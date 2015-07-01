@@ -86,10 +86,18 @@ add_filter( 'theme_mod_theme_layout', 'tamatebako_set_default_layout', 5 );
  * Filters the 'theme_mods_theme_layout'.
  */
 function tamatebako_set_default_layout( $layout ) {
-	if ( empty( $layout ) ) {
+	$layouts_args = tamatebako_layouts_args();
+	if( true === $layouts_args['customize'] ){
+		if ( empty( $layout ) ) {
+			return tamatebako_layout_default();
+		}
+		else{
+			return $layout;
+		}
+	}
+	else{
 		return tamatebako_layout_default();
 	}
-	return $layout;
 }
 
 
