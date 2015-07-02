@@ -40,6 +40,8 @@ function tamatebako_include( $file ){
 		include_once( $path );
 	}
 }
+
+
 /**
  * Including a file if a theme feature is supported and the file exists.
  * @since 3.0.0
@@ -50,6 +52,7 @@ function tamatebako_require_if_theme_supports( $feature, $file ) {
 		require_once( $path );
 	}
 }
+
 
 /* Load Custom Theme Support Files */
 add_action( 'after_setup_theme', 'tamatebako_load_theme_support', 15 );
@@ -68,6 +71,12 @@ function tamatebako_load_theme_support(){
 
 	/* Theme Layouts */
 	tamatebako_require_if_theme_supports( 'tamatebako-layouts', 'tamatebako/layouts/layouts' );
+
+	/* Enqueue Script (JS) */
+	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-js', 'tamatebako/includes/enqueue-js' );
+
+	/* Enqueue Style (CSS) */
+	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-css', 'tamatebako/includes/enqueue-css' );
 
 }
 

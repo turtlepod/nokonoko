@@ -33,7 +33,7 @@ function nokonoko_theme_setup(){
 		'status',
 		'video',
 		'audio',
-		'chat'
+		'chat',
 	);
 	//add_theme_support( 'post-formats', $post_formats_args );
 
@@ -54,6 +54,40 @@ function nokonoko_theme_setup(){
 	);
 	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args );
 
+
+	/* === Tamatebako: Enqueue Script (JS) === */
+	$js_scripts = array(
+		"fitvids" => array(
+			'src'        => 'js/fitvids',
+			'deps'       => array( 'jquery' ),
+			//'ver'        => tamatebako_theme_version(),
+			//'in_footer'  => true,
+			//'external'   => false,
+		),
+		"theme" => array( 
+			'src'        => 'js/theme',
+			'deps'       => array( 'jquery', 'fitvids' ),
+			//'ver'        => tamatebako_theme_version(),
+			//'in_footer'  => true,
+			//'external'   => false,
+		),
+	);
+	add_theme_support( 'tamatebako-enqueue-js', $js_scripts );
+
+	/* === Tamatebako: Enqueue Style (CSS) === */
+	$js_scripts = array(
+		"style" => array(
+			'src'        => 'style',
+			//'deps'       => array(),
+			//'ver'        => tamatebako_theme_version(),
+			//'media'      => 'all',
+			//'external'   => false,
+		),
+	);
+	add_theme_support( 'tamatebako-enqueue-css', $js_scripts );
+	
+	
+	
 
 	/* === Tamatebako: Register Sidebars === */
 	$sidebars_args = array(
