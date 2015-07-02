@@ -89,7 +89,7 @@ tamatebako_include( 'tamatebako/includes/load-js' );
 
 /* Load Utility */
 if ( version_compare( PHP_VERSION, '5.3.0' ) >= 0 ) {
-	//tamatebako_include( 'tamatebako/includes/utility' );
+	tamatebako_include( 'tamatebako/includes/utility' );
 }
 
 

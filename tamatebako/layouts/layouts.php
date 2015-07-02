@@ -1,7 +1,7 @@
 <?php
 /**
  * Tamatebako Theme Layouts
- * Fork (trim down version) of Hybrid Core 2.0 Theme Layouts Ext.
+ * Based on Hybrid Core 2.0 Theme Layouts Ext.
  *
  * @author    David Chandra <david@shellcreeper.com>
  * @author    Justin Tadlock <justin@justintadlock.com>

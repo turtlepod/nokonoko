@@ -35,36 +35,91 @@ function tamatebako_theme_file( $path, $ext ){
 		$debug = true;
 	}
 
-	/* On debug mode, load non min file, first. */
-	if ( $debug ){
-		/* return parent theme file if exist */
-		if ( file_exists( trailingslashit( get_template_directory() ) . $path . '.' . $ext ) ){
-			return trailingslashit( get_template_directory_uri() ) . $path . '.' . $ext;
+	/* If Child Theme Active */
+	if ( is_child_theme() ){
+
+		/* On debug mode, load non min file, first. */
+		if ( $debug ){
+			/* return child theme file if exist */
+			if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $path . '.' . $ext ) ){
+				return trailingslashit( get_stylesheet_directory_uri() ) . $path . '.' . $ext;
+			}
+			/* return child theme min file if exist */
+			elseif ( file_exists( trailingslashit( get_stylesheet_directory() ) . $path . '.min.' . $ext ) ){
+				return trailingslashit( get_stylesheet_directory_uri() ) . $path . '.min.' . $ext;
+			}
+			/* return parent theme regular file if exist */
+			elseif ( file_exists( trailingslashit( get_template_directory() ) . $path . '.' . $ext ) ){
+				return trailingslashit( get_template_directory_uri() ) . $path . '.' . $ext;
+			}
+			/* return parent theme min file if exist */
+			elseif ( file_exists( trailingslashit( get_template_directory() ) . $path . '.min.' . $ext ) ){
+				return trailingslashit( get_template_directory_uri() ) . $path . '.min.' . $ext;
+			}
+			/* return empty string */
+			else{
+				return '';
+			}
 		}
-		/* return parent theme min file if exist */
-		elseif ( file_exists( trailingslashit( get_template_directory() ) . $path . '.min.' . $ext ) ){
-			return trailingslashit( get_template_directory_uri() ) . $path . '.min.' . $ext;
-		}
-		/* return empty string */
+
+		/* Not debug mode, load min file if exist. */
 		else{
-			return '';
-		}
-	}
-	/* Not debug mode, load min file if exist. */
-	else{
-		/* return parent theme min file if exist */
-		if ( file_exists( trailingslashit( get_template_directory() ) . $path . '.min.' . $ext ) ){
-			return trailingslashit( get_template_directory_uri() ) . $path . '.min.' . $ext;
-		}
-		/* return parent theme regular file if exist */
-		elseif ( file_exists( trailingslashit( get_template_directory() ) . $path . '.' . $ext ) ){
-			return trailingslashit( get_template_directory_uri() ) . $path . '.' . $ext;
-		}
-		/* return empty string */
-		else{
-			return '';
+			/* return child theme min file if exist */
+			if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $path . '.min.' . $ext ) ){
+				return trailingslashit( get_stylesheet_directory_uri() ) . $path . '.min.' . $ext;
+			}
+			/* return child theme regular file if exist */
+			elseif ( file_exists( trailingslashit( get_stylesheet_directory() ) . $path . '.' . $ext ) ){
+				return trailingslashit( get_stylesheet_directory_uri() ) . $path . '.' . $ext;
+			}
+			/* return parent theme min file if exist */
+			elseif ( file_exists( trailingslashit( get_template_directory() ) . $path . '.min.' . $ext ) ){
+				return trailingslashit( get_template_directory_uri() ) . $path . '.min.' . $ext;
+			}
+			/* return parent theme regular file if exist */
+			elseif ( file_exists( trailingslashit( get_template_directory() ) . $path . '.' . $ext ) ){
+				return trailingslashit( get_template_directory_uri() ) . $path . '.' . $ext;
+			}
+			/* return empty string */
+			else{
+				return '';
+			}
 		}
 	}
 
+	/* No Child Theme Active */
+	else{
+
+		/* On debug mode, load non min file, first. */
+		if ( $debug ){
+			/* return parent theme file if exist */
+			if ( file_exists( trailingslashit( get_template_directory() ) . $path . '.' . $ext ) ){
+				return trailingslashit( get_template_directory_uri() ) . $path . '.' . $ext;
+			}
+			/* return parent theme min file if exist */
+			elseif ( file_exists( trailingslashit( get_template_directory() ) . $path . '.min.' . $ext ) ){
+				return trailingslashit( get_template_directory_uri() ) . $path . '.min.' . $ext;
+			}
+			/* return empty string */
+			else{
+				return '';
+			}
+		}
+		/* Not debug mode, load min file if exist. */
+		else{
+			/* return parent theme min file if exist */
+			if ( file_exists( trailingslashit( get_template_directory() ) . $path . '.min.' . $ext ) ){
+				return trailingslashit( get_template_directory_uri() ) . $path . '.min.' . $ext;
+			}
+			/* return parent theme regular file if exist */
+			elseif ( file_exists( trailingslashit( get_template_directory() ) . $path . '.' . $ext ) ){
+				return trailingslashit( get_template_directory_uri() ) . $path . '.' . $ext;
+			}
+			/* return empty string */
+			else{
+				return '';
+			}
+		}
+	}
 }
 
