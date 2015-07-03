@@ -21,6 +21,9 @@ tamatebako_include( 'tamatebako/template/archive' );
 /* Content */
 tamatebako_include( 'tamatebako/template/content' );
 
+/* Attachment */
+tamatebako_include( 'tamatebako/template/attachment' );
+
 
 
 
