@@ -18,14 +18,14 @@
 
 		</div><!-- .entry-header -->
 
-		<div <?php hybrid_attr( 'entry-summary' ); ?>>
+		<div class="entry-summary" itemprop="description">
 			<?php //get_the_image( array( 'attachment' => false, 'image_class' => 'alignright' ) ); ?>
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
 
 		<div class="entry-footer">
 			<?php edit_post_link(); ?>
-			<?php tamatebako_entry_terms(); ?>
+			<?php //tamatebako_entry_terms(); ?>
 		</div><!-- .entry-footer -->
 
 	</div><!-- .entry-wrap -->
