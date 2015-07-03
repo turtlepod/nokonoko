@@ -82,7 +82,7 @@ function nokonoko_theme_setup(){
 		),
 	);
 	$layouts_args = array(
-		'default'   => 'content',
+		'default'   => 'sidebar2-content-sidebar1',
 		'customize' => false,
 		'post_meta' => true,
 	);

@@ -147,13 +147,3 @@
 	}
 }
 
-
-/* === #06 - JETPACK === */
-/* Related Posts */
-@media only screen and (max-width: 450px) {
-	div.jp-relatedposts .jp-relatedposts-post {
-		width: auto;
-		clear: both;
-		margin: 0 0 1em;
-	}
-}

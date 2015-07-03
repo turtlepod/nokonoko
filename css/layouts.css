@@ -21,6 +21,7 @@
 	padding-right: 2rem;
 }
 #content{
+	width: 100%;
 	float: left;
 }
 #sidebar-primary-wrap{

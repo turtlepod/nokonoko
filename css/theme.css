@@ -1,11 +1,6 @@
 /* === ELEMENTS === */
 body{
-	font-size: 14px;
-	font-size: 1.4rem;
-}
-/* Default Background */
-body.wordpress{
-	background: #e6e6e6;
+	background: #ccc;
 }
 a{
 	color: #21759B;
@@ -20,8 +15,8 @@ ul{
 /* Blockquotes */
 blockquote, q{
 	position: relative;
-	padding: 0 0 0 20px;
-	padding: 0 0 0 2rem;
+	padding: 0 0 0 30px;
+	padding: 0 0 0 3rem;
 }
 blockquote:before,
 q:before{
@@ -48,16 +43,16 @@ code{
 
 /* === #04 - CONTAINER === */
 #container{
-	background: #fff;
 	width: 1200px;
 	margin: 20px auto;
 	margin: 2rem auto;
-	padding: 0;
+	background: #fff;
 }
 
 /* === #05 - HEADER === */
 #header{
 	padding: 20px;
+	padding: 2rem;
 }
 	#branding{
 		
@@ -68,11 +63,11 @@ code{
 		#site-title{
 			font-size: 25px;
 			font-size: 2.5rem;
-			margin-bottom: 10px;
-			margin-bottom: 1rem;
+			font-weight: 800;
+			margin: 0;
+			line-height: 1em;
 		}
 			#site-title a{
-				font-weight: 800;
 				color: #444;
 			}
 			#site-title a:hover,
@@ -83,7 +78,7 @@ code{
 		#site-description{
 			font-size: 17px;
 			font-size: 1.7rem;
-			margin-bottom: 0;
+			margin: 0;
 		}
 
 
@@ -91,38 +86,35 @@ code{
 
 /* Primary Menu */
 #menu-primary{
-	background: #333;
-	border: none;
+	
 }
 	#menu-primary .menu-container{
-		border: none;
+		
 	}
 		#menu-primary li a{
-			color: #fff;
-			background: #333;
+			
 		}
 		#menu-primary li a:hover,
 		#menu-primary li a:focus{
-			color: #e6e6e6;
+			
 		}
 			#menu-primary li li a{
-				color: #444;
-				background: #fff;
+				
 			}
 			#menu-primary li li a:hover,
 			#menu-primary li li a:focus{
-				color: #000;
+				
 			}
 			#menu-primary .current-menu-item > a,
 			#menu-primary .current-menu-ancestor > a{
-				font-weight: 400;
+				
 			}
 	/* Menu Search */
 	#menu-primary .menu-search .search-toggle{
-		color: #fff;
+		
 	}
 	#menu-primary .search-toggle-active.menu-search button{
-		color: #fff;
+		
 	}
 
 
@@ -130,6 +122,8 @@ code{
 #main{
 	padding: 20px;
 	padding: 2rem;
+	padding-right: 0;
+	background: orange;
 }
 #main:after{
 	content:".";display:block;height:0;clear:both;visibility:hidden;
@@ -140,18 +134,15 @@ code{
 
 /* === #08 - CONTENT === */
 #content{
-	width: 100%;
+	background: yellow;
 }
 
 /* === #09 - LOOP META === */
 .loop-meta{
-	background: #fff;
-	padding: 20px;
-	padding: 2rem;
-	padding-bottom: 0;
-	margin: 0 20px 20px 0;
-	margin: 0 2rem 2rem 0;
-	border: 1px solid #ccc;
+	
+}
+.loop-meta:after{
+	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
 	.loop-title{
 	}
@@ -161,12 +152,9 @@ code{
 
 /* === #10 - ENTRY === */
 .entry{
+	background: lightyellow;
 	margin-bottom: 20px;
 	margin-bottom: 2rem;
-	padding: 20px;
-	padding: 2rem;
-	border: 1px solid #ccc;
-	background: #fff;
 }
 .entry:after{
 	content:".";display:block;height:0;clear:both;visibility:hidden;
@@ -179,70 +167,36 @@ code{
 	}
 		/* Entry Title */
 		.entry-title{
+			font-size: 25px;
+			font-size: 2.5rem;
+			line-height: 1em;
 			font-weight: 400;
-			border-bottom: 1px solid #ccc;
-			padding-bottom: 20px;
-			padding-bottom: 2rem;
 		}
 		.sticky .entry-title:before{
-			content: "\f109";
-			color: #444;
-			background: #e6e6e6;
-			padding: 5px;
-			padding: 0.5rem;
-			margin-right: 10px;
-			margin-right: 1rem;
-			font-family: "dashicons";
-			font-size: 17px;
-			font-size: 1.7rem;
-			vertical-align: middle;
-			-webkit-font-smoothing: antialiased;
-			-webkit-border-radius: 50%;
-			-moz-border-radius: 50%;
-			border-radius: 50%;
+			
 		}
 		/* Byline */
 		.entry-byline{
-			color: #444;
-			margin-bottom: 20px;
-			margin-bottom: 2rem;
+			
 		}
 		.entry-footer .entry-byline{
-			margin-bottom: 0;
+			
 		}
 			.entry-byline a{
-				color: #444;
+				
 			}
 			.entry-byline a:hover,
 			.entry-byline a:focus{
-				color: #000;
+				
 			}
 			.entry-author:before{
-				content: "\f110";
-				font-family: "dashicons";
-				vertical-align: top;
-				margin-right: 5px;
-				margin-right: 0.5rem;
-				color: #ccc;
-				-webkit-font-smoothing: antialiased;
+				
 			}
 			.entry-permalink:before{
-				content: "\f103";
-				font-family: "dashicons";
-				vertical-align: top;
-				margin-right: 5px;
-				margin-right: 0.5rem;
-				color: #ccc;
-				-webkit-font-smoothing: antialiased;
+				
 			}
 			.entry-published:before{
-				content: "\f469";
-				font-family: "dashicons";
-				vertical-align: top;
-				margin-right: 5px;
-				margin-right: 0.5rem;
-				color: #ccc;
-				-webkit-font-smoothing: antialiased;
+				
 			}
 			.comments-link:empty{
 				display: none;
@@ -251,10 +205,7 @@ code{
 				content: " | ";
 			}
 			.comments-link:after{
-				content: "\f101";
-				font-family: "dashicons";
-				vertical-align: middle;
-				-webkit-font-smoothing: antialiased;
+				
 			}
 /* Entry Content, Entry Summary */
 	.entry-content,
@@ -271,38 +222,21 @@ code{
 		/* Thumbnail */
 		.entry-summary .theme-thumbnail{
 			float: right;
-			margin: 0 0 20px 20px;
-			margin: 0 0 2rem 2rem;
-			border: 1px solid #ccc;
-			padding: 10px;
-			padding: 1rem;
 		}
 		/* More link */
 		.more-link-wrap{
 			display: block;
 		}
 		p .more-link-wrap{
-			margin-top: 20px;
-			margin-top: 2rem;
 		}
 		.more-link{
 			display: inline-block;
-			margin-bottom: 20px;
-			margin-bottom: 2rem;
-			border: 1px solid #ccc;
-			padding: 4px 10px;
-			padding: 0.4rem 1rem;
 		}
 		p .more-link{
 			margin-bottom: 0;
 		}
 		.more-text:after{
-			content: "\f345";
-			font-family: "dashicons";
-			vertical-align: top;
-			margin-left: 10px;
-			margin-left: 1rem;
-			-webkit-font-smoothing: antialiased;
+			
 		}
 		/* Page links */
 		.wp-link-pages{
@@ -322,16 +256,13 @@ code{
 		.wp-link-pages a:focus{
 			border: 1px solid #aaa;
 		}
-/* Entry Footer */
+	/* Entry Footer */
 	.entry-footer{
 	}
 		.post-edit-link{
 		}
 		.post-edit-link:before{
-			content: "\f464";
-			font-family: "dashicons";
-			vertical-align: top;
-			-webkit-font-smoothing: antialiased;
+			
 		}
 		.post-edit-link:after{
 			content:".";display:block;height:0;clear:both;visibility:hidden;
@@ -450,6 +381,15 @@ code{
 		vertical-align: top;
 		-webkit-font-smoothing: antialiased;
 	}
+
+
+/* === SIDEBAR === */
+#sidebar-primary-wrap{
+	background: lightblue;
+}
+#sidebar-secondary-wrap{
+	background: lightgreen;
+}
 
 
 /* === FOOTER === */
