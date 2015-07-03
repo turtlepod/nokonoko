@@ -160,6 +160,10 @@ function tamatebako_post_class( $classes, $class, $post_id ){
 		return $classes;
 	}
 
+	$post = get_post( $post_id );
+	$post_type = get_post_type();
+	$post_status = get_post_status();
+
 	/* Entry */
 	$classes[] = 'entry';
 

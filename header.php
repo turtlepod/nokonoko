@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html <?php language_attributes( 'html' ); ?>>
+<header itemtype="http://schema.org/WPHeader" itemscope="itemscope" role="banner" id="header">
 
-<head>
-<?php wp_head(); // Hook required for scripts, styles, and other <head> items. ?>
-</head>
+	<div id="branding">
 
-<body itemtype="http://schema.org/WebPage" itemscope="itemscope" <?php body_class(); ?>>
-<?php echo tamatebako_check_js_script(); ?>
+		<h1 itemprop="headline" id="site-title"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<p itemprop="description" id="site-description"><?php bloginfo( 'description' ); ?></p>
+
+	</div><!-- #branding -->
+
+</header><!-- #header-->

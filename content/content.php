@@ -1,18 +1,18 @@
-<article <?php hybrid_attr( 'post' ); ?>>
+<article itemprop="blogPost" itemtype="http://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-wrap">
 
 		<div class="entry-header">
-			<?php the_title( '<h2 ' . hybrid_get_attr( 'entry-title' ) . '><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h2>' ); ?>
+			<?php the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h2>' ); ?>
 		</div><!-- .entry-header -->
 
-		<div <?php hybrid_attr( 'entry-summary' ); ?>>
+		<div class="entry-summary" itemprop="description">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
 
 		<div class="entry-footer">
 			<?php edit_post_link(); ?>
-			<?php tamatebako_entry_terms(); ?>
+			<?php //tamatebako_entry_terms(); ?>
 		</div><!-- .entry-footer -->
 
 	</div><!-- .entry-wrap -->

@@ -1,10 +1,19 @@
-<?php get_header(); ?>
+<!DOCTYPE html>
+<html <?php language_attributes( 'html' ); ?>>
+
+<head>
+<?php wp_head(); // Hook required for scripts, styles, and other <head> items. ?>
+</head>
+
+<body itemtype="http://schema.org/WebPage" itemscope="itemscope" <?php body_class(); ?>>
+
+<?php echo tamatebako_check_js_script(); ?>
 
 <div id="container">
 
 	<?php tamatebako_skip_to_content(); ?>
 
-	<?php get_template_part( 'site-header' ); ?>
+	<?php get_header(); ?>
 
 	<?php get_template_part( 'menu/primary' ); ?>
 
@@ -27,7 +36,7 @@
 								<?php the_post(); /* Load Post Data */ ?>
 
 								<?php /* Start Content */ ?>
-								<?php //tamatebako_get_template( 'content' ); // Loads the content/*.php template. ?>
+								<?php tamatebako_get_template( 'content' ); // Loads the content/*.php template. ?>
 								<?php /* End Content */ ?>
 
 							<?php } /* End Loop */ ?>
@@ -59,3 +68,7 @@
 </div><!-- #container -->
 
 <?php get_footer(); // Loads the footer.php template. ?>
+
+<?php wp_footer();?>
+</body>
+</html>
