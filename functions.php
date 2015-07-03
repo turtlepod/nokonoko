@@ -99,7 +99,7 @@ function nokonoko_theme_setup(){
 
 	/* === Tamatebako: Enqueue Script (JS) === */
 	$enqueue_js_scripts = array(
-		"fitvids"                    => array( 'registered' => true ),
+		"theme-fitvids"              => array( 'registered' => true ),
 		"theme-js"                   => array( 'registered' => true ),
 		"child-theme-js"             => array( 'registered' => true ),
 	);
@@ -108,11 +108,12 @@ function nokonoko_theme_setup(){
 	/* === Tamatebako: Enqueue Style (CSS) === */
 	$enqueue_css_scripts = array(
 		"theme-open-sans-font"       => array( 'registered' => true ),
-		"theme-merriweather-font"    => array( 'registered' => true ),
+		//"theme-merriweather-font"    => array( 'registered' => true ),
 		"dashicons"                  => array( 'registered' => true ),
 		"theme-reset"                => array( 'registered' => true ),
 		"theme-layouts"              => array( 'registered' => true ),
 		"theme-menus"                => array( 'registered' => true ),
+		"theme-comments"             => array( 'registered' => true ),
 		"theme"                      => array( 'registered' => true ),
 		"media-queries"              => array( 'registered' => true ),
 		"debug-media-queries"        => array( 'registered' => true ),

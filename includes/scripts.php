@@ -25,7 +25,7 @@ $register_js_scripts = array(
 	),
 	"theme-js" => array(
 		'src' => tamatebako_theme_file( 'js/theme', 'js' ),
-		'deps'=> array( 'jquery', 'fitvids' ),
+		'deps'=> array( 'jquery', 'theme-fitvids' ),
 	),
 	"child-theme-js" => array(
 		'src' => tamatebako_child_theme_file( 'js/child-theme', 'js' ),
@@ -55,6 +55,9 @@ $register_css_scripts = array(
 	),
 	"theme-menus" => array(
 		'src' => tamatebako_theme_file( 'css/menus', 'css' ),
+	),
+	"theme-comments" => array(
+		'src' => tamatebako_theme_file( 'css/comments', 'css' ),
 	),
 	"theme" => array(
 		'src' => tamatebako_theme_file( 'css/theme', 'css' ),
