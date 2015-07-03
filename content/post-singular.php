@@ -34,4 +34,4 @@
 
 <?php //tamatebako_entry_nav(); ?>
 
-<?php //comments_template( '', true ); // Load comments. ?>
+<?php comments_template( '', true ); // Load comments. ?>
