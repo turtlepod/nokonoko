@@ -114,6 +114,7 @@ function nokonoko_theme_setup(){
 		"theme-layouts"              => array( 'registered' => true ),
 		"theme-menus"                => array( 'registered' => true ),
 		"theme-comments"             => array( 'registered' => true ),
+		"theme-widgets"              => array( 'registered' => true ),
 		"theme"                      => array( 'registered' => true ),
 		"media-queries"              => array( 'registered' => true ),
 		"debug-media-queries"        => array( 'registered' => true ),

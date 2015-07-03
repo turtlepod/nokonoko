@@ -59,6 +59,9 @@ $register_css_scripts = array(
 	"theme-comments" => array(
 		'src' => tamatebako_theme_file( 'css/comments', 'css' ),
 	),
+	"theme-widgets" => array(
+		'src' => tamatebako_theme_file( 'css/widgets', 'css' ),
+	),
 	"theme" => array(
 		'src' => tamatebako_theme_file( 'css/theme', 'css' ),
 	),

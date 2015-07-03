@@ -32,8 +32,8 @@ function tamatebako_setup(){
 	add_filter( 'the_content_more_link', 'tamatebako_content_more', 10, 2 );
 
 	/* WP Link Pages */
-	add_filter( 'wp_link_pages_args', 'tamatebako_wp_link_pages' );
-	
+	add_filter( 'wp_link_pages_args', 'tamatebako_wp_link_pages', 5 );
+	add_filter( 'wp_link_pages_link', 'tamatebako_wp_link_pages_link', 5 );
 	
 	
 	
@@ -81,6 +81,17 @@ function tamatebako_wp_link_pages( $args ){
 }
 
 
+/**
+ * Wraps page "links" that aren't actually links (just text) with `<span class="page-numbers">` so that they 
+ * can also be styled.  This makes `wp_link_pages()` consistent with the output of `paginate_links()`.
+ */
+function tamatebako_wp_link_pages_link( $link ) {
+
+	if ( 0 !== strpos( $link, '<a' ) )
+		$link = "<span class='page-numbers'>{$link}</span>";
+
+	return $link;
+}
 
 
 
