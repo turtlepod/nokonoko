@@ -6,7 +6,7 @@
 
 	<?php get_template_part( 'site-header' ); ?>
 
-	<?php //get_template_part( 'menu/primary' ); ?>
+	<?php get_template_part( 'menu/primary' ); ?>
 
 	<div id="main">
 
@@ -38,7 +38,7 @@
 
 					<?php } else { /* No Posts Found */ ?>
 
-						<?php //tamatebako_content_error(); ?>
+						<?php tamatebako_content_error(); ?>
 
 					<?php } /* End Posts Found Check */ ?>
 

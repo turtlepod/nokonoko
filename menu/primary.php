@@ -1,4 +1,4 @@
-<nav <?php hybrid_attr( 'menu', 'primary' ); ?>>
+<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" aria-label="Navigation Menu" role="navigation" class="menu" id="menu-primary">
 
 	<div class="menu-container menu-dropdown menu-search">
 

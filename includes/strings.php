@@ -23,6 +23,16 @@ function nokonoko_strings( $texts ){
 	$texts['Layout'] = __( 'Layout', 'nokonoko' );
 	$texts['Global Layout'] = __( 'Global Layout', 'nokonoko' );
 
+	/* Template/Menu */
+	$text['Search...'] = _x( 'Search&hellip;', 'search text', 'nokonoko' );
+	$text['Search'] = _x( 'Search', 'search button (accessibility)', 'nokonoko' );
+	$text['Expand Search Form'] = _x( 'Expand Search Form', 'expand search form button (accessibility)', 'nokonoko' );
+
+	/* Template/Content */
+	$text['404 Not Found'] = _x( '404 Not Found', '404 title', 'nokonoko' );
+	$text['Apologies, but no entries were found.'] = _x( 'Apologies, but no entries were found.', '404 content', 'nokonoko' );
+
+
 	/* === Theme === */
 
 	/* Register Layouts */

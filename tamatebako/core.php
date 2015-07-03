@@ -19,6 +19,15 @@ function tamatebako_string( $context ){
 	$texts['Layout'] = 'Layout';
 	$texts['Global Layout'] = 'Global Layout';
 
+	/* Template/Menu */
+	$text['Search...'] = 'Search&hellip;';
+	$text['Search'] = 'Search';
+	$text['Expand Search Form'] = 'Expand Search Form';
+
+	/* Template/Content */
+	$text['404 Not Found'] = '404 Not Found';
+	$text['Apologies, but no entries were found.'] = 'Apologies, but no entries were found.';
+
 	/* Filter */
 	$texts = apply_filters( 'tamatebako_strings', $texts );
 
@@ -106,7 +115,7 @@ tamatebako_include( 'tamatebako/includes/load-js' );
 
 /* Template Tags */
 if ( !is_admin() ) {
-	tamatebako_include( 'tamatebako/template-tags/load' );
+	tamatebako_include( 'tamatebako/template/load' );
 }
 
 /* Load Utility */
