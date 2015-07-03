@@ -46,19 +46,25 @@ function tamatebako_enqueue_js(){
 			'deps'       => array(),
 			'ver'        => tamatebako_theme_version(),
 			'in_footer'  => true,
-			'external'   => false,
+			'registered' => false,
 		);
 
 		/* Merge */
 		$script_args = wp_parse_args( $script_args, $defaults_args );
 
 		/* Enqueue it. */
-		if( !empty( $script_args['handle'] ) && !empty( $script_args['src'] ) ){
-			if( false === $script_args['external'] ){
-				$script_args['src'] = tamatebako_theme_file( $script_args['src'], 'js' );
+		if( !empty( $script_args['handle'] ) ){
+			if( true === $script_args['registered'] && wp_script_is( $script_args['handle'], 'registered' ) ){
+				wp_enqueue_script( sanitize_key( $script_args['handle'] ) );
 			}
-			if( $script_args['src'] ){
-				wp_enqueue_script( $script_args['handle'], $script_args['src'], $script_args['deps'], $script_args['ver'], $script_args['in_footer'] );
+			elseif( !empty( $script_args['src'] ) ){
+				wp_enqueue_script(
+					sanitize_key( $script_args['handle'] ),
+					esc_url( $script_args['src'] ),
+					is_array( $script_args['deps'] ) ? $script_args['deps'] : array(),
+					esc_attr( $script_args['ver'] ),
+					$script_args['in_footer'] ? true : false
+				);
 			}
 		}
 

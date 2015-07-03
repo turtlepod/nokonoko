@@ -12,19 +12,19 @@
  */
 function tamatebako_string( $context ){
 
-	$tamatebako_strings = array();
+	$texts = array();
 
 	/* Layouts */
-	$tamatebako_strings['Default'] = 'Default';
-	$tamatebako_strings['Layout'] = 'Layout';
-	$tamatebako_strings['Global Layout'] = 'Global Layout';
+	$texts['Default'] = 'Default';
+	$texts['Layout'] = 'Layout';
+	$texts['Global Layout'] = 'Global Layout';
 
 	/* Filter */
-	$tamatebako_strings = apply_filters( 'tamatebako_strings', $tamatebako_strings );
+	$texts = apply_filters( 'tamatebako_strings', $texts );
 
 	/* Output */
-	if ( isset( $tamatebako_strings[$context] ) ){
-		return $tamatebako_strings[$context];
+	if ( isset( $texts[$context] ) ){
+		return $texts[$context];
 	}
 	return $context;
 }
@@ -72,11 +72,19 @@ function tamatebako_load_theme_support(){
 	/* Theme Layouts */
 	tamatebako_require_if_theme_supports( 'tamatebako-layouts', 'tamatebako/layouts/layouts' );
 
+	/* === SCRIPTS === */
+
+	/* Register Script (JS) */
+	tamatebako_require_if_theme_supports( 'tamatebako-register-js', 'tamatebako/scripts/register-js' );
+
 	/* Enqueue Script (JS) */
-	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-js', 'tamatebako/includes/enqueue-js' );
+	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-js', 'tamatebako/scripts/enqueue-js' );
+
+	/* Register Style (CSS) */
+	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-css', 'tamatebako/scripts/register-css' );
 
 	/* Enqueue Style (CSS) */
-	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-css', 'tamatebako/includes/enqueue-css' );
+	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-css', 'tamatebako/scripts/enqueue-css' );
 
 }
 

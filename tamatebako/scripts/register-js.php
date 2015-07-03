@@ -5,17 +5,17 @@
 **/
 
 /* Hook to theme setup */
-add_action( 'after_setup_theme', 'tamatebako_enqueue_css_setup', 20 );
+add_action( 'after_setup_theme', 'tamatebako_register_js_setup', 20 );
 
 
 /**
  * Register Sidebar Setup.
  * @since 3.0.0
  */
-function tamatebako_enqueue_css_setup(){
+function tamatebako_register_js_setup(){
 
 	/* Register Sidebars */
-	add_action( 'wp_enqueue_scripts', 'tamatebako_enqueue_css' );
+	add_action( 'wp_enqueue_scripts', 'tamatebako_register_js', 1 );
 }
 
 
@@ -23,10 +23,10 @@ function tamatebako_enqueue_css_setup(){
  * Enqueue JS
  * @since 3.0.0
  */
-function tamatebako_enqueue_css(){
+function tamatebako_register_js(){
 
 	/* Get theme-supported sidebars. */
-	$scripts = get_theme_support( 'tamatebako-enqueue-css' );
+	$scripts = get_theme_support( 'tamatebako-register-js' );
 
 	/* No Support, Return */
 	if ( !is_array( $scripts[0] ) ){
@@ -45,8 +45,7 @@ function tamatebako_enqueue_css(){
 			'src'        => '',
 			'deps'       => array(),
 			'ver'        => tamatebako_theme_version(),
-			'media'      => 'all',
-			'external'   => false,
+			'in_footer'  => true,
 		);
 
 		/* Merge */
@@ -54,12 +53,13 @@ function tamatebako_enqueue_css(){
 
 		/* Enqueue it. */
 		if( !empty( $script_args['handle'] ) && !empty( $script_args['src'] ) ){
-			if( false === $script_args['external'] ){
-				$script_args['src'] = tamatebako_theme_file( $script_args['src'], 'css' );
-			}
-			if( $script_args['src'] ){
-				wp_enqueue_style( $script_args['handle'], $script_args['src'], $script_args['deps'], $script_args['ver'], $script_args['media'] );
-			}
+			wp_register_script(
+				sanitize_key( $script_args['handle'] ),
+				esc_url( $script_args['src'] ),
+				is_array( $script_args['deps'] ) ? $script_args['deps'] : array(),
+				esc_attr( $script_args['ver'] ),
+				$script_args['in_footer'] ? true : false
+			);
 		}
 
 	}

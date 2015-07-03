@@ -16,7 +16,11 @@ add_filter( 'theme_mod_theme_layout', 'tamatebako_set_post_layout' );
 function tamatebako_set_post_layout( $layout ) {
 	if ( is_singular() ){
 		if ( post_type_supports( get_post_type( get_queried_object_id() ), 'theme-layouts' ) ) {
-			$layout = tamatebako_get_post_layout( get_queried_object_id() );
+			$layouts = array_keys( tamatebako_layouts() );
+			$post_layout = tamatebako_get_post_layout( get_queried_object_id() );
+			if( !empty( $post_layout ) && in_array( $post_layout, $layouts ) ){
+				$layout = tamatebako_get_post_layout( get_queried_object_id() );
+			}
 		}
 	}
 	return $layout;
@@ -39,8 +43,7 @@ function tamatebako_get_post_layout( $post_id = '' ) {
 	if( empty( $post_id ) ){
 		$post_id = get_queried_object_id();
 	}
-	$layout = get_post_meta( $post_id, tamatebako_layout_meta_key(), true );
-	return ( !empty( $layout ) ? $layout : 'default' );
+	return get_post_meta( $post_id, tamatebako_layout_meta_key(), true );
 }
 
 
@@ -131,13 +134,19 @@ function tamatebako_layouts_post_meta_box( $post, $box ) {
 	/* Vars */
 	$layouts_args = tamatebako_layouts_args();
 	$layouts = tamatebako_layouts();
+
+	/* Add Default */
+	$layout_default = array();
 	if( true === $layouts_args['customize'] ){
-		$layouts['default'] = tamatebako_string( 'Global Layout' );
+		$layout_default['default'] = array( 'name' => tamatebako_string( 'Global Layout' ) );
 	}
 	else{
-		$layouts['default'] = tamatebako_string( 'Default' );
+		$layout_default['default'] = array( 'name' => tamatebako_string( 'Default' ) );
 	}
-	$layouts['default'] = $layouts['default'] . ' (' . tamatebako_layout_name( tamatebako_current_layout() ) . ')';
+	if( tamatebako_current_layout() ){
+		$layout_default['default']['name'] = $layout_default['default']['name'] . ' (' . tamatebako_layout_name( tamatebako_current_layout() ) . ')';
+	}
+	$layouts = array_merge( $layout_default, $layouts );
 
 	$post_layout = tamatebako_get_post_layout( $post->ID );
 ?>
@@ -148,8 +157,13 @@ function tamatebako_layouts_post_meta_box( $post, $box ) {
 
 		<div class="post-layout-wrap">
 			<ul>
-				<?php foreach ( $layouts as $layout => $layout_name ) { ?>
-					<li><input type="radio" name="post-layout" id="post-layout-<?php echo esc_attr( $layout ); ?>" value="<?php echo esc_attr( $layout ); ?>" <?php checked( $post_layout, $layout ); ?> /> <label for="post-layout-<?php echo esc_attr( $layout ); ?>"><?php echo esc_html( $layout_name ); ?></label></li>
+				<?php foreach ( $layouts as $layout => $layout_data ) {
+					$layout_value = $layout;
+					if( 'default' == $layout ){
+						$layout_value = '';
+					}
+					?>
+					<li><input type="radio" name="post-layout" id="post-layout-<?php echo esc_attr( $layout ); ?>" value="<?php echo esc_attr( $layout_value ); ?>" <?php checked( $post_layout, $layout_value ); ?> /> <label for="post-layout-<?php echo esc_attr( $layout ); ?>"><?php echo esc_html( $layout_data['name'] ); ?></label></li>
 				<?php } ?>
 			</ul>
 		</div>
@@ -204,13 +218,19 @@ function tamatebako_layouts_attachment_fields_to_edit( $fields, $post ) {
 	/* Vars */
 	$layouts_args = tamatebako_layouts_args();
 	$layouts = tamatebako_layouts();
+
+	/* Add default */
+	$layout_default = array();
 	if( true === $layouts_args['customize'] ){
-		$layouts['default'] = tamatebako_string( 'Global Layout' );
+		$layout_default['default'] = array( 'name' => tamatebako_string( 'Global Layout' ) );
 	}
 	else{
-		$layouts['default'] = tamatebako_string( 'Default' );
+		$layout_default['default'] = array( 'name' => tamatebako_string( 'Default' ) );
 	}
-	$layouts['default'] = $layouts['default'] . ' (' . tamatebako_layout_name( tamatebako_current_layout() ) . ')';
+	if( tamatebako_current_layout() ){
+		$layout_default['default']['name'] = $layout_default['default']['name'] . ' (' . tamatebako_layout_name( tamatebako_current_layout() ) . ')';
+	}
+	$layouts = array_merge( $layout_default, $layouts );
 
 	/* Get the current post's layout. */
 	$post_layout = tamatebako_get_post_layout( $post->ID );
@@ -219,8 +239,12 @@ function tamatebako_layouts_attachment_fields_to_edit( $fields, $post ) {
 	$select = '';
 
 	/* Loop through each theme-supported layout, adding it to the select element. */
-	foreach ( $layouts as $layout => $layout_name ){
-		$select .= '<option id="post-layout-' . esc_attr( $layout ) . '" value="' . esc_attr( $layout ) . '" ' . selected( $post_layout, $layout, false ) . '>' . esc_html( $layout_name ) . '</option>';
+	foreach ( $layouts as $layout => $layout_data ){
+		$layout_value = $layout;
+		if( 'default' == $layout ){
+			$layout_value = '';
+		}
+		$select .= '<option id="post-layout-' . esc_attr( $layout ) . '" value="' . esc_attr( $layout_value ) . '" ' . selected( $post_layout, $layout_value, false ) . '>' . esc_html( $layout_data['name'] ) . '</option>';
 	}
 
 	/* Set the HTML for the post layout select drop-down. */
