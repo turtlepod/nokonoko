@@ -37,22 +37,53 @@ function nokonoko_theme_setup(){
 	add_theme_support( 'tamatebako-customize-mobile-view' );
 
 	/* === Maximum Content Width === */
-	$GLOBALS['content_width'] = 940;
+	$GLOBALS['content_width'] = 1100;
 
 	/* === Tamatebako: Theme Layouts === */
 	$layouts = array(
+		/* One Column */
 		'content' => array(
-			'name'          => tamatebako_string( 'One Column' ),
-			'content_width' => 940,
+			'name'          => tamatebako_string( 'Content' ),
+			'content_width' => 1100,
 		),
+		/* Two Columns */
 		'content-sidebar1' => array(
-			'name'          => tamatebako_string( 'Two Columns' ),
-			'content_width' => 640,
+			'name'          => tamatebako_string( 'Content | Sidebar 1' ),
+			'content_width' => 760,
+		),
+		'sidebar1-content' => array(
+			'name'          => tamatebako_string( 'Sidebar 1 | Content' ),
+			'content_width' => 760,
+		),
+		'content-sidebar2' => array(
+			'name'          => tamatebako_string( 'Sidebar 1 | Content' ),
+			'content_width' => 900,
+		),
+		'sidebar2-content' => array(
+			'name'          => tamatebako_string( 'Sidebar 1 | Content' ),
+			'content_width' => 900,
+		),
+		/* Three Columns */
+		'sidebar2-content-sidebar1' => array(
+			'name'          => tamatebako_string( 'Sidebar 2 | Content | Sidebar 1' ),
+			'content_width' => 560,
+		),
+		'sidebar2-sidebar1-content' => array(
+			'name'          => tamatebako_string( 'Sidebar 1 | Sidebar 2 | Content' ),
+			'content_width' => 560,
+		),
+		'content-sidebar1-sidebar2' => array(
+			'name'          => tamatebako_string( 'Content | Sidebar 1 | Sidebar 2' ),
+			'content_width' => 560,
+		),
+		'sidebar1-content-sidebar2' => array(
+			'name'          => tamatebako_string( 'Sidebar 1 | Content | Sidebar 2' ),
+			'content_width' => 560,
 		),
 	);
 	$layouts_args = array(
-		'default'   => 'content-sidebar1',
-		'customize' => true,
+		'default'   => 'content',
+		'customize' => false,
 		'post_meta' => true,
 	);
 	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args );
