@@ -104,6 +104,11 @@ tamatebako_include( 'tamatebako/includes/load-css' );
 /* Load JS */
 tamatebako_include( 'tamatebako/includes/load-js' );
 
+/* Template Tags */
+if ( !is_admin() ) {
+	tamatebako_include( 'tamatebako/template-tags/load' );
+}
+
 /* Load Utility */
 if ( version_compare( PHP_VERSION, '5.3.0' ) >= 0 ) {
 	tamatebako_include( 'tamatebako/includes/utility' );

@@ -1,7 +1,6 @@
 <?php
 /**
  * Additional Context
- * for easier styling.
  * @since 3.0.0
  */
 
@@ -24,7 +23,7 @@ function tamatebako_contexts_setup(){
 	add_filter( 'body_class', 'tamatebako_body_class' );
 
 	/* Additional Post Classes */
-	add_filter( 'post_class', 'tamatebako_post_class' );
+	add_filter( 'post_class', 'tamatebako_post_class', 5, 3 );
 
 	/* Additional Widgets Classes */
 	add_filter( 'dynamic_sidebar_params', 'tamatebako_widget_class' );
@@ -51,6 +50,29 @@ function tamatebako_tinymce_body_class( $settings ){
  * @since 0.1.0
  */
 function tamatebako_body_class( $classes ){
+
+	/* WordPress */
+	$classes[] = 'wordpress';
+
+	/* Text Direction */
+	$classes[] = is_rtl() ? 'rtl' : 'ltr';
+
+	/* Parent or Child Theme */
+	$classes[] = is_child_theme() ? 'child-theme' : 'parent-theme';
+
+	/* Multisite */
+	if ( is_multisite() ) {
+		$classes[] = 'multisite';
+		$classes[] = 'blog-' . get_current_blog_id();
+	}
+
+	/* Is the current user logged in. */
+	$classes[] = is_user_logged_in() ? 'logged-in' : 'logged-out';
+
+	/* Plural/multiple-post view (opposite of singular). */
+	if ( is_home() || is_archive() || is_search() ){
+		$classes[] = 'plural';
+	}
 
 	/* JS Status, need to be changed to "js" when js available */
 	$classes[] = 'no-js';
@@ -131,13 +153,36 @@ function tamatebako_body_class( $classes ){
  *
  * @since 0.1.0
  */
-function tamatebako_post_class( $classes ){
+function tamatebako_post_class( $classes, $class, $post_id ){
+
+	/* Do not filter admin */
+	if ( is_admin() ){
+		return $classes;
+	}
+
+	/* Entry */
+	$classes[] = 'entry';
+
+	/* Has excerpt. */
+	if ( post_type_supports( $post->post_type, 'excerpt' ) && has_excerpt() ){
+		$classes[] = 'has-excerpt';
+	}
+
+	/* Has <!--more--> link. */
+	if ( !is_singular() && false !== strpos( $post->post_content, '<!--more-->' ) ){
+		$classes[] = 'has-more-link';
+	}
 
 	/* Post formats */
 	if ( post_type_supports( get_post_type(), 'post-formats' ) ) {
 		if ( get_post_format() ){
 			$classes[] = 'has-format';
 		}
+	}
+
+	/* Has <!--more--> link. */
+	if ( !is_singular() && false !== strpos( $post->post_content, '<!--more-->' ) ){
+		$_classes[] = 'has-more-link';
 	}
 
 	/* Make it unique */
