@@ -25,7 +25,7 @@
 
 		<div class="entry-footer">
 			<?php edit_post_link(); ?>
-			<?php //tamatebako_entry_terms(); ?>
+			<?php tamatebako_entry_terms(); ?>
 		</div><!-- .entry-footer -->
 
 	</div><!-- .entry-wrap -->
