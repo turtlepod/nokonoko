@@ -83,7 +83,7 @@ function nokonoko_theme_setup(){
 	);
 	$layouts_args = array(
 		'default'   => 'sidebar2-content-sidebar1',
-		'customize' => false,
+		'customize' => true,
 		'post_meta' => true,
 	);
 	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args );

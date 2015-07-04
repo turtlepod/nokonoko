@@ -15,7 +15,11 @@ function tamatebako_layouts_customize_register( $wp_customize ) {
 	/* Layouts Choices */
 	$layouts = tamatebako_layouts();
 	unset( $layouts['default'] );
-	$layouts[tamatebako_layout_default()] = $layouts[tamatebako_layout_default()] . ' (' . tamatebako_string( 'Default' ) . ')';
+	$layouts[tamatebako_layout_default()]['name'] = $layouts[tamatebako_layout_default()]['name'] . ' (' . tamatebako_string( 'Default' ) . ')';
+	$layouts_choices = array();
+	foreach( $layouts as $layout => $layout_data ){
+		$layouts_choices[$layout] = $layout_data['name'];
+	}
 
 	/* Add the layout section. */
 	$wp_customize->add_section(
@@ -47,7 +51,7 @@ function tamatebako_layouts_customize_register( $wp_customize ) {
 			'section'  => 'layout',
 			'settings' => 'theme_layout',
 			'type'     => 'radio',
-			'choices'  => $layouts,
+			'choices'  => $layouts_choices,
 		)
 	);
 

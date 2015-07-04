@@ -11,7 +11,7 @@
  */
 function tamatebako_archive_header(){ ?>
 
-	<?php if ( get_the_archive_title() ){ ?>
+	<?php if ( get_the_archive_title() && !is_front_page() && !is_singular() && !is_404() ){ ?>
 
 		<header itemtype="http://schema.org/WebPageElement" itemscope="itemscope" class="loop-meta">
 

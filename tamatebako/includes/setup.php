@@ -226,9 +226,10 @@ function tamatebako_comments_popup_link_attributes( $attr ) {
  */
 function tamatebako_archive_title( $title ){
 	
-	
-	
-	
+	/* Blog Page */
+	if( is_home() && !is_front_page() ){
+		$title = get_post_field( 'post_title', get_queried_object_id() );
+	}
 	
 	return $title;
 }
@@ -237,10 +238,20 @@ function tamatebako_archive_title( $title ){
  * Archive Description
  */
 function tamatebako_archive_description( $desc ){
-	
-	
-	
-	
+
+	/* Blog Page */
+	if( is_home() && !is_front_page() ){
+		$desc = get_post_field( 'post_content', get_queried_object_id(), 'raw' );
+	}
+	/* Author Page */
+	elseif ( is_author() ){
+		$desc = get_the_author_meta( 'description', get_query_var( 'author' ) );
+	}
+	/* Post Type Archive */
+	elseif ( is_post_type_archive() ){
+		$desc = get_post_type_object( get_query_var( 'post_type' ) )->description;
+	}
+
 	if( !empty( $desc ) ){
 		return wpautop( $desc );
 	}

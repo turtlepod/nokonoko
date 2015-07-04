@@ -68,16 +68,14 @@ code{
 			line-height: 1em;
 		}
 			#site-title a{
-				color: #444;
 			}
 			#site-title a:hover,
 			#site-title a:focus{
-				color: #444;
-				opacity: 0.8;
 			}
 		#site-description{
 			font-size: 17px;
 			font-size: 1.7rem;
+			line-height: 1em;
 			margin: 0;
 		}
 
@@ -139,14 +137,25 @@ code{
 
 /* === #09 - LOOP META === */
 .loop-meta{
-	
+	margin-right: 20px;
+	margin-bottom: 20px;
+	background: pink;
 }
 .loop-meta:after{
 	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
 	.loop-title{
+		font-size: 25px;
+		font-size: 2.5rem;
+		line-height: 1em;
+		font-weight: 400;
+		margin: 0;
 	}
 	.loop-description{
+		
+	}
+	.loop-description p{
+		margin: 0;
 	}
 
 
@@ -171,6 +180,7 @@ code{
 			font-size: 2.5rem;
 			line-height: 1em;
 			font-weight: 400;
+			margin: 0;
 		}
 		.sticky .entry-title:before{
 			
@@ -337,8 +347,8 @@ code{
 
 /* === LOOP PAGINATION === */
 .navigation.pagination{
-	margin: 0 20px 25px 0;
-	margin: 0 2rem 2.5rem 0;
+	margin-right: 20px;
+	margin-right: 2rem;
 }
 .navigation.pagination:before,
 .navigation.pagination:after{
@@ -347,11 +357,14 @@ code{
 	.navigation.pagination .screen-reader-text{
 	}
 	.navigation.pagination .page-numbers{
+		display: inline-block;
 		color: #444;
 		background: #fff;
 		border: 1px solid #ccc;
-		padding: 5px 10px;
-		padding: 0.5rem 1rem;
+		padding: 0 10px;
+		padding: 0 1rem;
+		margin-bottom: 20px;
+		margin-bottom: 2rem;
 	}
 	.navigation.pagination a.page-numbers:hover,
 	.navigation.pagination a.page-numbers:focus{

@@ -32,6 +32,6 @@
 
 </article><!-- .entry -->
 
-<?php //tamatebako_entry_nav(); ?>
+<?php tamatebako_entry_nav(); ?>
 
 <?php comments_template( '', true ); // Load comments. ?>

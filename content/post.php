@@ -21,6 +21,7 @@
 		<div class="entry-summary" itemprop="description">
 			<?php //get_the_image( array( 'attachment' => false, 'image_class' => 'alignright' ) ); ?>
 			<?php the_excerpt(); ?>
+			<?php tamatebako_read_more(); ?>
 		</div><!-- .entry-summary -->
 
 		<div class="entry-footer">

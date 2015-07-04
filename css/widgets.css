@@ -4,7 +4,10 @@
 	
 }
 	.widget-title{
-		
+		font-size: 20px;
+		font-size: 2rem;
+		line-height: 1em;
+		margin: 0;
 	}
 /* Calendar widget */
 #wp-calendar,
@@ -19,23 +22,14 @@
 .widget_meta ul,
 .widget_recent_comments ul,
 .widget_rss ul{
-	list-style: none;
-	margin-left: 0;
-	padding-top: 10px;
-	padding-top: 1rem;
-	border-top: 1px solid #ccc;
+
 }
 .widget_recent_entries ul li,
 .widget_archive ul li,
 .widget_meta ul li,
 .widget_recent_comments ul li,
 .widget_rss ul li{
-	display: block;
-	margin-bottom: 10px;
-	margin-bottom: 1rem;
-	padding-bottom: 10px;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid #ccc;
+
 }
 .widget_recent_entries ul li:after,
 .widget_archive ul li:after,
@@ -47,7 +41,6 @@
 /* Widget Recent Post + Widget RSS date */
 .widget_recent_entries .post-date,
 .widget_rss .rss-date{
-	color: #6A6A6A;
 	display: block;
 }
 /* Widget RSS */
@@ -55,7 +48,6 @@
 	display: none;
 }
 .widget_rss .widget-title .rsswidget{
-	color: #fff;
 }
 .widget_rss cite{
 	float: right;
@@ -67,14 +59,9 @@
 	text-align: center;
 }
 .widget_search .search-submit{
-	width: 100%;
-	margin-bottom: 0;
-	border: none;
-	color: #fff;
-	background: #444;
+	
 }
 .widget_search .search-submit:hover,
 .widget_search .search-submit:focus{
-	background: #333;
-	border: none;
+	
 }
