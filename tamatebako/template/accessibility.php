@@ -1,14 +1,16 @@
 <?php
 /**
  * Accessibility Template Tags
+ * @since 3.0.0
 **/
 
 /**
  * Check JS Status
  * Script to modify "no-js" to "js" in body class.
  * Need to be added after the opening "<body>" tag.
- *
- * @since 0.1.0
+ * @access public
+ * @since  0.1.0
+ * @return string
  */
 function tamatebako_check_js_script(){
 	$script  = '<script type="text/javascript">';
@@ -17,24 +19,18 @@ function tamatebako_check_js_script(){
 	echo apply_filters( 'tamatebako_check_js_script', $script );
 }
 
-
-
 /**
- * Skip to Content Link (accessibility)
- * Better to be added before any content of the page.
+ * Skip to Content Link
+ * Need to be added before any content of the page.
  * Commonly added after the opening '<div id="container">'
- *
- * @since 0.1.0
+ * @access public
+ * @since  0.1.0
+ * @return string
  */
 function tamatebako_skip_to_content(){
 ?>
 <div class="skip-link">
-	<a class="screen-reader-text" href="#content"><?php echo tamatebako_string( 'skip-to-content' ); ?></a>
+	<a class="screen-reader-text" href="#content"><?php echo tamatebako_string( 'skip_to_content' ); ?></a>
 </div>
 <?php
 }
-
-
-
-
-

@@ -1,10 +1,9 @@
 <?php
 /**
- * Tamatebako Theme Layouts
+ * Theme Layouts
  * Based on Hybrid Core 2.0 Theme Layouts Ext.
- *
  * @author    David Chandra <david@shellcreeper.com>
- * @author    Justin Tadlock <justin@justintadlock.com>
+ * @author    Justin Tadlock <justintadlock@gmail.com>
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 **/
 
@@ -185,13 +184,13 @@ $layouts_args = tamatebako_layouts_args();
  * Load Layouts Post Meta
  */
 if( true === $layouts_args['post_meta'] ){
-	tamatebako_include( 'tamatebako/layouts/post-meta' );
+	tamatebako_include( 'layouts/post-meta' );
 }
 
 /**
  * Load Layouts Customizer
  */
 if( true === $layouts_args['customize'] ){
-	tamatebako_include( 'tamatebako/layouts/customize' );
+	tamatebako_include( 'layouts/customize' );
 }
 

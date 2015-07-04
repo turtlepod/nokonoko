@@ -1,6 +1,6 @@
 <?php
 /**
- * Sidebar
+ * Sidebar Tamplate Tags.
 **/
 
 /**
@@ -28,5 +28,3 @@ function tamatebako_get_sidebar_name( $id ){
 
 	return false;
 }
-
-

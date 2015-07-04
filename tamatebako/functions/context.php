@@ -1,8 +1,8 @@
 <?php
 /**
- * Additional Context
+ * Additional context for easier styling.
  * @since 3.0.0
- */
+**/
 
 /* Load theme contexts setup */
 add_action( 'after_setup_theme', 'tamatebako_contexts_setup', 5 );
@@ -11,22 +11,18 @@ add_action( 'after_setup_theme', 'tamatebako_contexts_setup', 5 );
 /**
  * Contexts Setup
  * Additional classes for easier styling.
- *
  * @since 0.1.0
  */
 function tamatebako_contexts_setup(){
 
 	/* Admin: TinyMCE Editor Style */
-	add_filter( 'tiny_mce_before_init', 'tamatebako_tinymce_body_class' );
+	add_filter( 'tiny_mce_before_init', 'tamatebako_tinymce_body_class', 5 );
 
 	/* Additional Body Classes */
-	add_filter( 'body_class', 'tamatebako_body_class' );
+	add_filter( 'body_class', 'tamatebako_body_class', 5 );
 
 	/* Additional Post Classes */
 	add_filter( 'post_class', 'tamatebako_post_class', 5, 3 );
-
-	/* Additional Widgets Classes */
-	add_filter( 'dynamic_sidebar_params', 'tamatebako_widget_class' );
 
 }
 
@@ -35,7 +31,6 @@ function tamatebako_contexts_setup(){
  * Add TinyMCE Body Class
  * Add "entry-content" in editor style, to use main style.css as editor style.
  * need to consider this when styling '<body>' and '<div class"entry-content">'.
- *
  * @since  0.1.0
  */
 function tamatebako_tinymce_body_class( $settings ){
@@ -46,7 +41,6 @@ function tamatebako_tinymce_body_class( $settings ){
 
 /**
  * Additional Body Class
- *
  * @since 0.1.0
  */
 function tamatebako_body_class( $classes ){
@@ -150,7 +144,6 @@ function tamatebako_body_class( $classes ){
 
 /**
  * Add Post Class
- *
  * @since 0.1.0
  */
 function tamatebako_post_class( $classes, $class, $post_id ){
@@ -194,57 +187,3 @@ function tamatebako_post_class( $classes, $class, $post_id ){
 
 	return $classes;
 }
-
-
-/**
- * Widget Class
- * @since 0.1.0
- */
-function tamatebako_widget_class( $params ) {
-
-	/* Global a counter array */
-	global $tamatebako_widget_num;
-
-	/* Get the id for the current sidebar we're processing */
-	$this_id = $params[0]['id'];
-
-	/* Get registered widgets */
-	$arr_registered_widgets = wp_get_sidebars_widgets();
-
-	/* If the counter array doesn't exist, create it */
-	if ( !$tamatebako_widget_num ) {
-		$tamatebako_widget_num = array();
-	}
-
-	/* if current sidebar has no widget, return. */
-	if ( !isset( $arr_registered_widgets[$this_id] ) || !is_array( $arr_registered_widgets[$this_id] ) ) {
-		return $params;
-	}
-
-	/* See if the counter array has an entry for this sidebar */
-	if ( isset( $tamatebako_widget_num[$this_id] ) ) {
-		$tamatebako_widget_num[$this_id] ++;
-	}
-	/* If not, create it starting with 1 */
-	else {
-		$tamatebako_widget_num[$this_id] = 1;
-	}
-
-	/* Add a widget number class for additional styling options */
-	$class = 'class="widget widget-' . $tamatebako_widget_num[$this_id] . ' '; 
-
-	/* in first widget, add 'widget-first' class */
-	if ( $tamatebako_widget_num[$this_id] == 1 ) {
-		$class .= 'widget-first ';
-	}
-	/* in last widget, add 'widget-last' class */
-	elseif( $tamatebako_widget_num[$this_id] == count( $arr_registered_widgets[$this_id] ) ) { 
-		$class .= 'widget-last ';
-	}
-
-	/* str replace before_widget param with new class */
-	$params[0]['before_widget'] = str_replace( 'class="widget ', $class, $params[0]['before_widget'] );
-
-	return $params;
-}
-

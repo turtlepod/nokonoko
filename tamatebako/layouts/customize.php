@@ -56,9 +56,3 @@ function tamatebako_layouts_customize_register( $wp_customize ) {
 	);
 
 }
-
-
-
-
-
-

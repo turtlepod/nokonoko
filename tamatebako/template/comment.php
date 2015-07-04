@@ -1,6 +1,9 @@
 <?php
 /**
- * Comments
+ * Comments Template Tags.
+ * Taken from Hybrid Core v.2 Comment Feature.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since 3.0.0
 **/
 
 /**
@@ -24,9 +27,6 @@ function tamatebako_comments_nav(){
 <?php } // End check for paged comments. ?>
 <?php
 }
-
-
-
 
 /**
  * Comments Error
@@ -55,7 +55,9 @@ function tamatebako_comments_error(){
 }
 
 /**
- * Outputs the comment reply link. 
+ * Outputs the comment reply link.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since 3.0.0
  */
 function tamatebako_get_comment_reply_link( $args = array() ) {
 
@@ -74,9 +76,10 @@ function tamatebako_get_comment_reply_link( $args = array() ) {
 	return get_comment_reply_link( $args );
 }
 
-
 /**
  * Uses the $comment_type to determine which comment template should be used.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since 3.0.0
  */
 function tamatebako_comments_callback( $comment, $args, $depth ) {
 
@@ -117,10 +120,10 @@ function tamatebako_comments_callback( $comment, $args, $depth ) {
 	}
 }
 
-
-
 /**
  * Ends the display of individual comments. Uses the callback parameter for wp_list_comments().
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since 3.0.0
  */
 function tamatebako_comments_end_callback() {
 	echo '</li><!-- .comment -->';

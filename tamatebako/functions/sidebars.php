@@ -7,18 +7,13 @@
 /* Hook to theme setup */
 add_action( 'after_setup_theme', 'tamatebako_register_sidebars_setup', 20 );
 
-
 /**
  * Register Sidebar Setup.
  * @since 1.0.0
  */
 function tamatebako_register_sidebars_setup(){
-
-	/* Register Sidebars */
 	add_action( 'widgets_init', 'tamatebako_register_sidebars' );
-
 }
-
 
 /**
  * Register Sidebars
@@ -56,4 +51,3 @@ function tamatebako_register_sidebars(){
 		register_sidebar( $sidebar_args );
 	}
 }
-

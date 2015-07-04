@@ -4,7 +4,7 @@
 ** ---------------------------- */
 
 /* Load base theme functionality. */
-require_once( trailingslashit( get_template_directory() ) . 'tamatebako/core.php' );
+require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamatebako.php' );
 
 
 /* Load theme general setup */
@@ -17,7 +17,7 @@ add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
 function nokonoko_theme_setup(){
 
 	/* === Translation === */
-	tamatebako_include( 'includes/strings' );
+	require_once( trailingslashit( get_template_directory() ) . 'includes/strings.php' );
 
 	/* === Post Formats === */
 	$post_formats_args = array(
@@ -126,7 +126,7 @@ function nokonoko_theme_setup(){
 	add_theme_support( 'custom-header', $custom_header_args );
 
 	/* === Tamatebako: Register Scripts === */
-	tamatebako_include( 'includes/scripts' );
+	require_once( trailingslashit( get_template_directory() ) . 'includes/scripts.php' );
 
 	/* === Tamatebako: Enqueue Script (JS) === */
 	$enqueue_js_scripts = array(

@@ -1,14 +1,15 @@
 <?php
 /**
  * Navigation Menus Template Functions
+ * @since 3.0.0
 **/
 
 /**
  * Get custom menu name by location
  * Helper function to get menu location and use it as mobile toggle.
- *
- * @link http://wordpress.stackexchange.com/questions/45700
- * @since 0.1.0
+ * @access public
+ * @link   http://wordpress.stackexchange.com/questions/45700
+ * @since  0.1.0
  */
 function tamatebako_get_menu_name( $location ){
 
@@ -55,27 +56,22 @@ function tamatebako_is_menu_registered( $location ){
 	return false;
 }
 
-
 /**
  * Menu Toggle
  * @since 0.1.0
  */
 function tamatebako_menu_toggle( $location ){
 ?>
-
 <div id="menu-toggle-<?php echo $location; ?>" class="menu-toggle">
 	<a class="menu-toggle-open" href="#menu-<?php echo $location; ?>"><span class="screen-reader-text"><?php echo tamatebako_get_menu_name( $location ); ?></span></a>
 	<a class="menu-toggle-close" href="#menu-toggle-<?php echo $location?>"><span class="screen-reader-text"><?php echo tamatebako_get_menu_name( $location ); ?></span></a>
 </div><!-- .menu-toggle -->
-
 <?php
 }
-
 
 /**
  * Menu Fallback Callback
  * Generic menu fallback and only display link to home page.
- *
  * @since 0.1.0
  */
 function tamatebako_menu_fallback_cb(){
@@ -93,7 +89,6 @@ function tamatebako_menu_fallback_cb(){
 
 /**
  * Navigation Search Form
- *
  * @since 0.1.0
  */
 function tamatebako_menu_search_form( $id = 'search-menu' ){
@@ -105,6 +100,3 @@ function tamatebako_menu_search_form( $id = 'search-menu' ){
 </form>
 <?php
 }
-
-
-

@@ -1,11 +1,13 @@
 <?php
 /**
- * Attachment
+ * Attachment Template Tags
+ * @since 3.0.0
 **/
 
 /**
- * Display any type of Attachment
- * @since 0.1.0
+ * Display attachment.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since  0.1.0
  */
 function tamatebako_attachment(){
 	$file       = wp_get_attachment_url();
@@ -24,10 +26,8 @@ function tamatebako_attachment(){
 	echo $attachment;
 }
 
-
 /**
  * Display Attachment Image with caption if available.
- *
  * @since 0.1.0
  */
 function tamatebako_attachment_image( $mime = '', $file = '' ){
@@ -49,9 +49,10 @@ function tamatebako_attachment_image( $mime = '', $file = '' ){
 	}
 }
 
-
 /**
- * Handles application attachments
+ * Handles application attachments.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since 3.0.0
  */
 function tamatebako_attachment_application( $mime = '', $file = '' ) {
 	$embed_defaults = wp_embed_defaults();
@@ -64,6 +65,8 @@ function tamatebako_attachment_application( $mime = '', $file = '' ) {
 
 /**
  * Handles text attachments on their attachment pages.
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @since 3.0.0
  */
 function tamatebako_attachment_text( $mime = '', $file = '' ) {
 	$embed_defaults = wp_embed_defaults();
@@ -76,6 +79,7 @@ function tamatebako_attachment_text( $mime = '', $file = '' ) {
 
 /**
  * Handles the output of the media for audio attachment posts.
+ * @since 3.0.0
  */
 function tamatebako_attachment_audio( $mime = '', $file = '' ) {
 	return do_shortcode( '[audio src="' . esc_url( esc_url( $file ) ) . '"]' );
@@ -92,14 +96,10 @@ function tamatebako_attachment_video( $mime = '', $file = '' ) {
 	return do_shortcode( '[video src="' . esc_url( esc_url( $file ) ) . '"]' );
 }
 
-
-
-
-
 /**
  * Checks if the current post has a mime type of 'audio'.
- *
- * @since  1.6.0
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @since  3.0.0
  * @access public
  * @param  int    $post_id
  * @return bool
@@ -116,8 +116,8 @@ function tamatebako_attachment_is_audio( $post_id = 0 ) {
 
 /**
  * Checks if the current post has a mime type of 'video'.
- *
- * @since  1.6.0
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @since  3.0.0
  * @access public
  * @param  int    $post_id
  * @return bool
@@ -131,6 +131,3 @@ function tamatebako_attachment_is_video( $post_id = 0 ) {
 
 	return 'video' === $type ? true : false;
 }
-
-
-
