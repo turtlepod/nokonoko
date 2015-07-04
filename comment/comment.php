@@ -8,7 +8,7 @@
 
 			<cite class="comment-author" itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><?php comment_author_link(); ?></cite><br />
 
-			<time class="comment-published" datetime="<?php echo get_comment_time( 'Y-m-d\TH:i:sP' );?>" title="<?php echo get_comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'hybrid-core' ) ); ?>" itemprop="commentTime"><?php printf( '%1$s (%2$s)', get_comment_date(), get_comment_time() ) ?></time>
+			<time class="comment-published" datetime="<?php echo get_comment_time( 'Y-m-d\TH:i:sP' );?>" title="<?php echo get_comment_time( 'l, F j, Y, g:i a' ); ?>" itemprop="commentTime"><?php printf( '%1$s (%2$s)', get_comment_date(), get_comment_time() ) ?></time>
 
 			<a class="comment-permalink" href="<?php echo esc_url( get_comment_link() ); ?>" itemprop="url">#</a>
 

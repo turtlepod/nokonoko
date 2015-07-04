@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Theme\n"
 "Report-Msgid-Bugs-To: http://genbu.me/contact/\n"
-"POT-Creation-Date: 2015-07-03 13:23+0700\n"
-"PO-Revision-Date: 2015-07-03 13:24+0700\n"
+"POT-Creation-Date: 2015-07-04 21:16+0700\n"
+"PO-Revision-Date: 2015-07-04 21:17+0700\n"
 "Last-Translator: David Chandra Purnama <david@shellcreeper.com>\n"
 "Language-Team: David Chandra <david@shellcreeper.com>\n"
 "Language: en_US\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Basepath: ../includes\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_attr__;esc_html_e;esc_html__;"
 "__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;"
@@ -22,38 +22,162 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: strings.php:17
+#: functions.php:25
+msgctxt "layout"
 msgid "Default"
 msgstr ""
 
-#: strings.php:18
+#: functions.php:26
+msgctxt "layout"
 msgid "Layout"
 msgstr ""
 
-#: strings.php:19
+#: functions.php:27
+msgctxt "layout"
 msgid "Global Layout"
 msgstr ""
 
-#: strings.php:24
-msgid "One Column"
+#: functions.php:30
+msgctxt "accessibility"
+msgid "Skip to content"
 msgstr ""
 
-#: strings.php:25
-msgid "Two Columns"
+#: functions.php:33
+msgctxt "pagination"
+msgid "Next"
 msgstr ""
 
-#: strings.php:28
-msgid "Primary"
+#: functions.php:34
+msgctxt "pagination"
+msgid "Previous"
 msgstr ""
 
-#: strings.php:29
-msgid "Secondary"
+#: functions.php:37
+msgctxt "nav menu"
+msgid "Search&hellip;"
 msgstr ""
 
-#: strings.php:32
+#: functions.php:38
+msgctxt "nav menu"
+msgid "Search"
+msgstr ""
+
+#: functions.php:39
+msgctxt "nav menu"
+msgid "Expand Search Form"
+msgstr ""
+
+#: functions.php:42
+msgctxt "entry"
+msgid "404 Not Found"
+msgstr ""
+
+#: functions.php:43
+msgctxt "entry"
+msgid "Apologies, but no entries were found."
+msgstr ""
+
+#: functions.php:44
+msgctxt "entry"
+msgid "Next"
+msgstr ""
+
+#: functions.php:45
+msgctxt "entry"
+msgid "Previous"
+msgstr ""
+
+#: functions.php:46
+msgctxt "entry"
+msgid "Permalink"
+msgstr ""
+
+#: functions.php:49
+msgctxt "comment"
+msgid "Next"
+msgstr ""
+
+#: functions.php:50
+msgctxt "comment"
+msgid "Previous"
+msgstr ""
+
+#: functions.php:51
+msgctxt "comment"
+msgid "Comments are closed, but trackbacks and pingbacks are open."
+msgstr ""
+
+#: functions.php:52
+msgctxt "comment"
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:55
+msgctxt "entry"
+msgid "Read More"
+msgstr ""
+
+#: functions.php:86
+msgctxt "layout name"
+msgid "Content"
+msgstr ""
+
+#: functions.php:91
+msgctxt "layout name"
+msgid "Content | Sidebar 1"
+msgstr ""
+
+#: functions.php:95
+msgctxt "layout name"
+msgid "Sidebar 1 | Content"
+msgstr ""
+
+#: functions.php:99
+msgctxt "layout name"
+msgid "Content | Sidebar 2"
+msgstr ""
+
+#: functions.php:103
+msgctxt "layout name"
+msgid "Sidebar 2 | Content"
+msgstr ""
+
+#: functions.php:108
+msgctxt "layout name"
+msgid "Sidebar 2 | Content | Sidebar 1"
+msgstr ""
+
+#: functions.php:112
+msgctxt "layout name"
+msgid "Sidebar 2 | Sidebar 1 | Content"
+msgstr ""
+
+#: functions.php:116
+msgctxt "layout name"
+msgid "Content | Sidebar 1 | Sidebar 2"
+msgstr ""
+
+#: functions.php:120
+msgctxt "layout name"
+msgid "Sidebar 1 | Content | Sidebar 2"
+msgstr ""
+
+#: functions.php:133
+msgctxt "sidebar name"
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:134
+msgctxt "sidebar name"
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: functions.php:140
+msgctxt "nav menu name"
 msgid "Navigation"
 msgstr ""
 
-#: strings.php:33
+#: functions.php:141
+msgctxt "nav menu name"
 msgid "Footer Links"
 msgstr ""
