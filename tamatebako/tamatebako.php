@@ -12,6 +12,12 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 **/
 
+/**
+ * Start Tamatebako!
+ */
+global $tamatebako;
+$tamatebako = new stdClass;
+
 /* Tamatebako directory */
 define( 'TAMATEBAKO_DIR', basename( dirname( __FILE__ ) ) );
 

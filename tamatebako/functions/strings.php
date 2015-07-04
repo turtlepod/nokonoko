@@ -10,6 +10,30 @@
  */
 function tamatebako_string( $context ){
 
+	/* tamatebako object */
+	global $tamatebako;
+
+	/* If text found, return it. */
+	if ( isset( $tamatebako->strings[$context] ) ){
+		return $tamatebako->strings[$context];
+	}
+	/* Not found, use default. */
+	else{
+		$texts = tamatebako_strings();
+		if ( isset( $texts[$context] ) ){
+			return $texts[$context];
+		}
+		return $context;
+	}
+}
+
+/**
+ * Lists of translatable texts string used in the framework
+ * @since 3.0.0
+ */
+function tamatebako_strings(){
+
+	/* Open sesame! */
 	$texts = array();
 
 	/* layouts */
@@ -45,12 +69,6 @@ function tamatebako_string( $context ){
 	/* functions/setup.php */
 	$texts['read_more'] = 'Read More';
 
-	/* Filter */
-	$texts = apply_filters( 'tamatebako_strings', $texts );
-
-	/* Output */
-	if ( isset( $texts[$context] ) ){
-		return $texts[$context];
-	}
-	return $context;
+	/* Close sesame. */
+	return $texts;
 }

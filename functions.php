@@ -6,7 +6,6 @@
 /* Load base theme functionality. */
 require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamatebako.php' );
 
-
 /* Load theme general setup */
 add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
 
@@ -16,8 +15,49 @@ add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
  */
 function nokonoko_theme_setup(){
 
+	/* Tamatebako */
+	global $tamatebako;
+
 	/* === Translation === */
-	require_once( trailingslashit( get_template_directory() ) . 'includes/strings.php' );
+	load_theme_textdomain( 'nokonoko', get_template_directory() . '/languages' );
+
+	/* layouts/ */
+	$texts['default'] = _x( 'Default', 'layout', 'nokonoko' );
+	$texts['layout'] = _x( 'Layout', 'layout', 'nokonoko' );
+	$texts['global_layout'] = _x( 'Global Layout', 'layout', 'nokonoko' );
+
+	/* template/accessibility.php */
+	$texts['skip_to_content'] = _x( 'Skip to content', 'accessibility', 'nokonoko' );
+
+	/* template/general.php */
+	$texts['next_posts'] = _x( 'Next', 'pagination', 'nokonoko' );
+	$texts['previous_posts'] = _x( 'Previous', 'pagination', 'nokonoko' );
+
+	/* template/menu.php */
+	$texts['menu_search_placeholder'] = _x( 'Search&hellip;', 'nav menu', 'nokonoko' );
+	$texts['menu_search_button'] = _x( 'Search', 'nav menu', 'nokonoko' );
+	$texts['menu_search_form_toggle'] = _x( 'Expand Search Form', 'nav menu', 'nokonoko' );
+
+	/* template/entry.php */
+	$texts['error_title'] = _x( '404 Not Found', 'entry', 'nokonoko' );
+	$texts['error_message'] = _x( 'Apologies, but no entries were found.', 'entry', 'nokonoko' );
+	$texts['next_post'] = _x( 'Next', 'entry', 'nokonoko' );
+	$texts['previous_post'] = _x( 'Previous', 'entry', 'nokonoko' );
+	$texts['permalink'] = _x( 'Permalink', 'entry', 'nokonoko' );
+
+	/* template/comment.php */
+	$texts['next_comment'] = _x( 'Next', 'comment', 'nokonoko' );
+	$texts['previous_comment'] = _x( 'Previous', 'comment', 'nokonoko' );
+	$texts['comments_closed_pings_open'] = _x( 'Comments are closed, but trackbacks and pingbacks are open.', 'comment', 'nokonoko' );
+	$texts['comments_closed'] = _x( 'Comments are closed.', 'comment', 'nokonoko' );
+
+	/* functions/setup.php */
+	$texts['read_more'] = _x( 'Read More', 'entry', 'nokonoko' );
+
+	/* Add text to tamatebako */
+	foreach( $texts as $text_key => $text ){
+		$tamatebako->strings[$text_key] = $text;
+	}
 
 	/* === Post Formats === */
 	$post_formats_args = array(
@@ -43,41 +83,41 @@ function nokonoko_theme_setup(){
 	$layouts = array(
 		/* One Column */
 		'content' => array(
-			'name'          => tamatebako_string( 'Content' ),
+			'name'          => _x( 'Content', 'layout name', 'nokonoko' ),
 			'content_width' => 1100,
 		),
 		/* Two Columns */
 		'content-sidebar1' => array(
-			'name'          => tamatebako_string( 'Content | Sidebar 1' ),
+			'name'          => _x( 'Content | Sidebar 1', 'layout name', 'nokonoko' ),
 			'content_width' => 760,
 		),
 		'sidebar1-content' => array(
-			'name'          => tamatebako_string( 'Sidebar 1 | Content' ),
+			'name'          => _x( 'Sidebar 1 | Content', 'layout name', 'nokonoko' ),
 			'content_width' => 760,
 		),
 		'content-sidebar2' => array(
-			'name'          => tamatebako_string( 'Sidebar 1 | Content' ),
+			'name'          => _x( 'Content | Sidebar 2', 'layout name', 'nokonoko' ),
 			'content_width' => 900,
 		),
 		'sidebar2-content' => array(
-			'name'          => tamatebako_string( 'Sidebar 1 | Content' ),
+			'name'          => _x( 'Sidebar 2 | Content', 'layout name', 'nokonoko' ),
 			'content_width' => 900,
 		),
 		/* Three Columns */
 		'sidebar2-content-sidebar1' => array(
-			'name'          => tamatebako_string( 'Sidebar 2 | Content | Sidebar 1' ),
+			'name'          => _x( 'Sidebar 2 | Content | Sidebar 1', 'layout name', 'nokonoko' ),
 			'content_width' => 560,
 		),
 		'sidebar2-sidebar1-content' => array(
-			'name'          => tamatebako_string( 'Sidebar 1 | Sidebar 2 | Content' ),
+			'name'          => _x( 'Sidebar 2 | Sidebar 1 | Content', 'layout name', 'nokonoko' ),
 			'content_width' => 560,
 		),
 		'content-sidebar1-sidebar2' => array(
-			'name'          => tamatebako_string( 'Content | Sidebar 1 | Sidebar 2' ),
+			'name'          => _x( 'Content | Sidebar 1 | Sidebar 2', 'layout name', 'nokonoko' ),
 			'content_width' => 560,
 		),
 		'sidebar1-content-sidebar2' => array(
-			'name'          => tamatebako_string( 'Sidebar 1 | Content | Sidebar 2' ),
+			'name'          => _x( 'Sidebar 1 | Content | Sidebar 2', 'layout name', 'nokonoko' ),
 			'content_width' => 560,
 		),
 	);
@@ -90,15 +130,15 @@ function nokonoko_theme_setup(){
 
 	/* === Tamatebako: Register Sidebars === */
 	$sidebars_args = array(
-		"primary" => array( "name" => tamatebako_string( 'Primary' ), "description" => "" ),
-		"secondary" => array( "name" => tamatebako_string( 'Secondary' ), "description" => "" ),
+		"primary" => array( "name" => _x( 'Primary Sidebar', 'sidebar name', 'nokonoko' ), "description" => "" ),
+		"secondary" => array( "name" => _x( 'Secondary Sidebar', 'sidebar name', 'nokonoko' ), "description" => "" ),
 	);
 	add_theme_support( 'tamatebako-sidebars', $sidebars_args );
 
 	/* === Register Menus === */
 	$nav_menus_args = array(
-		"primary" => tamatebako_string( 'Navigation' ),
-		"footer" => tamatebako_string( 'Footer Links' ),
+		"primary" => _x( 'Navigation', 'nav menu name', 'nokonoko' ),
+		"footer" => _x( 'Footer Links', 'nav menu name', 'nokonoko' ),
 	);
 	register_nav_menus( $nav_menus_args );
 
@@ -126,7 +166,79 @@ function nokonoko_theme_setup(){
 	add_theme_support( 'custom-header', $custom_header_args );
 
 	/* === Tamatebako: Register Scripts === */
-	require_once( trailingslashit( get_template_directory() ) . 'includes/scripts.php' );
+
+	/* === JS === */
+	$register_js_scripts = array(
+		"theme-webfontloader" => array(
+			'src' => tamatebako_theme_file( 'js/webfontloader', 'js' ),
+			'deps'=> array(),
+		),
+		"theme-imagesloaded" => array(
+			'src' => tamatebako_theme_file( 'js/imagesloaded', 'js' ),
+			'deps'=> array(),
+		),
+		"theme-flexslider" => array(
+			'src' => tamatebako_theme_file( 'js/flexslider', 'js' ),
+			'deps'=> array( 'jquery' ),
+		),
+		"theme-fitvids" => array(
+			'src' => tamatebako_theme_file( 'js/fitvids', 'js' ),
+			'deps'=> array( 'jquery' ),
+		),
+		"theme-js" => array(
+			'src' => tamatebako_theme_file( 'js/theme', 'js' ),
+			'deps'=> array( 'jquery', 'theme-fitvids' ),
+		),
+		"child-theme-js" => array(
+			'src' => tamatebako_child_theme_file( 'js/child-theme', 'js' ),
+			'deps'=> array( 'jquery' ),
+		),
+	);
+	add_theme_support( 'tamatebako-register-js', $register_js_scripts );
+
+	/* === CSS === */
+	$register_css_scripts = array(
+		"theme-open-sans-font" => array(
+			'src' => add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
+		),
+		"theme-merriweather-font" => array(
+			'src' => add_query_arg( 'family', urlencode( 'Merriweather:400,300italic,300,400italic,700,700italic,900,900italic' ), "//fonts.googleapis.com/css" ),
+		),
+		"theme-flexslider" => array(
+			'src' => tamatebako_theme_file( 'css/flexslider', 'css' ),
+		),
+		"theme-reset" => array(
+			'src' => tamatebako_theme_file( 'css/reset', 'css' ),
+		),
+		"theme-layouts" => array(
+			'src' => tamatebako_theme_file( 'css/layouts', 'css' ),
+		),
+		"theme-menus" => array(
+			'src' => tamatebako_theme_file( 'css/menus', 'css' ),
+		),
+		"theme-comments" => array(
+			'src' => tamatebako_theme_file( 'css/comments', 'css' ),
+		),
+		"theme-widgets" => array(
+			'src' => tamatebako_theme_file( 'css/widgets', 'css' ),
+		),
+		"theme" => array(
+			'src' => tamatebako_theme_file( 'css/theme', 'css' ),
+		),
+		"media-queries" => array(
+			'src' => tamatebako_theme_file( 'css/media-queries', 'css' ),
+		),
+		"debug-media-queries" => array(
+			'src' => tamatebako_theme_file( 'css/debug-media-queries', 'css' ),
+		),
+		"style" => array(
+			'src' => tamatebako_theme_file( 'style', 'css' ),
+		),
+		"child" => array(
+			'src' => tamatebako_child_theme_file( 'style', 'css' ),
+		),
+	);
+	add_theme_support( 'tamatebako-register-css', $register_css_scripts );
 
 	/* === Tamatebako: Enqueue Script (JS) === */
 	$enqueue_js_scripts = array(
