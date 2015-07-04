@@ -99,9 +99,9 @@ function tamatebako_menu_fallback_cb(){
 function tamatebako_menu_search_form( $id = 'search-menu' ){
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-	<a href="#<?php echo esc_attr( $id ); ?>" class="search-toggle"><span class="screen-reader-text"><?php echo tamatebako_string('Expand Search Form'); ?></span></a>
-	<input id="<?php echo esc_attr( $id ); ?>" type="search" class="search-field" placeholder="<?php echo tamatebako_string('Search...'); ?>" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else ''; ?>" name="s"/>
-	<button class="search-submit button"><span class="screen-reader-text"><?php echo tamatebako_string('Search'); ?></span></button>
+	<a href="#<?php echo esc_attr( $id ); ?>" class="search-toggle"><span class="screen-reader-text"><?php echo tamatebako_string('menu_search_form_toggle'); ?></span></a>
+	<input id="<?php echo esc_attr( $id ); ?>" type="search" class="search-field" placeholder="<?php echo tamatebako_string('menu_search_placeholder'); ?>" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else ''; ?>" name="s"/>
+	<button class="search-submit button"><span class="screen-reader-text"><?php echo tamatebako_string('menu_search_button'); ?></span></button>
 </form>
 <?php
 }

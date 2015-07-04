@@ -15,7 +15,7 @@ function tamatebako_layouts_customize_register( $wp_customize ) {
 	/* Layouts Choices */
 	$layouts = tamatebako_layouts();
 	unset( $layouts['default'] );
-	$layouts[tamatebako_layout_default()]['name'] = $layouts[tamatebako_layout_default()]['name'] . ' (' . tamatebako_string( 'Default' ) . ')';
+	$layouts[tamatebako_layout_default()]['name'] = $layouts[tamatebako_layout_default()]['name'] . ' (' . tamatebako_string( 'default' ) . ')';
 	$layouts_choices = array();
 	foreach( $layouts as $layout => $layout_data ){
 		$layouts_choices[$layout] = $layout_data['name'];
@@ -25,7 +25,7 @@ function tamatebako_layouts_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'layout',
 		array(
-			'title'      => esc_html( tamatebako_string( 'Layout' ) ),
+			'title'      => esc_html( tamatebako_string( 'layout' ) ),
 			'priority'   => 190,
 			'capability' => 'edit_theme_options'
 		)
@@ -47,7 +47,7 @@ function tamatebako_layouts_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'theme-layout-control',
 		array(
-			'label'    => esc_html( tamatebako_string( 'Global Layout' ) ),
+			'label'    => esc_html( tamatebako_string( 'global_layout' ) ),
 			'section'  => 'layout',
 			'settings' => 'theme_layout',
 			'type'     => 'radio',

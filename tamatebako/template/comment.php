@@ -13,11 +13,11 @@ function tamatebako_comments_nav(){
 
 	<div class="comments-nav">
 
-		<?php previous_comments_link( '<span class="prev-comments"><span class="screen-reader-text">' . tamatebako_string( 'previous' ) . '</span></span>' ); ?>
+		<?php previous_comments_link( '<span class="prev-comments"><span class="screen-reader-text">' . tamatebako_string( 'previous_comment' ) . '</span></span>' ); ?>
 
 		<span class="page-numbers"><?php printf( '%1$s / %2$s', get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); ?></span>
 
-		<?php next_comments_link( '<span class="next-comments"><span class="screen-reader-text">' . tamatebako_string( 'next' ) . '</span></span>' ); ?>
+		<?php next_comments_link( '<span class="next-comments"><span class="screen-reader-text">' . tamatebako_string( 'next_comment' ) . '</span></span>' ); ?>
 
 	</div><!-- .comments-nav -->
 
@@ -41,13 +41,13 @@ function tamatebako_comments_error(){
 <?php if ( pings_open() && !comments_open() ) { ?>
 
 	<p class="comments-closed pings-open">
-		<?php echo tamatebako_string( 'comments-closed-pings-open' ); ?>
+		<?php echo tamatebako_string( 'comments_closed_pings_open' ); ?>
 	</p><!-- .comments-closed.pings-open -->
 
 <?php } elseif ( !comments_open() ) { ?>
 
 	<p class="comments-closed">
-		<?php echo tamatebako_string( 'comments-closed' ); ?>
+		<?php echo tamatebako_string( 'comments_closed' ); ?>
 	</p><!-- .comments-closed -->
 
 <?php } ?>
@@ -76,20 +76,7 @@ function tamatebako_get_comment_reply_link( $args = array() ) {
 
 
 /**
- * Uses the $comment_type to determine which comment template should be used. Once the 
- * template is located, it is loaded for use. Child themes can create custom templates based off
- * the $comment_type. The comment template hierarchy is comment-$comment_type.php, 
- * comment.php.
- *
- * The templates are saved in $hybrid->comment_template[$comment_type], so each comment template
- * is only located once if it is needed. Following comments will use the saved template.
- *
- * @since  0.2.3
- * @access public
- * @param  $comment The comment object.
- * @param  $args    Array of arguments passed from wp_list_comments().
- * @param  $depth   What level the particular comment is.
- * @return void
+ * Uses the $comment_type to determine which comment template should be used.
  */
 function tamatebako_comments_callback( $comment, $args, $depth ) {
 
@@ -117,9 +104,6 @@ function tamatebako_comments_callback( $comment, $args, $depth ) {
 		$templates[] = 'comment/comment.php';
 		$templates[] = 'comment.php';
 
-		/* Allow devs to filter the template hierarchy. */
-		$templates = apply_filters( 'hybrid_comment_template_hierarchy', $templates, $comment_type );
-
 		/* Locate the comment template. */
 		$template = locate_template( $templates );
 
@@ -136,16 +120,8 @@ function tamatebako_comments_callback( $comment, $args, $depth ) {
 
 
 /**
- * Ends the display of individual comments. Uses the callback parameter for wp_list_comments(). 
- * Needs to be used in conjunction with hybrid_comments_callback(). Not needed but used just in 
- * case something is changed.
- *
- * @since  0.2.3
- * @access public
- * @return void
+ * Ends the display of individual comments. Uses the callback parameter for wp_list_comments().
  */
 function tamatebako_comments_end_callback() {
 	echo '</li><!-- .comment -->';
 }
-
-

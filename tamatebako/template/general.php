@@ -38,8 +38,8 @@ function tamatebako_archive_footer(){ ?>
 
 		<?php the_posts_pagination( array(
 			'mid_size' => 3,
-			'prev_text' => '<span class="screen-reader-text">' . tamatebako_string( 'previous' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . tamatebako_string( 'next' ) . '</span>',
+			'prev_text' => '<span class="screen-reader-text">' . tamatebako_string( 'previous_posts' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . tamatebako_string( 'next_posts' ) . '</span>',
 		) ); ?>
 
 	<?php } ?>

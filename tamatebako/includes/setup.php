@@ -70,9 +70,9 @@ function tamatebako_excerpt_more( $more ) {
  * @since 0.1.0
  */
 function tamatebako_content_more( $more_link, $more_link_text ){
-	$string = tamatebako_string( 'read-more' );
+	$string = tamatebako_string( 'read_more' );
 	if ( !empty( $string ) ){
-		return '<span class="more-link-wrap">' . str_replace( $more_link_text, '<span class="more-text">' . tamatebako_string( 'read-more' ) . '</span> <span class="screen-reader-text">' . get_the_title() . '</span>', $more_link ) . '</span>';
+		return '<span class="more-link-wrap">' . str_replace( $more_link_text, '<span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span>', $more_link ) . '</span>';
 	}
 	return $more_link;
 }

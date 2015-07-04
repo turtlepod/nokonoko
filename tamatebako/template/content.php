@@ -90,11 +90,11 @@ function tamatebako_content_error(){
 		<div class="entry-wrap">
 
 			<header class="entry-header">
-				<h1 class="entry-title"><?php echo tamatebako_string( '404 Not Found' ); ?></h1>
+				<h1 class="entry-title"><?php echo tamatebako_string( 'error_title' ); ?></h1>
 			</header><!-- .entry-header -->
 
 			<div class="entry-content" itemprop="text">
-				<?php echo wpautop( tamatebako_string( 'Apologies, but no entries were found.' ) ); ?>
+				<?php echo wpautop( tamatebako_string( 'error_message' ) ); ?>
 			</div><!-- .entry-content -->
 
 		</div><!-- .entry-wrap -->
@@ -192,8 +192,8 @@ function tamatebako_entry_taxonomy( $args = array() ) {
 function tamatebako_entry_nav(){
 ?>
 <div class="loop-nav">
-	<?php previous_post_link( '<div class="prev"><span class="screen-reader-text">' . tamatebako_string( 'previous' ) . ':</span> %link</div>', '%title' ); ?>
-	<?php next_post_link( '<div class="next"><span class="screen-reader-text">' . tamatebako_string( 'next' ) . ':</span> %link</div>', '%title' ); ?>
+	<?php previous_post_link( '<div class="prev"><span class="screen-reader-text">' . tamatebako_string( 'previous_post' ) . ':</span> %link</div>', '%title' ); ?>
+	<?php next_post_link( '<div class="next"><span class="screen-reader-text">' . tamatebako_string( 'next_post' ) . ':</span> %link</div>', '%title' ); ?>
 </div><!-- .loop-nav -->
 <?php
 }

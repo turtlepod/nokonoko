@@ -1,32 +1,50 @@
 <?php
 /**
  * Tamatebako Library
- * A standalone theme library.
- * @version 3.0.0
+ * A standalone theme library for faster theme development.
+ * 
+ * @version   3.0.0
+ * @author    David Chandra <david@shellcreeper.com>
+ * @copyright Copyright (c) 2015, David Chandra
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 **/
 
-
 /**
- * Text String / Translatable string used in tamatebako
- * @since 0.1.0
+ * Texts string / translatable string used in tamatebako.
  */
 function tamatebako_string( $context ){
 
 	$texts = array();
 
-	/* Layouts */
-	$texts['Default'] = 'Default';
-	$texts['Layout'] = 'Layout';
-	$texts['Global Layout'] = 'Global Layout';
+	/* layouts */
+	$texts['default'] = 'Default';
+	$texts['layout'] = 'Layout';
+	$texts['global_layout'] = 'Global Layout';
 
-	/* Template/Menu */
-	$text['Search...'] = 'Search&hellip;';
-	$text['Search'] = 'Search';
-	$text['Expand Search Form'] = 'Expand Search Form';
+	/* template/menu.php */
+	$texts['next_posts'] = 'Next';
+	$texts['previous_posts'] = 'Previous';
 
-	/* Template/Content */
-	$text['404 Not Found'] = '404 Not Found';
-	$text['Apologies, but no entries were found.'] = 'Apologies, but no entries were found.';
+	/* template/menu.php */
+	$texts['menu_search_placeholder'] = 'Search&hellip;';
+	$texts['menu_search_button'] = 'Search';
+	$texts['menu_search_form_toggle'] = 'Expand Search Form';
+
+	/* template/content.php */
+	$texts['error_title'] = '404 Not Found';
+	$texts['error_message'] = 'Apologies, but no entries were found.';
+	$texts['next_post'] = 'Next';
+	$texts['previous_post'] = 'Previous';
+	$texts['permalink'] = 'Permalink';
+
+	/* template/comment.php */
+	$texts['next_comment'] = 'Next';
+	$texts['previous_comment'] = 'Previous';
+	$texts['comments_closed_pings_open'] = 'Comments are closed, but trackbacks and pingbacks are open.';
+	$texts['comments_closed'] = 'Comments are closed.';
+
+	/* includes/setup.php */
+	$texts['read_more'] = 'Read More';
 
 	/* Filter */
 	$texts = apply_filters( 'tamatebako_strings', $texts );
@@ -41,7 +59,6 @@ function tamatebako_string( $context ){
 
 /**
  * Include PHP File
- * @since 3.0.0
  */
 function tamatebako_include( $file ){
 	$path = trailingslashit( get_template_directory() ) . $file . '.php';
@@ -122,19 +139,4 @@ if ( !is_admin() ) {
 if ( version_compare( PHP_VERSION, '5.3.0' ) >= 0 ) {
 	tamatebako_include( 'tamatebako/includes/utility' );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
