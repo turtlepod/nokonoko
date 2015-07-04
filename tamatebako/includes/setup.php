@@ -43,8 +43,10 @@ function tamatebako_setup(){
 	add_filter( 'get_avatar',                     'tamatebako_get_avatar',                     5 );
 	add_filter( 'post_thumbnail_html',            'tamatebako_post_thumbnail_html',            5 );
 	add_filter( 'comments_popup_link_attributes', 'tamatebako_comments_popup_link_attributes', 5 );
-	
-	
+
+	/* Archive Title & Desc */
+	add_filter( 'get_the_archive_title', 'tamatebako_archive_title', 5 );
+	add_filter( 'get_the_archive_description', 'tamatebako_archive_description', 5 );
 	
 }
 
@@ -219,8 +221,31 @@ function tamatebako_comments_popup_link_attributes( $attr ) {
 }
 
 
+/**
+ * Archive Description
+ */
+function tamatebako_archive_title( $title ){
+	
+	
+	
+	
+	
+	return $title;
+}
 
-
+/**
+ * Archive Description
+ */
+function tamatebako_archive_description( $desc ){
+	
+	
+	
+	
+	if( !empty( $desc ) ){
+		return wpautop( $desc );
+	}
+	return $desc;
+}
 
 
 

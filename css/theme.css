@@ -336,46 +336,46 @@ code{
 
 
 /* === LOOP PAGINATION === */
-.loop-pagination{
+.navigation.pagination{
 	margin: 0 20px 25px 0;
 	margin: 0 2rem 2.5rem 0;
 }
-.loop-pagination:before,
-.loop-pagination:after{
+.navigation.pagination:before,
+.navigation.pagination:after{
 	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
-	.loop-pagination .screen-reader-text{
+	.navigation.pagination .screen-reader-text{
 	}
-	.loop-pagination .page-numbers{
+	.navigation.pagination .page-numbers{
 		color: #444;
 		background: #fff;
 		border: 1px solid #ccc;
 		padding: 5px 10px;
 		padding: 0.5rem 1rem;
 	}
-	.loop-pagination a.page-numbers:hover,
-	.loop-pagination a.page-numbers:focus{
+	.navigation.pagination a.page-numbers:hover,
+	.navigation.pagination a.page-numbers:focus{
 		border: 1px solid #aaa;
 	}
-	.loop-pagination .page-numbers.current{
+	.navigation.pagination .page-numbers.current{
 		color: #ccc;
 		border: 1px solid #eee;
 	}
-	.loop-pagination .page-numbers.dots{
+	.navigation.pagination .page-numbers.dots{
 		color: #ccc;
 		border: 1px solid #eee;
 	}
-	.loop-pagination .page-numbers.prev{
+	.navigation.pagination .page-numbers.prev{
 	}
-	.loop-pagination .page-numbers.next{
+	.navigation.pagination .page-numbers.next{
 	}
-	.loop-pagination .page-numbers.prev:before{
+	.navigation.pagination .page-numbers.prev:before{
 		content: "\f340";
 		font-family: "dashicons";
 		vertical-align: top;
 		-webkit-font-smoothing: antialiased;
 	}
-	.loop-pagination .page-numbers.next:after{
+	.navigation.pagination .page-numbers.next:after{
 		content: "\f344";
 		font-family: "dashicons";
 		vertical-align: top;

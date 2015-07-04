@@ -27,7 +27,7 @@
 
 						<?php if ( have_posts() ){ /* Posts Found */ ?>
 
-							<?php //tamatebako_archive_header(); ?>
+							<?php tamatebako_archive_header(); ?>
 
 							<div class="content-entry-wrap">
 
@@ -43,7 +43,7 @@
 
 							</div><!-- .content-entry-wrap-->
 
-							<?php //tamatebako_archive_footer(); ?>
+							<?php tamatebako_archive_footer(); ?>
 
 						<?php } else { /* No Posts Found */ ?>
 
