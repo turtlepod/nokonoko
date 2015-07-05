@@ -80,51 +80,62 @@ function nokonoko_theme_setup(){
 	$GLOBALS['content_width'] = 1100;
 
 	/* === Tamatebako: Theme Layouts === */
+	$image_dir = get_template_directory_uri() . '/images/';
 	$layouts = array(
 		/* One Column */
 		'content' => array(
 			'name'          => _x( 'Content', 'layout name', 'nokonoko' ),
 			'content_width' => 1100,
+			'thumbnail'     => $image_dir . 'layout-content.png',
 		),
 		/* Two Columns */
 		'content-sidebar1' => array(
 			'name'          => _x( 'Content | Sidebar 1', 'layout name', 'nokonoko' ),
 			'content_width' => 760,
+			'thumbnail'     => $image_dir . 'layout-content-sidebar1.png',
 		),
 		'sidebar1-content' => array(
 			'name'          => _x( 'Sidebar 1 | Content', 'layout name', 'nokonoko' ),
 			'content_width' => 760,
+			'thumbnail'     => $image_dir . 'layout-sidebar1-content.png',
 		),
 		'content-sidebar2' => array(
 			'name'          => _x( 'Content | Sidebar 2', 'layout name', 'nokonoko' ),
 			'content_width' => 900,
+			'thumbnail'     => $image_dir . 'layout-content-sidebar2.png',
 		),
 		'sidebar2-content' => array(
 			'name'          => _x( 'Sidebar 2 | Content', 'layout name', 'nokonoko' ),
 			'content_width' => 900,
+			'thumbnail'     => $image_dir . 'layout-sidebar2-content.png',
 		),
 		/* Three Columns */
 		'sidebar2-content-sidebar1' => array(
 			'name'          => _x( 'Sidebar 2 | Content | Sidebar 1', 'layout name', 'nokonoko' ),
 			'content_width' => 560,
+			'thumbnail'     => $image_dir . 'layout-sidebar2-content-sidebar1.png',
 		),
 		'sidebar2-sidebar1-content' => array(
 			'name'          => _x( 'Sidebar 2 | Sidebar 1 | Content', 'layout name', 'nokonoko' ),
 			'content_width' => 560,
+			'thumbnail'     => $image_dir . 'layout-sidebar2-sidebar1-content.png',
 		),
 		'content-sidebar1-sidebar2' => array(
 			'name'          => _x( 'Content | Sidebar 1 | Sidebar 2', 'layout name', 'nokonoko' ),
 			'content_width' => 560,
+			'thumbnail'     => $image_dir . 'layout-content-sidebar1-sidebar2.png',
 		),
 		'sidebar1-content-sidebar2' => array(
 			'name'          => _x( 'Sidebar 1 | Content | Sidebar 2', 'layout name', 'nokonoko' ),
 			'content_width' => 560,
+			'thumbnail'     => $image_dir . 'layout-sidebar1-content-sidebar2.png',
 		),
 	);
 	$layouts_args = array(
 		'default'   => 'sidebar2-content-sidebar1',
 		'customize' => true,
 		'post_meta' => true,
+		'thumbnail' => true,
 	);
 	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args );
 
@@ -148,7 +159,7 @@ function nokonoko_theme_setup(){
 		'default-image'          => '',
 		'wp-head-callback'       => '_custom_background_cb',
 	);
-	add_theme_support( 'custom-background', $custom_backgound_args );
+	//add_theme_support( 'custom-background', $custom_backgound_args );
 
 	/* === Custom Header Image === */
 	$custom_header_args = array(
@@ -163,7 +174,7 @@ function nokonoko_theme_setup(){
 		'uploads'                => true,
 		'wp-head-callback'       => '',
 	);
-	add_theme_support( 'custom-header', $custom_header_args );
+	//add_theme_support( 'custom-header', $custom_header_args );
 
 	/* === Tamatebako: Register Scripts === */
 
