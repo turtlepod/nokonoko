@@ -63,6 +63,7 @@ function tamatebako_layouts_args() {
 		'customize' => true, 
 		'post_meta' => true, 
 		'default'   => '',
+		'thumbnail' => false,
 	);
 
 	$layouts = tamatebako_theme_layouts();
@@ -191,6 +192,6 @@ if( true === $layouts_args['post_meta'] ){
  * Load Layouts Customizer
  */
 if( true === $layouts_args['customize'] ){
-	tamatebako_include( 'layouts/customize' );
+	tamatebako_include( 'layouts/customizer' );
 }
 

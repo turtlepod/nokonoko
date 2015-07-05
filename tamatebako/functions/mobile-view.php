@@ -13,7 +13,6 @@ add_action( 'after_setup_theme', 'tamatebako_customizer_mobile_view_setup', 20 )
  */
 function tamatebako_customizer_mobile_view_setup(){
 
-
 	/* Customize Mobile View */
 	if ( current_theme_supports( 'tamatebako-customize-mobile-view' ) ){
 		add_action( 'customize_controls_print_footer_scripts', 'tamatebako_customize_mobile_view_script' );
@@ -66,7 +65,7 @@ jQuery(document).ready(function ($) {
  * @since 0.1.0
  */
 function tamatebako_customize_mobile_view_style(){
-/* Hide theme information */ ?>
+?>
 <style id="tamatebako-customize-mobile-view">
 /* Preview */
 #customize-preview{
