@@ -40,19 +40,23 @@ function tamatebako_layouts_customizer_register( $wp_customize ) {
 		new Tamatebako_Customize_Layout(
 			$wp_customize,
 			'theme_layout',
-			array(
-				'label'    => esc_html( tamatebako_string( 'global_layout' ) ),
-				'settings' => 'theme_layout',
-			)
+			array()
 		)
 	);
 }
 
-/* Print Script and Style */
-add_action( 'customize_controls_print_footer_scripts', 'tamatebako_customize_layouts_script' );
-add_action( 'customize_controls_print_styles', 'tamatebako_customize_layouts_style' );
+/* Print Script and Style if using thumbnail */
+$layouts_args = tamatebako_layouts_args();
+if( true == $layouts_args['thumbnail'] ){
+	add_action( 'customize_controls_print_footer_scripts', 'tamatebako_customize_layouts_thumb_script' );
+	add_action( 'customize_controls_print_styles', 'tamatebako_customize_layouts_thumb_style' );
+}
 
-function tamatebako_customize_layouts_script(){
+/**
+ * Script for layout thumbnail
+ * @since 3.0.0
+ */
+function tamatebako_customize_layouts_thumb_script(){
 ?>
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
@@ -67,7 +71,11 @@ jQuery(document).ready(function ($) {
 <?php
 }
 
-function tamatebako_customize_layouts_style(){
+/**
+ * Style for layout thumbnail.
+ * @since 3.0.0
+ */
+function tamatebako_customize_layouts_thumb_style(){
 ?>
 <style id="tamatebako-customize-layouts">
 .theme-layouts-thumbnail-wrap .theme-layout-input{
@@ -83,7 +91,7 @@ function tamatebako_customize_layouts_style(){
 	width: 60px;
 	display: block;
 	float: left;
-	margin: 0 20px 0 0;
+	margin: 0 20px 5px 0;
 	padding: 0;
 }
 .layout-thumbnail{
