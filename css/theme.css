@@ -231,7 +231,7 @@ code{
 		content:".";display:block;height:0;clear:both;visibility:hidden;
 	}
 		/* Thumbnail */
-		.entry-summary .theme-thumbnail{
+		.entry-summary .theme-thumbnail-link{
 			float: right;
 		}
 		/* More link */

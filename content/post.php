@@ -19,9 +19,16 @@
 		</div><!-- .entry-header -->
 
 		<div class="entry-summary" itemprop="description">
-			<?php //get_the_image( array( 'attachment' => false, 'image_class' => 'alignright' ) ); ?>
+
+			<?php if ( has_post_thumbnail() ) { ?>
+				<a class="theme-thumbnail-link" href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'thumbnail' ); ?>
+				</a>
+			<?php } ?> 
+
 			<?php the_excerpt(); ?>
 			<?php tamatebako_read_more(); ?>
+
 		</div><!-- .entry-summary -->
 
 		<div class="entry-footer">
