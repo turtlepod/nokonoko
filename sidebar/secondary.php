@@ -6,7 +6,7 @@ if ( strpos( get_theme_mod( 'theme_layout' ),'sidebar2' ) === false) {
 
 <div id="sidebar-secondary-wrap">
 
-	<aside itemtype="http://schema.org/WPSideBar" itemscope="itemscope" aria-label="Sidebar 2 Sidebar" role="complementary" class="sidebar" id="sidebar-secondary">
+	<aside class="sidebar" id="sidebar-secondary">
 
 		<?php if ( is_active_sidebar( 'secondary' ) ) : // If the sidebar has widgets. ?>
 

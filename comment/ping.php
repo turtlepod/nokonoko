@@ -2,11 +2,11 @@
 
 	<div class="comment-meta">
 
-		<cite class="comment-author" itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><?php comment_author_link(); ?></cite><br />
+		<cite class="comment-author"><?php comment_author_link(); ?></cite><br />
 
-		<time class="comment-published" datetime="<?php echo get_comment_time( 'Y-m-d\TH:i:sP' );?>" itemprop="commentTime"><?php printf( '%1$s (%2$s)', get_comment_date(), get_comment_time() ) ?></time>
+		<time class="comment-published" datetime="<?php echo get_comment_time( 'Y-m-d\TH:i:sP' );?>"><?php printf( '%1$s (%2$s)', get_comment_date(), get_comment_time() ) ?></time>
 
-		<a class="comment-permalink" href="<?php echo esc_url( get_comment_link() ); ?>" itemprop="url">#</a>
+		<a class="comment-permalink" href="<?php echo esc_url( get_comment_link() ); ?>">#</a>
 
 		<?php edit_comment_link(); ?>
 

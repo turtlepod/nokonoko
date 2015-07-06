@@ -5,7 +5,7 @@
 <?php wp_head(); // Hook required for scripts, styles, and other <head> items. ?>
 </head>
 
-<body itemtype="http://schema.org/WebPage" itemscope="itemscope" <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
 	<?php echo tamatebako_check_js_script(); ?>
 
@@ -27,7 +27,7 @@
 
 					<?php //tamatebako_get_sidebar( 'primary' ); ?>
 
-					<main itemtype="http://schema.org/Blog" itemscope="" itemprop="mainContentOfPage" role="main" class="content" id="content">
+					<main role="main" class="content" id="content">
 
 						<?php if ( have_posts() ){ /* Posts Found */ ?>
 

@@ -1,14 +1,14 @@
-<article itemprop="blogPost" itemtype="http://schema.org/BlogPosting" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-wrap">
 
 		<div class="entry-header">
 
-			<?php the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h2>' ); ?>
+			<?php the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">', '</a></h2>' ); ?>
 
 			<div class="entry-byline">
 
-				<span class="entry-author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><?php the_author_posts_link(); ?></span>
+				<span class="entry-author"><?php the_author_posts_link(); ?></span>
 
 				<time class="entry-published updated" datetime="<?php echo get_the_time( 'Y-m-d\TH:i:sP' ); ?>"><?php echo get_the_date(); ?></time>
 
@@ -18,7 +18,7 @@
 
 		</div><!-- .entry-header -->
 
-		<div class="entry-summary" itemprop="description">
+		<div class="entry-summary">
 
 			<?php if ( has_post_thumbnail() ) { ?>
 				<a class="theme-thumbnail-link" href="<?php the_permalink(); ?>">

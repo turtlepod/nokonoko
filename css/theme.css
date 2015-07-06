@@ -418,7 +418,10 @@ code{
 		margin-bottom: 0;
 	}
 	/* Footer Menu */
-	span#footer-links a:before{
+	#footer-links{
+		display: inline;
+	}
+	#footer-links a:before{
 		content: " | ";
 		color: #ccc;
 	}

@@ -1,4 +1,4 @@
-<footer itemtype="http://schema.org/WPFooter" itemscope="itemscope" role="contentinfo" id="footer">
+<footer id="footer">
 
 	<div class="wrap">
 
