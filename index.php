@@ -19,9 +19,13 @@
 
 		<div id="main">
 
+			<?php //tamatebako_get_sidebar( 'secondary' ); ?>
+
 			<div class="main-inner">
 
 				<div class="main-wrap">
+
+					<?php //tamatebako_get_sidebar( 'primary' ); ?>
 
 					<main itemtype="http://schema.org/Blog" itemscope="" itemprop="mainContentOfPage" role="main" class="content" id="content">
 
@@ -53,13 +57,13 @@
 
 					</main><!-- #content -->
 
-					<?php get_sidebar( 'primary' ); ?>
+					<?php tamatebako_get_sidebar( 'primary' ); ?>
 
 				</div><!-- .main-wrap -->
 
 			</div><!-- .main-inner -->
 
-			<?php get_sidebar( 'secondary' ); ?>
+			<?php tamatebako_get_sidebar( 'secondary' ); ?>
 
 		</div><!-- #main -->
 
