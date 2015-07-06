@@ -68,6 +68,9 @@ function tamatebako_layouts_post_meta_box( $post, $box ) {
 	if( true == $layouts_args['thumbnail'] ){
 		$div_class .= ' theme-layouts-thumbnail-wrap';
 	}
+	if( !empty( $post_layout ) ){
+		$div_class .= ' post-layout-selected';
+	}
 ?>
 
 	<div id="post-layout" class="<?php echo esc_attr( $div_class ); ?>">
@@ -93,7 +96,17 @@ function tamatebako_layouts_post_meta_box( $post, $box ) {
 						$label_class .= " layout-selected";
 					}
 
-					/* Label default */
+					/* Label */
+					if( true === $layouts_args['customize'] ){
+						$layout_info = tamatebako_string( 'global_layout' );
+					}
+					else{
+						$layout_info = tamatebako_string( 'default' );
+					}
+					if( tamatebako_current_layout() == $layout ){
+						$layout_data['name'] = $layout_data['name'] . ' (' . $layout_info . ')';
+						$label_class .= " layout-global";
+					}
 					$layout_label = $layout_data['name'];
 
 					/* If theme using layout thumbnail, label using image. */
@@ -196,7 +209,13 @@ function tamatebako_post_layouts_thumb_style(){
 }
 .layout-default .layout-thumbnail{
 }
-.layout-selected .layout-thumbnail{
+.layout-global .layout-thumbnail{
+	border: 5px solid #b6cfdb;
+}
+.post-layout-selected .layout-global .layout-thumbnail{
+	border: 5px solid #ccc;
+}
+.post-layout .layout-selected .layout-thumbnail{
 	border: 5px solid #298cba;
 }
 .theme-layout-label:hover .layout-thumbnail{
@@ -219,13 +238,22 @@ function tamatebako_post_layouts_thumb_script(){
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
 	$( ".theme-layout-input" ).click( function(){
+		/* if it's already selected, remove it and select default. */
 		if( $( this ).parent( '.theme-layout-label' ).hasClass( 'layout-selected' ) ){
 			$( '.layout-default .theme-layout-input' ).attr('checked', 'checked');
 			$( this ).parent( '.theme-layout-label' ).removeClass( 'layout-selected' );
 		}
+		/* not yet selected, select it! */
 		else{
 			$( this ).parent( '.theme-layout-label' ).siblings( '.theme-layout-label' ).removeClass( 'layout-selected' );
 			$( this ).parent( '.theme-layout-label' ).addClass( 'layout-selected' );
+		}
+		/* if a layout is selected, add wrapper class */
+		if ( $( ".layout-selected" ).length ) {
+			$( '.post-layout' ).addClass( 'post-layout-selected' );
+		}
+		else{
+			$( '.post-layout' ).removeClass( 'post-layout-selected' );
 		}
 	});
 });
