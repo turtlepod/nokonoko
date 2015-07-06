@@ -109,7 +109,7 @@ function tamatebako_body_class( $classes ){
 	}
 
 	/* Custom header */
-	if ( current_theme_supports( 'custom-header' ) ){
+	if ( current_theme_supports( 'custom-header' ) && get_header_image() ){
 
 		/* Header Image */
 		if ( get_header_image() ) {
@@ -133,7 +133,6 @@ function tamatebako_body_class( $classes ){
 			$classes[] = 'custom-header-no-text-color';
 		}
 	}
-
 
 	/* Make it unique */
 	$classes = array_unique( $classes );
