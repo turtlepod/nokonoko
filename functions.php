@@ -135,10 +135,11 @@ function nokonoko_theme_setup(){
 		),
 	);
 	$layouts_args = array(
-		'default'   => 'sidebar2-content-sidebar1',
-		'customize' => true,
-		'post_meta' => true,
-		'thumbnail' => true,
+		'default'     => 'sidebar2-content-sidebar1',
+		'customize'   => true,
+		'post_meta'   => true,
+		'thumbnail'   => true,
+		'post_types'  => array( 'post', 'page' ),
 	);
 	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args );
 

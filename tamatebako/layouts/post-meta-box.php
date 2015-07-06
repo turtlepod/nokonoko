@@ -33,7 +33,7 @@ function tamatebako_layouts_load_meta_boxes() {
 function tamatebako_layouts_add_meta_boxes( $post_type, $post ) {
 
 	/* Add the meta box if the post type supports 'theme-layouts'. */
-	if ( ( post_type_supports( $post_type, 'theme-layouts' ) ) && ( current_user_can( 'edit_post_meta', $post->ID ) || current_user_can( 'add_post_meta', $post->ID ) || current_user_can( 'delete_post_meta', $post->ID ) ) ){
+	if ( ( in_array( $post_type, tamatebako_layouts_post_types() ) ) && ( current_user_can( 'edit_post_meta', $post->ID ) || current_user_can( 'add_post_meta', $post->ID ) || current_user_can( 'delete_post_meta', $post->ID ) ) ){
 
 		add_meta_box( 'theme-layouts-post-meta-box', tamatebako_string( 'layout' ), 'tamatebako_layouts_post_meta_box', $post_type, 'side', 'default' );
 	}
@@ -161,7 +161,7 @@ function tamatebako_layouts_save_post( $post_id, $post = '' ) {
  */
 function tamatebako_post_layouts_thumb_style(){
 	global $post_type;
-	if ( post_type_supports( $post_type, 'theme-layouts' ) ){
+	if ( in_array( $post_type, tamatebako_layouts_post_types() ) ){
 ?>
 <style id="tamatebako-customize-layouts">
 .theme-layouts-thumbnail-wrap{
@@ -214,7 +214,7 @@ function tamatebako_post_layouts_thumb_style(){
  */
 function tamatebako_post_layouts_thumb_script(){
 	global $post_type;
-	if ( post_type_supports( $post_type, 'theme-layouts' ) ){
+	if ( in_array( $post_type, tamatebako_layouts_post_types() ) ){
 ?>
 <script type="text/javascript">
 jQuery(document).ready(function ($) {

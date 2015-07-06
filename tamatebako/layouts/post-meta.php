@@ -19,7 +19,7 @@ function tamatebako_set_post_layout( $layout ) {
 	if ( !is_admin() && is_singular() ){
 
 		/* Check if current post type has layouts support */
-		if ( post_type_supports( get_post_type( get_queried_object_id() ), 'theme-layouts' ) ) {
+		if ( in_array( get_post_type( get_queried_object_id() ), tamatebako_layouts_post_types() ) ) {
 
 			/* Get list of available layouts */
 			$layouts = array_keys( tamatebako_layouts() );
@@ -68,26 +68,6 @@ add_action( 'init', 'tamatebako_layouts_register_meta' );
  */
 function tamatebako_layouts_register_meta() {
 	register_meta( 'post', tamatebako_layout_meta_key(), 'sanitize_html_class' );
-}
-
-
-/* === POST TYPE SUPPORT === */
-
-/* Add post type support for theme layouts. */
-add_action( 'init', 'tamatebako_layouts_add_post_type_support', 5 );
-
-/**
- * Adds post type support to all 'public' post types.
- */
-function tamatebako_layouts_add_post_type_support() {
-
-	/* Add all public post type, except attachment. */
-	$post_types = get_post_types( array( 'public' => true ) );
-	foreach ( $post_types as $type ){
-		if( 'attachment' != $type ){
-			add_post_type_support( $type, 'theme-layouts' );
-		}
-	}
 }
 
 /* === ADMIN : META BOX / ATTACHMENT OPTION === */

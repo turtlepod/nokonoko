@@ -60,10 +60,11 @@ function tamatebako_layout_content_width( $layout ) {
 function tamatebako_layouts_args() {
 
 	$defaults = array( 
-		'customize' => true, 
-		'post_meta' => true, 
-		'default'   => '',
-		'thumbnail' => false,
+		'customize'   => true, 
+		'post_meta'   => true, 
+		'default'     => '',
+		'thumbnail'   => false,
+		'post_types'  => array(),
 	);
 
 	$layouts = tamatebako_theme_layouts();
@@ -90,6 +91,14 @@ function tamatebako_layout_default( $return = 'slug' ){
 		}
 	}
 	return '';
+}
+
+/**
+ * Supported Post Types
+ */
+function tamatebako_layouts_post_types(){
+	$layouts_args = tamatebako_layouts_args();
+	return $layouts_args['post_types'];
 }
 
 
