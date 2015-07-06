@@ -83,7 +83,7 @@ function nokonoko_theme_setup(){
 	$GLOBALS['content_width'] = 1100;
 
 	/* === Tamatebako: Theme Layouts === */
-	$image_dir = get_template_directory_uri() . '/images/';
+	$image_dir = get_template_directory_uri() . '/images/layouts/';
 	$layouts = array(
 		/* One Column */
 		'content' => array(
