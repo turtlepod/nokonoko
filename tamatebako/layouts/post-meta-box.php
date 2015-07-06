@@ -221,6 +221,14 @@ function tamatebako_post_layouts_thumb_style(){
 .theme-layout-label:hover .layout-thumbnail{
 	opacity: 0.8;
 }
+/* No JS Compat */
+body.no-js .theme-layouts-thumbnail-wrap .theme-layout-label.layout-default{
+	display: block !important;
+	width: 100%;
+}
+body.no-js .theme-layouts-thumbnail-wrap .theme-layout-input{
+	display: block !important;
+}
 </style>
 <?php
 	}
