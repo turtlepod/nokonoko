@@ -21,6 +21,9 @@ function nokonoko_theme_setup(){
 	/* === Translation === */
 	load_theme_textdomain( 'nokonoko', get_template_directory() . '/languages' );
 
+	/* Make all string in the framework translatable. */
+	$texts = array();
+
 	/* layouts/ */
 	$texts['default'] = _x( 'Default', 'layout', 'nokonoko' );
 	$texts['layout'] = _x( 'Layout', 'layout', 'nokonoko' );
