@@ -24,6 +24,7 @@
  * #07 - 20px RESET
  * #08 - WP EDITOR (front-end)
  * #09 - ACCESSIBILITY
+ * #10 - CUSTOM BACKGROUND
  * 
 ******************************************/
 
@@ -644,3 +645,10 @@ hr,h1,h2,h3,h4,h5,h6,figure,p,ul,ol,dl,address,pre,object,fieldset,table,table c
 	background: #fff;
 }
 
+/* === #10 - CUSTOM BACKGROUND === */
+
+/* Full width (cover) */
+body.full-size-background{
+	background-size: cover !important;
+	background-attachment: fixed !important;
+}

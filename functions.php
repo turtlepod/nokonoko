@@ -21,41 +21,46 @@ function nokonoko_theme_setup(){
 	load_theme_textdomain( 'nokonoko', get_template_directory() . '/languages' );
 
 	/* Make all string in the framework translatable. */
-	$texts = array();
+	$texts = array(
 
-	/* layouts/ */
-	$texts['default'] = _x( 'Default', 'layout', 'nokonoko' );
-	$texts['layout'] = _x( 'Layout', 'layout', 'nokonoko' );
-	$texts['global_layout'] = _x( 'Global Layout', 'layout', 'nokonoko' );
+		/* layouts/ */
+		'default' => _x( 'Default', 'layout', 'nokonoko' ),
+		'layout' => _x( 'Layout', 'layout', 'nokonoko' ),
+		'global_layout' => _x( 'Global Layout', 'layout', 'nokonoko' ),
 
-	/* template/accessibility.php */
-	$texts['skip_to_content'] = _x( 'Skip to content', 'accessibility', 'nokonoko' );
+		/* template/accessibility.php */
+		'skip_to_content' => _x( 'Skip to content', 'accessibility', 'nokonoko' ),
 
-	/* template/general.php */
-	$texts['next_posts'] = _x( 'Next', 'pagination', 'nokonoko' );
-	$texts['previous_posts'] = _x( 'Previous', 'pagination', 'nokonoko' );
-	$texts['search_title_prefix'] = _x( 'Search results for', 'archive title', 'nokonoko' );
+		/* template/general.php */
+		'next_posts' => _x( 'Next', 'pagination', 'nokonoko' ),
+		'previous_posts' => _x( 'Previous', 'pagination', 'nokonoko' ),
+		'search_title_prefix' => _x( 'Search results for', 'archive title', 'nokonoko' ),
 
-	/* template/menu.php */
-	$texts['menu_search_placeholder'] = _x( 'Search&hellip;', 'nav menu', 'nokonoko' );
-	$texts['menu_search_button'] = _x( 'Search', 'nav menu', 'nokonoko' );
-	$texts['menu_search_form_toggle'] = _x( 'Expand Search Form', 'nav menu', 'nokonoko' );
+		/* template/menu.php */
+		'menu_search_placeholder' => _x( 'Search&hellip;', 'nav menu', 'nokonoko' ),
+		'menu_search_button' => _x( 'Search', 'nav menu', 'nokonoko' ),
+		'menu_search_form_toggle' => _x( 'Expand Search Form', 'nav menu', 'nokonoko' ),
 
-	/* template/entry.php */
-	$texts['error_title'] = _x( '404 Not Found', 'entry', 'nokonoko' );
-	$texts['error_message'] = _x( 'Apologies, but no entries were found.', 'entry', 'nokonoko' );
-	$texts['next_post'] = _x( 'Next', 'entry', 'nokonoko' );
-	$texts['previous_post'] = _x( 'Previous', 'entry', 'nokonoko' );
-	$texts['permalink'] = _x( 'Permalink', 'entry', 'nokonoko' );
+		/* template/entry.php */
+		'error_title' => _x( '404 Not Found', 'entry', 'nokonoko' ),
+		'error_message' => _x( 'Apologies, but no entries were found.', 'entry', 'nokonoko' ),
+		'next_post' => _x( 'Next', 'entry', 'nokonoko' ),
+		'previous_post' => _x( 'Previous', 'entry', 'nokonoko' ),
+		'permalink' => _x( 'Permalink', 'entry', 'nokonoko' ),
 
-	/* template/comment.php */
-	$texts['next_comment'] = _x( 'Next', 'comment', 'nokonoko' );
-	$texts['previous_comment'] = _x( 'Previous', 'comment', 'nokonoko' );
-	$texts['comments_closed_pings_open'] = _x( 'Comments are closed, but trackbacks and pingbacks are open.', 'comment', 'nokonoko' );
-	$texts['comments_closed'] = _x( 'Comments are closed.', 'comment', 'nokonoko' );
+		/* template/comment.php */
+		'next_comment' => _x( 'Next', 'comment', 'nokonoko' ),
+		'previous_comment' => _x( 'Previous', 'comment', 'nokonoko' ),
+		'comments_closed_pings_open' => _x( 'Comments are closed, but trackbacks and pingbacks are open.', 'comment', 'nokonoko' ),
+		'comments_closed' => _x( 'Comments are closed.', 'comment', 'nokonoko' ),
 
-	/* functions/setup.php */
-	$texts['read_more'] = _x( 'Read More', 'entry', 'nokonoko' );
+		/* functions/setup.php */
+		'read_more' => _x( 'Read More', 'entry', 'nokonoko' ),
+
+		/* functions/custom-background.php */
+		'full_size_bg' => _x( 'Full Size Background', 'customizer', 'nokonoko' ),
+
+	);
 
 	/* Add text to tamatebako */
 	foreach( $texts as $text_key => $text ){
@@ -163,7 +168,8 @@ function nokonoko_theme_setup(){
 		'default-image'          => '',
 		'wp-head-callback'       => '_custom_background_cb',
 	);
-	//add_theme_support( 'custom-background', $custom_backgound_args );
+	add_theme_support( 'custom-background', $custom_backgound_args );
+	add_theme_support( 'tamatebako-custom-background' ); // full size background
 
 	/* === Custom Header Image === */
 	$custom_header_args = array(
@@ -174,11 +180,11 @@ function nokonoko_theme_setup(){
 		'flex-height'            => false,
 		'flex-width'             => false,
 		'default-text-color'     => '',
-		'header-text'            => true,
+		'header-text'            => false, /* false, use as logo */
 		'uploads'                => true,
 		'wp-head-callback'       => '',
 	);
-	//add_theme_support( 'custom-header', $custom_header_args );
+	add_theme_support( 'custom-header', $custom_header_args );
 
 	/* === Tamatebako: Register Scripts === */
 

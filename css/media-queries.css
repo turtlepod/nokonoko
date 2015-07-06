@@ -2,20 +2,6 @@
  * Media Queries CSS
 ******************************************/
 
-/*****************************************
- * TABLE OF CONTENTS:
- * 
- * #00 - VIEWPORT FIX
- * #01 - LAYOUTS       (max-width: 1000px)
- *                     (max-width:  700px)
- * #02 - MENU          (max-width:  700px)
- * #03 - ENTRY         (max-width:  450px)
- * #04 - LOOP-NAV      (max-width:  700px)
- * #05 - COMMENTS      (max-width:  700px)
- * #06 - JETPACK       (max-width:  450px)
- * 
- *****************************************/
-
  /* Make Responsive */
 #container{
 	max-width: 95%;
@@ -35,7 +21,7 @@
 }
 
 
-/* === #01 - LAYOUTS === */
+/* === LAYOUTS === */
 
 /* Push primary sidebar to bottom */
 @media screen and (max-width: 1000px){
@@ -72,7 +58,7 @@
 }
 
 
-/* === #02 - MENU ===  */
+/* === MENU ===  */
 @media screen and (max-width: 700px){
 
 	/* Menu Primary 1st Level */
@@ -100,7 +86,7 @@
 }
 
 
-/* === #03 - ENTRY === */
+/* === ENTRY === */
 @media screen and (max-width: 450px) {
 	.entry-byline .entry-author{
 		display: block;
@@ -112,7 +98,7 @@
 }
 
 
-/* === #04 - LOOP-NAV === */
+/* === LOOP-NAV === */
 @media screen and (max-width: 700px) {
 	.loop-nav .prev{
 		width: 100%;
@@ -131,7 +117,7 @@
 }
 
 
-/* === #05 - COMMENTS === */
+/* === COMMENTS === */
 @media screen and (max-width: 700px) {
 	#respond .comment-form-author,
 	#respond .comment-form-email,

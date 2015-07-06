@@ -28,7 +28,6 @@
 }
 .menu-container li a:hover,
 .menu-container li a:focus{
-	color: #000;
 }
 .menu-container:after{
 	content:".";display:block;height:0;clear:both;visibility:hidden;
