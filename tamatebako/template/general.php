@@ -94,9 +94,9 @@ function tamatebako_get_template( $dir = 'content' ) {
 function tamatebako_archive_header(){
 	if ( get_the_archive_title() && !is_front_page() && !is_singular() && !is_404() ){
 ?>
-	<header itemtype="http://schema.org/WebPageElement" itemscope="itemscope" class="loop-meta">
-		<?php the_archive_title( '<h1 itemprop="headline" class="loop-title">', '</h1>'); ?>
-		<?php the_archive_description( '<div itemprop="text" class="loop-description">', '</div>' ); ?>
+	<header class="loop-meta">
+		<?php the_archive_title( '<h1 class="loop-title">', '</h1>'); ?>
+		<?php the_archive_description( '<div class="loop-description">', '</div>' ); ?>
 	</header><!-- .loop-meta -->
 <?php
 	}

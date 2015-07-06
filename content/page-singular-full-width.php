@@ -1,12 +1,12 @@
-<article itemprop="blogPost" itemtype="http://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-wrap">
 
 		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title" itemprop="headline"><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">', '</a></h1>' ); ?>
 		</header><!-- .entry-header -->
 
-		<div class="entry-content" itemprop="text">
+		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php wp_link_pages( array( 'before' => '<p class="wp-link-pages">' ) ); ?>
 		</div><!-- .entry-content -->

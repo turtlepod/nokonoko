@@ -19,7 +19,7 @@ function tamatebako_content_error(){
 				<h1 class="entry-title"><?php echo tamatebako_string( 'error_title' ); ?></h1>
 			</header><!-- .entry-header -->
 
-			<div class="entry-content" itemprop="text">
+			<div class="entry-content">
 				<?php echo wpautop( tamatebako_string( 'error_message' ) ); ?>
 			</div><!-- .entry-content -->
 
@@ -92,12 +92,6 @@ function tamatebako_entry_taxonomy( $args = array() ) {
 	$attr_string = '';
 	$attr = array();
 	$attr['class'] = 'entry-terms ' . sanitize_html_class( $args['taxonomy'] );
-	if ( 'category' === $args['taxonomy'] ){
-		$attr['itemprop'] = 'articleSection';
-	}
-	elseif ( 'post_tag' === $args['taxonomy'] ){
-		$attr['itemprop'] = 'keywords';
-	}
 	foreach ( $attr as $name => $value ){
 		$attr_string .= trim( !empty( $value ) ? sprintf( ' %s="%s"', esc_html( $name ), esc_attr( $value ) ) : esc_html( " {$name}" ) );
 	}
@@ -146,7 +140,7 @@ function tamatebako_read_more() {
  */
 function tamatebako_entry_permalink(){
 ?>
-<a class="entry-permalink" href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php echo tamatebako_string( 'permalink' ); ?></a>
+<a class="entry-permalink" href="<?php the_permalink(); ?>" rel="bookmark"><?php echo tamatebako_string( 'permalink' ); ?></a>
 <?php
 }
 
