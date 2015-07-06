@@ -81,6 +81,9 @@ function tamatebako_load_theme_support(){
 	/* Theme Layouts */
 	tamatebako_require_if_theme_supports( 'tamatebako-layouts', 'layouts/layouts' );
 
+	/* Post Formats Setup */
+	tamatebako_require_if_theme_supports( 'post-formats', 'functions/post-formats' );
+
 	/* === SCRIPTS === */
 
 	/* Register Script (JS) */

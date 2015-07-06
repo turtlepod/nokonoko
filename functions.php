@@ -75,7 +75,7 @@ function nokonoko_theme_setup(){
 		'audio',
 		'chat',
 	);
-	//add_theme_support( 'post-formats', $post_formats_args );
+	add_theme_support( 'post-formats', $post_formats_args );
 
 	/* === Tamatebako: Customizer Mobile View === */
 	add_theme_support( 'tamatebako-customize-mobile-view' );
