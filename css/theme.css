@@ -4,11 +4,11 @@ body{
 	font-size:1.4em; /* use em for default, chrome fix */
 }
 a{
-	color: #21759B;
+	color: #0073aa;
 }
 a:hover,
 a:focus {
-	color: #444;
+	color: #00a0d2;
 }
 ul{
 	list-style: circle;
@@ -39,10 +39,10 @@ code{
 	background: #eee;
 }
 
-/* === #03 - IMAGES & MEDIA === */
+/* === IMAGES & MEDIA === */
 
 
-/* === #04 - CONTAINER === */
+/* === CONTAINER === */
 #container{
 	width: 1200px;
 	margin: 20px auto;
@@ -50,7 +50,7 @@ code{
 	background: #fff;
 }
 
-/* === #05 - HEADER === */
+/* === HEADER === */
 #header{
 	padding: 20px;
 	padding: 2rem;
@@ -81,7 +81,7 @@ code{
 		}
 
 
-/* === #06 - MENUS === */
+/* === MENUS === */
 
 /* Primary Menu */
 #menu-primary{
@@ -117,7 +117,7 @@ code{
 	}
 
 
-/* === #07 - MAIN === */
+/* === MAIN === */
 #main{
 	padding: 20px;
 	padding: 2rem;
@@ -131,12 +131,12 @@ code{
 		content:".";display:block;height:0;clear:both;visibility:hidden;
 	}
 
-/* === #08 - CONTENT === */
+/* === CONTENT === */
 #content{
 	background: yellow;
 }
 
-/* === #09 - LOOP META === */
+/* === LOOP META === */
 .loop-meta{
 	margin-right: 20px;
 	margin-bottom: 20px;
@@ -160,7 +160,7 @@ code{
 	}
 
 
-/* === #10 - ENTRY === */
+/* === ENTRY === */
 .entry{
 	background: lightyellow;
 	margin-bottom: 20px;
@@ -254,13 +254,11 @@ code{
 		}
 		.wp-link-pages .page-numbers,
 		.wp-link-pages a{
-			color: #ccc;
 			padding: 5px 10px;
 			padding: 0.5rem 1rem;
 			border: 1px solid #eee;
 		}
 		.wp-link-pages a{
-			color: #444;
 			border: 1px solid #ccc;
 		}
 		.wp-link-pages a:hover,
@@ -295,7 +293,7 @@ code{
 }
 
 
-/* === #11 - LOOP NAV === */
+/* === LOOP NAV === */
 .loop-nav{
 	margin-bottom: 20px;
 	margin-bottom: 2rem;
@@ -359,7 +357,6 @@ code{
 	}
 	.navigation.pagination .page-numbers{
 		display: inline-block;
-		color: #444;
 		background: #fff;
 		border: 1px solid #ccc;
 		padding: 0 10px;
