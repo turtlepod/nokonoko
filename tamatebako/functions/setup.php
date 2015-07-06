@@ -240,9 +240,13 @@ function tamatebako_comments_popup_link_attributes( $attr ) {
  * @return string
  */
 function tamatebako_archive_title( $title ){
-	/* Blog Page */
+	/* Blog Page. */
 	if( is_home() && !is_front_page() ){
 		$title = get_post_field( 'post_title', get_queried_object_id() );
+	}
+	/* Search result page. */
+	if( is_search() ){
+		$title = tamatebako_string( 'search_title_prefix' ) . sprintf( " &#8220;%s&#8221;", get_search_query() );
 	}
 	return $title;
 }
@@ -256,15 +260,15 @@ function tamatebako_archive_title( $title ){
  */
 function tamatebako_archive_description( $desc ){
 
-	/* Blog Page */
+	/* Blog Page. */
 	if( is_home() && !is_front_page() ){
 		$desc = get_post_field( 'post_content', get_queried_object_id(), 'raw' );
 	}
-	/* Author Page */
+	/* Author Page. */
 	elseif ( is_author() ){
 		$desc = get_the_author_meta( 'description', get_query_var( 'author' ) );
 	}
-	/* Post Type Archive */
+	/* Post Type Archive. */
 	elseif ( is_post_type_archive() ){
 		$desc = get_post_type_object( get_query_var( 'post_type' ) )->description;
 	}

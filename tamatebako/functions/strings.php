@@ -44,9 +44,10 @@ function tamatebako_strings(){
 	/* template/accessibility.php */
 	$texts['skip_to_content'] = 'Skip to content';
 
-	/* template/menu.php */
+	/* template/general.php */
 	$texts['next_posts'] = 'Next';
 	$texts['previous_posts'] = 'Previous';
+	$texts['search_title_prefix'] = 'Search results for';
 
 	/* template/menu.php */
 	$texts['menu_search_placeholder'] = 'Search&hellip;';

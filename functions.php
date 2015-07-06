@@ -35,6 +35,7 @@ function nokonoko_theme_setup(){
 	/* template/general.php */
 	$texts['next_posts'] = _x( 'Next', 'pagination', 'nokonoko' );
 	$texts['previous_posts'] = _x( 'Previous', 'pagination', 'nokonoko' );
+	$texts['search_title_prefix'] = _x( 'Search results for', 'archive title', 'nokonoko' );
 
 	/* template/menu.php */
 	$texts['menu_search_placeholder'] = _x( 'Search&hellip;', 'nav menu', 'nokonoko' );
