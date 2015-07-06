@@ -79,6 +79,17 @@ code{
 			line-height: 1em;
 			margin: 0;
 		}
+	/* Header Image */
+	#site-logo{
+		margin: 0;
+		float: left;
+	}
+	#site-logo > a{
+		display: block;
+	}
+	img.header-image{
+		display: block;
+	}
 
 
 /* === MENUS === */

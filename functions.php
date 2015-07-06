@@ -180,11 +180,11 @@ function nokonoko_theme_setup(){
 		'flex-height'            => false,
 		'flex-width'             => false,
 		'default-text-color'     => '',
-		'header-text'            => true,
+		'header-text'            => false, /* false, use as logo */
 		'uploads'                => true,
 		'wp-head-callback'       => '',
 	);
-	//add_theme_support( 'custom-header', $custom_header_args );
+	add_theme_support( 'custom-header', $custom_header_args );
 
 	/* === Tamatebako: Register Scripts === */
 
