@@ -1,7 +1,5 @@
 body{
-	font-size: 14px;
-	font-size: 1.4rem;
-	background: #fff;
+	font-size:1.4em; /* use em for default, chrome fix */
 }
 a{
 	color: #21759B;

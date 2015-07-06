@@ -1,6 +1,7 @@
 /* === ELEMENTS === */
 body{
 	background: #ccc;
+	font-size:1.4em; /* use em for default, chrome fix */
 }
 a{
 	color: #21759B;

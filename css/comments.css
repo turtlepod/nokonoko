@@ -235,6 +235,7 @@
 				#commentform #comment{
 				}
 			#commentform .form-allowed-tags{
+				display: none; /* do not hide for public theme. */
 			}
 				#commentform .form-allowed-tags code{
 					display: block;

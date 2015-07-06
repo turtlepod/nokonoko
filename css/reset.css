@@ -414,6 +414,7 @@ body {
 	font-family: 'Open Sans','Trebuchet MS', sans-serif;
 	font-size:17px;
 	font-size:1.7rem;
+	font-size:1.7em; /* chrome fix */
 	line-height:1.7em;
 	color: #444;
 }
