@@ -70,7 +70,7 @@ function tamatebako_get_template( $dir = 'content' ) {
 	if ( 'page' === $post_type ) {
 		if( get_page_template_slug() ){
 			$page_template = str_replace( '.php', '', basename( get_page_template_slug() ) );
-			$templates[] = "{$dir}/{$post_type}{$singular}{$page_template}.php";
+			$templates[] = "{$dir}/page-singular-{$page_template}.php";
 		}
 	}
 
