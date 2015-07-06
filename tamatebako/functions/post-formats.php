@@ -30,9 +30,6 @@ function tamatebako_structured_post_formats() {
 	/* Filter the content of chat posts. */
 	if ( current_theme_supports( 'post-formats', 'chat' ) ) {
 		add_filter( 'the_content', 'tamatebako_post_format_chat_content' );
-
-		/* Auto-add paragraphs to the chat text. */
-		add_filter( 'hybrid_post_format_chat_text', 'wpautop' );
 	}
 }
 
@@ -145,8 +142,9 @@ function tamatebako_get_the_post_format_chat( $content ) {
 function tamatebako_post_format_chat_content( $content ) {
 
 	/* If this isn't a chat, return. */
-	if ( !has_post_format( 'chat' ) || post_password_required() )
+	if ( !has_post_format( 'chat' ) || post_password_required() ){
 		return $content;
+	}
 
 	/* Open the chat transcript div and give it a unique ID based on the post ID. */
 	$chat_output = "\n\t\t\t" . '<div class="chat-transcript">';

@@ -11,7 +11,6 @@ add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
 
 /**
  * General Setup
- * @since 1.0.0
  */
 function nokonoko_theme_setup(){
 
