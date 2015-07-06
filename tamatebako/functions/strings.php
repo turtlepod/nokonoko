@@ -34,41 +34,46 @@ function tamatebako_string( $context ){
 function tamatebako_strings(){
 
 	/* Open sesame! */
-	$texts = array();
+	$texts = array(
 
-	/* layouts */
-	$texts['default'] = 'Default';
-	$texts['layout'] = 'Layout';
-	$texts['global_layout'] = 'Global Layout';
+		/* layouts */
+		'default' => 'Default',
+		'layout' => 'Layout',
+		'global_layout' => 'Global Layout',
 
-	/* template/accessibility.php */
-	$texts['skip_to_content'] = 'Skip to content';
+		/* template/accessibility.php */
+		'skip_to_content' => 'Skip to content',
 
-	/* template/general.php */
-	$texts['next_posts'] = 'Next';
-	$texts['previous_posts'] = 'Previous';
-	$texts['search_title_prefix'] = 'Search results for';
+		/* template/general.php */
+		'next_posts' => 'Next',
+		'previous_posts' => 'Previous',
+		'search_title_prefix' => 'Search results for',
 
-	/* template/menu.php */
-	$texts['menu_search_placeholder'] = 'Search&hellip;';
-	$texts['menu_search_button'] = 'Search';
-	$texts['menu_search_form_toggle'] = 'Expand Search Form';
+		/* template/menu.php */
+		'menu_search_placeholder' => 'Search&hellip,',
+		'menu_search_button' => 'Search',
+		'menu_search_form_toggle' => 'Expand Search Form',
 
-	/* template/content.php */
-	$texts['error_title'] = '404 Not Found';
-	$texts['error_message'] = 'Apologies, but no entries were found.';
-	$texts['next_post'] = 'Next';
-	$texts['previous_post'] = 'Previous';
-	$texts['permalink'] = 'Permalink';
+		/* template/content.php */
+		'error_title' => '404 Not Found',
+		'error_message' => 'Apologies, but no entries were found.',
+		'next_post' => 'Next',
+		'previous_post' => 'Previous',
+		'permalink' => 'Permalink',
 
-	/* template/comment.php */
-	$texts['next_comment'] = 'Next';
-	$texts['previous_comment'] = 'Previous';
-	$texts['comments_closed_pings_open'] = 'Comments are closed, but trackbacks and pingbacks are open.';
-	$texts['comments_closed'] = 'Comments are closed.';
+		/* template/comment.php */
+		'next_comment' => 'Next',
+		'previous_comment' => 'Previous',
+		'comments_closed_pings_open' => 'Comments are closed, but trackbacks and pingbacks are open.',
+		'comments_closed' => 'Comments are closed.',
 
-	/* functions/setup.php */
-	$texts['read_more'] = 'Read More';
+		/* functions/setup.php */
+		'read_more' => 'Read More',
+
+		/* functions/custom-background.php */
+		'full_size_bg' => 'Full Size Background',
+
+	);
 
 	/* Close sesame. */
 	return $texts;

@@ -27,6 +27,9 @@ require_once( trailingslashit( get_template_directory() ) . TAMATEBAKO_DIR . '/f
 /* Load text string used within the framework. */
 tamatebako_include( 'functions/strings' );
 
+/* Load sanitization functions. */
+tamatebako_include( 'functions/sanitize' );
+
 /* Load default setup and helper functions. */
 tamatebako_include( 'functions/setup' );
 
@@ -75,7 +78,7 @@ function tamatebako_load_theme_support(){
 	/* Register Sidebar */
 	tamatebako_require_if_theme_supports( 'tamatebako-sidebars', 'functions/sidebars' );
 
-	/* Activate Mobile View in Customizer */
+	/* Customizer Mobile View */
 	tamatebako_require_if_theme_supports( 'tamatebako-customize-mobile-view', 'functions/mobile-view' );
 
 	/* Theme Layouts */
@@ -83,6 +86,11 @@ function tamatebako_load_theme_support(){
 
 	/* Post Formats Setup */
 	tamatebako_require_if_theme_supports( 'post-formats', 'functions/post-formats' );
+
+	/* Custom Background: Full Size */
+	if ( current_theme_supports( 'custom-background' ) ){
+		tamatebako_require_if_theme_supports( 'tamatebako-custom-background', 'functions/custom-background' );
+	}
 
 	/* === SCRIPTS === */
 
