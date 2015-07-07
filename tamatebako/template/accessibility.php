@@ -13,10 +13,11 @@
  * @return string
  */
 function tamatebako_check_js_script(){
-	$script  = '<script type="text/javascript">';
-	$script .= "document.body.className = document.body.className.replace('no-js','js');";
-	$script .= '</script>';
-	echo apply_filters( 'tamatebako_check_js_script', $script );
+?>
+<script type="text/javascript">
+document.body.className = document.body.className.replace('no-js','js');
+</script>
+<?php
 }
 
 /**
