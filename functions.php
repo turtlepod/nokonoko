@@ -3,8 +3,16 @@
  * Theme Functions
 ** ---------------------------- */
 
-/* Load base theme functionality. */
+/* Load library. */
 require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamatebako.php' );
+
+/* Load ext. script */
+if( ! function_exists( 'get_the_image' ) ){
+	//require_once( trailingslashit( get_template_directory() ) . 'includes/get-the-image.php' );
+}
+if( ! function_exists( 'breadcrumb_trail' ) ){
+	//require_once( trailingslashit( get_template_directory() ) . 'includes/breadcrumb-trail.php' );
+}
 
 /* Load theme general setup */
 add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
