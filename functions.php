@@ -3,12 +3,12 @@
  * Theme Functions
 ** ---------------------------- */
 
-/* Load library. */
+/* Load Library. */
 require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamatebako.php' );
 
-/* Load ext. script */
+/* Load Stuff. */
 if( ! function_exists( 'get_the_image' ) ){
-	//require_once( trailingslashit( get_template_directory() ) . 'includes/get-the-image.php' );
+	require_once( trailingslashit( get_template_directory() ) . 'includes/get-the-image.php' );
 }
 if( ! function_exists( 'breadcrumb_trail' ) ){
 	//require_once( trailingslashit( get_template_directory() ) . 'includes/breadcrumb-trail.php' );
