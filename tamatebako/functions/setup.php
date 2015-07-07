@@ -38,6 +38,11 @@ function tamatebako_setup(){
 	/* Enable Title Tag */
 	add_theme_support( 'title-tag' );
 
+	/* === HEAD === */
+	add_action( 'wp_head', 'tamatebako_wp_head_meta_charset',   0 );
+	add_action( 'wp_head', 'tamatebako_wp_head_meta_viewport',  1 );
+	add_action( 'wp_head', 'tamatebako_wp_head_link_pingback',  3 );
+
 	/* === Filters: Set Better Default Output === */
 
 	/* Set Consistent Read More */
@@ -51,6 +56,34 @@ function tamatebako_setup(){
 	/* Archive Title & Desc */
 	add_filter( 'get_the_archive_title', 'tamatebako_archive_title', 5 );
 	add_filter( 'get_the_archive_description', 'tamatebako_archive_description', 5 );
+}
+
+
+/**
+ * Adds the meta charset to the header.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @return void
+ */
+function tamatebako_wp_head_meta_charset() {
+	printf( '<meta charset="%s" />' . "\n", esc_attr( get_bloginfo( 'charset' ) ) );
+}
+
+/**
+ * Adds the meta viewport to the header.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ */
+function tamatebako_wp_head_meta_viewport() {
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
+}
+
+
+/**
+ * Adds the pingback link to the header.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ */
+function tamatebako_wp_head_link_pingback() {
+	if ( 'open' === get_option( 'default_ping_status' ) )
+		printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 }
 
 /**
