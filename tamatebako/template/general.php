@@ -122,8 +122,7 @@ function tamatebako_archive_footer(){
 
 /**
  * Do Content
- * this will parse a sting and add content-like functionality such as autoembed autop etc.
- * useful for outputing custom setting.
+ * this will parse a string and add content-like functionality such as autoembed autop etc.
 **/
 function tamatebako_do_content( $content ){
 	if( $content ){

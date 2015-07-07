@@ -54,7 +54,7 @@ function tamatebako_register_css(){
 
 		/* Enqueue it. */
 		if( !empty( $script_args['handle'] ) && !empty( $script_args['src'] ) ){
-			wp_enqueue_style(
+			wp_register_style(
 				sanitize_key( $script_args['handle'] ),
 				esc_url( $script_args['src'] ),
 				is_array( $script_args['deps'] ) ? $script_args['deps'] : array(),
