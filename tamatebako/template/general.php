@@ -117,3 +117,26 @@ function tamatebako_archive_footer(){
 		) );
 	}
 }
+
+
+
+/**
+ * Do Content
+ * this will parse a sting and add content-like functionality such as autoembed autop etc.
+ * useful for outputing custom setting.
+**/
+function tamatebako_do_content( $content ){
+	if( $content ){
+		global $wp_embed;
+		$content = $wp_embed->run_shortcode( $content );
+		$content = $wp_embed->autoembed( $content );
+		$content = wptexturize( $content );
+		$content = convert_smilies( $content );
+		$content = convert_chars( $content );
+		$content = wpautop( $content );
+		$content = wptexturize( $content );
+		$content = do_shortcode( $content );
+		$content = shortcode_unautop( $content );
+	}
+	return $content;
+}
