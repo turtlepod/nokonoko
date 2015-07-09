@@ -6,8 +6,8 @@
 
 /* === SET LAYOUT === */
 
-/* Filters the theme layout mod. */
-add_filter( 'theme_mod_theme_layout', 'tamatebako_set_post_layout', 6 );
+/* Filters the theme layout mod. Need to be using more than 10 (default) priorities to work on customizer. */
+add_filter( 'theme_mod_theme_layout', 'tamatebako_set_post_layout', 20 );
 
 
 /**

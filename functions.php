@@ -10,9 +10,6 @@ require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamateba
 if( ! function_exists( 'get_the_image' ) ){
 	require_once( trailingslashit( get_template_directory() ) . 'includes/get-the-image.php' );
 }
-if( ! function_exists( 'breadcrumb_trail' ) ){
-	//require_once( trailingslashit( get_template_directory() ) . 'includes/breadcrumb-trail.php' );
-}
 
 /* Load theme general setup */
 add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
@@ -151,8 +148,8 @@ function nokonoko_theme_setup(){
 		'default'     => 'sidebar2-content-sidebar1',
 		'customize'   => true,
 		'post_meta'   => true,
+		'post_types'  => array( 'post' ),
 		'thumbnail'   => true,
-		'post_types'  => array( 'post', 'page' ),
 	);
 	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args );
 
