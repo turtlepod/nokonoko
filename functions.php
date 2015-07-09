@@ -3,8 +3,13 @@
  * Theme Functions
 ** ---------------------------- */
 
-/* Load base theme functionality. */
+/* Load Library. */
 require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamatebako.php' );
+
+/* Load Stuff. */
+if( ! function_exists( 'get_the_image' ) ){
+	require_once( trailingslashit( get_template_directory() ) . 'includes/get-the-image.php' );
+}
 
 /* Load theme general setup */
 add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
@@ -143,8 +148,8 @@ function nokonoko_theme_setup(){
 		'default'     => 'sidebar2-content-sidebar1',
 		'customize'   => true,
 		'post_meta'   => true,
+		'post_types'  => array( 'post' ),
 		'thumbnail'   => true,
-		'post_types'  => array( 'post', 'page' ),
 	);
 	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args );
 
