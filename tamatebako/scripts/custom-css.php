@@ -35,7 +35,7 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 			'type'                => 'theme_mod',
 			'transport'           => 'postMessage',
 			'capability'          => 'edit_theme_options',
-			'sanitize_callback'   => 'tamatebako_sanitize_css',
+			'sanitize_callback'   => 'esc_html',
 		)
 	);
 
@@ -71,7 +71,7 @@ function tamatebako_custom_css_wp_head() {
 	if( get_theme_mod( 'custom_css' ) ){
 ?>
 <style id="custom-css" type="text/css">
-<?php echo tamatebako_sanitize_css( get_theme_mod( 'custom_css' ) );?>
+<?php echo tamatebako_parse_css( get_theme_mod( 'custom_css' ) );?>
 </style>
 <?php
 	}
@@ -84,10 +84,10 @@ function tamatebako_custom_css_wp_head() {
 }
 
 /**
- * Tamatebako Sanitize CSS
+ * Tamatebako Restore CSS
  * @access Private
  */
-function tamatebako_sanitize_css( $css ){
+function tamatebako_parse_css( $css ){
 	$css = esc_html( $css );
 	$css = str_replace( '&gt;', '>', $css );
 	$css = str_replace( '&quot;', '"', $css );
