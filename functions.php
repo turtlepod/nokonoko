@@ -65,6 +65,9 @@ function nokonoko_theme_setup(){
 		/* functions/custom-background.php */
 		'full_size_bg' => _x( 'Full Size Background', 'customizer', 'nokonoko' ),
 
+		/* scripts/custom-css.php */
+		'custom_css' => _x( 'Custom CSS', 'customizer', 'nokonoko' ),
+
 	);
 
 	/* Add text to tamatebako */
@@ -286,7 +289,7 @@ function nokonoko_theme_setup(){
 		"theme-widgets"              => array( 'registered' => true ),
 		"theme"                      => array( 'registered' => true ),
 		"media-queries"              => array( 'registered' => true ),
-		"debug-media-queries"        => array( 'registered' => true ),
+		//"debug-media-queries"        => array( 'registered' => true ),
 		//"style"                      => array( 'registered' => true ),
 		"child"                      => array( 'registered' => true ),
 	);
@@ -300,6 +303,8 @@ function nokonoko_theme_setup(){
 	);
 	add_editor_style( $editor_css );
 
+	/* === CUSTOM CSS === */
+	add_theme_support( 'tamatebako-custom-css' );
 }
 
 do_action( 'tamatebako_after_theme_setup' );

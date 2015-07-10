@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Theme\n"
 "Report-Msgid-Bugs-To: http://genbu.me/contact/\n"
-"POT-Creation-Date: 2015-07-06 10:39+0700\n"
-"PO-Revision-Date: 2015-07-06 10:49+0700\n"
+"POT-Creation-Date: 2015-07-10 13:19+0700\n"
+"PO-Revision-Date: 2015-07-10 13:20+0700\n"
 "Last-Translator: David Chandra Purnama <david@shellcreeper.com>\n"
 "Language-Team: David Chandra <david@shellcreeper.com>\n"
 "Language: en_US\n"
@@ -22,167 +22,177 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions.php:28
+#: functions.php:32
 msgctxt "layout"
 msgid "Default"
 msgstr "Default"
 
-#: functions.php:29
+#: functions.php:33
 msgctxt "layout"
 msgid "Layout"
 msgstr "Layout"
 
-#: functions.php:30
+#: functions.php:34
 msgctxt "layout"
 msgid "Global Layout"
 msgstr "Layout Global"
 
-#: functions.php:33
+#: functions.php:37
 msgctxt "accessibility"
 msgid "Skip to content"
 msgstr "Loncat ke konten"
 
-#: functions.php:36
+#: functions.php:40
 msgctxt "pagination"
 msgid "Next"
 msgstr "Berikutnya"
 
-#: functions.php:37
+#: functions.php:41
 msgctxt "pagination"
 msgid "Previous"
 msgstr "Sebelumnya"
 
-#: functions.php:38
+#: functions.php:42
 msgctxt "archive title"
 msgid "Search results for"
 msgstr "Hasil pencarian untuk"
 
-#: functions.php:41
+#: functions.php:45
 msgctxt "nav menu"
 msgid "Search&hellip;"
 msgstr "Cari&hellip;"
 
-#: functions.php:42
+#: functions.php:46
 msgctxt "nav menu"
 msgid "Search"
 msgstr "Cari"
 
-#: functions.php:43
+#: functions.php:47
 msgctxt "nav menu"
 msgid "Expand Search Form"
 msgstr "Buka Formulir Pencarian"
 
-#: functions.php:46
+#: functions.php:50
 msgctxt "entry"
 msgid "404 Not Found"
 msgstr "404 Tidak Ditemukan"
 
-#: functions.php:47
+#: functions.php:51
 msgctxt "entry"
 msgid "Apologies, but no entries were found."
 msgstr "Maaf, tidak ada entri ditemukan."
 
-#: functions.php:48
+#: functions.php:52
 msgctxt "entry"
 msgid "Next"
 msgstr "Berikutnya"
 
-#: functions.php:49
+#: functions.php:53
 msgctxt "entry"
 msgid "Previous"
 msgstr "Sebelumnya"
 
-#: functions.php:50
+#: functions.php:54
 msgctxt "entry"
 msgid "Permalink"
 msgstr "Permalink"
 
-#: functions.php:53
+#: functions.php:57
 msgctxt "comment"
 msgid "Next"
 msgstr "Berikutnya"
 
-#: functions.php:54
+#: functions.php:58
 msgctxt "comment"
 msgid "Previous"
 msgstr "Sebelumnya"
 
-#: functions.php:55
+#: functions.php:59
 msgctxt "comment"
 msgid "Comments are closed, but trackbacks and pingbacks are open."
 msgstr "Komentar ditutup, tapi pelacakan dan ping dibuka."
 
-#: functions.php:56
+#: functions.php:60
 msgctxt "comment"
 msgid "Comments are closed."
 msgstr "Komentar ditutup."
 
-#: functions.php:59
+#: functions.php:63
 msgctxt "entry"
 msgid "Read More"
 msgstr "Baca Selengkapnya"
 
-#: functions.php:91
+#: functions.php:66
+msgctxt "customizer"
+msgid "Full Size Background"
+msgstr "Latar Belakang Ukuran Penuh"
+
+#: functions.php:69
+msgctxt "customizer"
+msgid "Custom CSS"
+msgstr "CSS Kustom"
+
+#: functions.php:103
 msgctxt "layout name"
 msgid "Content"
 msgstr "Konten"
 
-#: functions.php:97
+#: functions.php:109
 msgctxt "layout name"
 msgid "Content | Sidebar 1"
 msgstr "Konten | Sidebar 1"
 
-#: functions.php:102
+#: functions.php:114
 msgctxt "layout name"
 msgid "Sidebar 1 | Content"
 msgstr "Sidebar 1 | Konten"
 
-#: functions.php:107
+#: functions.php:119
 msgctxt "layout name"
 msgid "Content | Sidebar 2"
 msgstr "Konten | Sidebar 2"
 
-#: functions.php:112
+#: functions.php:124
 msgctxt "layout name"
 msgid "Sidebar 2 | Content"
 msgstr "Sidebar 2 | Konten"
 
-#: functions.php:118
+#: functions.php:130
 msgctxt "layout name"
 msgid "Sidebar 2 | Content | Sidebar 1"
 msgstr "Sidebar 2 | Konten | Sidebar 1"
 
-#: functions.php:123
+#: functions.php:135
 msgctxt "layout name"
 msgid "Sidebar 2 | Sidebar 1 | Content"
 msgstr "Sidebar 2 | Sidebar 1 | Konten"
 
-#: functions.php:128
+#: functions.php:140
 msgctxt "layout name"
 msgid "Content | Sidebar 1 | Sidebar 2"
 msgstr "Konten | Sidebar 1 | Sidebar 2"
 
-#: functions.php:133
+#: functions.php:145
 msgctxt "layout name"
 msgid "Sidebar 1 | Content | Sidebar 2"
 msgstr "Sidebar 1 | Konten | Sidebar 2"
 
-#: functions.php:149
+#: functions.php:161
 msgctxt "sidebar name"
 msgid "Primary Sidebar"
 msgstr "Sidebar Primer"
 
-#: functions.php:150
+#: functions.php:162
 msgctxt "sidebar name"
 msgid "Secondary Sidebar"
 msgstr "Sidebar Sekunder"
 
-#: functions.php:156
+#: functions.php:168
 msgctxt "nav menu name"
 msgid "Navigation"
 msgstr "Navigasi"
 
-#: functions.php:157
+#: functions.php:169
 msgctxt "nav menu name"
 msgid "Footer Links"
 msgstr "Tautan Kaki Halaman"

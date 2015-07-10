@@ -109,4 +109,7 @@ function tamatebako_load_theme_support(){
 	/* Enqueue Style (CSS) */
 	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-css', 'scripts/enqueue-css' );
 
+	/* Custom CSS */
+	tamatebako_require_if_theme_supports( 'tamatebako-custom-css', 'scripts/custom-css' );
+
 }
