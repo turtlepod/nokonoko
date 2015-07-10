@@ -33,7 +33,7 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 		'custom_css',
 		array(
 			'type'                => 'theme_mod',
-			'transport'           => 'refresh',
+			'transport'           => 'postMessage',
 			'capability'          => 'edit_theme_options',
 			'sanitize_callback'   => 'tamatebako_sanitize_css',
 		)
@@ -49,6 +49,16 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 	) );
 }
 
+/* Preview Script */
+add_action( 'customize_preview_init', 'tamatebako_custom_css_customizer_js' );
+
+/**
+ * JS to load changes asynchronously.
+ */
+function tamatebako_custom_css_customizer_js() {
+	$js = trailingslashit( get_template_directory_uri() ) . TAMATEBAKO_DIR . '/scripts/custom-css.js';
+	wp_enqueue_script( 'tamatebako_custom_css_preview', $js, array( 'customize-preview' ), tamatebako_theme_version(), true );
+}
 
 /* Print CSS to WP Head */
 add_action( 'wp_head', 'tamatebako_custom_css_wp_head', 99 );
@@ -57,13 +67,20 @@ add_action( 'wp_head', 'tamatebako_custom_css_wp_head', 99 );
  * Add CSS to Head.
  */
 function tamatebako_custom_css_wp_head() {
+	global $wp_customize;
 	if( get_theme_mod( 'custom_css' ) ){
 ?>
-<style id="custom-css" type="text/css" >
+<style id="custom-css" type="text/css">
 <?php echo tamatebako_sanitize_css( get_theme_mod( 'custom_css' ) );?>
 </style>
 <?php
-	} // end if
+	}
+	/* Always add empty style in customizer. */
+	elseif( isset( $wp_customize ) ){
+?>
+<style id="custom-css" type="text/css"></style>
+<?php
+	}
 }
 
 /**
