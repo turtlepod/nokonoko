@@ -14,7 +14,7 @@ add_action( 'after_setup_theme', 'tamatebako_customizer_mobile_view_setup', 20 )
 function tamatebako_customizer_mobile_view_setup(){
 
 	/* Customize Mobile View do not load if using mobile device */
-	if ( current_theme_supports( 'tamatebako-customize-mobile-view' ) && !wp_is_mobile() ){
+	if ( !wp_is_mobile() ){
 		add_action( 'customize_controls_print_footer_scripts', 'tamatebako_customize_mobile_view_script' );
 		add_action( 'customize_controls_print_styles', 'tamatebako_customize_mobile_view_style' );
 	}
