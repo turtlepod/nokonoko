@@ -1,12 +1,16 @@
 <?php
 /**
  * Customizer Custom CSS
+ * It's using postMessage because using refresh method is not user friendly.
+ * @since 3.0.0
 **/
-add_action( 'customize_register', 'tamatebako_custom_css_customize_register', 15 );
 
+/* Register Custom CSS to Customizer */
+add_action( 'customize_register', 'tamatebako_custom_css_customize_register', 15 );
 
 /**
  * Register Customizer
+ * @since 3.0.0
  */
 function tamatebako_custom_css_customize_register( $wp_customize ){
 
@@ -85,6 +89,7 @@ function tamatebako_custom_css_wp_head() {
 
 /**
  * Tamatebako Restore CSS
+ * restore several character from esc_html().
  * @access Private
  */
 function tamatebako_parse_css( $css ){

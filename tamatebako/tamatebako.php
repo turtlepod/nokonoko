@@ -8,7 +8,7 @@
  * 
  * @version   3.0.0
  * @author    David Chandra <david@shellcreeper.com>
- * @copyright Copyright (c) 2015, David Chandra
+ * @copyright Copyright (c) 2015, Genbu Media
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 **/
 
@@ -18,16 +18,16 @@
 global $tamatebako;
 $tamatebako = new stdClass;
 
-/* Tamatebako directory */
+/* Constant: Tamatebako Directory (not path) */
 define( 'TAMATEBAKO_DIR', basename( dirname( __FILE__ ) ) );
 
-/* File loader. */
+/* Load File Loader. */
 require_once( trailingslashit( get_template_directory() ) . TAMATEBAKO_DIR . '/functions/loader.php' );
 
 /* Load text string used within the framework. */
 tamatebako_include( 'functions/strings' );
 
-/* Load sanitization functions. */
+/* Load various sanitization functions. */
 tamatebako_include( 'functions/sanitize' );
 
 /* Load default setup and helper functions. */
@@ -36,7 +36,7 @@ tamatebako_include( 'functions/setup' );
 /* Load contexts function. */
 tamatebako_include( 'functions/context' );
 
-/* Load template-tag functions on site front end */
+/* Load template-tag functions on site front end. */
 if ( !is_admin() ) {
 
 	/* Accessibility */
@@ -66,7 +66,7 @@ if ( !is_admin() ) {
 	}
 }
 
-/* Load custom theme features files */
+/* Load custom theme features. */
 add_action( 'after_setup_theme', 'tamatebako_load_theme_support', 15 );
 
 /**
@@ -81,21 +81,21 @@ function tamatebako_load_theme_support(){
 	/* Customizer Mobile View */
 	tamatebako_require_if_theme_supports( 'tamatebako-customize-mobile-view', 'functions/mobile-view' );
 
-	/* Theme Layouts */
-	tamatebako_require_if_theme_supports( 'tamatebako-layouts', 'layouts/layouts' );
-
 	/* Post Formats Setup */
 	tamatebako_require_if_theme_supports( 'post-formats', 'functions/post-formats' );
 
-	/* Custom Background: Full Size */
+	/* Custom Background: Full Size (Cover) */
 	if ( current_theme_supports( 'custom-background' ) ){
-		tamatebako_require_if_theme_supports( 'tamatebako-custom-background', 'functions/custom-background' );
+		tamatebako_require_if_theme_supports( 'tamatebako-full-size-background', 'functions/full-size-background' );
 	}
 
 	/* Microdata Filters */
 	tamatebako_require_if_theme_supports( 'tamatebako-microdata', 'functions/microdata' );
 
-	/* Custom CSS */
+	/* === LAYOUTS === */
+	tamatebako_require_if_theme_supports( 'tamatebako-layouts', 'layouts/layouts' );
+
+	/* === CUSTOM CSS === */
 	tamatebako_require_if_theme_supports( 'tamatebako-custom-css', 'custom-css/custom-css' );
 
 	/* === SCRIPTS === */

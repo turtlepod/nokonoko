@@ -177,7 +177,7 @@ function nokonoko_theme_setup(){
 		'wp-head-callback'       => '_custom_background_cb',
 	);
 	add_theme_support( 'custom-background', $custom_backgound_args );
-	add_theme_support( 'tamatebako-custom-background' ); // full size background
+	add_theme_support( 'tamatebako-full-size-background' );
 
 	/* === Custom Header Image === */
 	$custom_header_args = array(
@@ -200,11 +200,9 @@ function nokonoko_theme_setup(){
 	$register_js_scripts = array(
 		"theme-webfontloader" => array(
 			'src' => tamatebako_theme_file( 'js/webfontloader', 'js' ),
-			'deps'=> array(),
 		),
 		"theme-imagesloaded" => array(
 			'src' => tamatebako_theme_file( 'js/imagesloaded', 'js' ),
-			'deps'=> array(),
 		),
 		"theme-flexslider" => array(
 			'src' => tamatebako_theme_file( 'js/flexslider', 'js' ),
