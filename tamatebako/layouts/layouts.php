@@ -44,17 +44,6 @@ function tamatebako_layout_name( $layout ) {
 }
 
 /**
- * Get Specific Layout Content Width From Layout Slug
- */
-function tamatebako_layout_content_width( $layout ) {
-	$layouts = tamatebako_layouts();
-	if( isset( $layouts[ $layout ]['content_width'] ) ){
-		return $layouts[ $layout ]['content_width'];
-	}
-	return '';
-}
-
-/**
  * Array of arguments for layouts.
  */
 function tamatebako_layouts_args() {
@@ -142,14 +131,6 @@ function tamatebako_current_layout() {
 	return get_theme_mod( 'theme_layout', tamatebako_layout_default() );
 }
 
-/**
- * Get Current Content Width
- */
-function tamatebako_current_layout_content_width(){
-	$current_layout = tamatebako_current_layout();
-	return tamatebako_layout_content_width( $current_layout );
-}
-
 /* === ADD BODY CLASS === */
 
 /* Filters the body_class hook to add a custom class. */
@@ -162,27 +143,9 @@ add_filter( 'body_class', 'tamatebako_layouts_body_class' );
 function tamatebako_layouts_body_class( $classes ) {
 	$current_layout = tamatebako_current_layout();
 	if( !empty( $current_layout ) ){
-		global $content_width;
-		$classes[] = sanitize_html_class( 'layout-content-width-' . $content_width );
 		$classes[] = sanitize_html_class( 'layout-' . tamatebako_current_layout() );
 	}
 	return array_unique( $classes );
-}
-
-
-/* === SET CONTENT WIDTH === */
-add_action( 'template_redirect', 'tamatebako_content_width' );
-
-/**
- * Set Content Width Based on Layout
- * @since 3.0.0
- */
-function tamatebako_content_width(){
-	$current_layout_content_width = tamatebako_current_layout_content_width();
-	if( !empty( $current_layout_content_width ) ){
-		global $content_width;
-		$content_width = absint( tamatebako_current_layout_content_width() );
-	}
 }
 
 /* === LOAD === */
