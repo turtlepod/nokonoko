@@ -22,7 +22,7 @@ $tamatebako = new stdClass;
 define( 'TAMATEBAKO_DIR', basename( dirname( __FILE__ ) ) );
 
 /* Load File Loader. */
-require_once( trailingslashit( get_template_directory() ) . TAMATEBAKO_DIR . '/functions/loader.php' );
+require_once( trailingslashit( get_template_directory() ) . TAMATEBAKO_DIR . '/functions/helper.php' );
 
 /* Load text string used within the framework. */
 tamatebako_include( 'functions/strings' );

@@ -5,17 +5,6 @@
  * @access private
 **/
 
-/**
- * Helper Function: Get (parent) theme version
- * This function is to properly add version number to scripts and styles.
- * @since 0.1.0
- */
-function tamatebako_theme_version(){
-	$theme = wp_get_theme( get_template() );
-	return $theme->get( 'Version' );
-}
-
-
 /* Setup the defaults theme feature. */
 add_action( 'after_setup_theme', 'tamatebako_setup', 5 );
 
