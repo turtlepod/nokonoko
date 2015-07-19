@@ -65,7 +65,7 @@ function tamatebako_attachment_application( $mime = '', $file = '' ) {
 
 /**
  * Handles text attachments on their attachment pages.
- * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @author Justin Tadlock <justintadlock@gmail.com>
  * @since 3.0.0
  */
 function tamatebako_attachment_text( $mime = '', $file = '' ) {
@@ -87,47 +87,9 @@ function tamatebako_attachment_audio( $mime = '', $file = '' ) {
 
 /**
  * Handles the output of the media for video attachment posts. This should be used within The Loop.
- *
- * @since  0.2.2
- * @access public
- * @return string
+ * @since  3.0.0
  */
 function tamatebako_attachment_video( $mime = '', $file = '' ) {
 	return do_shortcode( '[video src="' . esc_url( esc_url( $file ) ) . '"]' );
 }
 
-/**
- * Checks if the current post has a mime type of 'audio'.
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @since  3.0.0
- * @access public
- * @param  int    $post_id
- * @return bool
- */
-function tamatebako_attachment_is_audio( $post_id = 0 ) {
-
-	$post_id   = empty( $post_id ) ? get_the_ID() : $post_id;
-	$mime_type = get_post_mime_type( $post_id );
-
-	list( $type, $subtype ) = false !== strpos( $mime_type, '/' ) ? explode( '/', $mime_type ) : array( $mime_type, '' );
-
-	return 'audio' === $type ? true : false;
-}
-
-/**
- * Checks if the current post has a mime type of 'video'.
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @since  3.0.0
- * @access public
- * @param  int    $post_id
- * @return bool
- */
-function tamatebako_attachment_is_video( $post_id = 0 ) {
-
-	$post_id   = empty( $post_id ) ? get_the_ID() : $post_id;
-	$mime_type = get_post_mime_type( $post_id );
-
-	list( $type, $subtype ) = false !== strpos( $mime_type, '/' ) ? explode( '/', $mime_type ) : array( $mime_type, '' );
-
-	return 'video' === $type ? true : false;
-}

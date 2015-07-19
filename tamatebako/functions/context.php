@@ -29,7 +29,7 @@ function tamatebako_contexts_setup(){
 
 /**
  * Add TinyMCE Body Class
- * Add "entry-content" in editor style, to use main style.css as editor style.
+ * Add "entry-content" in editor style for easier copy-paste CSS to editor.css
  * need to consider this when styling '<body>' and '<div class"entry-content">'.
  * @since  0.1.0
  */
@@ -100,13 +100,7 @@ function tamatebako_body_class( $classes ){
 	}
 
 	/* Mobile visitor class */
-	if ( wp_is_mobile() ){
-		$classes[] = 'wp-is-mobile';
-	}
-	/* Non-mobile visitor/using desktop browser */
-	else{
-		$classes[] = 'wp-is-not-mobile';
-	}
+	$classes[] = wp_is_mobile() ? 'wp-is-mobile' : 'wp-is-not-mobile';
 
 	/* Custom header */
 	if ( current_theme_supports( 'custom-header' ) && get_header_image() ){
