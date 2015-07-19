@@ -1,6 +1,6 @@
 <?php
 /**
- * File Loader Functions
+ * Helper Functions
  * @since 3.0.0
 **/
 
@@ -27,6 +27,7 @@ function tamatebako_include( $file ){
 	}
 }
 
+
 /**
  * Including a PHP file if a theme feature is supported and the file exists.
  * @since  3.0.0
@@ -49,6 +50,17 @@ function tamatebako_require_if_theme_supports( $feature, $file ) {
 	if ( current_theme_supports( $feature ) && file_exists( $file_path ) ){
 		require_once( $file_path );
 	}
+}
+
+
+/**
+ * Helper Function: Get (parent) theme version
+ * This function is to properly add version number to scripts and styles.
+ * @since 0.1.0
+ */
+function tamatebako_theme_version(){
+	$theme = wp_get_theme( get_template() );
+	return $theme->get( 'Version' );
 }
 
 
@@ -109,6 +121,7 @@ function tamatebako_theme_file( $path, $ext ){
 	}
 }
 
+
 /**
  * Get child theme assets file.
  * Return empty if child theme not active or file not exist.
@@ -168,5 +181,3 @@ function tamatebako_child_theme_file( $path, $ext ){
 	}
 	return '';
 }
-
-
