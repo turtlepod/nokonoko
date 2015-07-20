@@ -2,7 +2,7 @@
 <html <?php language_attributes( 'html' ); ?>>
 
 <head>
-<?php wp_head(); // Hook required for scripts, styles, and other <head> items. ?>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -67,7 +67,7 @@
 
 		</div><!-- #main -->
 
-		<?php get_footer(); // Loads the footer.php template. ?>
+		<?php get_footer(); ?>
 
 	</div><!-- #container -->
 
