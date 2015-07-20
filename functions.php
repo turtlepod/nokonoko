@@ -60,6 +60,7 @@ function nokonoko_theme_setup(){
 		'comments_closed' => _x( 'Comments are closed.', 'comment', 'nokonoko' ),
 
 		/* functions/setup.php */
+		'untitled' => _x( '(Untitled)', 'entry', 'nokonoko' ),
 		'read_more' => _x( 'Read More', 'entry', 'nokonoko' ),
 
 		/* functions/custom-background.php */
@@ -94,6 +95,10 @@ function nokonoko_theme_setup(){
 
 	/* === Maximum Content Width === */
 	$GLOBALS['content_width'] = 1100;
+
+	/* === Thumbnail Size === */
+	//add_image_size( 'theme-thumbnail', 300, 200, true );
+	//set_post_thumbnail_size( 200, 200, true );
 
 	/* === Tamatebako: Theme Layouts === */
 	$image_dir = get_template_directory_uri() . '/images/layouts/';

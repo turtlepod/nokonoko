@@ -34,6 +34,9 @@ function tamatebako_setup(){
 
 	/* === Filters: Set Better Default Output === */
 
+	/* Set Untitled Entry Title */
+	add_filter( 'the_title', 'tamatebako_untitled_entry' );
+
 	/* Set Consistent Read More */
 	add_filter( 'excerpt_more', 'tamatebako_excerpt_more', 5 );
 	add_filter( 'the_content_more_link', 'tamatebako_content_more', 5, 2 );
@@ -73,6 +76,17 @@ function tamatebako_wp_head_meta_viewport() {
 function tamatebako_wp_head_link_pingback() {
 	if ( 'open' === get_option( 'default_ping_status' ) )
 		printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
+}
+
+
+/**
+ * Add '(Untitled)' title if not entry title is set
+ */
+function tamatebako_untitled_entry( $title ) {
+	if ( empty( $title ) && !is_singular() && in_the_loop() && !is_admin() ) {
+		$title = tamatebako_string( 'untitled' );
+	}
+	return $title;
 }
 
 /**
