@@ -116,7 +116,6 @@ function tamatebako_layouts_post_types(){
 	return apply_filters( 'tamatebako_layouts_post_types', $layouts_args['post_types'] );
 }
 
-
 /* === SET DEFAULT LAYOUT === */
 
 /* Filters the theme layout mod. */
@@ -146,7 +145,6 @@ function tamatebako_set_default_layout( $layout ) {
 		return tamatebako_layout_default();
 	}
 }
-
 
 /* === GET CURRENT LAYOUT === */
 

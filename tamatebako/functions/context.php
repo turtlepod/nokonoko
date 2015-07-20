@@ -7,7 +7,6 @@
 /* Load theme contexts setup */
 add_action( 'after_setup_theme', 'tamatebako_contexts_setup', 5 );
 
-
 /**
  * Contexts Setup
  * Additional classes for easier styling.

@@ -26,7 +26,6 @@ function tamatebako_layouts_load_meta_boxes() {
 	}
 }
 
-
 /**
  * Add Meta Boxes
  */
@@ -165,8 +164,6 @@ function tamatebako_layouts_save_post( $post_id, $post = '' ) {
 		update_post_meta( $post_id, $meta_key, $new_meta_value );
 	}
 }
-
-
 
 /**
  * Style for layout thumbnail.

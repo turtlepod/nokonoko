@@ -65,5 +65,3 @@ function tamatebako_register_css(){
 
 	}
 }
-
-

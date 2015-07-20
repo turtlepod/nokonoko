@@ -62,6 +62,7 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 	$wp_customize->add_control( 'custom_css', tamatebako_custom_css_args() );
 }
 
+
 /* Preview Script */
 add_action( 'customize_preview_init', 'tamatebako_custom_css_customizer_js' );
 
@@ -72,6 +73,7 @@ function tamatebako_custom_css_customizer_js() {
 	$js = trailingslashit( get_template_directory_uri() ) . TAMATEBAKO_DIR . '/custom-css/custom-css.js';
 	wp_enqueue_script( 'tamatebako_custom_css_preview', $js, array( 'customize-preview' ), tamatebako_theme_version(), true );
 }
+
 
 /* Print CSS to WP Head */
 add_action( 'wp_head', 'tamatebako_custom_css_wp_head', 99 );

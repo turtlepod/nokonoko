@@ -6,7 +6,6 @@
 /* Hook to theme setup */
 add_action( 'after_setup_theme', 'tamatebako_customizer_mobile_view_setup', 20 );
 
-
 /**
  * Register Theme Elements
  * @since 0.1.0

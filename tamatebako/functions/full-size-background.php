@@ -24,6 +24,7 @@ function tamatebako_full_size_background_args(){
 	return wp_parse_args( $theme_args, $defaults_args );
 }
 
+
 /* Add customizer option */
 add_action( 'customize_register', 'tamatebako_full_size_background_customizer_register' );
 
@@ -50,6 +51,7 @@ function tamatebako_full_size_background_customizer_register( $wp_customize ){
 	));
 
 }
+
 
 /* Body Class */
 add_action( 'body_class', 'tamatebako_full_size_background_body_class' );
