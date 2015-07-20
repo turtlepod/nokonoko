@@ -63,12 +63,6 @@ function nokonoko_theme_setup(){
 		'untitled' => _x( '(Untitled)', 'entry', 'nokonoko' ),
 		'read_more' => _x( 'Read More', 'entry', 'nokonoko' ),
 
-		/* functions/custom-background.php */
-		'full_size_bg' => _x( 'Full Size Background', 'customizer', 'nokonoko' ),
-
-		/* scripts/custom-css.php */
-		'custom_css' => _x( 'Custom CSS', 'customizer', 'nokonoko' ),
-
 	);
 
 	/* Add text to tamatebako */
@@ -173,7 +167,12 @@ function nokonoko_theme_setup(){
 		'wp-head-callback'       => '_custom_background_cb',
 	);
 	add_theme_support( 'custom-background', $custom_backgound_args );
-	add_theme_support( 'tamatebako-full-size-background' );
+
+	/* Full Size Background (Cover) */
+	$full_size_bg_args = array(
+		'label' => _x( 'Full Size Background', 'customizer', 'nokonoko' ),
+	);
+	add_theme_support( 'tamatebako-full-size-background', $full_size_bg_args );
 
 	/* === Custom Header Image === */
 	$custom_header_args = array(
@@ -196,8 +195,8 @@ function nokonoko_theme_setup(){
 		'height'                 => 200,
 		'flex-height'            => true,
 		'flex-width'             => true,
-		'label'                  => _x( 'Logo', 'nokonoko' ),
-		'description'            => _x( 'This will replace site title with logo in header area. Recommended size is 300px wide and 200px tall.', 'customizer logo', 'nokonoko' ),
+		'label'                  => _x( 'Logo', 'customizer', 'nokonoko' ),
+		'description'            => _x( 'This will replace site title with logo in header area. Recommended size is 300px wide and 200px tall.', 'customizer', 'nokonoko' ),
 	);
 	add_theme_support( 'tamatebako-logo', $logo_args );
 
@@ -309,7 +308,11 @@ function nokonoko_theme_setup(){
 	add_editor_style( $editor_css );
 
 	/* === CUSTOM CSS === */
-	add_theme_support( 'tamatebako-custom-css' );
+	$custom_css_args = array(
+		'title' => _x( 'Custom CSS', 'customizer', 'nokonoko' ),
+		'label' => _x( 'Custom CSS', 'customizer', 'nokonoko' ),
+	);
+	add_theme_support( 'tamatebako-custom-css', $custom_css_args );
 }
 
 do_action( 'tamatebako_after_theme_setup' );
