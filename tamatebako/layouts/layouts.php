@@ -25,6 +25,7 @@ function tamatebako_layouts() {
 	$theme_layouts = tamatebako_theme_layouts();
 
 	/* Assign the strings passed in by the theme author. */
+	$layouts = array();
 	if ( isset( $theme_layouts[0] ) ){
 		$layouts = $theme_layouts[0];
 	}
@@ -87,14 +88,14 @@ function tamatebako_layout_default( $return = 'slug' ){
  */
 function tamatebako_layouts_post_types(){
 	$layouts_args = tamatebako_layouts_args();
-	return $layouts_args['post_types'];
+	return apply_filters( 'tamatebako_layouts_post_types', $layouts_args['post_types'] );
 }
 
 
 /* === SET DEFAULT LAYOUT === */
 
 /* Filters the theme layout mod. */
-add_filter( 'theme_mod_theme_layout', 'tamatebako_set_default_layout', 5 );
+add_filter( 'theme_mod_theme_layout', 'tamatebako_set_default_layout' );
 
 
 /**

@@ -71,12 +71,6 @@ function tamatebako_strings(){
 		'untitled' => '(Untitled)',
 		'read_more' => 'Read More',
 
-		/* functions/custom-background.php */
-		'full_size_bg' => 'Full Size Background',
-
-		/* scripts/custom-css */
-		'custom_css' => 'Custom CSS',
-
 	);
 
 	/* Close sesame. */

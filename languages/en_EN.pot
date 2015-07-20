@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Theme\n"
 "Report-Msgid-Bugs-To: http://genbu.me/contact/\n"
-"POT-Creation-Date: 2015-07-20 09:39+0700\n"
-"PO-Revision-Date: 2015-07-20 09:39+0700\n"
+"POT-Creation-Date: 2015-07-20 12:17+0700\n"
+"PO-Revision-Date: 2015-07-20 12:17+0700\n"
 "Last-Translator: David Chandra Purnama <david@shellcreeper.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -127,77 +127,89 @@ msgctxt "entry"
 msgid "Read More"
 msgstr ""
 
-#: functions.php:67
-msgctxt "customizer"
-msgid "Full Size Background"
-msgstr ""
-
-#: functions.php:70
-msgctxt "customizer"
-msgid "Custom CSS"
-msgstr ""
-
-#: functions.php:104
+#: functions.php:102
 msgctxt "layout name"
 msgid "Content"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:107
 msgctxt "layout name"
 msgid "Content | Sidebar 1"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:111
 msgctxt "layout name"
 msgid "Sidebar 1 | Content"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:115
 msgctxt "layout name"
 msgid "Content | Sidebar 2"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:119
 msgctxt "layout name"
 msgid "Sidebar 2 | Content"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:124
 msgctxt "layout name"
 msgid "Sidebar 2 | Content | Sidebar 1"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:128
 msgctxt "layout name"
 msgid "Sidebar 2 | Sidebar 1 | Content"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:132
 msgctxt "layout name"
 msgid "Content | Sidebar 1 | Sidebar 2"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:136
 msgctxt "layout name"
 msgid "Sidebar 1 | Content | Sidebar 2"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:151
 msgctxt "sidebar name"
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:154
+#: functions.php:152
 msgctxt "sidebar name"
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:160
+#: functions.php:158
 msgctxt "nav menu name"
 msgid "Navigation"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:159
 msgctxt "nav menu name"
 msgid "Footer Links"
+msgstr ""
+
+#: functions.php:173
+msgctxt "customizer"
+msgid "Full Size Background"
+msgstr ""
+
+#: functions.php:198
+msgctxt "customizer"
+msgid "Logo"
+msgstr ""
+
+#: functions.php:199
+msgctxt "customizer"
+msgid ""
+"This will replace site title with logo in header area. Recommended size is "
+"300px wide and 200px tall."
+msgstr ""
+
+#: functions.php:312 functions.php:313
+msgctxt "customizer"
+msgid "Custom CSS"
 msgstr ""

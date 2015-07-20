@@ -1,9 +1,34 @@
 <?php
 /**
- * Customizer Custom CSS
+ * Custom CSS
  * It's using postMessage because using refresh method is not user friendly.
  * @since 3.0.0
 **/
+
+/**
+ * Custom CSS Args
+ */
+function tamatebako_custom_css_args(){
+
+	/* Get theme support */
+	$custom_css_support = get_theme_support( 'tamatebako-custom-css' );
+	$theme_args = array();
+	if ( isset( $custom_css_support[0] ) ){
+		$theme_args = $custom_css_support[0];
+	}
+
+	/* Default Args */
+	$defaults_args = array( 
+		'title'       => 'Custom CSS',
+		'label'       => 'Custom CSS',
+		'type'        => 'textarea',
+		'section'     => 'custom_css',
+	);
+
+	/* Logo Args. */
+	return wp_parse_args( $theme_args, $defaults_args );
+}
+
 
 /* Register Custom CSS to Customizer */
 add_action( 'customize_register', 'tamatebako_custom_css_customize_register', 15 );
@@ -14,21 +39,11 @@ add_action( 'customize_register', 'tamatebako_custom_css_customize_register', 15
  */
 function tamatebako_custom_css_customize_register( $wp_customize ){
 
-	/* Add Panel: for larger area */
-	$wp_customize->add_panel(
-		'custom_css',
-		array(
-			'priority'    => 200,
-			'title'       => esc_html( tamatebako_string( 'custom_css' ) ),
-		)
-	);
-
 	/* Add Section */
 	$wp_customize->add_section(
 		'custom_css',
 		array(
-			'title'       => esc_html( tamatebako_string( 'custom_css' ) ),
-			'panel'       => 'custom_css',
+			'title' => esc_html( tamatebako_custom_css_args()['title'] ),
 		)
 	);
 
@@ -44,13 +59,7 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 	);
 
 	// Uses the `textarea` type added in WordPress 4.0.
-	$wp_customize->add_control(
-		'custom_css',
-		array(
-			'label'       => '',
-			'type'        => 'textarea',
-			'section'     => 'custom_css',
-	) );
+	$wp_customize->add_control( 'custom_css', tamatebako_custom_css_args() );
 }
 
 /* Preview Script */

@@ -79,7 +79,13 @@ code{
 			line-height: 1em;
 			margin: 0;
 		}
-	/* Header Image */
+	/* Logo */
+	.logo-active{
+		
+	}
+	.logo-uploaded{
+		
+	}
 	#site-logo{
 		margin: 0;
 		float: left;
