@@ -19,9 +19,7 @@ function tamatebako_layouts_customizer_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'layout',
 		array(
-			'title'      => esc_html( tamatebako_string( 'layout' ) ),
-			'priority'   => 190,
-			'capability' => 'edit_theme_options'
+			'title' => esc_html( tamatebako_string( 'layout' ) ),
 		)
 	);
 
