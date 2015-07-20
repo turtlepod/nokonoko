@@ -9,7 +9,6 @@
 /* Filters the theme layout mod. Need to be using more than 10 (default) priorities to work on customizer. */
 add_filter( 'theme_mod_theme_layout', 'tamatebako_set_post_layout', 20 );
 
-
 /**
  * Filters the 'theme_mods_theme_layout'.
  */
@@ -37,7 +36,6 @@ function tamatebako_set_post_layout( $layout ) {
 	return $layout;
 }
 
-
 /* === VARS === */
 
 /**
@@ -57,7 +55,6 @@ function tamatebako_get_post_layout( $post_id = '' ) {
 	return get_post_meta( $post_id, tamatebako_layout_meta_key(), true );
 }
 
-
 /* === REGISTER META === */
 
 /* Register Meta */
@@ -70,7 +67,7 @@ function tamatebako_layouts_register_meta() {
 	register_meta( 'post', tamatebako_layout_meta_key(), 'sanitize_html_class' );
 }
 
-/* === ADMIN : META BOX / ATTACHMENT OPTION === */
+/* === ADMIN : META BOX === */
 
 /* Set up the custom post layouts. */
 add_action( 'admin_init', 'tamatebako_layouts_admin_setup' );

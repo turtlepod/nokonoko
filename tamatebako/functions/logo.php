@@ -31,6 +31,7 @@ function tamatebako_logo_args(){
 	return wp_parse_args( $theme_args, $defaults_args );
 }
 
+
 /* Register Custom CSS to Customizer */
 add_action( 'customize_register', 'tamatebako_logo_customize_register' );
 
@@ -45,7 +46,7 @@ function tamatebako_logo_customize_register( $wp_customize ){
 		'logo',
 		array(
 			'type'                => 'theme_mod',
-			'transport'           => 'postMessage',
+			'transport'           => 'refresh',
 			'capability'          => 'edit_theme_options',
 			'sanitize_callback'   => 'esc_html',
 		)
@@ -56,6 +57,7 @@ function tamatebako_logo_customize_register( $wp_customize ){
 		new WP_Customize_Cropped_Image_Control( $wp_customize, 'logo', tamatebako_logo_args() )
 	);
 }
+
 
 /* Body Class */
 add_filter( 'body_class', 'tamatebako_logo_body_class' );
@@ -72,6 +74,7 @@ function tamatebako_logo_body_class( $classes ) {
 	}
 	return $classes;
 }
+
 
 /**
  * Logo URL

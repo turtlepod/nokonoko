@@ -70,5 +70,3 @@ function tamatebako_enqueue_css(){
 
 	}
 }
-
-

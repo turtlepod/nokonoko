@@ -60,6 +60,7 @@ function tamatebako_wp_head_meta_charset() {
 	printf( '<meta charset="%s" />' . "\n", esc_attr( get_bloginfo( 'charset' ) ) );
 }
 
+
 /**
  * Adds the meta viewport to the header.
  * @author Justin Tadlock <justintadlock@gmail.com>
@@ -89,6 +90,7 @@ function tamatebako_untitled_entry( $title ) {
 	return $title;
 }
 
+
 /**
  * Default Excerpt More
  * to add more link to excerpt add template function "tamatebako_read_more()" after "the_excerpt()"
@@ -99,6 +101,7 @@ function tamatebako_untitled_entry( $title ) {
 function tamatebako_excerpt_more( $more ) {
 	return " &hellip; ";
 }
+
 
 /**
  * Content More
@@ -114,6 +117,7 @@ function tamatebako_content_more( $more_link, $more_link_text ){
 	}
 	return $more_link;
 }
+
 
 /**
  * WP Link Pages
@@ -144,6 +148,7 @@ function tamatebako_wp_link_pages_link( $link ) {
 	return $link;
 }
 
+
 /**
  * Add blog page title as archive title.
  * @since  3.0.0
@@ -162,6 +167,7 @@ function tamatebako_archive_title( $title ){
 	}
 	return $title;
 }
+
 
 /**
  * Add additional archive description.
@@ -193,4 +199,3 @@ function tamatebako_archive_description( $desc ){
 	/* Return it. */
 	return $desc;
 }
-

@@ -3,7 +3,6 @@
  * Sanitization, Validation, and Related Functions.
 **/
 
-
 /* === CHECKBOX === */
 
 /**
@@ -16,9 +15,7 @@ function tamatebako_sanitize_checkbox( $input ){
 	return false;
 }
 
-
 /* === COLOR === */
-
 
 /**
  * Converts a hex color to RGB.  Returns the RGB values as an array.
@@ -45,6 +42,7 @@ function tamatebako_hex_to_rgb( $hex ) {
 	// Return the RGB colors as an array.
 	return array( 'r' => $red, 'g' => $green, 'b' => $blue );
 }
+
 
 /**
  * Hex Color Sanitization Helper Function
@@ -78,7 +76,6 @@ function tamatebako_sanitize_hex_color_no_hash( $color ){
 
 	return chelonian_sanitize_hex_color( '#' . $color ) ? $color : null;
 }
-
 
 /* === FILE === */
 

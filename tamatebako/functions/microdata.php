@@ -93,6 +93,7 @@ function tamatebako_microdata_comment_reply_link_filter( $link ) {
 	return preg_replace( '/(<a\s)/i', '$1itemprop="replyToUrl"', $link );
 }
 
+
 /**
  * Adds microdata to avatars.
  * @author Justin Tadlock <justintadlock@gmail.com>
@@ -130,4 +131,3 @@ function tamatebako_microdata_post_thumbnail_html( $html ) {
 function tamatebako_microdata_comments_popup_link_attributes( $attr ) {
 	return 'itemprop="discussionURL"';
 }
-

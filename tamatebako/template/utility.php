@@ -18,7 +18,6 @@ function tamatebako_set_layout( $new_layout ){
 	add_filter( 'theme_mod_theme_layout', $filter_layout );
 }
 
-
 /**
  * Set Template Dir
  * @param $old_dir string
@@ -34,7 +33,6 @@ function tamatebako_set_template_dir( $new_dir, $old_dir ){
 	};
 	add_filter( 'tamatebako_get_template_dir', $filter_dir );
 }
-
 
 /**
  * Add Body Classes

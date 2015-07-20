@@ -92,4 +92,3 @@ function tamatebako_attachment_audio( $mime = '', $file = '' ) {
 function tamatebako_attachment_video( $mime = '', $file = '' ) {
 	return do_shortcode( '[video src="' . esc_url( esc_url( $file ) ) . '"]' );
 }
-

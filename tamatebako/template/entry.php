@@ -143,4 +143,3 @@ function tamatebako_entry_permalink(){
 <a class="entry-permalink" href="<?php the_permalink(); ?>" rel="bookmark"><?php echo tamatebako_string( 'permalink' ); ?></a>
 <?php
 }
-

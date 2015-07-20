@@ -118,8 +118,6 @@ function tamatebako_archive_footer(){
 	}
 }
 
-
-
 /**
  * Do Content
  * this will parse a string and add content-like functionality such as autoembed autop etc.
