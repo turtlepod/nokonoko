@@ -92,6 +92,9 @@ function tamatebako_load_theme_support(){
 	/* Microdata Filters */
 	tamatebako_require_if_theme_supports( 'tamatebako-microdata', 'functions/microdata' );
 
+	/* Logo */
+	tamatebako_require_if_theme_supports( 'tamatebako-logo', 'functions/logo' );
+
 	/* === LAYOUTS === */
 	tamatebako_require_if_theme_supports( 'tamatebako-layouts', 'layouts/layouts' );
 

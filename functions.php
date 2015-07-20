@@ -188,7 +188,18 @@ function nokonoko_theme_setup(){
 		'uploads'                => true,
 		'wp-head-callback'       => '',
 	);
-	add_theme_support( 'custom-header', $custom_header_args );
+	//add_theme_support( 'custom-header', $custom_header_args );
+
+	/* === Logo === */
+	$logo_args = array(
+		'width'                  => 300,
+		'height'                 => 200,
+		'flex-height'            => true,
+		'flex-width'             => true,
+		'label'                  => _x( 'Logo', 'nokonoko' ),
+		'description'            => _x( 'This will replace site title with logo in header area. Recommended size is 300px wide and 200px tall.', 'customizer logo', 'nokonoko' ),
+	);
+	add_theme_support( 'tamatebako-logo', $logo_args );
 
 	/* === Tamatebako: Register Scripts === */
 

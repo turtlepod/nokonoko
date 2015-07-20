@@ -2,11 +2,11 @@
 
 	<div id="branding">
 
-		<?php if ( current_theme_supports( 'custom-header' ) && get_header_image() ) { /* Custom Header */ ?>
+		<?php if ( current_theme_supports( 'tamatebako-logo' ) && get_theme_mod( 'logo' ) ) { ?>
 
 			<h1 id="site-logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img class="header-image" src="<?php header_image(); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"/>
+					<img class="header-image" src="<?php echo esc_url( tamatebako_logo_url() ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"/>
 					<span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
 				</a>
 			</h1>
