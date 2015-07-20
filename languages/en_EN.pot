@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Theme\n"
 "Report-Msgid-Bugs-To: http://genbu.me/contact/\n"
-"POT-Creation-Date: 2015-07-10 13:18+0700\n"
-"PO-Revision-Date: 2015-07-14 10:34+0700\n"
+"POT-Creation-Date: 2015-07-20 09:39+0700\n"
+"PO-Revision-Date: 2015-07-20 09:39+0700\n"
 "Last-Translator: David Chandra Purnama <david@shellcreeper.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -119,20 +119,25 @@ msgstr ""
 
 #: functions.php:63
 msgctxt "entry"
+msgid "(Untitled)"
+msgstr ""
+
+#: functions.php:64
+msgctxt "entry"
 msgid "Read More"
 msgstr ""
 
-#: functions.php:66
+#: functions.php:67
 msgctxt "customizer"
 msgid "Full Size Background"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:70
 msgctxt "customizer"
 msgid "Custom CSS"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:104
 msgctxt "layout name"
 msgid "Content"
 msgstr ""
@@ -142,57 +147,57 @@ msgctxt "layout name"
 msgid "Content | Sidebar 1"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:113
 msgctxt "layout name"
 msgid "Sidebar 1 | Content"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:117
 msgctxt "layout name"
 msgid "Content | Sidebar 2"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:121
 msgctxt "layout name"
 msgid "Sidebar 2 | Content"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:126
 msgctxt "layout name"
 msgid "Sidebar 2 | Content | Sidebar 1"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:130
 msgctxt "layout name"
 msgid "Sidebar 2 | Sidebar 1 | Content"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:134
 msgctxt "layout name"
 msgid "Content | Sidebar 1 | Sidebar 2"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:138
 msgctxt "layout name"
 msgid "Sidebar 1 | Content | Sidebar 2"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:153
 msgctxt "sidebar name"
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:154
 msgctxt "sidebar name"
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:160
 msgctxt "nav menu name"
 msgid "Navigation"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:161
 msgctxt "nav menu name"
 msgid "Footer Links"
 msgstr ""

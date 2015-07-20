@@ -60,6 +60,7 @@ function nokonoko_theme_setup(){
 		'comments_closed' => _x( 'Comments are closed.', 'comment', 'nokonoko' ),
 
 		/* functions/setup.php */
+		'untitled' => _x( '(Untitled)', 'entry', 'nokonoko' ),
 		'read_more' => _x( 'Read More', 'entry', 'nokonoko' ),
 
 		/* functions/custom-background.php */

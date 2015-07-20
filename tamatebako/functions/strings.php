@@ -68,6 +68,7 @@ function tamatebako_strings(){
 		'comments_closed' => 'Comments are closed.',
 
 		/* functions/setup.php */
+		'untitled' => '(Untitled)',
 		'read_more' => 'Read More',
 
 		/* functions/custom-background.php */
