@@ -93,13 +93,13 @@ function tamatebako_logo_url(){
 	/* if theme supports it and logo uploaded, return logo URL */
 	if( current_theme_supports( 'tamatebako-logo' ) && get_theme_mod( 'logo' ) ){
 		$image = wp_get_attachment_image_src( absint( get_theme_mod( 'logo' ) ), 'full' );
-		return $image[0]; /* image URL */
+		return tamatebako_sanitize_file_type( $image[0], 'image' ); /* image URL */
 	}
 
 	/* If default logo image defined, use it as fallback. */
 	$logo_args = tamatebako_logo_args();
 	if( !empty( $logo_args['default-logo'] ) ){
-		return $logo_args['default-logo'];
+		return tamatebako_sanitize_file_type( $logo_args['default-logo'], 'image' );
 	}
 	return '';
 }

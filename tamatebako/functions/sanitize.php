@@ -20,8 +20,8 @@ function tamatebako_sanitize_checkbox( $input ){
 /**
  * Converts a hex color to RGB.  Returns the RGB values as an array.
  * Usage:
- * $color_rgb = join( ', ', hybrid_hex_to_rgb( $color ) );
- * $css = ".element{ background: rgba({$primary_rgb},0.7); }";
+ * $color_rgb = join( ', ', tamatebako_hex_to_rgb( $color ) );
+ * $css = ".element{ background: rgba({$color_rgb},0.7); }";
  * 
  * @author Justin Tadlock <justintadlock@gmail.com>
  */
