@@ -1,6 +1,6 @@
 <?php
 /**
- * Logo
+ * Logo Upload.
 **/
 
 /**
@@ -17,12 +17,12 @@ function tamatebako_logo_args(){
 
 	/* Default Args */
 	$defaults_args = array( 
-		'section'             => 'default-image',
+		'crop'                => true,
 		'section'             => 'title_tagline',
 		'label'               => 'Logo',
 		'description'         => '',
 		'flex_width'          => true,
-		'flex_height'         => false,
+		'flex_height'         => true,
 		'width'               => 300,
 		'height'              => 200,
 	);
@@ -53,7 +53,7 @@ function tamatebako_logo_customize_register( $wp_customize ){
 	);
 
 	/* Add Control (WP 4.3 with image cropper) */
-	if ( class_exists( 'WP_Customize_Cropped_Image_Control' ) ) {
+	if ( class_exists( 'WP_Customize_Cropped_Image_Control' ) && true === tamatebako_logo_args()['crop'] ) {
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'logo', tamatebako_logo_args() )
 		);
@@ -93,13 +93,13 @@ function tamatebako_logo_url(){
 	/* if theme supports it and logo uploaded, return logo URL */
 	if( current_theme_supports( 'tamatebako-logo' ) && get_theme_mod( 'logo' ) ){
 		$image = wp_get_attachment_image_src( absint( get_theme_mod( 'logo' ) ), 'full' );
-		return $image[0]; /* image URL */
+		return tamatebako_sanitize_file_type( $image[0], 'image' ); /* image URL */
 	}
 
 	/* If default logo image defined, use it as fallback. */
 	$logo_args = tamatebako_logo_args();
 	if( !empty( $logo_args['default-logo'] ) ){
-		return $logo_args['default-logo'];
+		return tamatebako_sanitize_file_type( $logo_args['default-logo'], 'image' );
 	}
 	return '';
 }

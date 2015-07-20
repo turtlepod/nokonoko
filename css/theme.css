@@ -93,7 +93,7 @@ code{
 	#site-logo > a{
 		display: block;
 	}
-	img.header-image{
+	img.logo-img{
 		display: block;
 	}
 
@@ -376,8 +376,8 @@ code{
 		display: inline-block;
 		background: #fff;
 		border: 1px solid #ccc;
-		padding: 0 10px;
-		padding: 0 1rem;
+		padding: 0 8px;
+		padding: 0 0.8rem;
 		margin-bottom: 20px;
 		margin-bottom: 2rem;
 	}

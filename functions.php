@@ -192,6 +192,7 @@ function nokonoko_theme_setup(){
 
 	/* === Logo === */
 	$logo_args = array(
+		//'crop'                   => true, /* set to false to disable image cropper. */
 		'width'                  => 300,
 		'height'                 => 200,
 		'flex-height'            => true,
