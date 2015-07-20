@@ -28,11 +28,6 @@ function nokonoko_theme_setup(){
 	/* Make all string in the framework translatable. */
 	$texts = array(
 
-		/* layouts/ */
-		'default' => _x( 'Default', 'layout', 'nokonoko' ),
-		'layout' => _x( 'Layout', 'layout', 'nokonoko' ),
-		'global_layout' => _x( 'Global Layout', 'layout', 'nokonoko' ),
-
 		/* template/accessibility.php */
 		'skip_to_content' => _x( 'Skip to content', 'accessibility', 'nokonoko' ),
 
@@ -144,7 +139,12 @@ function nokonoko_theme_setup(){
 		'post_types'  => array( 'post' ),
 		'thumbnail'   => true,
 	);
-	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args );
+	$layouts_strings = array(
+		'default' => _x( 'Default', 'layout', 'nokonoko' ),
+		'layout' => _x( 'Layout', 'layout', 'nokonoko' ),
+		'global_layout' => _x( 'Global Layout', 'layout', 'nokonoko' ),
+	);
+	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args, $layouts_strings );
 
 	/* === Tamatebako: Register Sidebars === */
 	$sidebars_args = array(

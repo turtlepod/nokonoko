@@ -35,7 +35,7 @@ function tamatebako_layouts_add_meta_boxes( $post_type, $post ) {
 	/* Add the meta box if the post type supports 'theme-layouts'. */
 	if ( ( in_array( $post_type, tamatebako_layouts_post_types() ) ) && ( current_user_can( 'edit_post_meta', $post->ID ) || current_user_can( 'add_post_meta', $post->ID ) || current_user_can( 'delete_post_meta', $post->ID ) ) ){
 
-		add_meta_box( 'theme-layouts-post-meta-box', tamatebako_string( 'layout' ), 'tamatebako_layouts_post_meta_box', $post_type, 'side', 'default' );
+		add_meta_box( 'theme-layouts-post-meta-box', tamatebako_layouts_string( 'layout' ), 'tamatebako_layouts_post_meta_box', $post_type, 'side', 'default' );
 	}
 }
 
@@ -51,10 +51,10 @@ function tamatebako_layouts_post_meta_box( $post, $box ) {
 	/* Add Default/Global */
 	$layout_default = array();
 	if( true === $layouts_args['customize'] ){
-		$layout_default['default'] = array( 'name' => tamatebako_string( 'global_layout' ) );
+		$layout_default['default'] = array( 'name' => tamatebako_layouts_string( 'global_layout' ) );
 	}
 	else{
-		$layout_default['default'] = array( 'name' => tamatebako_string( 'default' ) );
+		$layout_default['default'] = array( 'name' => tamatebako_layouts_string( 'default' ) );
 	}
 	if( tamatebako_current_layout() ){
 		$layout_default['default']['name'] = $layout_default['default']['name'] . ' (' . tamatebako_layout_name( tamatebako_current_layout() ) . ')';
@@ -98,10 +98,10 @@ function tamatebako_layouts_post_meta_box( $post, $box ) {
 
 					/* Label */
 					if( true === $layouts_args['customize'] ){
-						$layout_info = tamatebako_string( 'global_layout' );
+						$layout_info = tamatebako_layouts_string( 'global_layout' );
 					}
 					else{
-						$layout_info = tamatebako_string( 'default' );
+						$layout_info = tamatebako_layouts_string( 'default' );
 					}
 					if( tamatebako_current_layout() == $layout ){
 						$layout_data['name'] = $layout_data['name'] . ' (' . $layout_info . ')';

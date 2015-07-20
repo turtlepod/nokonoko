@@ -27,7 +27,7 @@ class Tamatebako_Customize_Layout extends WP_Customize_Control {
 		}
 
 		/* Add default layout info in layout name */
-		$layouts[tamatebako_layout_default()]['name'] = $layouts[tamatebako_layout_default()]['name'] . ' (' . tamatebako_string( 'default' ) . ')';
+		$layouts[tamatebako_layout_default()]['name'] = $layouts[tamatebako_layout_default()]['name'] . ' (' . tamatebako_layouts_string( 'default' ) . ')';
 
 		/* Input name */
 		$name = '_customize-radio-' . $this->id;
@@ -41,7 +41,7 @@ class Tamatebako_Customize_Layout extends WP_Customize_Control {
 
 		<div class="<?php echo esc_attr( $wrap_class ); ?>">
 
-			<span class="customize-control-title"><?php echo esc_html( tamatebako_string( 'global_layout' ) ); ?></span>
+			<span class="customize-control-title"><?php echo esc_html( tamatebako_layouts_string( 'global_layout' ) ); ?></span>
 
 			<?php foreach ( $layouts as $layout => $layout_data ){
 
