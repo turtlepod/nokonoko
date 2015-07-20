@@ -52,10 +52,18 @@ function tamatebako_logo_customize_register( $wp_customize ){
 		)
 	);
 
-	/* Add Control */
-	$wp_customize->add_control(
-		new WP_Customize_Cropped_Image_Control( $wp_customize, 'logo', tamatebako_logo_args() )
-	);
+	/* Add Control (WP 4.3 with image cropper) */
+	if ( class_exists( 'WP_Customize_Cropped_Image_Control' ) ) {
+		$wp_customize->add_control(
+			new WP_Customize_Cropped_Image_Control( $wp_customize, 'logo', tamatebako_logo_args() )
+		);
+	}
+	/* WP 4.2, use image as is. */
+	elseif( class_exists( 'WP_Customize_Media_Control' ) ){
+		$wp_customize->add_control(
+			new WP_Customize_Media_Control( $wp_customize, 'logo', tamatebako_logo_args() )
+		);
+	}
 }
 
 
