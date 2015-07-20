@@ -24,7 +24,8 @@
 				<a class="theme-thumbnail-link" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'thumbnail' ); ?>
 				</a>
-			<?php } ?> 
+			<?php } ?>
+			<?php //get_the_image( array( 'attachment' => false, 'image_class' => 'theme-thumbnail' ) ); ?>
 
 			<?php the_excerpt(); ?>
 			<?php tamatebako_read_more(); ?>
