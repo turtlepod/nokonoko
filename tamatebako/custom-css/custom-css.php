@@ -14,21 +14,11 @@ add_action( 'customize_register', 'tamatebako_custom_css_customize_register', 15
  */
 function tamatebako_custom_css_customize_register( $wp_customize ){
 
-	/* Add Panel: for larger area */
-	$wp_customize->add_panel(
-		'custom_css',
-		array(
-			'priority'    => 200,
-			'title'       => esc_html( tamatebako_string( 'custom_css' ) ),
-		)
-	);
-
 	/* Add Section */
 	$wp_customize->add_section(
 		'custom_css',
 		array(
-			'title'       => esc_html( tamatebako_string( 'custom_css' ) ),
-			'panel'       => 'custom_css',
+			'title' => esc_html( tamatebako_string( 'custom_css' ) ),
 		)
 	);
 
