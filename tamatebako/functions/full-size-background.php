@@ -17,7 +17,8 @@ function tamatebako_full_size_background_args(){
 
 	/* Default Args */
 	$defaults_args = array( 
-		'label' => 'Full Size Background',
+		'label'            => 'Full Size Background',
+		'wp-head-callback' => 'tamatebako_full_size_background_wp_head',
 	);
 
 	/* Logo Args. */
@@ -58,7 +59,6 @@ add_action( 'body_class', 'tamatebako_full_size_background_body_class' );
 
 /**
  * Add body class for full width background
- * CSS implementation included in reset.css
  */
 function tamatebako_full_size_background_body_class( $classes ){
 
@@ -68,4 +68,23 @@ function tamatebako_full_size_background_body_class( $classes ){
 	}
 
 	return $classes;
+}
+
+/* WP Head */
+if( tamatebako_full_size_background_args()['wp-head-callback'] ){
+	add_action( 'wp_head', tamatebako_full_size_background_args()['wp-head-callback'], 20 );
+}
+
+/**
+ * WP Head Print CSS
+ */
+function tamatebako_full_size_background_wp_head(){
+?>
+<style type="text/css" id="full-size-background-css">
+body.full-size-background{
+	background-size: cover;
+	background-attachment: fixed;
+}
+</style>
+<?php
 }

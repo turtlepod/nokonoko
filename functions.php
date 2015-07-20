@@ -170,7 +170,8 @@ function nokonoko_theme_setup(){
 
 	/* Full Size Background (Cover) */
 	$full_size_bg_args = array(
-		'label' => _x( 'Full Size Background', 'customizer', 'nokonoko' ),
+		'label'                  => _x( 'Full Size Background', 'customizer', 'nokonoko' ),
+		//'wp-head-callback'       => 'tamatebako_full_size_background_wp_head',
 	);
 	add_theme_support( 'tamatebako-full-size-background', $full_size_bg_args );
 
