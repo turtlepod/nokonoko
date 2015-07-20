@@ -124,7 +124,7 @@ function tamatebako_entry_nav(){
  * @since 0.1.0
  */
 function tamatebako_read_more() {
-	$string = tamatebako_string( 'read-more' );
+	$string = tamatebako_string( 'read_more' );
 	$read_more = '';
 	if ( !empty( $string ) ){
 		$read_more = '<span class="more-link-wrap"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span></a></span>';
