@@ -36,11 +36,6 @@ function tamatebako_strings(){
 	/* Open sesame! */
 	$texts = array(
 
-		/* layouts */
-		'default' => 'Default',
-		'layout' => 'Layout',
-		'global_layout' => 'Global Layout',
-
 		/* template/accessibility.php */
 		'skip_to_content' => 'Skip to content',
 

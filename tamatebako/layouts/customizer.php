@@ -19,7 +19,7 @@ function tamatebako_layouts_customizer_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'layout',
 		array(
-			'title' => esc_html( tamatebako_string( 'layout' ) ),
+			'title' => esc_html( tamatebako_layouts_string( 'layout' ) ),
 		)
 	);
 

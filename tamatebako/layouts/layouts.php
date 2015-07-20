@@ -63,6 +63,31 @@ function tamatebako_layouts_args() {
 }
 
 /**
+ * Texts String Used in Layouts Feature
+ */
+function tamatebako_layouts_strings(){
+	$defaults = array( 
+		'default'       => 'Default',
+		'layout'        => 'Layout',
+		'global_layout' => 'Global Layout',
+	);
+	$layouts = tamatebako_theme_layouts();
+	$args = isset( $layouts[2] ) ? $layouts[2] : array();
+	return wp_parse_args( $args, $defaults );
+}
+
+/**
+ * Get String
+ */
+function tamatebako_layouts_string( $context ){
+	$strings = tamatebako_layouts_strings();
+	if ( isset( $strings[$context] ) ){
+		return $strings[$context];
+	}
+	return $context;
+}
+
+/**
  * Default Layout
  */
 function tamatebako_layout_default( $return = 'slug' ){
