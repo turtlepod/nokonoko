@@ -61,6 +61,6 @@ function tamatebako_register_css(){
 				esc_attr( $script_args['media'] )
 			);
 		}
-
-	}
+	} // end foreach
 }
+

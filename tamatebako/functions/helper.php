@@ -63,6 +63,19 @@ function tamatebako_theme_version(){
 	return $theme->get( 'Version' );
 }
 
+/**
+ * Helper Function: Get (child) theme version
+ * This function is to properly add version number to scripts and styles.
+ * @since 0.1.0
+ */
+function tamatebako_child_theme_version(){
+	if( is_child_theme() ){
+		$theme = wp_get_theme( get_stylesheet() );
+		return $theme->get( 'Version' );
+	}
+	return tamatebako_theme_version();
+}
+
 
 /**
  * Get parent theme assets file.

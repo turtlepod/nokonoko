@@ -1,0 +1,217 @@
+# Copyright (C) 2014 David Chandra Purnama
+# This file is distributed under the GNU General Public License v2.0 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Theme\n"
+"Report-Msgid-Bugs-To: http://genbu.me/contact/\n"
+"POT-Creation-Date: 2015-07-21 15:10+0700\n"
+"PO-Revision-Date: 2015-07-21 15:10+0700\n"
+"Last-Translator: David Chandra Purnama <david@shellcreeper.com>\n"
+"Language-Team: \n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_attr__;esc_html_e;esc_html__;"
+"__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;"
+"_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/background.php:16
+msgctxt "customizer"
+msgid "Full Size Background"
+msgstr "Latar Belakang Ukuran Penuh"
+
+#: includes/layouts.php:9
+msgctxt "sidebar name"
+msgid "Primary Sidebar"
+msgstr "Sidebar Primer"
+
+#: includes/layouts.php:10
+msgctxt "sidebar name"
+msgid "Secondary Sidebar"
+msgstr "Sidebar Sekunder"
+
+#: includes/layouts.php:18
+msgctxt "nav menu name"
+msgid "Navigation"
+msgstr "Navigasi"
+
+#: includes/layouts.php:19
+msgctxt "nav menu name"
+msgid "Footer Links"
+msgstr "Tautan Kaki Halaman"
+
+#: includes/layouts.php:40
+msgctxt "layout name"
+msgid "Content"
+msgstr "Konten"
+
+#: includes/layouts.php:45
+msgctxt "layout name"
+msgid "Content | Sidebar 1"
+msgstr "Konten | Sidebar 1"
+
+#: includes/layouts.php:49
+msgctxt "layout name"
+msgid "Sidebar 1 | Content"
+msgstr "Sidebar 1 | Konten"
+
+#: includes/layouts.php:53
+msgctxt "layout name"
+msgid "Content | Sidebar 2"
+msgstr "Konten | Sidebar 2"
+
+#: includes/layouts.php:57
+msgctxt "layout name"
+msgid "Sidebar 2 | Content"
+msgstr "Sidebar 2 | Konten"
+
+#: includes/layouts.php:62
+msgctxt "layout name"
+msgid "Sidebar 2 | Content | Sidebar 1"
+msgstr "Sidebar 2 | Konten | Sidebar 1"
+
+#: includes/layouts.php:66
+msgctxt "layout name"
+msgid "Sidebar 2 | Sidebar 1 | Content"
+msgstr "Sidebar 2 | Sidebar 1 | Konten"
+
+#: includes/layouts.php:70
+msgctxt "layout name"
+msgid "Content | Sidebar 1 | Sidebar 2"
+msgstr "Konten | Sidebar 1 | Sidebar 2"
+
+#: includes/layouts.php:74
+msgctxt "layout name"
+msgid "Sidebar 1 | Content | Sidebar 2"
+msgstr "Sidebar 1 | Konten | Sidebar 2"
+
+#: includes/layouts.php:86
+msgctxt "layout"
+msgid "Default"
+msgstr "Default"
+
+#: includes/layouts.php:87
+msgctxt "layout"
+msgid "Layout"
+msgstr "Layout"
+
+#: includes/layouts.php:88
+msgctxt "layout"
+msgid "Global Layout"
+msgstr "Layout Global"
+
+#: includes/logo.php:13
+msgctxt "customizer"
+msgid "Logo"
+msgstr "Logo"
+
+#: includes/logo.php:14
+msgctxt "customizer"
+msgid ""
+"This will replace site title with logo in header area. Recommended size is "
+"300px wide and 200px tall."
+msgstr ""
+"Logo akan menggantikan judul situs di area kepala halaman. Ukuran yang "
+"direkomendasikan adalah lebar 300px dan tinggi 200px."
+
+#: includes/translation.php:13
+msgctxt "accessibility"
+msgid "Skip to content"
+msgstr "Loncat ke konten"
+
+#: includes/translation.php:16
+msgctxt "pagination"
+msgid "Next"
+msgstr "Berikutnya"
+
+#: includes/translation.php:17
+msgctxt "pagination"
+msgid "Previous"
+msgstr "Sebelumnya"
+
+#: includes/translation.php:18
+msgctxt "archive title"
+msgid "Search results for"
+msgstr "Hasil pencarian untuk"
+
+#: includes/translation.php:21
+msgctxt "nav menu"
+msgid "Search&hellip;"
+msgstr "Cari&hellip;"
+
+#: includes/translation.php:22
+msgctxt "nav menu"
+msgid "Search"
+msgstr "Cari"
+
+#: includes/translation.php:23
+msgctxt "nav menu"
+msgid "Expand Search Form"
+msgstr "Buka Formulir Pencarian"
+
+#: includes/translation.php:26
+msgctxt "entry"
+msgid "404 Not Found"
+msgstr "404 Tidak Ditemukan"
+
+#: includes/translation.php:27
+msgctxt "entry"
+msgid "Apologies, but no entries were found."
+msgstr "Maaf, tidak ada entri ditemukan."
+
+#: includes/translation.php:28
+msgctxt "entry"
+msgid "Next"
+msgstr "Berikutnya"
+
+#: includes/translation.php:29
+msgctxt "entry"
+msgid "Previous"
+msgstr "Sebelumnya"
+
+#: includes/translation.php:30
+msgctxt "entry"
+msgid "Permalink"
+msgstr "Permalink"
+
+#: includes/translation.php:33
+msgctxt "comment"
+msgid "Next"
+msgstr "Berikutnya"
+
+#: includes/translation.php:34
+msgctxt "comment"
+msgid "Previous"
+msgstr "Sebelumnya"
+
+#: includes/translation.php:35
+msgctxt "comment"
+msgid "Comments are closed, but trackbacks and pingbacks are open."
+msgstr "Komentar ditutup, tapi pelacakan dan ping dibuka."
+
+#: includes/translation.php:36
+msgctxt "comment"
+msgid "Comments are closed."
+msgstr "Komentar ditutup."
+
+#: includes/translation.php:39
+msgctxt "entry"
+msgid "(Untitled)"
+msgstr "(Tanpa Judul)"
+
+#: includes/translation.php:40
+msgctxt "entry"
+msgid "Read More"
+msgstr "Baca Selengkapnya"
+
+#: includes/utility.php:11 includes/utility.php:12
+msgctxt "customizer"
+msgid "Custom CSS"
+msgstr "CSS Kustom"

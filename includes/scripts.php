@@ -82,6 +82,8 @@ $register_js_scripts = array(
 	"child-theme-js" => array(
 		'src'        => tamatebako_child_theme_file( 'assets/js/child-theme', 'js' ),
 		'deps'       => array( 'jquery' ),
+		'ver'        => tamatebako_child_theme_version(),
+		'in_footer'  => true,
 	),
 );
 add_theme_support( 'tamatebako-register-js', $register_js_scripts );
@@ -123,7 +125,6 @@ $register_css_scripts = array(
 	"debug-media-queries" => array(
 		'src'   => tamatebako_theme_file( 'assets/css/debug-media-queries', 'css' ),
 	),
-	/* Main Stylesheet */
 	"style" => array(
 		'src'   => tamatebako_theme_file( 'style', 'css' ),
 		'deps'  => array(),
@@ -132,6 +133,9 @@ $register_css_scripts = array(
 	),
 	"child" => array(
 		'src'   => tamatebako_child_theme_file( 'style', 'css' ),
+		'deps'  => array(),
+		'ver'   => tamatebako_child_theme_version(),
+		'media' => 'all',
 	),
 );
 add_theme_support( 'tamatebako-register-css', $register_css_scripts );

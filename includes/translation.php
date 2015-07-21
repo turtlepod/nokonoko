@@ -4,7 +4,7 @@
 **/
 
 /* Load Text Domain */
-load_theme_textdomain( 'nokonoko', get_template_directory() . '/languages' );
+load_theme_textdomain( 'nokonoko', get_template_directory() . '/assets/languages' );
 
 /* Make all string in the framework translatable. */
 $texts = array(
