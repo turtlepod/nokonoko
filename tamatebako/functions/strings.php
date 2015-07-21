@@ -36,27 +36,27 @@ function tamatebako_strings(){
 	/* Open sesame! */
 	$texts = array(
 
-		/* template/accessibility.php */
+		/* functions/template/accessibility.php */
 		'skip_to_content' => 'Skip to content',
 
-		/* template/general.php */
+		/* functions/template/general.php */
 		'next_posts' => 'Next',
 		'previous_posts' => 'Previous',
 		'search_title_prefix' => 'Search results for',
 
-		/* template/menu.php */
+		/* functions/template/menu.php */
 		'menu_search_placeholder' => 'Search&hellip,',
 		'menu_search_button' => 'Search',
 		'menu_search_form_toggle' => 'Expand Search Form',
 
-		/* template/content.php */
+		/* functions/template/content.php */
 		'error_title' => '404 Not Found',
 		'error_message' => 'Apologies, but no entries were found.',
 		'next_post' => 'Next',
 		'previous_post' => 'Previous',
 		'permalink' => 'Permalink',
 
-		/* template/comment.php */
+		/* functions/template/comment.php */
 		'next_comment' => 'Next',
 		'previous_comment' => 'Previous',
 		'comments_closed_pings_open' => 'Comments are closed, but trackbacks and pingbacks are open.',

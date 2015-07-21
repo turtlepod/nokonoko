@@ -13,7 +13,7 @@ add_action( 'customize_register', 'tamatebako_layouts_customizer_register' );
 function tamatebako_layouts_customizer_register( $wp_customize ) {
 
 	/* Load Layout Customizer Class */
-	tamatebako_include( 'layouts/customizer-control' );
+	tamatebako_include( 'modules/layouts/customizer-control' );
 
 	/* Add the layout section. */
 	$wp_customize->add_section(

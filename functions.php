@@ -28,35 +28,35 @@ function nokonoko_theme_setup(){
 	/* Make all string in the framework translatable. */
 	$texts = array(
 
-		/* template/accessibility.php */
-		'skip_to_content' => _x( 'Skip to content', 'accessibility', 'nokonoko' ),
+		/* functions/template/accessibility.php */
+		'skip_to_content'             => _x( 'Skip to content', 'accessibility', 'nokonoko' ),
 
-		/* template/general.php */
-		'next_posts' => _x( 'Next', 'pagination', 'nokonoko' ),
-		'previous_posts' => _x( 'Previous', 'pagination', 'nokonoko' ),
-		'search_title_prefix' => _x( 'Search results for', 'archive title', 'nokonoko' ),
+		/* functions/template/general.php */
+		'next_posts'                  => _x( 'Next', 'pagination', 'nokonoko' ),
+		'previous_posts'              => _x( 'Previous', 'pagination', 'nokonoko' ),
+		'search_title_prefix'         => _x( 'Search results for', 'archive title', 'nokonoko' ),
 
-		/* template/menu.php */
-		'menu_search_placeholder' => _x( 'Search&hellip;', 'nav menu', 'nokonoko' ),
-		'menu_search_button' => _x( 'Search', 'nav menu', 'nokonoko' ),
-		'menu_search_form_toggle' => _x( 'Expand Search Form', 'nav menu', 'nokonoko' ),
+		/* functions/template/menu.php */
+		'menu_search_placeholder'     => _x( 'Search&hellip;', 'nav menu', 'nokonoko' ),
+		'menu_search_button'          => _x( 'Search', 'nav menu', 'nokonoko' ),
+		'menu_search_form_toggle'     => _x( 'Expand Search Form', 'nav menu', 'nokonoko' ),
 
-		/* template/entry.php */
-		'error_title' => _x( '404 Not Found', 'entry', 'nokonoko' ),
-		'error_message' => _x( 'Apologies, but no entries were found.', 'entry', 'nokonoko' ),
-		'next_post' => _x( 'Next', 'entry', 'nokonoko' ),
-		'previous_post' => _x( 'Previous', 'entry', 'nokonoko' ),
-		'permalink' => _x( 'Permalink', 'entry', 'nokonoko' ),
+		/* functions/template/entry.php */
+		'error_title'                 => _x( '404 Not Found', 'entry', 'nokonoko' ),
+		'error_message'               => _x( 'Apologies, but no entries were found.', 'entry', 'nokonoko' ),
+		'next_post'                   => _x( 'Next', 'entry', 'nokonoko' ),
+		'previous_post'               => _x( 'Previous', 'entry', 'nokonoko' ),
+		'permalink'                   => _x( 'Permalink', 'entry', 'nokonoko' ),
 
-		/* template/comment.php */
-		'next_comment' => _x( 'Next', 'comment', 'nokonoko' ),
-		'previous_comment' => _x( 'Previous', 'comment', 'nokonoko' ),
-		'comments_closed_pings_open' => _x( 'Comments are closed, but trackbacks and pingbacks are open.', 'comment', 'nokonoko' ),
-		'comments_closed' => _x( 'Comments are closed.', 'comment', 'nokonoko' ),
+		/* functions/template/comment.php */
+		'next_comment'                => _x( 'Next', 'comment', 'nokonoko' ),
+		'previous_comment'            => _x( 'Previous', 'comment', 'nokonoko' ),
+		'comments_closed_pings_open'  => _x( 'Comments are closed, but trackbacks and pingbacks are open.', 'comment', 'nokonoko' ),
+		'comments_closed'             => _x( 'Comments are closed.', 'comment', 'nokonoko' ),
 
 		/* functions/setup.php */
-		'untitled' => _x( '(Untitled)', 'entry', 'nokonoko' ),
-		'read_more' => _x( 'Read More', 'entry', 'nokonoko' ),
+		'untitled'                    => _x( '(Untitled)', 'entry', 'nokonoko' ),
+		'read_more'                   => _x( 'Read More', 'entry', 'nokonoko' ),
 
 	);
 
@@ -98,19 +98,19 @@ function nokonoko_theme_setup(){
 			'thumbnail'     => $image_dir . 'layout-content.png',
 		),
 		/* Two Columns */
-		'content-sidebar1' => array(
+		'content-sidebar1'  => array(
 			'name'          => _x( 'Content | Sidebar 1', 'layout name', 'nokonoko' ),
 			'thumbnail'     => $image_dir . 'layout-content-sidebar1.png',
 		),
-		'sidebar1-content' => array(
+		'sidebar1-content'  => array(
 			'name'          => _x( 'Sidebar 1 | Content', 'layout name', 'nokonoko' ),
 			'thumbnail'     => $image_dir . 'layout-sidebar1-content.png',
 		),
-		'content-sidebar2' => array(
+		'content-sidebar2'  => array(
 			'name'          => _x( 'Content | Sidebar 2', 'layout name', 'nokonoko' ),
 			'thumbnail'     => $image_dir . 'layout-content-sidebar2.png',
 		),
-		'sidebar2-content' => array(
+		'sidebar2-content'  => array(
 			'name'          => _x( 'Sidebar 2 | Content', 'layout name', 'nokonoko' ),
 			'thumbnail'     => $image_dir . 'layout-sidebar2-content.png',
 		),
@@ -133,22 +133,22 @@ function nokonoko_theme_setup(){
 		),
 	);
 	$layouts_args = array(
-		'default'     => 'sidebar2-content-sidebar1',
-		'customize'   => true,
-		'post_meta'   => true,
-		'post_types'  => array( 'post' ),
-		'thumbnail'   => true,
+		'default'           => 'sidebar2-content-sidebar1',
+		'customize'         => true,
+		'post_meta'         => true,
+		'post_types'        => array( 'post' ),
+		'thumbnail'         => true,
 	);
 	$layouts_strings = array(
-		'default' => _x( 'Default', 'layout', 'nokonoko' ),
-		'layout' => _x( 'Layout', 'layout', 'nokonoko' ),
-		'global_layout' => _x( 'Global Layout', 'layout', 'nokonoko' ),
+		'default'           => _x( 'Default', 'layout', 'nokonoko' ),
+		'layout'            => _x( 'Layout', 'layout', 'nokonoko' ),
+		'global_layout'     => _x( 'Global Layout', 'layout', 'nokonoko' ),
 	);
 	add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args, $layouts_strings );
 
 	/* === Tamatebako: Register Sidebars === */
 	$sidebars_args = array(
-		"primary" => array( "name" => _x( 'Primary Sidebar', 'sidebar name', 'nokonoko' ), "description" => "" ),
+		"primary"   => array( "name" => _x( 'Primary Sidebar', 'sidebar name', 'nokonoko' ), "description" => "" ),
 		"secondary" => array( "name" => _x( 'Secondary Sidebar', 'sidebar name', 'nokonoko' ), "description" => "" ),
 	);
 	add_theme_support( 'tamatebako-sidebars', $sidebars_args );
@@ -317,4 +317,5 @@ function nokonoko_theme_setup(){
 	add_theme_support( 'tamatebako-custom-css', $custom_css_args );
 }
 
-do_action( 'tamatebako_after_theme_setup' );
+do_action( 'tamatebako_after_setup' );
+do_action( 'tamatebako_after_setup_theme' );
