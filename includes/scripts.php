@@ -39,6 +39,7 @@ function nokonoko_scripts(){
 	/* == CSS == */
 	wp_enqueue_style( 'theme-open-sans-font' );
 	wp_enqueue_style( 'dashicons' );
+	//wp_enqueue_style( 'theme-genericons' );
 	$dev = true;
 	if ( isset( $dev ) && $dev ){
 		wp_enqueue_style( 'theme-reset' );
@@ -71,7 +72,7 @@ $register_js_scripts = array(
 		'src'        => tamatebako_theme_file( 'assets/js/imagesloaded', 'js' ),
 	),
 	"theme-flexslider" => array(
-		'src'        => tamatebako_theme_file( 'assets/js/flexslider', 'js' ),
+		'src'        => tamatebako_theme_file( 'assets/flexslider/jquery.flexslider', 'js' ),
 		'deps'       => array( 'jquery' ),
 	),
 	"theme-fitvids" => array(
@@ -102,10 +103,10 @@ $register_css_scripts = array(
 		'src'   => add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
 	),
 	"theme-flexslider" => array(
-		'src'   => tamatebako_theme_file( 'assets/flexslider', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/flexslider/flexslider', 'css' ),
 	),
 	"theme-genericons" => array(
-		'src'   => tamatebako_theme_file( 'assets/genericons', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/genericons/genericons', 'css' ),
 	),
 	"theme-reset" => array(
 		'src'   => tamatebako_theme_file( 'assets/css/reset', 'css' ),
