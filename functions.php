@@ -15,7 +15,7 @@ if( ! function_exists( 'get_the_image' ) ){
 add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
 
 /**
- * General Setup
+ * Setup
  */
 function nokonoko_theme_setup(){
 
@@ -318,4 +318,3 @@ function nokonoko_theme_setup(){
 }
 
 do_action( 'tamatebako_after_setup' );
-do_action( 'tamatebako_after_setup_theme' );
