@@ -49,8 +49,8 @@ function nokonoko_scripts(){
 
 $editor_css = array(
 	add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
-	'css/reset.min.css',
-	'css/editor.css'
+	'assets/css/reset.min.css',
+	'assets/css/editor.css'
 );
 add_editor_style( $editor_css );
 
