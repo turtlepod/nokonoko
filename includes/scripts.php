@@ -2,35 +2,48 @@
 /**
  * Scripts Setup
 **/
+add_action( 'wp_enqueue_scripts', 'nokonoko_scripts' );
 
-/* === ENQUEUE JS === */
+/**
+ * Enqueue Scripts
+ */
+function nokonoko_scripts(){
 
-$enqueue_js_scripts = array(
-	"theme-fitvids"              => array( 'registered' => true ),
-	"theme-js"                   => array( 'registered' => true ),
-	"child-theme-js"             => array( 'registered' => true ),
-);
-add_theme_support( 'tamatebako-enqueue-js', $enqueue_js_scripts );
+	/* == CONDITIONAL == */
+	if( !is_singular() ){
+		//wp_enqueue_script( 'masonry' );
+		//wp_enqueue_style( 'masonry' );
+		//wp_enqueue_script( 'theme-imagesloaded' );
+		//wp_enqueue_script( 'theme-webfontloader' );
+	}
+	if( is_page() && is_front_page() ){
+		//wp_enqueue_script( 'theme-flexslider' );
+		//wp_enqueue_style( 'theme-flexslider' );
+	}
 
+	/* == JS == */
+	wp_enqueue_script( 'theme-fitvids' );
+	wp_enqueue_script( 'theme-js' );
 
-/* === ENQUEUE CSS === */
+	/* == CSS == */
+	wp_enqueue_style( 'theme-open-sans-font' );
+	wp_enqueue_style( 'dashicons' );
+	$debug = true;
+	if ( isset( $debug ) && $debug ){
+		wp_enqueue_style( 'theme-reset' );
+		wp_enqueue_style( 'theme-menus' );
+		wp_enqueue_style( 'theme-layouts' );
+		wp_enqueue_style( 'theme-comments' );
+		wp_enqueue_style( 'theme' );
+		wp_enqueue_style( 'media-queries' );
+		wp_enqueue_style( 'debug-media-queries' );
+	}
+	else{
+		wp_enqueue_style( 'style' );
+	}
+	if( is_child_theme() ) wp_enqueue_style( 'child' );
+}
 
-$enqueue_css_scripts = array(
-	"theme-open-sans-font"       => array( 'registered' => true ),
-	//"theme-merriweather-font"    => array( 'registered' => true ),
-	"dashicons"                  => array( 'registered' => true ),
-	"theme-reset"                => array( 'registered' => true ),
-	"theme-layouts"              => array( 'registered' => true ),
-	"theme-menus"                => array( 'registered' => true ),
-	"theme-comments"             => array( 'registered' => true ),
-	"theme-widgets"              => array( 'registered' => true ),
-	"theme"                      => array( 'registered' => true ),
-	"media-queries"              => array( 'registered' => true ),
-	//"debug-media-queries"        => array( 'registered' => true ),
-	//"style"                      => array( 'registered' => true ),
-	"child"                      => array( 'registered' => true ),
-);
-add_theme_support( 'tamatebako-enqueue-css', $enqueue_css_scripts );
 
 /* === EDITOR STYLE === */
 
@@ -46,26 +59,29 @@ add_editor_style( $editor_css );
 
 $register_js_scripts = array(
 	"theme-webfontloader" => array(
-		'src' => tamatebako_theme_file( 'js/webfontloader', 'js' ),
+		'src'        => tamatebako_theme_file( 'assets/js/webfontloader', 'js' ),
 	),
 	"theme-imagesloaded" => array(
-		'src' => tamatebako_theme_file( 'js/imagesloaded', 'js' ),
+		'src'        => tamatebako_theme_file( 'assets/js/imagesloaded', 'js' ),
 	),
 	"theme-flexslider" => array(
-		'src' => tamatebako_theme_file( 'js/flexslider', 'js' ),
-		'deps'=> array( 'jquery' ),
+		'src'        => tamatebako_theme_file( 'assets/js/flexslider', 'js' ),
+		'deps'       => array( 'jquery' ),
 	),
 	"theme-fitvids" => array(
-		'src' => tamatebako_theme_file( 'js/fitvids', 'js' ),
-		'deps'=> array( 'jquery' ),
+		'src'        => tamatebako_theme_file( 'assets/js/fitvids', 'js' ),
+		'deps'       => array( 'jquery' ),
 	),
+	/* Theme */
 	"theme-js" => array(
-		'src' => tamatebako_theme_file( 'js/theme', 'js' ),
-		'deps'=> array( 'jquery', 'theme-fitvids' ),
+		'src'        => tamatebako_theme_file( 'assets/js/theme', 'js' ),
+		'deps'       => array( 'jquery', 'theme-fitvids' ),
+		'ver'        => tamatebako_theme_version(),
+		'in_footer'  => true,
 	),
 	"child-theme-js" => array(
-		'src' => tamatebako_child_theme_file( 'js/child-theme', 'js' ),
-		'deps'=> array( 'jquery' ),
+		'src'        => tamatebako_child_theme_file( 'assets/js/child-theme', 'js' ),
+		'deps'       => array( 'jquery' ),
 	),
 );
 add_theme_support( 'tamatebako-register-js', $register_js_scripts );
@@ -75,45 +91,47 @@ add_theme_support( 'tamatebako-register-js', $register_js_scripts );
 
 $register_css_scripts = array(
 	"theme-open-sans-font" => array(
-		'src' => add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
-	),
-	"theme-merriweather-font" => array(
-		'src' => add_query_arg( 'family', urlencode( 'Merriweather:400,300italic,300,400italic,700,700italic,900,900italic' ), "//fonts.googleapis.com/css" ),
+		'src'   => add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
 	),
 	"theme-flexslider" => array(
-		'src' => tamatebako_theme_file( 'css/flexslider', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/flexslider', 'css' ),
+	),
+	"theme-flexslider" => array(
+		'src'   => tamatebako_theme_file( 'assets/css/genericons', 'css' ),
 	),
 	"theme-reset" => array(
-		'src' => tamatebako_theme_file( 'css/reset', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/reset', 'css' ),
 	),
 	"theme-layouts" => array(
-		'src' => tamatebako_theme_file( 'css/layouts', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/layouts', 'css' ),
 	),
 	"theme-menus" => array(
-		'src' => tamatebako_theme_file( 'css/menus', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/menus', 'css' ),
 	),
 	"theme-comments" => array(
-		'src' => tamatebako_theme_file( 'css/comments', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/comments', 'css' ),
 	),
 	"theme-widgets" => array(
-		'src' => tamatebako_theme_file( 'css/widgets', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/widgets', 'css' ),
 	),
 	"theme" => array(
-		'src' => tamatebako_theme_file( 'css/theme', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/theme', 'css' ),
 	),
 	"media-queries" => array(
-		'src' => tamatebako_theme_file( 'css/media-queries', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/media-queries', 'css' ),
 	),
 	"debug-media-queries" => array(
-		'src' => tamatebako_theme_file( 'css/debug-media-queries', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/css/debug-media-queries', 'css' ),
 	),
+	/* Main Stylesheet */
 	"style" => array(
-		'src' => tamatebako_theme_file( 'style', 'css' ),
+		'src'   => tamatebako_theme_file( 'style', 'css' ),
+		'deps'  => array(),
+		'ver'   => tamatebako_theme_version(),
+		'media' => 'all',
 	),
 	"child" => array(
-		'src' => tamatebako_child_theme_file( 'style', 'css' ),
+		'src'   => tamatebako_child_theme_file( 'style', 'css' ),
 	),
 );
 add_theme_support( 'tamatebako-register-css', $register_css_scripts );
-
-

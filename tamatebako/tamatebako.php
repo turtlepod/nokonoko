@@ -122,7 +122,7 @@ function tamatebako_load_theme_support(){
 	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-js', 'modules/scripts/enqueue-js' );
 
 	/* Register Style (CSS) */
-	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-css', 'modules/scripts/register-css' );
+	tamatebako_require_if_theme_supports( 'tamatebako-register-css', 'modules/scripts/register-css' );
 
 	/* Enqueue Style (CSS) */
 	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-css', 'modules/scripts/enqueue-css' );

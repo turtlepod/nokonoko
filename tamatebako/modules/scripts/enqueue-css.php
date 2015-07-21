@@ -14,13 +14,13 @@ add_action( 'after_setup_theme', 'tamatebako_enqueue_css_setup', 20 );
  */
 function tamatebako_enqueue_css_setup(){
 
-	/* Register Sidebars */
+	/* Enqueue CSS */
 	add_action( 'wp_enqueue_scripts', 'tamatebako_enqueue_css' );
 }
 
 
 /**
- * Enqueue JS
+ * Enqueue CSS
  * @since 3.0.0
  */
 function tamatebako_enqueue_css(){

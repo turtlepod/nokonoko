@@ -26,11 +26,11 @@ function nokonoko_theme_setup(){
 	/* === TRANSLATION === */
 	require_once( $includes . 'translation.php' );
 
-	/* === LAYOUTS === */
-	require_once( $includes . 'layouts.php' );
-
 	/* === SCRIPTS === */
 	require_once( $includes . 'scripts.php' );
+
+	/* === LAYOUTS === */
+	require_once( $includes . 'layouts.php' );
 
 	/* === BACKGROUND === */
 	require_once( $includes . 'background.php' );
@@ -46,7 +46,6 @@ function nokonoko_theme_setup(){
 
 	/* === POST FORMATS === */
 	require_once( $includes . 'post-formats.php' );
-
 }
 
 do_action( 'tamatebako_after_setup' );

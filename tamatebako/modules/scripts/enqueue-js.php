@@ -14,7 +14,7 @@ add_action( 'after_setup_theme', 'tamatebako_enqueue_js_setup', 20 );
  */
 function tamatebako_enqueue_js_setup(){
 
-	/* Register Sidebars */
+	/* Enqueue JS */
 	add_action( 'wp_enqueue_scripts', 'tamatebako_enqueue_js' );
 }
 

@@ -9,3 +9,24 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
+/* "theme-reset" */
+@import url( "assets/css/reset.css" );
+
+/* "theme-layouts" */
+@import url( "assets/css/layouts.css" );
+
+/* "theme-menus" */
+@import url( "assets/css/menus.css" );
+
+/* "theme-comments" */
+@import url( "assets/css/comments.css" );
+
+/* "theme-widgets" */
+@import url( "assets/css/widgets.css" );
+
+/* "theme" */
+@import url( "assets/css/theme.css" );
+
+/* "media-queries" */
+@import url( "css/media-queries.css" );
+
