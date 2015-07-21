@@ -1,5 +1,17 @@
 <?php
 /**
+ * Load Strings To Global Object.
+ * Need to be added in setup function.
+ * @since 3.0.0
+ */
+function tamatebako_load_strings( $texts ){
+	global $tamatebako;
+	foreach( $texts as $text_key => $text ){
+		$tamatebako->strings[$text_key] = $text;
+	}
+}
+
+/**
  * Texts string / translatable string used in tamatebako.
  * To make this string translatable, theme need to filter it using "tamatebako_strings",
  * and wrap it using translation functions.

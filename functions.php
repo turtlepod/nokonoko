@@ -19,10 +19,9 @@ add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
  */
 function nokonoko_theme_setup(){
 
-	/* Tamatebako */
-	global $tamatebako;
+	/* === TRANSLATION === */
 
-	/* === Translation === */
+	/* Load Text Domain */
 	load_theme_textdomain( 'nokonoko', get_template_directory() . '/languages' );
 
 	/* Make all string in the framework translatable. */
@@ -61,11 +60,11 @@ function nokonoko_theme_setup(){
 	);
 
 	/* Add text to tamatebako */
-	foreach( $texts as $text_key => $text ){
-		$tamatebako->strings[$text_key] = $text;
-	}
+	tamatebako_load_strings( $texts );
 
-	/* === Post Formats === */
+
+	/* === POST FORMATS === */
+
 	$post_formats_args = array(
 		'aside',
 		'image',
@@ -79,17 +78,17 @@ function nokonoko_theme_setup(){
 	);
 	add_theme_support( 'post-formats', $post_formats_args );
 
-	/* === Tamatebako: Customizer Mobile View === */
-	add_theme_support( 'tamatebako-customize-mobile-view' );
 
-	/* === Maximum Content Width === */
+	/* === LAYOUTS === */
+
+	/* Maximum Content Width */
 	$GLOBALS['content_width'] = 1100;
 
 	/* === Thumbnail Size === */
 	//add_image_size( 'theme-thumbnail', 300, 200, true );
 	//set_post_thumbnail_size( 200, 200, true );
 
-	/* === Tamatebako: Theme Layouts === */
+	/* === Theme Layouts === */
 	$image_dir = get_template_directory_uri() . '/images/layouts/';
 	$layouts = array(
 		/* One Column */
@@ -308,6 +307,9 @@ function nokonoko_theme_setup(){
 		'css/editor.css'
 	);
 	add_editor_style( $editor_css );
+
+	/* === Tamatebako: Customizer Mobile View === */
+	add_theme_support( 'tamatebako-customize-mobile-view' );
 
 	/* === CUSTOM CSS === */
 	$custom_css_args = array(
