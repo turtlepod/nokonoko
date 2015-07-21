@@ -22,11 +22,6 @@ jQuery( document ).ready( function($) {
 		$( "body" ).removeClass( "wp-is-mobile" ).addClass( "wp-is-not-mobile" );
 	}
 
-	/* = Mobile Debug Mode, force using "wp-is-mobile" class = */
-	if ( $("body").hasClass( "tamatebako-debug-mobile" ) ){
-		$("body").removeClass("wp-is-not-mobile").addClass("wp-is-mobile");
-	}
-
 	/* == Menu Toggle == */
 	$( '.menu-dropdown' ).find( 'a' ).on( 'focus blur', function() {
 		$( this ).parents().toggleClass( 'focus' );
@@ -40,11 +35,9 @@ jQuery( document ).ready( function($) {
 	if ( ( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
 		window.addEventListener( 'hashchange', function() {
 			var element = document.getElementById( location.hash.substring( 1 ) );
-
 			if ( element ) {
 				if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) )
 					element.tabIndex = -1;
-
 				element.focus();
 			}
 		}, false );
