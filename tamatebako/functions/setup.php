@@ -75,8 +75,9 @@ function tamatebako_wp_head_meta_viewport() {
  * @author Justin Tadlock <justintadlock@gmail.com>
  */
 function tamatebako_wp_head_link_pingback() {
-	if ( 'open' === get_option( 'default_ping_status' ) )
+	if ( 'open' === get_option( 'default_ping_status' ) ){
 		printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
+	}
 }
 
 

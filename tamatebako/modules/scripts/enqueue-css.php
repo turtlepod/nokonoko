@@ -9,7 +9,7 @@ add_action( 'after_setup_theme', 'tamatebako_enqueue_css_setup', 20 );
 
 
 /**
- * Register Sidebar Setup.
+ * Enqueue CSS Setup.
  * @since 3.0.0
  */
 function tamatebako_enqueue_css_setup(){
@@ -25,7 +25,7 @@ function tamatebako_enqueue_css_setup(){
  */
 function tamatebako_enqueue_css(){
 
-	/* Get theme-supported sidebars. */
+	/* Get CSS. */
 	$scripts = get_theme_support( 'tamatebako-enqueue-css' );
 
 	/* No Support, Return */
@@ -36,7 +36,7 @@ function tamatebako_enqueue_css(){
 	/* Foreach scrips, enqueue it */
 	foreach( $scripts[0] as $script_handle => $script_args ){
 
-		/* Add Sidebar ID */
+		/* Add Handle */
 		$script_args['handle'] = $script_handle;
 
 		/* Defaults */

@@ -9,13 +9,29 @@ add_action( 'after_setup_theme', 'tamatebako_register_css_setup', 20 );
 
 
 /**
- * Register Sidebar Setup.
+ * Register CSS Setup.
  * @since 3.0.0
  */
 function tamatebako_register_css_setup(){
 
+	/* Stylesheet URI */
+	add_filter( 'stylesheet_uri', 'tamatebako_stylesheet_uri', 5 );
+
 	/* Register CSS */
 	add_action( 'wp_enqueue_scripts', 'tamatebako_register_css', 1 );
+}
+
+
+/**
+ * Current Active Theme Stylesheet URI
+ */
+function tamatebako_stylesheet_uri( $stylesheet_uri ){
+
+	/* Child Theme Not Active */
+	if( ! is_child_theme() ){
+		$stylesheet_uri = tamatebako_theme_file( 'assets/css/style', 'css' );
+	}
+	return $stylesheet_uri;
 }
 
 
@@ -25,7 +41,29 @@ function tamatebako_register_css_setup(){
  */
 function tamatebako_register_css(){
 
-	/* Get theme-supported sidebars. */
+	/* == Register CSS == */
+
+	/* Main active theme stylesheet */
+	wp_register_style(
+		'style',
+		esc_url( get_stylesheet_uri() ),
+		array(),
+		is_child_theme() ? tamatebako_child_theme_version() : tamatebako_theme_version(),
+		'all'
+	);
+
+	/* Parent theme if child theme active */
+	if( is_child_theme() ){
+		wp_register_style(
+			'parent',
+			esc_url( tamatebako_theme_file( 'assets/css/style', 'css' ) ),
+			array(),
+			tamatebako_theme_version(),
+			'all'
+		);
+	}
+
+	/* Get CSS */
 	$scripts = get_theme_support( 'tamatebako-register-css' );
 
 	/* No Support, Return */
@@ -36,7 +74,7 @@ function tamatebako_register_css(){
 	/* Foreach scrips, enqueue it */
 	foreach( $scripts[0] as $script_handle => $script_args ){
 
-		/* Add Sidebar ID */
+		/* Add Handle */
 		$script_args['handle'] = $script_handle;
 
 		/* Defaults */
@@ -50,6 +88,16 @@ function tamatebako_register_css(){
 
 		/* Merge */
 		$script_args = wp_parse_args( $script_args, $defaults_args );
+
+		/* Main Theme Stylesheet */
+		if( 'style' == $script_args['handle'] ){
+			if( is_child_theme() ){
+				$script_args['src'] = tamatebako_theme_file( 'assets/css/style', 'css' );
+			}
+			else{
+				$script_args['src'] = get_stylesheet_uri();
+			}
+		}
 
 		/* Enqueue it. */
 		if( !empty( $script_args['handle'] ) && !empty( $script_args['src'] ) ){

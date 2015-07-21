@@ -9,7 +9,7 @@ add_action( 'after_setup_theme', 'tamatebako_enqueue_js_setup', 20 );
 
 
 /**
- * Register Sidebar Setup.
+ * Enqueue JS Setup.
  * @since 3.0.0
  */
 function tamatebako_enqueue_js_setup(){
@@ -25,7 +25,7 @@ function tamatebako_enqueue_js_setup(){
  */
 function tamatebako_enqueue_js(){
 
-	/* Get theme-supported sidebars. */
+	/* Get JS. */
 	$scripts = get_theme_support( 'tamatebako-enqueue-js' );
 
 	/* No Support, Return */
@@ -36,7 +36,7 @@ function tamatebako_enqueue_js(){
 	/* Foreach scrips, enqueue it */
 	foreach( $scripts[0] as $script_handle => $script_args ){
 
-		/* Add Sidebar ID */
+		/* Add Handle */
 		$script_args['handle'] = $script_handle;
 
 		/* Defaults */

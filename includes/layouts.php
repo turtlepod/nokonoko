@@ -33,7 +33,7 @@ $GLOBALS['content_width'] = 1100;
 
 /* === Theme Layouts === */
 
-$image_dir = get_template_directory_uri() . '/images/layouts/';
+$image_dir = get_template_directory_uri() . '/assets/images/layouts/';
 $layouts = array(
 	/* One Column */
 	'content' => array(

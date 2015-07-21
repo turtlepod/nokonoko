@@ -2,6 +2,17 @@
 /**
  * Scripts Setup
 **/
+
+/* === EDITOR STYLE === */
+$editor_css = array(
+	add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
+	'assets/css/reset.min.css',
+	'assets/css/editor.css'
+);
+add_editor_style( $editor_css );
+
+
+/* === ENQUEUE SCRIPTS === */
 add_action( 'wp_enqueue_scripts', 'nokonoko_scripts' );
 
 /**
@@ -28,8 +39,8 @@ function nokonoko_scripts(){
 	/* == CSS == */
 	wp_enqueue_style( 'theme-open-sans-font' );
 	wp_enqueue_style( 'dashicons' );
-	$debug = true;
-	if ( isset( $debug ) && $debug ){
+	$dev = true;
+	if ( isset( $dev ) && $dev ){
 		wp_enqueue_style( 'theme-reset' );
 		wp_enqueue_style( 'theme-menus' );
 		wp_enqueue_style( 'theme-layouts' );
@@ -39,25 +50,20 @@ function nokonoko_scripts(){
 		wp_enqueue_style( 'debug-media-queries' );
 	}
 	else{
-		wp_enqueue_style( 'style' );
+		if( is_child_theme() ){
+			wp_enqueue_style( 'parent' );
+			wp_enqueue_style( 'style' );
+		}
+		else{
+			wp_enqueue_style( 'style' );
+		}
 	}
-	if( is_child_theme() ) wp_enqueue_style( 'child' );
 }
-
-
-/* === EDITOR STYLE === */
-
-$editor_css = array(
-	add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
-	'assets/css/reset.min.css',
-	'assets/css/editor.css'
-);
-add_editor_style( $editor_css );
-
 
 /* === REGISTER JS === */
 
 $register_js_scripts = array(
+	/* Library */
 	"theme-webfontloader" => array(
 		'src'        => tamatebako_theme_file( 'assets/js/webfontloader', 'js' ),
 	),
@@ -96,10 +102,10 @@ $register_css_scripts = array(
 		'src'   => add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
 	),
 	"theme-flexslider" => array(
-		'src'   => tamatebako_theme_file( 'assets/css/flexslider', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/flexslider', 'css' ),
 	),
-	"theme-flexslider" => array(
-		'src'   => tamatebako_theme_file( 'assets/css/genericons', 'css' ),
+	"theme-genericons" => array(
+		'src'   => tamatebako_theme_file( 'assets/genericons', 'css' ),
 	),
 	"theme-reset" => array(
 		'src'   => tamatebako_theme_file( 'assets/css/reset', 'css' ),
@@ -124,18 +130,6 @@ $register_css_scripts = array(
 	),
 	"debug-media-queries" => array(
 		'src'   => tamatebako_theme_file( 'assets/css/debug-media-queries', 'css' ),
-	),
-	"style" => array(
-		'src'   => tamatebako_theme_file( 'style', 'css' ),
-		'deps'  => array(),
-		'ver'   => tamatebako_theme_version(),
-		'media' => 'all',
-	),
-	"child" => array(
-		'src'   => tamatebako_child_theme_file( 'style', 'css' ),
-		'deps'  => array(),
-		'ver'   => tamatebako_child_theme_version(),
-		'media' => 'all',
 	),
 );
 add_theme_support( 'tamatebako-register-css', $register_css_scripts );
