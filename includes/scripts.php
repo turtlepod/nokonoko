@@ -111,7 +111,7 @@ $register_css_scripts = array(
 	),
 	/* Icon */
 	"theme-genericons" => array(
-		'src'   => tamatebako_theme_file( 'assets/genericons/genericons', 'css' ),
+		'src'   => tamatebako_theme_file( 'assets/fonts/genericons/genericons', 'css' ),
 		'ver'   => '3.3.1',
 	),
 	/* Library */
