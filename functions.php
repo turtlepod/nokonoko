@@ -6,7 +6,7 @@
 /* Load Library. */
 require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamatebako.php' );
 
-/* Load Stuff. */
+/* Load External Library. */
 if( ! function_exists( 'get_the_image' ) ){
 	require_once( trailingslashit( get_template_directory() ) . 'includes/get-the-image.php' );
 }
@@ -19,7 +19,7 @@ add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
  */
 function nokonoko_theme_setup(){
 
-	/* Vars */
+	/* Path */
 	$theme_path = trailingslashit( get_template_directory() );
 	$includes = trailingslashit( $theme_path . 'includes' );
 
@@ -29,7 +29,7 @@ function nokonoko_theme_setup(){
 	/* === SCRIPTS === */
 	require_once( $includes . 'scripts.php' );
 
-	/* === SETUP: Sidebar, Menu, Thumbnail, Content Width === */
+	/* === SETUP: Sidebars, Menus, Image Sizes, Content Width === */
 	require_once( $includes . 'setup.php' );
 
 	/* === LAYOUTS === */

@@ -43,5 +43,3 @@ $texts = array(
 
 /* Add text to tamatebako */
 tamatebako_load_strings( $texts );
-
-

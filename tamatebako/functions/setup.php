@@ -27,7 +27,8 @@ function tamatebako_setup(){
 	/* Enable Title Tag */
 	add_theme_support( 'title-tag' );
 
-	/* === HEAD === */
+	/* === WP HEAD === */
+
 	add_action( 'wp_head', 'tamatebako_wp_head_meta_charset',   0 );
 	add_action( 'wp_head', 'tamatebako_wp_head_meta_viewport',  1 );
 	add_action( 'wp_head', 'tamatebako_wp_head_link_pingback',  3 );
