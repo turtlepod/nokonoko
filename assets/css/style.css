@@ -1,5 +1,5 @@
 /* "theme-reset" */
-@import url( "reset.css" );
+@import url( " base.css" );
 
 /* "theme-layouts" */
 @import url( "layouts.css" );
@@ -17,4 +17,4 @@
 @import url( "theme.css" );
 
 /* "media-queries" */
-@import url( "css/media-queries.css" );
+@import url( "media-queries.css" );

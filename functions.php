@@ -29,6 +29,9 @@ function nokonoko_theme_setup(){
 	/* === SCRIPTS === */
 	require_once( $includes . 'scripts.php' );
 
+	/* === SETUP: Sidebar, Menu, Thumbnail, Content Width === */
+	require_once( $includes . 'setup.php' );
+
 	/* === LAYOUTS === */
 	require_once( $includes . 'layouts.php' );
 
@@ -41,7 +44,7 @@ function nokonoko_theme_setup(){
 	/* === LOGO === */
 	require_once( $includes . 'logo.php' );
 
-	/* === UTILITY: MOBILE VIEW + CUSTOM CSS === */
+	/* === UTILITY: Mobile View, Custom CSS === */
 	require_once( $includes . 'utility.php' );
 
 	/* === POST FORMATS === */

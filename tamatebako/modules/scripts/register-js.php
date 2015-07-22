@@ -20,7 +20,7 @@ function tamatebako_register_js_setup(){
 
 
 /**
- * Enqueue JS
+ * Register JS
  * @since 3.0.0
  */
 function tamatebako_register_js(){
@@ -51,7 +51,7 @@ function tamatebako_register_js(){
 		/* Merge */
 		$script_args = wp_parse_args( $script_args, $defaults_args );
 
-		/* Enqueue it. */
+		/* Register it. */
 		if( !empty( $script_args['handle'] ) && !empty( $script_args['src'] ) ){
 			wp_register_script(
 				sanitize_key( $script_args['handle'] ),
