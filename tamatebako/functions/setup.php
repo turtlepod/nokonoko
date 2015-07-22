@@ -27,10 +27,19 @@ function tamatebako_setup(){
 	/* Enable Title Tag */
 	add_theme_support( 'title-tag' );
 
-	/* === HEAD === */
+	/* === WP HEAD === */
+
 	add_action( 'wp_head', 'tamatebako_wp_head_meta_charset',   0 );
 	add_action( 'wp_head', 'tamatebako_wp_head_meta_viewport',  1 );
 	add_action( 'wp_head', 'tamatebako_wp_head_link_pingback',  3 );
+
+	/* === SCRIPTS === */
+
+	/* Stylesheet URI */
+	add_filter( 'stylesheet_uri', 'tamatebako_stylesheet_uri', 5 );
+
+	/* Register CSS */
+	add_action( 'wp_enqueue_scripts', 'tamatebako_scripts', 0 );
 
 	/* === Filters: Set Better Default Output === */
 
@@ -75,8 +84,54 @@ function tamatebako_wp_head_meta_viewport() {
  * @author Justin Tadlock <justintadlock@gmail.com>
  */
 function tamatebako_wp_head_link_pingback() {
-	if ( 'open' === get_option( 'default_ping_status' ) )
+	if ( 'open' === get_option( 'default_ping_status' ) ){
 		printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
+	}
+}
+
+
+/**
+ * Current Active Theme Stylesheet URI
+ */
+function tamatebako_stylesheet_uri( $stylesheet_uri ){
+
+	/* Child Theme Not Active */
+	$parent_stylesheet_uri = tamatebako_get_parent_stylesheet_uri();
+	if( ! is_child_theme() && !empty( $parent_stylesheet_uri ) ){
+		$stylesheet_uri = $parent_stylesheet_uri;
+	}
+	return $stylesheet_uri;
+}
+
+
+/**
+ * Register Scripts
+ * @since 3.0.0
+ */
+function tamatebako_scripts(){
+
+	/* == Register CSS == */
+
+	/* Main active theme stylesheet */
+	wp_register_style(
+		'style',
+		esc_url( get_stylesheet_uri() ),
+		array(),
+		is_child_theme() ? tamatebako_child_theme_version() : tamatebako_theme_version(),
+		'all'
+	);
+
+	/* Parent theme CSS if child theme active */
+	$parent_stylesheet_uri = tamatebako_get_parent_stylesheet_uri();
+	if( is_child_theme() && !empty( $parent_stylesheet_uri ) ){
+		wp_register_style(
+			'parent',
+			esc_url( $parent_stylesheet_uri ),
+			array(),
+			tamatebako_theme_version(),
+			'all'
+		);
+	}
 }
 
 

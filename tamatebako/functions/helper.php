@@ -63,6 +63,49 @@ function tamatebako_theme_version(){
 	return $theme->get( 'Version' );
 }
 
+/**
+ * Helper Function: Get (child) theme version
+ * This function is to properly add version number to scripts and styles.
+ * @since 0.1.0
+ */
+function tamatebako_child_theme_version(){
+	if( is_child_theme() ){
+		$theme = wp_get_theme( get_stylesheet() );
+		return $theme->get( 'Version' );
+	}
+	return tamatebako_theme_version();
+}
+
+/**
+ * Returns the parent theme stylesheet URI.  Will return the active theme's stylesheet URI if no child
+ * theme is active. Be sure to check `is_child_theme()` when using.
+ */
+function tamatebako_get_parent_stylesheet_uri() {
+	return apply_filters( 'tamatebako_get_parent_stylesheet_uri', tamatebako_theme_file( 'assets/css/style', 'css' ) );
+}
+
+
+/**
+ * Maybe Enqueue Style
+ * Enqueue Style if the style is registered.
+ */
+function tamatebako_maybe_enqueue_style( $handle ){
+	if( wp_style_is( sanitize_key( $handle ), 'registered' ) ){
+		wp_enqueue_style( sanitize_key( $handle ) );
+	}
+}
+
+
+/**
+ * Maybe Enqueue Script
+ * Enqueue Script if the script is registered.
+ */
+function tamatebako_maybe_enqueue_script( $handle ){
+	if( wp_script_is( sanitize_key( $handle ), 'registered' ) ){
+		wp_enqueue_script( sanitize_key( $handle ) );
+	}
+}
+
 
 /**
  * Get parent theme assets file.
@@ -74,51 +117,27 @@ function tamatebako_theme_version(){
  * @access public
  * @return string
  */
-function tamatebako_theme_file( $path, $ext ){
+function tamatebako_theme_file( $file, $ext ){
 
-	/* Debug Mode Status, if debug do not load min file. */
-	$debug = false;
-	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ){
-		$debug = true;
+	/* Debug mode. */
+	$debug = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? true : false;
+
+	/* Path & URI */
+	$path = trailingslashit( get_template_directory() ) . $file;
+	$uri = trailingslashit( get_template_directory_uri() ) . $file;
+
+	/* File URI */
+	$file_uri = '';
+	if( file_exists(  $path . '.' . $ext ) ){
+		$file_uri = $uri . '.' . $ext;
 	}
 
-	/* File Path & URI */
-	$file_path = trailingslashit( get_template_directory() ) . $path;
-	$file_uri = trailingslashit( get_template_directory_uri() ) . $path;
-
-	/* On debug mode, load non min file, first. */
-	if ( $debug ){
-
-		/* return parent theme file if exist */
-		if ( file_exists(  $file_path . '.' . $ext ) ){
-			return $file_uri . '.' . $ext;
-		}
-		/* return parent theme min file if exist */
-		elseif ( file_exists( $file_path . '.min.' . $ext ) ){
-			return $file_uri . '.min.' . $ext;
-		}
-		/* return empty string */
-		else{
-			return '';
-		}
+	/* Not debug & min file exist, load it! */
+	if( ! $debug && file_exists(  $path . '.min.' . $ext ) ){
+		$file_uri = $uri . '.min.' . $ext;
 	}
 
-	/* Not debug mode, load min file if exist. */
-	else{
-
-		/* return parent theme min file if exist */
-		if ( file_exists( $file_path . '.min.' . $ext ) ){
-			return $file_uri . '.min.' . $ext;
-		}
-		/* return parent theme regular file if exist */
-		elseif ( file_exists( $file_path . '.' . $ext ) ){
-			return $file_uri . '.' . $ext;
-		}
-		/* return empty string */
-		else{
-			return '';
-		}
-	}
+	return $file_uri;
 }
 
 
@@ -132,52 +151,25 @@ function tamatebako_theme_file( $path, $ext ){
  * @access public
  * @return string
  */
-function tamatebako_child_theme_file( $path, $ext ){
+function tamatebako_child_theme_file( $file, $ext ){
 
-	/* Debug Mode Status, if debug do not load min file. */
-	$debug = false;
-	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ){
-		$debug = true;
+	/* Debug mode. */
+	$debug = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? true : false;
+
+	/* Path & URI */
+	$path = trailingslashit( get_stylesheet_directory() ) . $file;
+	$uri = trailingslashit( get_stylesheet_directory_uri() ) . $file;
+
+	/* File URI */
+	$file_uri = '';
+	if( file_exists(  $path . '.' . $ext ) ){
+		$file_uri = $uri . '.' . $ext;
 	}
 
-	/* File Path & URI */
-	$file_path = trailingslashit( get_stylesheet_directory() ) . $path;
-	$file_uri = trailingslashit( get_stylesheet_directory_uri() ) . $path;
-
-	/* If Child Theme Active */
-	if ( is_child_theme() ){
-
-		/* On debug mode, load non min file, first. */
-		if ( $debug ){
-			/* return child theme file if exist */
-			if ( file_exists( $file_path . '.' . $ext ) ){
-				return $file_uri . '.' . $ext;
-			}
-			/* return child theme min file if exist */
-			elseif ( file_exists( $file_path . '.min.' . $ext ) ){
-				return $file_uri . '.min.' . $ext;
-			}
-			/* return empty string */
-			else{
-				return '';
-			}
-		}
-
-		/* Not debug mode, load min file if exist. */
-		else{
-			/* return child theme min file if exist */
-			if ( file_exists( $file_path . '.min.' . $ext ) ){
-				return $file_uri . '.min.' . $ext;
-			}
-			/* return child theme regular file if exist */
-			elseif ( file_exists( $file_path . '.' . $ext ) ){
-				return $file_uri . '.' . $ext;
-			}
-			/* return empty string */
-			else{
-				return '';
-			}
-		}
+	/* Not debug & min file exist, load it! */
+	if( ! $debug && file_exists(  $path . '.min.' . $ext ) ){
+		$file_uri = $uri . '.min.' . $ext;
 	}
-	return '';
+
+	return $file_uri;
 }
