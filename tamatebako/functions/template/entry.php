@@ -111,10 +111,10 @@ function tamatebako_entry_taxonomy( $args = array() ) {
  */
 function tamatebako_entry_nav(){
 ?>
-<div class="loop-nav">
-	<?php previous_post_link( '<div class="prev"><span class="screen-reader-text">' . tamatebako_string( 'previous_post' ) . ':</span> %link</div>', '%title' ); ?>
-	<?php next_post_link( '<div class="next"><span class="screen-reader-text">' . tamatebako_string( 'next_post' ) . ':</span> %link</div>', '%title' ); ?>
-</div><!-- .loop-nav -->
+<nav class="post-navigation">
+	<?php previous_post_link( '<div class="nav-prev"><span class="screen-reader-text">' . tamatebako_string( 'previous_post' ) . ':</span> %link</div>', '%title' ); ?>
+	<?php next_post_link( '<div class="nav-next"><span class="screen-reader-text">' . tamatebako_string( 'next_post' ) . ':</span> %link</div>', '%title' ); ?>
+</nav><!-- .post-navigation -->
 <?php
 }
 
@@ -127,7 +127,7 @@ function tamatebako_read_more() {
 	$string = tamatebako_string( 'read_more' );
 	$read_more = '';
 	if ( !empty( $string ) ){
-		$read_more = '<span class="more-link-wrap"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span></a></span>';
+		$read_more = '<span class="more-link-wrap"><a class="more-link" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span></a></span>';
 	}
 	echo $read_more;
 }
@@ -140,6 +140,6 @@ function tamatebako_read_more() {
  */
 function tamatebako_entry_permalink(){
 ?>
-<a class="entry-permalink" href="<?php the_permalink(); ?>" rel="bookmark"><?php echo tamatebako_string( 'permalink' ); ?></a>
+<a class="entry-permalink" href="<?php the_permalink(); ?>" rel="bookmark"><span><?php echo tamatebako_string( 'permalink' ); ?></span></a>
 <?php
 }

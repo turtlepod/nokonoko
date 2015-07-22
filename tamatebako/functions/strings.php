@@ -54,7 +54,6 @@ function tamatebako_strings(){
 		/* functions/template/general.php */
 		'next_posts' => 'Next',
 		'previous_posts' => 'Previous',
-		'search_title_prefix' => 'Search results for',
 
 		/* functions/template/menu.php */
 		'menu_search_placeholder' => 'Search&hellip,',
@@ -77,6 +76,7 @@ function tamatebako_strings(){
 		/* functions/setup.php */
 		'untitled' => '(Untitled)',
 		'read_more' => 'Read More',
+		'search_title_prefix' => 'Search:',
 
 	);
 

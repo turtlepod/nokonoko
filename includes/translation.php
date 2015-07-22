@@ -15,7 +15,6 @@ $texts = array(
 	/* functions/template/general.php */
 	'next_posts'                  => _x( 'Next', 'pagination', 'nokonoko' ),
 	'previous_posts'              => _x( 'Previous', 'pagination', 'nokonoko' ),
-	'search_title_prefix'         => _x( 'Search results for', 'archive title', 'nokonoko' ),
 
 	/* functions/template/menu.php */
 	'menu_search_placeholder'     => _x( 'Search&hellip;', 'nav menu', 'nokonoko' ),
@@ -38,6 +37,7 @@ $texts = array(
 	/* functions/setup.php */
 	'untitled'                    => _x( '(Untitled)', 'entry', 'nokonoko' ),
 	'read_more'                   => _x( 'Read More', 'entry', 'nokonoko' ),
+	'search_title_prefix'         => _x( 'Search:', 'archive title', 'nokonoko' ),
 
 );
 

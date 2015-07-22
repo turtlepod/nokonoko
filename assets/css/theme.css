@@ -154,25 +154,25 @@ code{
 }
 
 /* === LOOP META === */
-.loop-meta{
+.archive-header{
 	margin-right: 20px;
 	margin-bottom: 20px;
 	background: pink;
 }
-.loop-meta:after{
+.archive-header:after{
 	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
-	.loop-title{
+	.archive-title{
 		font-size: 25px;
 		font-size: 2.5rem;
 		line-height: 1em;
 		font-weight: 400;
 		margin: 0;
 	}
-	.loop-description{
+	.archive-description{
 		
 	}
-	.loop-description p{
+	.archive-description p{
 		margin: 0;
 	}
 
@@ -310,8 +310,8 @@ code{
 }
 
 
-/* === LOOP NAV === */
-.loop-nav{
+/* === POST NAV: Next Post Link, Prev Post Link === */
+.post-navigation{
 	margin-bottom: 20px;
 	margin-bottom: 2rem;
 	padding: 10px;
@@ -319,12 +319,12 @@ code{
 	border: 1px solid #ccc;
 	background: #fff;
 }
-.loop-nav:after{
+.post-navigation:after{
 	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
-	.loop-nav .screen-reader-text{
+	.post-navigation .screen-reader-text{
 	}
-	.loop-nav .prev{
+	.post-navigation .nav-prev{
 		padding-left: 30px;
 		padding-left: 3rem;
 		width: 45%;
@@ -332,7 +332,7 @@ code{
 		text-align: left;
 		position: relative;
 	}
-	.loop-nav .next{
+	.post-navigation .nav-next{
 		padding-right: 30px;
 		padding-right: 3rem;
 		width: 45%;
@@ -340,7 +340,7 @@ code{
 		text-align: right;
 		position: relative;
 	}
-		.loop-nav .prev a:before{
+		.post-navigation .nav-prev a:before{
 			content: "\f340";
 			font-family: "dashicons";
 			vertical-align: top;
@@ -349,7 +349,7 @@ code{
 			top: 0;
 			left: 0;
 		}
-		.loop-nav .next a:after{
+		.post-navigation .nav-next a:after{
 			content: "\f344";
 			font-family: "dashicons";
 			vertical-align: top;
