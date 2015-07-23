@@ -44,7 +44,7 @@ function tamatebako_setup(){
 	/* === Filters: Set Better Default Output === */
 
 	/* Set Untitled Entry Title */
-	add_filter( 'the_title', 'tamatebako_untitled_entry' );
+	add_filter( 'the_title', 'tamatebako_untitled_entry_title' );
 
 	/* Set Consistent Read More */
 	add_filter( 'excerpt_more', 'tamatebako_excerpt_more', 5 );
@@ -138,7 +138,7 @@ function tamatebako_scripts(){
 /**
  * Add '(Untitled)' title if not entry title is set
  */
-function tamatebako_untitled_entry( $title ) {
+function tamatebako_untitled_entry_title( $title ) {
 	if ( empty( $title ) && !is_singular() && in_the_loop() && !is_admin() ) {
 		$title = tamatebako_string( 'untitled' );
 	}
@@ -192,9 +192,6 @@ function tamatebako_wp_link_pages( $args ){
  * Wraps page "links" that aren't actually links (just text) with `<span class="page-numbers">` so that they 
  * can also be styled.  This makes `wp_link_pages()` consistent with the output of `paginate_links()`.
  * @author Justin Tadlock <justintadlock@gmail.com>
- * @since  3.0.0
- * @access private
- * @return string
  */
 function tamatebako_wp_link_pages_link( $link ) {
 	if ( 0 !== strpos( $link, '<a' ) ){
@@ -205,11 +202,7 @@ function tamatebako_wp_link_pages_link( $link ) {
 
 
 /**
- * Add blog page title as archive title.
- * @since  3.0.0
- * @access private
- * @param  string  $title
- * @return string
+ * Add additional archive title.
  */
 function tamatebako_archive_title( $title ){
 	/* Blog Page. */
@@ -226,10 +219,6 @@ function tamatebako_archive_title( $title ){
 
 /**
  * Add additional archive description.
- * @since  3.0.0
- * @access private
- * @param  string  $title
- * @return string
  */
 function tamatebako_archive_description( $desc ){
 
