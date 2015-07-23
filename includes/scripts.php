@@ -52,18 +52,19 @@ function nokonoko_scripts(){
 	wp_enqueue_style( 'theme-open-sans' );
 	wp_enqueue_style( 'dashicons' );
 	//wp_enqueue_style( 'theme-genericons' );
-	tamatebako_maybe_enqueue_style( 'parent' );
 	$dev = true;
 	if ( isset( $dev ) && $dev ){
 		wp_enqueue_style( 'theme-base' );
 		wp_enqueue_style( 'theme-menus' );
 		wp_enqueue_style( 'theme-layouts' );
+		wp_enqueue_style( 'theme-widgets' );
 		wp_enqueue_style( 'theme-comments' );
 		wp_enqueue_style( 'theme' );
 		wp_enqueue_style( 'theme-media-queries' );
 		wp_enqueue_style( 'debug-media-queries' );
 	}
 	else{
+		tamatebako_maybe_enqueue_style( 'parent' );
 		wp_enqueue_style( 'style' );
 	}
 }
