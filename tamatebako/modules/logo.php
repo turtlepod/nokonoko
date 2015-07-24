@@ -74,11 +74,11 @@ add_filter( 'body_class', 'tamatebako_logo_body_class' );
  * Add body class for styling.
  */
 function tamatebako_logo_body_class( $classes ) {
-	if( current_theme_supports( 'tamatebako-logo' ) ){
-		$classes[] = 'logo-active';
-		if( get_theme_mod( 'logo' ) ){
-			$classes[] = 'logo-uploaded';
-		}
+	$logo_args = tamatebako_logo_args();
+	$logo_uploaded = get_theme_mod( 'logo' );
+	$classes[] = 'logo-active';
+	if( $logo_uploaded || !empty( $logo_args['default-logo'] ) ){
+		$classes[] = 'logo-uploaded';
 	}
 	return $classes;
 }
