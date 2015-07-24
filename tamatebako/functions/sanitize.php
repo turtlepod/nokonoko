@@ -74,7 +74,7 @@ function tamatebako_sanitize_hex_color_no_hash( $color ){
 	if ( '' === $color )
 		return '';
 
-	return chelonian_sanitize_hex_color( '#' . $color ) ? $color : null;
+	return tamatebako_sanitize_hex_color( '#' . $color ) ? $color : null;
 }
 
 /* === FILE === */
