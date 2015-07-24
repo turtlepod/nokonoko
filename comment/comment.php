@@ -20,7 +20,7 @@
 			<?php comment_text(); ?>
 		</div><!-- .comment-content -->
 
-		<?php tamatebako_get_comment_reply_link(); ?>
+		<?php echo tamatebako_get_comment_reply_link(); ?>
 
 	</div><!-- .comment-wrap -->
 
