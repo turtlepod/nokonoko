@@ -27,7 +27,7 @@ function tamatebako_layouts_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'theme_layout',
 		array(
-			'default'           => 'content',
+			'default'           => tamatebako_layout_default(),
 			'sanitize_callback' => 'sanitize_key',
 			'transport'         => 'refresh'
 		)

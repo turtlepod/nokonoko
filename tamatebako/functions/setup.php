@@ -38,7 +38,7 @@ function tamatebako_setup(){
 	/* Stylesheet URI */
 	add_filter( 'stylesheet_uri', 'tamatebako_stylesheet_uri', 5 );
 
-	/* Register CSS */
+	/* Scripts */
 	add_action( 'wp_enqueue_scripts', 'tamatebako_scripts', 0 );
 
 	/* === Filters: Set Better Default Output === */
@@ -131,6 +131,13 @@ function tamatebako_scripts(){
 			tamatebako_theme_version(),
 			'all'
 		);
+	}
+
+	/* === Load Comment Reply Scripts === */
+
+	/* Load the comment reply script on singular posts with open comments if threaded comments are supported. */
+	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ){
+		wp_enqueue_script( 'comment-reply' );
 	}
 }
 
