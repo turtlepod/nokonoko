@@ -39,11 +39,14 @@ add_action( 'customize_register', 'tamatebako_custom_css_customize_register', 15
  */
 function tamatebako_custom_css_customize_register( $wp_customize ){
 
+	/* Args */
+	$custom_css_args = tamatebako_custom_css_args();
+
 	/* Add Section */
 	$wp_customize->add_section(
 		'custom_css',
 		array(
-			'title' => esc_html( tamatebako_custom_css_args()['title'] ),
+			'title' => esc_html( $custom_css_args['title'] ),
 		)
 	);
 
