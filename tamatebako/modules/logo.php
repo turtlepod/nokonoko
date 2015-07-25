@@ -41,6 +41,9 @@ add_action( 'customize_register', 'tamatebako_logo_customize_register' );
  */
 function tamatebako_logo_customize_register( $wp_customize ){
 
+	/* Args */
+	$logo_args = tamatebako_logo_args();
+
 	/* Add Setting: as theme mod. */
 	$wp_customize->add_setting(
 		'logo',
@@ -53,15 +56,15 @@ function tamatebako_logo_customize_register( $wp_customize ){
 	);
 
 	/* Add Control (WP 4.3 with image cropper) */
-	if ( class_exists( 'WP_Customize_Cropped_Image_Control' ) && true === tamatebako_logo_args()['crop'] ) {
+	if ( class_exists( 'WP_Customize_Cropped_Image_Control' ) && true === $logo_args['crop'] ) {
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'logo', tamatebako_logo_args() )
+			new WP_Customize_Cropped_Image_Control( $wp_customize, 'logo', $logo_args )
 		);
 	}
 	/* WP 4.2, use image as is. */
 	elseif( class_exists( 'WP_Customize_Media_Control' ) ){
 		$wp_customize->add_control(
-			new WP_Customize_Media_Control( $wp_customize, 'logo', tamatebako_logo_args() )
+			new WP_Customize_Media_Control( $wp_customize, 'logo', $logo_args )
 		);
 	}
 }
@@ -79,6 +82,9 @@ function tamatebako_logo_body_class( $classes ) {
 	$classes[] = 'logo-active';
 	if( $logo_uploaded || !empty( $logo_args['default-logo'] ) ){
 		$classes[] = 'logo-uploaded';
+	}
+	else{
+		$classes[] = 'logo-empty';
 	}
 	return $classes;
 }

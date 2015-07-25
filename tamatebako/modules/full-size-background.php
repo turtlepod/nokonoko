@@ -34,6 +34,9 @@ add_action( 'customize_register', 'tamatebako_full_size_background_customizer_re
  */
 function tamatebako_full_size_background_customizer_register( $wp_customize ){
 
+	/* Args */
+	$full_size_bg_args = tamatebako_full_size_background_args();
+
 	/* Full size bg setting */
 	$wp_customize->add_setting( 'full_size_background', array(
     	'default'             => 0,
@@ -46,7 +49,7 @@ function tamatebako_full_size_background_customizer_register( $wp_customize ){
     $wp_customize->add_control( 'full_size_background', array(
     	'settings'            => 'full_size_background',
 		'section'             => 'background_image',
-		'label'               => esc_html( tamatebako_full_size_background_args()['label'] ),
+		'label'               => esc_html( $full_size_bg_args['label'] ),
 		'type'                => 'checkbox',
 		'priority'            => 20,
 	));
@@ -71,8 +74,9 @@ function tamatebako_full_size_background_body_class( $classes ){
 }
 
 /* WP Head */
-if( tamatebako_full_size_background_args()['wp-head-callback'] ){
-	add_action( 'wp_head', tamatebako_full_size_background_args()['wp-head-callback'], 20 );
+$full_size_bg_args = tamatebako_full_size_background_args();
+if( $full_size_bg_args['wp-head-callback'] ){
+	add_action( 'wp_head', $full_size_bg_args['wp-head-callback'], 20 );
 }
 
 /**

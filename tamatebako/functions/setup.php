@@ -16,7 +16,7 @@ add_action( 'after_setup_theme', 'tamatebako_setup', 5 );
 function tamatebako_setup(){
 
 	/* Enable Featured Image */
-	add_theme_support( 'post-thumbnail' );
+	add_theme_support( 'post-thumbnails' );
 
 	/* Eanble Feed Link */
 	add_theme_support( 'automatic-feed-links' );
