@@ -5,6 +5,15 @@
 **/
 
 /**
+ * Entry Title
+ * Use <h1> for singular page, and <h2> for archive.
+ */
+function tamatebako_entry_title(){
+	$tag = is_singular() ? 'h1' : 'h2';
+	the_title( '<' . $tag . ' class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . $tag . '>' );
+}
+
+/**
  * Content Error
  * used in "index.php"
  * @since 0.1.0
