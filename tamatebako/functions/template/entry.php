@@ -13,6 +13,35 @@ function tamatebako_entry_title(){
 	the_title( '<' . $tag . ' class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . $tag . '>' );
 }
 
+
+/**
+ * Comments Link
+ */
+function tamatebako_comments_link(){
+
+	/* Vars */
+	$id = get_the_ID();
+	$title = get_the_title();
+	$number = get_comments_number( $id );
+
+	/* If no comment added, and comments is closed do not display link to comment. */
+	if ( 0 == $number && !comments_open() && !pings_open() ) {
+		return;
+	}
+
+	/* In Password Protected Post, add span wrapper. */
+	 if ( post_password_required() ) {
+		echo '<span class="comments-link"><span class="screen-reader-text">';
+		comments_popup_link( number_format_i18n( 0 ), number_format_i18n( 1 ), '%', 'comments-link', '' );
+		echo '</span></span>';
+		return;
+	}
+
+	/* Display comments link as default. */
+	comments_popup_link( number_format_i18n( 0 ), number_format_i18n( 1 ), '%', 'comments-link', '' );
+}
+
+
 /**
  * Content Error
  * used in "index.php"
