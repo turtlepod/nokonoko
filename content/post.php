@@ -2,7 +2,7 @@
 
 	<div class="entry-wrap">
 
-		<div class="entry-header">
+		<header class="entry-header">
 
 			<?php tamatebako_entry_title(); ?>
 
@@ -16,7 +16,7 @@
  
 			</div><!-- .entry-byline -->
 
-		</div><!-- .entry-header -->
+		</header><!-- .entry-header -->
 
 		<div class="entry-summary">
 
@@ -32,10 +32,10 @@
 
 		</div><!-- .entry-summary -->
 
-		<div class="entry-footer">
+		<footer class="entry-footer">
 			<?php edit_post_link(); ?>
 			<?php tamatebako_entry_terms(); ?>
-		</div><!-- .entry-footer -->
+		</footer><!-- .entry-footer -->
 
 	</div><!-- .entry-wrap -->
 
