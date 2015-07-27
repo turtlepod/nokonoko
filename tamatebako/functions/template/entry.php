@@ -15,6 +15,36 @@ function tamatebako_entry_title(){
 
 
 /**
+ * Entry Date
+ */
+function tamatebako_entry_date( $permalink = true, $date_format = '' ){
+
+	/* Default time markup */
+	$time_string = '<time class="published updated" datetime="%1$s">%2$s</time>';
+
+	/* If the post has been modified, display "updated" time. */
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	/* Format it. */
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		get_the_date( $date_format ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		get_the_modified_date( $date_format )
+	);
+
+	if( $permalink ){
+		echo '<span class="entry-date entry-date-permalink"><a href=" ' . esc_url( get_permalink() ) . '" rel="bookmark">'  . $time_string . '</a></span>';
+	}
+	else{
+		echo '<span class="entry-date">' . $time_string . '</span>';
+	}
+}
+
+
+/**
  * Comments Link
  */
 function tamatebako_comments_link(){
