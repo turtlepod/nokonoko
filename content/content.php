@@ -2,18 +2,18 @@
 
 	<div class="entry-wrap">
 
-		<div class="entry-header">
-			<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-		</div><!-- .entry-header -->
+		<header class="entry-header">
+			<?php tamatebako_entry_title(); ?>
+		</header><!-- .entry-header -->
 
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
 
-		<div class="entry-footer">
+		<footer class="entry-footer">
 			<?php edit_post_link(); ?>
 			<?php tamatebako_entry_terms(); ?>
-		</div><!-- .entry-footer -->
+		</footer><!-- .entry-footer -->
 
 	</div><!-- .entry-wrap -->
 

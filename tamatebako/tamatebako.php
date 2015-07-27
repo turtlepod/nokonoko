@@ -89,7 +89,7 @@ function tamatebako_load_theme_support(){
 
 	/* === POST FORMATS SETUP === */
 
-	tamatebako_require_if_theme_supports( 'post-formats', 'modules/post-formats' );
+	if( !is_admin() ) tamatebako_require_if_theme_supports( 'post-formats', 'modules/post-formats' );
 
 	/* === FULL SIZE BACKGROUND === */
 
@@ -99,7 +99,7 @@ function tamatebako_load_theme_support(){
 
 	/* === MICRODATA FILTERS === */
 
-	tamatebako_require_if_theme_supports( 'tamatebako-microdata', 'modules/microdata' );
+	if( !is_admin() ) tamatebako_require_if_theme_supports( 'tamatebako-microdata', 'modules/microdata' );
 
 	/* === LOGO === */
 

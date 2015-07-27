@@ -217,14 +217,23 @@ code{
 			.entry-byline a:focus{
 				
 			}
+			.entry-author{
+				display: inline-block;
+			}
 			.entry-author:before{
 				
 			}
-			.entry-permalink:before{
+			.entry-date{
+				display: inline-block;
+			}
+			.entry-date .updated:not(.published){
+				display: none;
+			}
+			.entry-date .published:before{
 				
 			}
-			.entry-published:before{
-				
+			.comments-link{
+				display: inline-block;
 			}
 			.comments-link:empty{
 				display: none;
@@ -233,6 +242,9 @@ code{
 				content: " | ";
 			}
 			.comments-link:after{
+				
+			}
+			.entry-permalink:before{
 				
 			}
 /* Entry Content, Entry Summary */
