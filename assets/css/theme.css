@@ -65,8 +65,8 @@ code{
 			font-size: 25px;
 			font-size: 2.5rem;
 			font-weight: 800;
+			line-height: 1.2em;
 			margin: 0;
-			line-height: 1em;
 		}
 			#site-title a{
 			}
@@ -76,7 +76,8 @@ code{
 		#site-description{
 			font-size: 17px;
 			font-size: 1.7rem;
-			line-height: 1em;
+			font-weight: 400;
+			line-height: 1.2em;
 			margin: 0;
 		}
 	/* Logo */
