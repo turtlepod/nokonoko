@@ -1,8 +1,8 @@
 <li id="comment-<?php comment_ID(); ?>" <?php comment_class()?>>
 
-	<div class="comment-wrap">
+	<article class="comment-wrap">
 
-		<div class="comment-meta">
+		<header class="comment-meta">
 
 			<?php echo get_avatar( $comment ); ?>
 
@@ -12,7 +12,7 @@
 
 			<?php edit_comment_link(); ?>
 
-		</div><!-- .comment-meta -->
+		</header><!-- .comment-meta -->
 
 		<div class="comment-content">
 			<?php comment_text(); ?>
@@ -20,6 +20,6 @@
 
 		<?php echo tamatebako_get_comment_reply_link(); ?>
 
-	</div><!-- .comment-wrap -->
+	</article><!-- .comment-wrap -->
 
 <?php /* No closing </li> is needed.  WordPress will know where to add it. */ ?>
