@@ -4,9 +4,9 @@ if ( strpos( get_theme_mod( 'theme_layout' ),'sidebar2' ) === false) {
 }
 ?>
 
-<div id="sidebar-secondary-wrap">
+<div id="sidebar-secondary">
 
-	<aside class="sidebar" id="sidebar-secondary">
+	<aside class="sidebar">
 
 		<?php if ( is_active_sidebar( 'secondary' ) ) : // If the sidebar has widgets. ?>
 
@@ -29,6 +29,6 @@ if ( strpos( get_theme_mod( 'theme_layout' ),'sidebar2' ) === false) {
 
 		<?php endif; // End widgets check. ?>
 
-	</aside><!-- #sidebar-secondary -->
+	</aside><!-- #sidebar-secondary > .sidebar -->
 
-</div>
+</div><!-- #sidebar-secondary -->

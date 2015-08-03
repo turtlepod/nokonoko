@@ -17,23 +17,23 @@
 
 		<?php get_template_part( 'menu/primary' ); ?>
 
-		<div id="main">
+		<div class="wrap">
 
 			<?php //tamatebako_get_sidebar( 'secondary' ); ?>
 
-			<div class="main-inner">
+			<div id="main">
 
-				<div class="main-wrap">
+				<div class="wrap">
 
 					<?php //tamatebako_get_sidebar( 'primary' ); ?>
 
-					<main role="main" class="content" id="content">
+					<main id="content" class="content" role="main">
 
 						<?php if ( have_posts() ){ /* Posts Found */ ?>
 
 							<?php tamatebako_archive_header(); ?>
 
-							<div class="content-entry-wrap">
+							<div class="wrap">
 
 								<?php while ( have_posts() ) {  /* Start Loop */ ?>
 
@@ -45,7 +45,7 @@
 
 								<?php } /* End Loop */ ?>
 
-							</div><!-- .content-entry-wrap-->
+							</div><!-- #content > .wrap -->
 
 							<?php tamatebako_archive_footer(); ?>
 
@@ -59,13 +59,13 @@
 
 					<?php tamatebako_get_sidebar( 'primary' ); ?>
 
-				</div><!-- .main-wrap -->
+				</div><!-- #main > .wrap -->
 
-			</div><!-- .main-inner -->
+			</div><!-- #main -->
 
 			<?php tamatebako_get_sidebar( 'secondary' ); ?>
 
-		</div><!-- #main -->
+		</div><!-- #container > .wrap -->
 
 		<?php get_footer(); ?>
 
