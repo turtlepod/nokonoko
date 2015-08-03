@@ -103,15 +103,12 @@
 					}
 					.comment-published{
 					}
-					.comment-permalink{
+					.comment-permalink{ 
 					}
 					.comment-edit-link{
 					}
-					.comment-edit-link:after{
-						content: "\f464";
-						font-family: "dashicons";
-						vertical-align: top;
-						-webkit-font-smoothing: antialiased;
+					.comment-edit-link:before{
+						content: " | ";
 					}
 				.comment-content{
 				}
