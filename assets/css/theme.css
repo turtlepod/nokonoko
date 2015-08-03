@@ -44,9 +44,6 @@ code{
 
 /* === CONTAINER === */
 #container{
-	width: 1200px;
-	margin: 20px auto;
-	margin: 2rem auto;
 	background: #fff;
 }
 
@@ -136,18 +133,9 @@ code{
 
 
 /* === MAIN === */
-#main{
-	padding: 20px;
-	padding: 2rem;
-	padding-right: 0;
+#container > .wrap{
 	background: orange;
 }
-#main:after{
-	content:".";display:block;height:0;clear:both;visibility:hidden;
-}
-	.main-wrap:after{
-		content:".";display:block;height:0;clear:both;visibility:hidden;
-	}
 
 /* === CONTENT === */
 #content{
@@ -425,10 +413,10 @@ code{
 
 
 /* === SIDEBAR === */
-#sidebar-primary-wrap{
+#sidebar-primary{
 	background: lightblue;
 }
-#sidebar-secondary-wrap{
+#sidebar-secondary{
 	background: lightgreen;
 }
 

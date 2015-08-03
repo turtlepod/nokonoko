@@ -29,7 +29,7 @@ function nokonoko_theme_setup(){
 	add_theme_support( 'tamatebako-back-compat', $back_compat_args );
 
 	/* Check Minimum Requirements before loading functions */
-	if ( version_compare( $wp_version, $back_compat_args['wp_requires'], '<' ) || version_compare( PHP_VERSION, $back_compat_args['php_requires'], '<' ) ) {
+	if ( version_compare( $wp_version, $back_compat_args['wp_requires'], '>=' ) && version_compare( PHP_VERSION, $back_compat_args['php_requires'], '>=' ) ) {
 
 		/* Path */
 		$theme_path = trailingslashit( get_template_directory() );

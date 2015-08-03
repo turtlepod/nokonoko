@@ -63,7 +63,7 @@ if ( !is_admin() ) {
 	tamatebako_include( 'functions/template/comment' );
 
 	/* Load front-end utility functions for faster development ( min PHP 5.3 ) */
-	if ( version_compare( PHP_VERSION, '5.3.0' ) >= 0 ) {
+	if ( version_compare( PHP_VERSION, '5.3.0', '>=' ) ) {
 		tamatebako_include( 'functions/template/utility' );
 	}
 }
