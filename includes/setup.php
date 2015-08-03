@@ -3,6 +3,13 @@
  * Setup Theme Elements
 **/
 
+/* === Maximum Content Width === */
+
+global $content_width;
+if ( ! isset( $content_width ) ){
+	$content_width = 1100;
+}
+
 /* === Register Sidebars === */
 
 $sidebars_args = array(
@@ -19,11 +26,6 @@ $nav_menus_args = array(
 	"footer" => _x( 'Footer Links', 'nav menu name', 'nokonoko' ),
 );
 register_nav_menus( $nav_menus_args );
-
-
-/* === Maximum Content Width === */
-
-$GLOBALS['content_width'] = 1100;
 
 
 /* === Thumbnail Size === */

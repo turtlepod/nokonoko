@@ -8,7 +8,7 @@
 
 			<div class="entry-byline">
 
-				<span class="entry-author"><?php the_author_posts_link(); ?></span>
+				<span class="entry-author vcard"><?php the_author_posts_link(); ?></span>
 
 				<?php tamatebako_entry_date(); ?>
 
@@ -25,7 +25,7 @@
 
 		<footer class="entry-footer">
 			<?php edit_post_link(); ?>
-			<?php tamatebako_entry_terms(); ?>
+			<?php tamatebako_entry_taxonomies(); ?>
 		</footer><!-- .entry-footer -->
 
 	</div><!-- .entry-wrap -->

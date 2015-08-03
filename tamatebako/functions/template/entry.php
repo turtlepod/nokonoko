@@ -98,12 +98,11 @@ function tamatebako_content_error(){
 }
 
 /**
- * Entry Terms
+ * Entry Taxonomies
  * a helper function to print all taxonomy/term attach to a post.
- *
- * @since 0.1.0
+ * @since 3.0.0
  */
-function tamatebako_entry_terms(){
+function tamatebako_entry_taxonomies( $args = array() ){
 
 	/* Entry Taxonomies */
 	$entry_taxonomies = array();
@@ -114,63 +113,54 @@ function tamatebako_entry_terms(){
 
 		/* Only for public taxonomy */
 		if ( 1 == $entry_tax_obj->public ){
-			$entry_taxonomies[$entry_tax_id] = array(
-				'taxonomy' => $entry_tax_id,
-				'text' => $entry_tax_obj->labels->name,
-			);
+			$entry_taxonomies[] = $entry_tax_id;
 		}
 	}
 
-	/* If taxonomies not empty */
+	/* If taxonomies not empty, display it. */
 	if ( !empty( $entry_taxonomies ) ){ ?>
-		<div class="entry-meta">
-		<?php foreach ( $entry_taxonomies as $tax_id => $entry_tax ){ ?>
-			<?php echo tamatebako_entry_taxonomy( array( 'taxonomy' => $tax_id, 'text' => '<span class="term-name">' . $entry_tax['text'] . '</span>' . ' %s' ) ); ?>
-		<?php }//end foreach ?>
-		</div>
+		<div class="entry-taxonomies">
+			<?php foreach ( $entry_taxonomies as $entry_taxonomy ){
+				$args['taxonomy'] = $entry_taxonomy;
+				tamatebako_entry_taxonomy( $args );
+			} //end foreach ?>
+		</div><!-- .entry-taxonomies -->
 
 	<?php } //end empty check
 }
 
 /**
  * This template tag is meant to replace template tags like `the_category()`, `the_terms()`, etc.
- * @author    Justin Tadlock <justintadlock@gmail.com>
  * @since     3.0.0
  */
 function tamatebako_entry_taxonomy( $args = array() ) {
 
-	$html = '';
-
+	/* Args */
 	$defaults = array(
 		'post_id'    => get_the_ID(),
 		'taxonomy'   => 'category',
-		'text'       => '%s',
-		'before'     => '',
-		'after'      => '',
-		'items_wrap' => '<span %s>%s</span>',
-		/* Translators: Separates tags, categories, etc. when displaying a post. */
+		'text'       => '%s', /* %s will be replaced with taxonomy name (label) */
 		'sep'        => ', ',
 	);
-
 	$args = wp_parse_args( $args, $defaults );
 
+	/* Get Terms List */
 	$terms = get_the_term_list( $args['post_id'], $args['taxonomy'], '', $args['sep'], '' );
 
-	/* Attr */
-	$attr_string = '';
-	$attr = array();
-	$attr['class'] = 'entry-terms ' . sanitize_html_class( $args['taxonomy'] );
-	foreach ( $attr as $name => $value ){
-		$attr_string .= trim( !empty( $value ) ? sprintf( ' %s="%s"', esc_html( $name ), esc_attr( $value ) ) : esc_html( " {$name}" ) );
-	}
-
+	/* Display output only if terms available. */
 	if ( !empty( $terms ) ) {
-		$html .= $args['before'];
-		$html .= sprintf( $args['items_wrap'], $attr_string, sprintf( $args['text'], $terms ) );
-		$html .= $args['after'];
+		$tax_labels = get_taxonomy_labels( get_taxonomy( $args['taxonomy'] ) );
+		$tax_name = $tax_labels->name;
+		$text = sprintf( $args['text'], $tax_name );
+	?>
+		<span class="entry-terms <?php echo sanitize_html_class( $args['taxonomy'] ); ?>">
+			<?php if( !empty( $text ) ){ ?>
+			<span class="entry-taxonomy-text"><?php echo $text;?></span> 
+			<?php } ?>
+			<?php echo $terms; ?>
+		</span>
+	<?php
 	}
-
-	return $html;
 }
 
 /**
