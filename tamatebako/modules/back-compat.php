@@ -2,6 +2,7 @@
 /**
  * Backward compat. functionality
  * Prevent fatal error when using the theme.
+ * Note: PHP compat will still produce fatal error.
 **/
 
 /**
@@ -29,7 +30,7 @@ function tamatebako_back_compat_args(){
 	$defaults_args = array(
 		'theme_name' => 'This',
 		'wp_requires' => '4.0',
-		'php_requires' => '5.2',
+		'php_requires' => '5.2.4',
 		'wp_requires_notice' => '%theme_name% theme requires at least WordPress %wp_requires%. You are running WordPress %wp_current%. Please upgrade and try again.',
 		'php_requires_notice' => '%theme_name% theme requires at least PHP %php_requires%. You are running PHP %php_current%. Please upgrade and try again.',
 		'requires_notice' => '%theme_name% theme requires at least WordPress %wp_requires% and PHP %php_requires%. You are running WordPress %wp_current% and PHP %php_current%. Please upgrade and try again.',
@@ -83,6 +84,7 @@ $args  = tamatebako_back_compat_args();
 
 /* If using old system, prevent theme activation and switch to default theme. */
 if ( version_compare( $wp_version, $args['wp_requires'], '<' ) || version_compare( PHP_VERSION, $args['php_requires'], '<' ) ) {
+
 	/* Switch to default theme */
 	add_action( 'after_switch_theme', 'tamatebako_back_compat_switch_theme' );
 

@@ -1,7 +1,7 @@
 === NokoNoko ===
 Contributors: turtlepod
 Tags: black, blue, brown, gray, green, pink, purple, red, silver, tan, white, yellow, dark, light, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, holiday, photoblogging, seasonal
-Requires at least: 4.2
+Requires at least: 4.0
 Tested up to: 4.2
 Stable tag: 4.2
 License: GPLv2 or later
@@ -10,18 +10,21 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 Just another WordPress starter theme...
+This is just example description.
 
 * Responsive Layout
 * Custom Background
 * Custom Header
-* Social Links
+* Custom Colors
+* Custom Fonts
 * Two Navigation Menus
-* Two Widget Area
+* Two Widget Areas (Sidebars)
+* Social Links
 * Post Formats
 * Something Cool
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-Layouts available:
+Available layouts:
 
 * Content | Sidebar
 * Sidebar | Content
