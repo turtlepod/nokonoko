@@ -43,20 +43,31 @@ function tamatebako_setup(){
 
 	/* === Filters: Set Better Default Output === */
 
-	/* Set Untitled Entry Title */
-	add_filter( 'the_title', 'tamatebako_untitled_entry_title' );
+	if( !is_admin() ){
 
-	/* Set Consistent Read More */
-	add_filter( 'excerpt_more', 'tamatebako_excerpt_more', 5 );
-	add_filter( 'the_content_more_link', 'tamatebako_content_more', 5, 2 );
+		/* Archive Title & Desc */
+		add_filter( 'get_the_archive_title', 'tamatebako_archive_title', 5 );
+		add_filter( 'get_the_archive_description', 'tamatebako_archive_description', 5 );
 
-	/* WP Link Pages */
-	add_filter( 'wp_link_pages_args', 'tamatebako_wp_link_pages', 5 );
-	add_filter( 'wp_link_pages_link', 'tamatebako_wp_link_pages_link', 5 );
+		/* Set Untitled Entry Title */
+		add_filter( 'the_title', 'tamatebako_untitled_entry_title' );
 
-	/* Archive Title & Desc */
-	add_filter( 'get_the_archive_title', 'tamatebako_archive_title', 5 );
-	add_filter( 'get_the_archive_description', 'tamatebako_archive_description', 5 );
+		/* Author posts link */
+		add_filter( 'the_author_posts_link', 'tamatebako_the_author_posts_link', 5 );
+
+		/* Set Consistent Read More */
+		add_filter( 'excerpt_more', 'tamatebako_excerpt_more', 5 );
+		add_filter( 'the_content_more_link', 'tamatebako_content_more', 5, 2 );
+
+		/* WP Link Pages */
+		add_filter( 'wp_link_pages_args', 'tamatebako_wp_link_pages', 5 );
+		add_filter( 'wp_link_pages_link', 'tamatebako_wp_link_pages_link', 5 );
+
+		/* Comments */
+		add_filter( 'get_comment_author_link', 'tamatebako_get_comment_author_link', 5 );
+		add_filter( 'get_comment_author_url_link', 'tamatebako_get_comment_author_url_link', 5 );
+
+	} // end admin conditional
 }
 
 
@@ -143,6 +154,50 @@ function tamatebako_scripts(){
 
 
 /**
+ * Add additional archive title.
+ */
+function tamatebako_archive_title( $title ){
+	/* Blog Page. */
+	if( is_home() && !is_front_page() ){
+		$title = get_post_field( 'post_title', get_queried_object_id() );
+	}
+	/* Search result page. */
+	if( is_search() ){
+		$title = tamatebako_string( 'search_title_prefix' ) . sprintf( " &#8220;%s&#8221;", get_search_query() );
+	}
+	return $title;
+}
+
+
+/**
+ * Add additional archive description.
+ */
+function tamatebako_archive_description( $desc ){
+
+	/* Blog Page. */
+	if( is_home() && !is_front_page() ){
+		$desc = get_post_field( 'post_content', get_queried_object_id(), 'raw' );
+	}
+	/* Author Page. */
+	elseif ( is_author() ){
+		$desc = get_the_author_meta( 'description', get_query_var( 'author' ) );
+	}
+	/* Post Type Archive. */
+	elseif ( is_post_type_archive() ){
+		$desc = get_post_type_object( get_query_var( 'post_type' ) )->description;
+	}
+
+	/* Add paragraph tags. */
+	if( !empty( $desc ) ){
+		return wpautop( $desc );
+	}
+
+	/* Return it. */
+	return $desc;
+}
+
+
+/**
  * Add '(Untitled)' title if not entry title is set
  */
 function tamatebako_untitled_entry_title( $title ) {
@@ -150,6 +205,27 @@ function tamatebako_untitled_entry_title( $title ) {
 		$title = tamatebako_string( 'untitled' );
 	}
 	return $title;
+}
+
+
+/**
+ * Adds microdata to the author posts link.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since  3.0.0
+ * @access public
+ * @param  string  $link
+ * @return string
+ */
+function tamatebako_the_author_posts_link( $link ) {
+	$pattern = array(
+		"/(<a.*?)(>)/i",
+		'/(<a.*?>)(.*?)(<\/a>)/i'
+	);
+	$replace = array(
+		'$1 class="url fn n"',
+		'$1<span class="author-name">$2</span>$3'
+	);
+	return preg_replace( $pattern, $replace, $link );
 }
 
 
@@ -209,44 +285,45 @@ function tamatebako_wp_link_pages_link( $link ) {
 
 
 /**
- * Add additional archive title.
+ * Adds microdata to the comment author link.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since  3.0.0
+ * @access private
+ * @param  string  $link
+ * @return string
  */
-function tamatebako_archive_title( $title ){
-	/* Blog Page. */
-	if( is_home() && !is_front_page() ){
-		$title = get_post_field( 'post_title', get_queried_object_id() );
-	}
-	/* Search result page. */
-	if( is_search() ){
-		$title = tamatebako_string( 'search_title_prefix' ) . sprintf( " &#8220;%s&#8221;", get_search_query() );
-	}
-	return $title;
+function tamatebako_get_comment_author_link( $link ) {
+
+	$patterns = array(
+		'/(class=[\'"])(.+?)([\'"])/i',
+		'/(<a.*?>)(.*?)(<\/a>)/i'
+	);
+	$replaces = array(
+		'$1$2 fn n$3',
+		'$1<span class="comment-author-name">$2</span>$3'
+	);
+
+	return preg_replace( $patterns, $replaces, $link );
 }
 
 
 /**
- * Add additional archive description.
+ * Adds microdata to the comment author URL link.
+ * @author Justin Tadlock <justintadlock@gmail.com>
+ * @since  3.0.0
+ * @access private
+ * @param  string  $link
+ * @return string
  */
-function tamatebako_archive_description( $desc ){
+function tamatebako_get_comment_author_url_link( $link ) {
 
-	/* Blog Page. */
-	if( is_home() && !is_front_page() ){
-		$desc = get_post_field( 'post_content', get_queried_object_id(), 'raw' );
-	}
-	/* Author Page. */
-	elseif ( is_author() ){
-		$desc = get_the_author_meta( 'description', get_query_var( 'author' ) );
-	}
-	/* Post Type Archive. */
-	elseif ( is_post_type_archive() ){
-		$desc = get_post_type_object( get_query_var( 'post_type' ) )->description;
-	}
+	$patterns = array(
+		'/(class=[\'"])(.+?)([\'"])/i',
+	);
+	$replaces = array(
+		'$1$2 fn n$3',
+	);
 
-	/* Add paragraph tags. */
-	if( !empty( $desc ) ){
-		return wpautop( $desc );
-	}
-
-	/* Return it. */
-	return $desc;
+	return preg_replace( $patterns, $replaces, $link );
 }
+
