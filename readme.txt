@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Just another WordPress starter theme....
+Just another WordPress starter theme...
 
 * Responsive Layout
 * Custom Background
@@ -25,6 +25,8 @@ Layouts available:
 
 * Content | Sidebar
 * Sidebar | Content
+
+This theme is licensed under the GNU General Public License, version 2 (GPL) or later. All included images are also under GPL2+ licensing.
 
 == Installation ==
 
@@ -81,7 +83,7 @@ Available icons: (Linking to any of the following sites will automatically displ
 * WordPress
 * YouTube
 * Email ( use "mailto:" in URL or use "mail-icon" class )
-* RSS Feed ( use "/feed/" in URl or use "feed-icon" class )
+* RSS Feed ( use "/feed/" in URL or use "feed-icon" class )
 
 Social networks that aren't currently supported will be indicated by a generic star icon.
 

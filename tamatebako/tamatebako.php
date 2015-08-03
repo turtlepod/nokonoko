@@ -79,6 +79,10 @@ add_action( 'after_setup_theme', 'tamatebako_load_theme_support', 15 );
  */
 function tamatebako_load_theme_support(){
 
+	/* === BACK COMPAT === */
+
+	tamatebako_require_if_theme_supports( 'tamatebako-back-compat', 'modules/back-compat' );
+
 	/* === REGISTER SIDEBARS === */
 
 	tamatebako_require_if_theme_supports( 'tamatebako-sidebars', 'modules/sidebars' );
