@@ -25,11 +25,11 @@
 
 /* Push primary sidebar to bottom */
 @media screen and (max-width: 1000px){
-	.wordpress .main-wrap{
+	.wordpress #main > .wrap{
 		margin-right: 0;
 		margin-left: 0;
 	}
-	.wordpress #sidebar-primary-wrap{
+	.wordpress #sidebar-primary{
 		margin-right: 0;
 		margin-left: 0;
 		padding-right: 20px;
@@ -37,18 +37,18 @@
 		float: left;
 		width: 100%;
 	}
-	.wordpress #sidebar-primary-wrap .widget{
+	.wordpress #sidebar-primary .widget{
 	}
 }
 
 /* Push secondary sidebar to bottom */
 @media screen and (max-width: 700px){
-	.wordpress .main-inner{
+	.wordpress #main{
 		float: none;
 		padding-left: 0;
 		padding-right: 0;
 	}
-	.wordpress #sidebar-secondary-wrap{
+	.wordpress #sidebar-secondary{
 		margin-right: 0;
 		margin-left: 0;
 		padding-right: 20px;
@@ -100,17 +100,17 @@
 
 /* === LOOP-NAV === */
 @media screen and (max-width: 700px) {
-	.loop-nav .prev{
+	.post-navigation .nav-prev{
 		width: 100%;
 	}
-	.loop-nav .next{
+	.post-navigation .nav-next{
 		width: 100%;
 		padding-right: 0;
 		padding-left: 30px;
 		padding-left: 3rem;
 		text-align: left;
 	}
-	.loop-nav .next a:after{
+	.post-navigation .nav-next a:after{
 		right: auto;
 		left: 0;
 	}
