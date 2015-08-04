@@ -7,19 +7,27 @@
 /**
  * Including a PHP file within the framework if the file exists.
  * @since  3.0.0
- * @param  string  $file   File path relative to framework.
- * @access private
+ * @param  string  $file   File path.
+ * @param  bool    $root   if true, use theme root.
+ * @access public
  */
-function tamatebako_include( $file ){
+function tamatebako_include( $file, $dir = false ){
 
-	/* Theme Dir */
+	/* Theme Path */
 	$theme_path = trailingslashit( get_template_directory() );
 
-	/* Tamatebako Dir */
-	$tamatebako_path = trailingslashit( $theme_path . TAMATEBAKO_DIR );
-
 	/* File Path */
-	$file_path = $tamatebako_path . $file . '.php';
+	$file_path = $theme_path . $file . '.php';
+
+	/* If directory not set, use tamatebako dir */
+	if( false === $dir ){
+		$dir = TAMATEBAKO_DIR;
+	}
+
+	/* if dir not empty, use it. */
+	if( !empty( $dir ) ){
+		$file_path = trailingslashit( $theme_path . $dir ) . $file . '.php';
+	}
 
 	/* Check file exist before loading it. */
 	if( file_exists( $file_path ) ) {
@@ -173,3 +181,27 @@ function tamatebako_child_theme_file( $file, $ext ){
 
 	return $file_uri;
 }
+
+/**
+ * Check Minimum System Requirement.
+ * @return bool
+ * @since 3.0.0
+ */
+function tamatebako_minimum_requirement( $data = array() ){
+
+	global $wp_version;
+
+	/* if system have min req, return true */
+	if ( version_compare( $wp_version, $data['wp_requires'], '>=' ) && version_compare( PHP_VERSION, $data['php_requires'], '>=' ) ) {
+		return true;
+	}
+
+	/* if not return false */
+	return false;
+}
+
+
+
+
+
+
