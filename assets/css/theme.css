@@ -176,7 +176,7 @@ code{
 	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
 /* Entry Wrap */
-.entry-wrap{
+.entry > .wrap{
 }
 	/* Entry Header */
 	.entry-header{
