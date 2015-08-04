@@ -14,12 +14,28 @@ ul{
 	list-style: circle;
 }
 /* Blockquotes */
-blockquote, q{
+blockquote{
 	position: relative;
-	padding: 0 0 0 30px;
-	padding: 0 0 0 3rem;
+	padding: 0 0 0 50px;
+	padding: 0 0 0 5rem;
+	font-size: 20px;
+	font-size: 2rem;
+	line-height: 1.7em;
 }
-blockquote:before,
+q{
+	position: relative;
+	padding: 0 0 0 20px;
+	padding: 0 0 0 2rem;
+}
+blockquote:before{
+	content: "\f122";
+	font-family: "dashicons";
+	font-size: 40px;
+	color: #ccc;
+	position: absolute;
+	left: 0;
+	-webkit-font-smoothing: antialiased;
+}
 q:before{
 	content: "\f122";
 	font-family: "dashicons";
@@ -27,6 +43,14 @@ q:before{
 	position: absolute;
 	left: 0;
 	-webkit-font-smoothing: antialiased;
+}
+.theme-genericons-active blockquote:before{
+	content: "\f106";
+	font-family: "genericons";
+}
+.theme-genericons-active q:before{
+	content: "\f106";
+	font-family: "genericons";
 }
 /* Forms */
 label{
@@ -350,6 +374,10 @@ code{
 			top: 0;
 			left: 0;
 		}
+			.theme-genericons-active .post-navigation .nav-prev a:before{
+				content: "\f430";
+				font-family: "genericons";
+			}
 		.post-navigation .nav-next a:after{
 			content: "\f344";
 			font-family: "dashicons";
@@ -359,6 +387,10 @@ code{
 			top: 0;
 			right: 0;
 		}
+			.theme-genericons-active .post-navigation .nav-next a:after{
+				content: "\f429";
+				font-family: "genericons";
+			}
 
 
 
@@ -404,12 +436,20 @@ code{
 		vertical-align: top;
 		-webkit-font-smoothing: antialiased;
 	}
+		.theme-genericons-active .navigation.pagination .page-numbers.prev:before{
+			content: "\f430";
+			font-family: "genericons";
+		}
 	.navigation.pagination .page-numbers.next:after{
 		content: "\f344";
 		font-family: "dashicons";
 		vertical-align: top;
 		-webkit-font-smoothing: antialiased;
 	}
+		.theme-genericons-active .navigation.pagination .page-numbers.next:after{
+			content: "\f429";
+			font-family: "genericons";
+		}
 
 
 /* === SIDEBAR === */
@@ -440,5 +480,4 @@ code{
 		content: " | ";
 		color: #ccc;
 	}
-
 

@@ -3,6 +3,18 @@
  * Scripts Setup
 **/
 
+/* === BODY CLASSES === */
+
+add_filter( 'body_class', 'nokonoko_scripts_body_class' );
+
+/**
+ * Scripts Body Class Helper
+ */
+function nokonoko_scripts_body_class( $classes ){
+	$classes[] = 'theme-genericons-active';
+	return $classes;
+}
+
 /* === EDITOR STYLE === */
 
 $editor_css = array(
@@ -50,8 +62,8 @@ function nokonoko_scripts(){
 
 	/* == CSS == */
 	wp_enqueue_style( 'theme-open-sans' );
-	wp_enqueue_style( 'dashicons' );
-	//wp_enqueue_style( 'theme-genericons' );
+	//wp_enqueue_style( 'dashicons' );
+	wp_enqueue_style( 'theme-genericons' );
 	$dev = true;
 	if ( isset( $dev ) && $dev ){
 		wp_enqueue_style( 'theme-base' );

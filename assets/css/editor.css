@@ -12,12 +12,28 @@ ul{
 	list-style: circle;
 }
 /* Blockquotes */
-blockquote, q{
+blockquote{
+	position: relative;
+	padding: 0 0 0 50px;
+	padding: 0 0 0 5rem;
+	font-size: 20px;
+	font-size: 2rem;
+	line-height: 1.7em;
+}
+q{
 	position: relative;
 	padding: 0 0 0 20px;
 	padding: 0 0 0 2rem;
 }
-blockquote:before,
+blockquote:before{
+	content: "\f122";
+	font-family: "dashicons";
+	font-size: 40px;
+	color: #ccc;
+	position: absolute;
+	left: 0;
+	-webkit-font-smoothing: antialiased;
+}
 q:before{
 	content: "\f122";
 	font-family: "dashicons";
@@ -26,6 +42,7 @@ q:before{
 	left: 0;
 	-webkit-font-smoothing: antialiased;
 }
+
 /* Forms */
 label{
 }
