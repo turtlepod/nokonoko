@@ -199,9 +199,3 @@ function tamatebako_minimum_requirement( $data = array() ){
 	/* if not return false */
 	return false;
 }
-
-
-
-
-
-
