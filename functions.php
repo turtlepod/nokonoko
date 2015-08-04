@@ -4,7 +4,7 @@
 ** ---------------------------- */
 
 /* Load Library. */
-require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamatebako.php' );
+require_once( trailingslashit( get_template_directory() ) . 'library/tamatebako.php' );
 
 /* Load External Library. */
 if( ! function_exists( 'get_the_image' ) ){
