@@ -51,7 +51,9 @@
 
 						<?php } else { /* No Posts Found */ ?>
 
-							<?php tamatebako_content_error(); ?>
+							<div class="wrap">
+								<?php tamatebako_content_error(); ?>
+							</div><!-- #content > .wrap -->
 
 						<?php } /* End Posts Found Check */ ?>
 

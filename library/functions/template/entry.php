@@ -79,7 +79,6 @@ function tamatebako_comments_link(){
  */
 function tamatebako_content_error(){
 ?>
-<div class="wrap">
 	<article id="post-0" class="entry">
 		<div class="wrap">
 
@@ -93,7 +92,6 @@ function tamatebako_content_error(){
 
 		</div><!-- .entry > .wrap -->
 	</article><!-- .entry -->
-</div><!-- .content > .wrap -->
 <?php
 }
 
