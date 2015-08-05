@@ -22,6 +22,22 @@ function tamatebako_fonts_config(){
 }
 
 /**
+ * Fonts Settings
+ */
+function tamatebako_fonts_settings(){
+
+	/* Get theme-supported layouts. */
+	$theme_support = get_theme_support( 'tamatebako-custom-fonts' );
+
+	$fonts_settings = array();
+	if ( isset( $theme_support[1] ) ){
+		$fonts_settings = $theme_support[1];
+	}
+
+	return $fonts_settings;
+}
+
+/**
  * Fonts Customizer Label
  */
 function tamatebako_fonts_label(){
@@ -29,7 +45,7 @@ function tamatebako_fonts_label(){
 		'fonts' => 'Fonts',
 	);
 	$theme_support = get_theme_support( 'tamatebako-custom-fonts' );
-	$args = isset( $theme_support[1] ) ? $theme_support[1] : array();
+	$args = isset( $theme_support[2] ) ? $theme_support[2] : array();
 	return wp_parse_args( $args, $defaults );
 }
 
@@ -49,7 +65,6 @@ tamatebako_include( 'modules/custom-fonts/customizer' );
 
 
 /* === IMPLEMENTATION === */
-
 
 /**
  * Return Google Font URL containing all fonts used.
@@ -127,10 +142,13 @@ function tamatebako_fonts_print_style(){
 		$font = get_theme_mod( $section, $section_data['default'] );
 
 		/* Only add if it's not the default. */
-		if( $font && ( $font != $section_data['default'] ) ){
+		if( $font ){
+
 			$target_element = $section_data['target'];
 			$font_family = tamatebako_get_font_family( $font );
+
 			$css .= "{$target_element}{font-family:{$font_family};}";
+
 		}
 
 	}
@@ -139,4 +157,34 @@ function tamatebako_fonts_print_style(){
 	if ( !empty( $css ) ){
 		echo "\n" . '<style type="text/css" id="tamatebako-custom-fonts-css">' . trim( $css ) . '</style>' . "\n";
 	}
+}
+
+/* Add body classes */
+add_filter( 'body_class', 'tamatebako_fonts_body_class' );
+
+/**
+ * Custom Font: Body Class Status
+ */
+function tamatebako_fonts_body_class( $classes ){
+
+	/* Add active status */
+	$classes[] = 'custom-fonts-active';
+
+	/* Get fonts config */
+	$config = tamatebako_fonts_config();
+
+	/* Foreach setting */
+	foreach( $config as $section => $section_data ){
+		/* Add class */
+		$classes[] = sanitize_html_class( 'tf-' . $section . '-' . get_theme_mod( $section, $section_data['default'] ) );
+	}
+	return array_unique( $classes );
+}
+
+
+/* === EDITOR STYLE === */
+
+$settings = tamatebako_fonts_settings();
+if ( isset( $settings['editor_styles'] ) ){
+	tamatebako_include( 'modules/custom-fonts/editor-style' );
 }
