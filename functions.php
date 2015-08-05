@@ -4,7 +4,7 @@
 ** ---------------------------- */
 
 /* Load Library. */
-require_once( trailingslashit( get_template_directory() ) . 'tamatebako/tamatebako.php' );
+require_once( trailingslashit( get_template_directory() ) . 'library/tamatebako.php' );
 
 /* Load External Library. */
 if( ! function_exists( 'get_the_image' ) ){
@@ -19,50 +19,44 @@ add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
  */
 function nokonoko_theme_setup(){
 
-	/* === BACKWARD COMPATIBILITY === */
-	global $wp_version;
+	/* === MINIMUM SYSTEM REQ === */
 	$back_compat_args = array(
 		'theme_name'   => 'NokoNoko',
 		'wp_requires'  => '4.0.0',
 		'php_requires' => '5.2.4',
 	);
 	add_theme_support( 'tamatebako-back-compat', $back_compat_args );
+	if( ! tamatebako_minimum_requirement( $back_compat_args ) ) return;
 
-	/* Check Minimum Requirements before loading functions */
-	if ( version_compare( $wp_version, $back_compat_args['wp_requires'], '>=' ) && version_compare( PHP_VERSION, $back_compat_args['php_requires'], '>=' ) ) {
+	/* === TRANSLATION === */
+	tamatebako_include( 'translation', 'includes' );
 
-		/* Path */
-		$theme_path = trailingslashit( get_template_directory() );
-		$includes = trailingslashit( $theme_path . 'includes' );
+	/* === SCRIPTS === */
+	tamatebako_include( 'scripts', 'includes' );
 
-		/* === TRANSLATION === */
-		require_once( $includes . 'translation.php' );
+	/* === CUSTOM FONTS === */
+	tamatebako_include( 'custom-fonts', 'includes' );
 
-		/* === SCRIPTS === */
-		require_once( $includes . 'scripts.php' );
+	/* === SETUP: Sidebars, Menus, Image Sizes, Content Width === */
+	tamatebako_include( 'setup', 'includes' );
 
-		/* === SETUP: Sidebars, Menus, Image Sizes, Content Width === */
-		require_once( $includes . 'setup.php' );
+	/* === LAYOUTS === */
+	tamatebako_include( 'layouts', 'includes' );
 
-		/* === LAYOUTS === */
-		require_once( $includes . 'layouts.php' );
+	/* === BACKGROUND === */
+	tamatebako_include( 'background', 'includes' );
 
-		/* === BACKGROUND === */
-		require_once( $includes . 'background.php' );
+	/* === HEADER IMAGE === */
+	tamatebako_include( 'header-image', 'includes' );
 
-		/* === HEADER IMAGE === */
-		require_once( $includes . 'header-image.php' );
+	/* === LOGO === */
+	tamatebako_include( 'logo', 'includes' );
 
-		/* === LOGO === */
-		require_once( $includes . 'logo.php' );
+	/* === UTILITY: Mobile View, Custom CSS === */
+	tamatebako_include( 'utility', 'includes' );
 
-		/* === UTILITY: Mobile View, Custom CSS === */
-		require_once( $includes . 'utility.php' );
-
-		/* === POST FORMATS === */
-		require_once( $includes . 'post-formats.php' );
-
-	} // end req check.
+	/* === POST FORMATS === */
+	tamatebako_include( 'post-formats', 'includes' );
 
 }
 

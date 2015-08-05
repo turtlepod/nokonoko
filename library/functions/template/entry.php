@@ -79,9 +79,8 @@ function tamatebako_comments_link(){
  */
 function tamatebako_content_error(){
 ?>
-<div class="content-entry-wrap">
 	<article id="post-0" class="entry">
-		<div class="entry-wrap">
+		<div class="wrap">
 
 			<header class="entry-header">
 				<h1 class="entry-title"><?php echo tamatebako_string( 'error_title' ); ?></h1>
@@ -91,9 +90,8 @@ function tamatebako_content_error(){
 				<?php echo wpautop( tamatebako_string( 'error_message' ) ); ?>
 			</div><!-- .entry-content -->
 
-		</div><!-- .entry-wrap -->
+		</div><!-- .entry > .wrap -->
 	</article><!-- .entry -->
-</div><!-- .content-entry-wrap -->
 <?php
 }
 

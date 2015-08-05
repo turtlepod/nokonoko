@@ -7,19 +7,27 @@
 /**
  * Including a PHP file within the framework if the file exists.
  * @since  3.0.0
- * @param  string  $file   File path relative to framework.
- * @access private
+ * @param  string  $file   File path.
+ * @param  bool    $root   if true, use theme root.
+ * @access public
  */
-function tamatebako_include( $file ){
+function tamatebako_include( $file, $dir = false ){
 
-	/* Theme Dir */
+	/* Theme Path */
 	$theme_path = trailingslashit( get_template_directory() );
 
-	/* Tamatebako Dir */
-	$tamatebako_path = trailingslashit( $theme_path . TAMATEBAKO_DIR );
-
 	/* File Path */
-	$file_path = $tamatebako_path . $file . '.php';
+	$file_path = $theme_path . $file . '.php';
+
+	/* If directory not set, use tamatebako dir */
+	if( false === $dir ){
+		$dir = TAMATEBAKO_DIR;
+	}
+
+	/* if dir not empty, use it. */
+	if( $dir ){
+		$file_path = trailingslashit( $theme_path . $dir ) . $file . '.php';
+	}
 
 	/* Check file exist before loading it. */
 	if( file_exists( $file_path ) ) {
@@ -172,4 +180,67 @@ function tamatebako_child_theme_file( $file, $ext ){
 	}
 
 	return $file_uri;
+}
+
+/**
+ * Check Minimum System Requirement.
+ * @return bool
+ * @since 3.0.0
+ */
+function tamatebako_minimum_requirement( $data = array() ){
+
+	global $wp_version;
+
+	/* if system have min req, return true */
+	if ( version_compare( $wp_version, $data['wp_requires'], '>=' ) && version_compare( PHP_VERSION, $data['php_requires'], '>=' ) ) {
+		return true;
+	}
+
+	/* if not return false */
+	return false;
+}
+
+/**
+ * Google Font URL
+ * Combine multiple google font in one URL
+ */
+function tamatebako_google_fonts_url( $fonts, $subsets = array() ){
+
+	/* URL */
+	$base_url    =  "//fonts.googleapis.com/css";
+	$font_args   = array();
+	$family      = array();
+
+	/* Format Each Font Family in Array */
+	foreach( $fonts as $font_name => $font_weight ){
+		$font_name = str_replace( ' ', '+', $font_name );
+		if( !empty( $font_weight ) ){
+			if( is_array( $font_weight ) ){
+				$font_weight = implode( ",", $font_weight );
+			}
+			$family[] = trim( $font_name . ':' . urlencode( trim( $font_weight ) ) );
+		}
+		else{
+			$family[] = trim( $font_name );
+		}
+	}
+
+	/* Only return URL if font family defined. */
+	if( !empty( $family ) ){
+
+		/* Make Font Family a String */
+		$family = implode( "|", $family );
+
+		/* Add font family in args */
+		$font_args['family'] = $family;
+
+		/* Add font subsets in args */
+		if( !empty( $subsets ) ){
+			$font_args['subset'] = $subsets;
+		}
+
+		return add_query_arg( $font_args, $base_url );
+	}
+
+	return '';
 }
