@@ -18,7 +18,7 @@ function nokonoko_scripts_body_class( $classes ){
 /* === EDITOR STYLE === */
 
 $editor_css = array(
-	add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
+	tamatebako_google_fonts_url( array( 'Open Sans' => '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ) ),
 	'assets/css/base.min.css',
 	'assets/css/editor.css',
 );
@@ -61,7 +61,7 @@ function nokonoko_scripts(){
 	wp_enqueue_script( 'theme-js' );
 
 	/* == CSS == */
-	wp_enqueue_style( 'theme-open-sans' );
+	//wp_enqueue_style( 'theme-google-fonts' );
 	//wp_enqueue_style( 'dashicons' );
 	wp_enqueue_style( 'theme-genericons' );
 	$dev = true;
@@ -119,9 +119,9 @@ add_theme_support( 'tamatebako-register-js', $register_js_scripts );
 
 $register_css_scripts = array(
 	/* Font */
-	"theme-open-sans" => array(
-		'src'   => add_query_arg( 'family', 'Open+Sans:' . urlencode( '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ), "//fonts.googleapis.com/css" ),
-	),
+	//"theme-google-fonts" => array(
+	//	'src'   => tamatebako_google_fonts_url( array( 'Open Sans' => '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ) ),
+	//),
 	/* Icon */
 	"theme-genericons" => array(
 		'src'   => tamatebako_theme_file( 'assets/fonts/genericons/genericons', 'css' ),

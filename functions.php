@@ -34,6 +34,9 @@ function nokonoko_theme_setup(){
 	/* === SCRIPTS === */
 	tamatebako_include( 'scripts', 'includes' );
 
+	/* === CUSTOM FONTS === */
+	tamatebako_include( 'custom-fonts', 'includes' );
+
 	/* === SETUP: Sidebars, Menus, Image Sizes, Content Width === */
 	tamatebako_include( 'setup', 'includes' );
 

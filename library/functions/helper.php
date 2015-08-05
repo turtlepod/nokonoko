@@ -25,7 +25,7 @@ function tamatebako_include( $file, $dir = false ){
 	}
 
 	/* if dir not empty, use it. */
-	if( !empty( $dir ) ){
+	if( $dir ){
 		$file_path = trailingslashit( $theme_path . $dir ) . $file . '.php';
 	}
 
@@ -198,4 +198,49 @@ function tamatebako_minimum_requirement( $data = array() ){
 
 	/* if not return false */
 	return false;
+}
+
+/**
+ * Google Font URL
+ * Combine multiple google font in one URL
+ */
+function tamatebako_google_fonts_url( $fonts, $subsets = array() ){
+
+	/* URL */
+	$base_url    =  "//fonts.googleapis.com/css";
+	$font_args   = array();
+	$family      = array();
+
+	/* Format Each Font Family in Array */
+	foreach( $fonts as $font_name => $font_weight ){
+		$font_name = str_replace( ' ', '+', $font_name );
+		if( !empty( $font_weight ) ){
+			if( is_array( $font_weight ) ){
+				$font_weight = implode( ",", $font_weight );
+			}
+			$family[] = trim( $font_name . ':' . urlencode( trim( $font_weight ) ) );
+		}
+		else{
+			$family[] = trim( $font_name );
+		}
+	}
+
+	/* Only return URL if font family defined. */
+	if( !empty( $family ) ){
+
+		/* Make Font Family a String */
+		$family = implode( "|", $family );
+
+		/* Add font family in args */
+		$font_args['family'] = $family;
+
+		/* Add font subsets in args */
+		if( !empty( $subsets ) ){
+			$font_args['subset'] = $subsets;
+		}
+
+		return add_query_arg( $font_args, $base_url );
+	}
+
+	return '';
 }

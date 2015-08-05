@@ -90,4 +90,9 @@ Available icons: (Linking to any of the following sites will automatically displ
 
 Social networks that aren't currently supported will be indicated by a generic star icon.
 
-abcdefghijklmnopqrstuvexyz
+== Changelog ==
+
+= 1.0.0 =
+
+* Initial Release.
+
