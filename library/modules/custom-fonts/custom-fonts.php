@@ -30,6 +30,45 @@ function tamatebako_fonts_settings(){
 }
 
 /**
+ * Font Subsets
+ */
+function tamatebako_fonts_subsets_setting(){
+
+	/* Add latin and latin-extended as default subset. */
+	$subsets = array( 'latin', 'latin-ext' );
+
+	/* Add user defined subset. */
+	$settings = tamatebako_fonts_settings();
+	if( isset( $settings['subsets_settings']['font_subset'] ) ){
+		$subset = $settings['subsets_settings']['font_subset'];
+
+		/* add subset. */
+		if ( 'cyrillic' == $subset ) {
+			$subsets[] = 'cyrillic';
+			$subsets[] = 'cyrillic-ext';
+		}
+		elseif ( 'greek' == $subset ) {
+			$subsets[] = 'greek';
+			$subsets[] = 'greek-ext';
+		}
+		elseif ( 'vietnamese' == $subset ) {
+			$subsets[] = 'vietnamese';
+		}
+		elseif( 'no-subset' != $subset ){
+			/* do nothing. */
+		}
+		else{
+			$subsets[] = $subset;
+		}
+	}
+	/* sanitize */
+	$subsets = array_map( 'sanitize_html_class', $subsets );
+
+	return apply_filters( 'tamatebako_fonts_subsets_setting', $subsets );
+}
+
+
+/**
  * Fonts Customizer Label
  */
 function tamatebako_fonts_label(){
@@ -65,6 +104,7 @@ function tamatebako_fonts_all_google_url(){
 
 	/* Vars: List of all fonts used */
 	$fonts = array();
+	$fonts_subsets = array();
 
 	/* Foreach setting */
 	foreach( $config as $section => $section_data ){
@@ -74,12 +114,26 @@ function tamatebako_fonts_all_google_url(){
 
 		if( !empty( $font ) ){
 			$fonts[$font] = tamatebako_get_font_weight( $font );
+
+			/* subsets. */
+			$get_font_subsets = tamatebako_get_font_subsets( $font );
+			if( !empty( $get_font_subsets ) ){
+				foreach( $get_font_subsets as $subset ){
+					$fonts_subsets[] = $subset;
+				}
+			}
 		}
 
 	}
 
 	if( !empty( $fonts ) ){
-		return tamatebako_google_fonts_url( $fonts );
+
+		/* get available subset. */
+		$subsets_settings = tamatebako_fonts_subsets_setting();
+		$subsets = array_intersect( $subsets_settings, $fonts_subsets );
+
+		/* return url */
+		return tamatebako_google_fonts_url( $fonts, $subsets );
 	}
 	return '';
 }

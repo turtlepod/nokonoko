@@ -236,7 +236,13 @@ function tamatebako_google_fonts_url( $fonts, $subsets = array() ){
 
 		/* Add font subsets in args */
 		if( !empty( $subsets ) ){
-			$font_args['subset'] = $subsets;
+
+			/* format subsets to string */
+			if( is_array( $subsets ) ){
+				$subsets = implode( ',', $subsets );
+			}
+
+			$font_args['subset'] = urlencode( trim( $subsets ) );
 		}
 
 		return add_query_arg( $font_args, $base_url );

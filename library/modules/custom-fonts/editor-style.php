@@ -36,16 +36,7 @@ function tamatebako_fonts_mce_fonts(){
  */
 function tamatebako_fonts_mce_google_fonts(){
 
-	/* var */
-	$fonts = tamatebako_fonts_mce_fonts();
-	$google_fonts = array();
-	foreach( $fonts as $font_name => $font_data ){
-		$font = tamatebako_fonts_remove_websafe( $font_name );
-		if( !empty( $font ) ){
-			$google_fonts[$font_name] = $font_data;
-		}
-	}
-	return $google_fonts;
+
 }
 
 /* Add Editor Style */
@@ -55,7 +46,33 @@ add_filter( 'mce_css', 'tamatebako_fonts_mce_css' );
  * WP Editor Styles
  */
 function tamatebako_fonts_mce_css( $mce_css ){
-	$url = tamatebako_google_fonts_url( tamatebako_fonts_mce_google_fonts() );
+
+	/* var */
+	$google_fonts = array();
+	$fonts_subsets = array();
+	$fonts = tamatebako_fonts_mce_fonts();
+
+	/* Foreach fonts get data. */
+	foreach( $fonts as $font_name => $font_data ){
+		$font = tamatebako_fonts_remove_websafe( $font_name );
+		if( !empty( $font ) ){
+			$google_fonts[$font_name] = $font_data;
+
+			/* subsets. */
+			$get_font_subsets = tamatebako_get_font_subsets( $font_name );
+			if( !empty( $get_font_subsets ) ){
+				foreach( $get_font_subsets as $subset ){
+					$fonts_subsets[] = $subset;
+				}
+			}
+		}
+	}
+
+	/* get available subset. */
+	$subsets_settings = tamatebako_fonts_subsets_setting();
+	$subsets = array_intersect( $subsets_settings, $fonts_subsets );
+
+	$url = tamatebako_google_fonts_url( $google_fonts, $subsets );
 	if( !empty( $url ) ){
 		$mce_css .= ', ' . $url;
 	}

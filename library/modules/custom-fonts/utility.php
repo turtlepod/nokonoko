@@ -90,6 +90,17 @@ function tamatebako_get_font_family( $font_name ){
 	return 'sans-serif';
 }
 
+/**
+ * Get Font Subsets
+ */
+function tamatebako_get_font_subsets( $font_name ){
+	$fonts = tamatebako_fonts();
+	if( isset( $fonts[$font_name]['subset'] ) ){
+		return $fonts[$font_name]['subset'];
+	}
+	return '';
+}
+
 
 /**
  * Return empty if it's a websafe font.
