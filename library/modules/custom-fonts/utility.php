@@ -4,7 +4,7 @@
 **/
 
 /**
- * Format Choices Array From Fonts Data
+ * Format Choices Array From Fonts Group
  */
 function tamatebako_fonts_format_choices( $font_groups ){
 
@@ -65,8 +65,7 @@ function tamatebako_get_font_family( $font_name ){
 
 
 /**
- * Remove WebSafe Fonts From Fonts List.
- * this is used to get only "google fonts".
+ * Return empty if it's a websafe font.
  */
 function tamatebako_fonts_remove_websafe( $font ){
 	if ( strpos( $font, 'ws_' ) !== false ) {

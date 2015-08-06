@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Fonts
+ * Custom Fonts Module.
 **/
 
 /* === VARS === */
@@ -9,15 +9,11 @@
  * Fonts Config Defined By Theme
  */
 function tamatebako_fonts_config(){
-
-	/* Get theme-supported layouts. */
 	$theme_support = get_theme_support( 'tamatebako-custom-fonts' );
-
 	$fonts_config = array();
 	if ( isset( $theme_support[0] ) ){
 		$fonts_config = $theme_support[0];
 	}
-
 	return $fonts_config;
 }
 
@@ -25,15 +21,11 @@ function tamatebako_fonts_config(){
  * Fonts Settings
  */
 function tamatebako_fonts_settings(){
-
-	/* Get theme-supported layouts. */
 	$theme_support = get_theme_support( 'tamatebako-custom-fonts' );
-
 	$fonts_settings = array();
 	if ( isset( $theme_support[1] ) ){
 		$fonts_settings = $theme_support[1];
 	}
-
 	return $fonts_settings;
 }
 
@@ -53,16 +45,13 @@ function tamatebako_fonts_label(){
 
 tamatebako_include( 'modules/custom-fonts/fonts' );
 
-
 /* === UTILITY === */
 
 tamatebako_include( 'modules/custom-fonts/utility' );
 
-
 /* === CUSTOMIZER === */
 
 tamatebako_include( 'modules/custom-fonts/customizer' );
-
 
 /* === IMPLEMENTATION === */
 
@@ -185,6 +174,6 @@ function tamatebako_fonts_body_class( $classes ){
 /* === EDITOR STYLE === */
 
 $settings = tamatebako_fonts_settings();
-if ( isset( $settings['editor_styles'] ) ){
+if ( isset( $settings['editor_styles'] ) && !empty( $settings['editor_styles'] ) ){
 	tamatebako_include( 'modules/custom-fonts/editor-style' );
 }

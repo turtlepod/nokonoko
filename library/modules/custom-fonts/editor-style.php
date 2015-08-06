@@ -1,6 +1,9 @@
 <?php
 /**
- * Custom Fonts: Editor Style Functions
+ * Custom Fonts: Editor Style Functions.
+ * Ajax CSS in editor style is taken from "Stargazer" theme by Justin Tadlock.
+ * @author David Chandra <david@genbu.me>
+ * @author Justin Tadlock <justintadlock@gmail.com>
 **/
 
 /**
@@ -23,7 +26,8 @@ function tamatebako_fonts_mce_fonts(){
 
 	foreach( $settings as $setting ){
 		$font = get_theme_mod( $setting, $config[$setting]['default'] );
-		$fonts[$font] = '400,400italic,700,700italic';
+		$weight = apply_filters( 'tamatebako_font_weight_mce-' . sanitize_title( $font ), '400,400italic,700,700italic' );
+		$fonts[$font] = apply_filters( 'tamatebako_fonts_weight_mce', $weight );
 	}
 	return $fonts;
 }

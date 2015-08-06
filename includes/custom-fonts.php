@@ -7,6 +7,7 @@
 $fonts_config = array(
 	'site_title_font' => array(
 		'label' => _x( 'Site Title Font', 'customizer', 'nokonoko' ),
+		'description' => _x( 'You can select your preferred font for your site title below.', 'customizer', 'nokonoko' ),
 		'target' => '#site-title',
 		'fonts' => array( 'websafe', 'heading', 'base' ),
 		'default' => 'Open Sans',

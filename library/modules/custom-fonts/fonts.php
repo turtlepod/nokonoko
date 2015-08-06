@@ -5,6 +5,7 @@
 
 /**
  * Web Safe Fonts
+ * all fonts in this group nned to use "ws_" prefix.
  */
 function tamatebako_fonts_websafe(){
 
@@ -28,7 +29,7 @@ function tamatebako_fonts_websafe(){
 
 /**
  * Heading Fonts Choices
- * fonts only suitable for headings
+ * Google fonts only suitable for headings
 **/
 function tamatebako_fonts_heading(){
 
@@ -88,7 +89,7 @@ function tamatebako_fonts_heading(){
 
 /**
  * Base Fonts Choices
- * fonts suitable for base fonts
+ * Google fonts suitable for base fonts
 **/
 function tamatebako_fonts_base(){
 
@@ -182,14 +183,14 @@ function tamatebako_fonts_base(){
 }
 
 /**
- * All Fonts Available
+ * Merge All Fonts Available
  */
 function tamatebako_fonts(){
 	return array_merge( tamatebako_fonts_websafe(), tamatebako_fonts_heading(), tamatebako_fonts_base() );
 }
 
 /**
- * All Google Fonts
+ * MErge All Google Fonts
  */
 function tamatebako_fonts_google(){
 	return array_merge( tamatebako_fonts_heading(), tamatebako_fonts_base() );

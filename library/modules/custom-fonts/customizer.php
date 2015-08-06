@@ -38,6 +38,7 @@ function tamatebako_fonts_customizer_register( $wp_customize ) {
 			$section,
 			array(
 				'title' => esc_html( $section_data['label'] ),
+				'description' => isset( $section_data['description'] ) ? $section_data['description'] : '',
 				'panel' => 'fonts',
 			)
 		);
@@ -99,36 +100,6 @@ function tamatebako_fonts_sanitize( $input ){
 		return $input;
 	}
 
-	/* return empty if not available. */
+	/* return empty if not valid. */
 	return '';
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
