@@ -222,7 +222,7 @@ function tamatebako_the_author_posts_link( $link ) {
 		'/(<a.*?>)(.*?)(<\/a>)/i'
 	);
 	$replace = array(
-		'$1 class="url fn n"',
+		'$1 class="url fn n"$2',
 		'$1<span class="author-name">$2</span>$3'
 	);
 	return preg_replace( $pattern, $replace, $link );
