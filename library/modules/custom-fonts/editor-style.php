@@ -50,14 +50,13 @@ function tamatebako_fonts_mce_google_fonts(){
 }
 
 /* Editor Body Class */
-add_filter( 'tiny_mce_before_init', 'tamatebako_fonts_mce_body_class' );
+add_filter( 'tiny_mce_before_init', 'tamatebako_fonts_mce_body_class', 6 );
 
 /**
  * WP Editor Body Class
  */
 function tamatebako_fonts_mce_body_class( $settings ){
-	$classes = array( 'custom-fonts-active' );
-	$settings['body_class'] = join( ' ', $classes );
+	$settings['body_class'] = $settings['body_class'] . ' custom-fonts-active';
 	return $settings;
 }
 
