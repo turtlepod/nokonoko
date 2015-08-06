@@ -26,8 +26,7 @@ function tamatebako_fonts_mce_fonts(){
 
 	foreach( $settings as $setting ){
 		$font = get_theme_mod( $setting, $config[$setting]['default'] );
-		$weight = apply_filters( 'tamatebako_font_weight_mce-' . sanitize_title( $font ), '400,400italic,700,700italic' );
-		$fonts[$font] = apply_filters( 'tamatebako_fonts_weight_mce', $weight );
+		$fonts[$font] = tamatebako_get_font_weight( $font );
 	}
 	return $fonts;
 }
@@ -49,18 +48,6 @@ function tamatebako_fonts_mce_google_fonts(){
 	return $google_fonts;
 }
 
-/* Editor Body Class */
-add_filter( 'tiny_mce_before_init', 'tamatebako_fonts_mce_body_class', 6 );
-
-/**
- * WP Editor Body Class
- */
-function tamatebako_fonts_mce_body_class( $settings ){
-	$settings['body_class'] = $settings['body_class'] . ' custom-fonts-active';
-	return $settings;
-}
-
-
 /* Add Editor Style */
 add_filter( 'mce_css', 'tamatebako_fonts_mce_css' );
 
@@ -77,7 +64,7 @@ function tamatebako_fonts_mce_css( $mce_css ){
 }
 
 
-/* Ajax: print editor style */
+/* Ajax: editor style CSS */
 add_action( 'wp_ajax_tamatebako_fonts_mce_css', 'tamatebako_fonts_mce_css_ajax_callback' );
 add_action( 'wp_ajax_no_priv_tamatebako_fonts_mce_css', 'tamatebako_fonts_mce_css_ajax_callback' );
 

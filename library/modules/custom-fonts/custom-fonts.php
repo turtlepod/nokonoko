@@ -63,9 +63,6 @@ function tamatebako_fonts_all_google_url(){
 	/* Get fonts config */
 	$config = tamatebako_fonts_config();
 
-	$heading_fonts = tamatebako_fonts_heading();
-	$base_fonts = tamatebako_fonts_base();
-
 	/* Vars: List of all fonts used */
 	$fonts = array();
 
@@ -76,16 +73,7 @@ function tamatebako_fonts_all_google_url(){
 		$font = tamatebako_fonts_remove_websafe( get_theme_mod( $section, $section_data['default'] ) );
 
 		if( !empty( $font ) ){
-			/* Heading Fonts, do not load weight+style */
-			if ( array_key_exists( $font, $heading_fonts ) ){
-				$weight = apply_filters( 'tamatebako_font_weight-' . sanitize_title( $font ), '' );
-				$fonts[$font] = apply_filters( 'tamatebako_fonts_weight_heading', $weight );
-			}
-			/* Base Font, load normal and bold. */
-			else{
-				$weight = apply_filters( 'tamatebako_font_weight-' . sanitize_title( $font ), '400,400italic,700,700italic' );
-				$fonts[$font] = apply_filters( 'tamatebako_fonts_weight_base', $weight );
-			}
+			$fonts[$font] = tamatebako_get_font_weight( $font );
 		}
 
 	}
@@ -106,7 +94,7 @@ add_action( 'wp_enqueue_scripts', 'tamatebako_fonts_enqueue_scripts' );
 function tamatebako_fonts_enqueue_scripts(){
 	$google_fonts_url = tamatebako_fonts_all_google_url();
 	if( !empty( $google_fonts_url ) ){
-		wp_enqueue_style( 'tamatebako-google-fonts', $google_fonts_url, array(), tamatebako_theme_version(), 'all'  );
+		wp_enqueue_style( 'tamatebako-custom-fonts', $google_fonts_url, array(), tamatebako_theme_version(), 'all'  );
 	}
 }
 
@@ -144,7 +132,7 @@ function tamatebako_fonts_print_style(){
 
 	/* PRINT CSS */
 	if ( !empty( $css ) ){
-		echo "\n" . '<style type="text/css" id="tamatebako-custom-fonts-css">' . trim( $css ) . '</style>' . "\n";
+		echo "\n" . '<style type="text/css" id="tamatebako-custom-fonts-rules-css">' . trim( $css ) . '</style>' . "\n";
 	}
 }
 

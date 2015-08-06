@@ -186,12 +186,14 @@ function tamatebako_fonts_base(){
  * Merge All Fonts Available
  */
 function tamatebako_fonts(){
-	return array_merge( tamatebako_fonts_websafe(), tamatebako_fonts_heading(), tamatebako_fonts_base() );
+	$fonts = array_merge( tamatebako_fonts_websafe(), tamatebako_fonts_heading(), tamatebako_fonts_base() );
+	return apply_filters( 'tamatebako_fonts', $fonts );
 }
 
 /**
  * MErge All Google Fonts
  */
 function tamatebako_fonts_google(){
-	return array_merge( tamatebako_fonts_heading(), tamatebako_fonts_base() );
+	$fonts = array_merge( tamatebako_fonts_heading(), tamatebako_fonts_base() );
+	return apply_filters( 'tamatebako_fonts_google', $fonts );
 }
