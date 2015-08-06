@@ -18,7 +18,7 @@ function nokonoko_scripts_body_class( $classes ){
 /* === EDITOR STYLE === */
 
 $editor_css = array(
-	tamatebako_google_fonts_url( array( 'Open Sans' => '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ) ),
+	//tamatebako_google_fonts_url( array( 'Open Sans' => '400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' ) ),
 	'assets/css/base.min.css',
 	'assets/css/editor.css',
 );
@@ -69,8 +69,6 @@ function nokonoko_scripts(){
 		wp_enqueue_style( 'theme-base' );
 		wp_enqueue_style( 'theme-menus' );
 		wp_enqueue_style( 'theme-layouts' );
-		wp_enqueue_style( 'theme-widgets' );
-		wp_enqueue_style( 'theme-comments' );
 		wp_enqueue_style( 'theme' );
 		wp_enqueue_style( 'theme-media-queries' );
 		wp_enqueue_style( 'debug-media-queries' );
@@ -141,12 +139,6 @@ $register_css_scripts = array(
 	),
 	"theme-menus" => array(
 		'src'   => tamatebako_theme_file( 'assets/css/menus', 'css' ),
-	),
-	"theme-comments" => array(
-		'src'   => tamatebako_theme_file( 'assets/css/comments', 'css' ),
-	),
-	"theme-widgets" => array(
-		'src'   => tamatebako_theme_file( 'assets/css/widgets', 'css' ),
 	),
 	"theme" => array(
 		'src'   => tamatebako_theme_file( 'assets/css/theme', 'css' ),

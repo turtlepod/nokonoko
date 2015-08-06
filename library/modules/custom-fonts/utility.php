@@ -4,7 +4,7 @@
 **/
 
 /**
- * Format Choices Array From Fonts Data
+ * Format Choices Array From Fonts Group
  */
 function tamatebako_fonts_format_choices( $font_groups ){
 
@@ -42,15 +42,42 @@ function tamatebako_fonts_format_choices( $font_groups ){
 }
 
 /**
- * Get Google Font Weight + Style available.
+ * Get Google Font Weight + Style available (as string)
+ * after compating with allowed weight/style.
  */
-function tamatebako_get_font_weight( $font_name ){
+function tamatebako_get_font_weight( $font_name, $return_array = false ){
+
+	/* get all fonts data. */
 	$fonts = tamatebako_fonts();
+
+	/* get font weight. */
 	if( isset( $fonts[$font_name]['weight'] ) ){
-		return $fonts[$font_name]['weight'];
+
+		/* Allowed weight+style. */
+		$allowed_weight = apply_filters( 'tamatebako_fonts_allowed_weight', array('400','400italic','700','700italic') );
+
+		/* available weight */
+		$available_weigth = $fonts[$font_name]['weight'];
+
+		/* set allowed weight to "false" to load all available font. */
+		if( false === $allowed_weight ){
+			$weight = $available_weigth;
+		}
+		else{
+			$weight = array_intersect( $allowed_weight, $available_weigth );
+		}
+
+		if( $return_array ){
+			return $weight;
+		}
+		else{
+			return implode( ",", $weight );
+		}
 	}
+
 	return '';
 }
+
 
 /**
  * Get Font Family (used in CSS) by Font Name
@@ -65,8 +92,7 @@ function tamatebako_get_font_family( $font_name ){
 
 
 /**
- * Remove WebSafe Fonts From Fonts List.
- * this is used to get only "google fonts".
+ * Return empty if it's a websafe font.
  */
 function tamatebako_fonts_remove_websafe( $font ){
 	if ( strpos( $font, 'ws_' ) !== false ) {

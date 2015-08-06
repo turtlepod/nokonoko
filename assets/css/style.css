@@ -7,12 +7,6 @@
 /* "theme-menus" */
 @import url( "menus.css" );
 
-/* "theme-comments" */
-@import url( "comments.css" );
-
-/* "theme-widgets" */
-@import url( "widgets.css" );
-
 /* "theme" */
 @import url( "theme.css" );
 

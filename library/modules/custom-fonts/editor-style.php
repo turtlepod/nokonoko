@@ -1,6 +1,9 @@
 <?php
 /**
- * Custom Fonts: Editor Style Functions
+ * Custom Fonts: Editor Style Functions.
+ * Ajax CSS in editor style is taken from "Stargazer" theme by Justin Tadlock.
+ * @author David Chandra <david@genbu.me>
+ * @author Justin Tadlock <justintadlock@gmail.com>
 **/
 
 /**
@@ -23,7 +26,7 @@ function tamatebako_fonts_mce_fonts(){
 
 	foreach( $settings as $setting ){
 		$font = get_theme_mod( $setting, $config[$setting]['default'] );
-		$fonts[$font] = '400,400italic,700,700italic';
+		$fonts[$font] = tamatebako_get_font_weight( $font );
 	}
 	return $fonts;
 }
@@ -45,19 +48,6 @@ function tamatebako_fonts_mce_google_fonts(){
 	return $google_fonts;
 }
 
-/* Editor Body Class */
-add_filter( 'tiny_mce_before_init', 'tamatebako_fonts_mce_body_class' );
-
-/**
- * WP Editor Body Class
- */
-function tamatebako_fonts_mce_body_class( $settings ){
-	$classes = array( 'custom-fonts-active' );
-	$settings['body_class'] = join( ' ', $classes );
-	return $settings;
-}
-
-
 /* Add Editor Style */
 add_filter( 'mce_css', 'tamatebako_fonts_mce_css' );
 
@@ -74,7 +64,7 @@ function tamatebako_fonts_mce_css( $mce_css ){
 }
 
 
-/* Ajax: print editor style */
+/* Ajax: editor style CSS */
 add_action( 'wp_ajax_tamatebako_fonts_mce_css', 'tamatebako_fonts_mce_css_ajax_callback' );
 add_action( 'wp_ajax_no_priv_tamatebako_fonts_mce_css', 'tamatebako_fonts_mce_css_ajax_callback' );
 
