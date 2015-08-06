@@ -119,7 +119,6 @@
 		width: 100%;
 		border: none;
 		border-bottom: 1px solid #ccc;
-		background: #eee;
 	}
 	.menu-dropdown .sub-menu li a{
 		background: transparent;
@@ -142,87 +141,34 @@
 	.menu-dropdown .sub-menu .sub-menu{
 	}
 	/* .sub-menu */
-	.menu-dropdown .sub-menu li a:before,
-	.menu-dropdown .sub-menu li.menu-item-open-children >  a:before,
-	.menu-dropdown .sub-menu li.menu-item-has-children > a:before{
-		content:"\f460 ";
-		font-family: 'dashicons';
-		vertical-align: top;
-		padding: 0;
-		margin-right: 5px;
-		margin-right: 0.5rem;
-		float: none;
-		position: inherit;
-		right: auto;
-		-webkit-font-smoothing: antialiased;
+	.wordpress .menu-dropdown ul li.menu-item-open-children > a:before,
+	.wordpress .menu-dropdown ul li.menu-item-has-children > a:before{
+		content: "";
 	}
-		.theme-genericons-active .menu-dropdown .sub-menu li a:before,
-		.theme-genericons-active .menu-dropdown .sub-menu li.menu-item-open-children >  a:before,
-		.theme-genericons-active .menu-dropdown .sub-menu li.menu-item-has-children > a:before{
-			content:"\f421 ";
-			font-family: 'genericons';
-		}
-	.menu-dropdown .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 ";
-		font-family: 'dashicons';
-		vertical-align: top;
-		padding: 0;
-		margin-right: 5px;
-		margin-right: 0.5rem;
-		float: none;
-		-webkit-font-smoothing: antialiased;
+	.wordpress .menu-dropdown .sub-menu li a:before,
+	.wordpress .menu-dropdown .sub-menu li.menu-item-open-children >  a:before,
+	.wordpress .menu-dropdown .sub-menu li.menu-item-has-children > a:before{
+		content: "";
 	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 ";
-			font-family: 'genericons';
-		}
-	.menu-dropdown .sub-menu .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 \f460 ";
+	.menu-dropdown .sub-menu li a{
+		padding-left: 40px;
+		padding-left: 4rem;
 	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 \f421 ";
-		}
-	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 \f460 \f460 ";
+	.menu-dropdown .sub-menu .sub-menu li a{
+		padding-left: 60px;
+		padding-left: 6rem;
 	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 \f421 \f421 ";
-		}
-	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 \f460 \f460 \f460 ";
+	.menu-dropdown .sub-menu .sub-menu .sub-menu li a{
+		padding-left: 80px;
+		padding-left: 8rem;
 	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 \f421 \f421 \f421 ";
-		}
-	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 \f460 \f460 \f460 \f460 ";
+	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu li a{
+		padding-left: 100px;
+		padding-left: 10rem;
 	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 \f421 \f421 \f421 \f421 ";
-		}
-	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 \f460 \f460 \f460 \f460 \f460 ";
+	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a{
+		padding-left: 120px;
+		padding-left: 12rem;
 	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 \f421 \f421 \f421 \f421 \f421 ";
-		}
-	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 \f460 \f460 \f460 \f460 \f460 \f460 ";
-	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 \f421 \f421 \f421 \f421 \f421 \f421 ";
-		}
-	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 \f460 \f460 \f460 \f460 \f460 \f460 \f460 ";
-	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 \f421 \f421 \f421 \f421 \f421 \f421 \f421 ";
-		}
-	.menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-		content:"\f460 \f460 \f460 \f460 \f460 \f460 \f460 \f460 \f460 \f460 ";
-	}
-		.theme-genericons-active .menu-dropdown .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li a:before{
-			content:"\f421 \f421 \f421 \f421 \f421 \f421 \f421 \f421 \f421 \f421 ";
-		}
 
 }
