@@ -1,6 +1,6 @@
 === NokoNoko ===
 Contributors: turtlepod
-Tags: black, blue, brown, gray, green, pink, purple, red, silver, tan, white, yellow, dark, light, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, holiday, photoblogging, seasonal
+Tags: black, blue, brown, gray, green, pink, purple, red, silver, tan, white, yellow, dark, light, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, holiday, photoblogging, seasonal
 Requires at least: 4.0
 Tested up to: 4.2
 Stable tag: 4.2
@@ -51,48 +51,9 @@ You can change Global Layout in Customize Page. You can change individual post l
 
 You can upload logo in Customize Page in "Site Title & Tagline" Section or in WordPress 4.3 "Site Identity" Section.
 
-= How do I add the Social Links? =
-
-This theme allows you display links to your social media profiles, like Twitter and Facebook, with icons.
-
-1. Create a new Custom Menu, and assign it to the Social Links Menu location.
-2. Add links to each of your social services using the Links panel.
-3. Icons for your social links will automatically appear if it's available.
-
-Available icons: (Linking to any of the following sites will automatically display its icon in your social menu).
-
-* Codepen
-* Digg
-* Dribbble
-* Dropbox
-* Facebook
-* Flickr
-* Foursquare
-* GitHub
-* Google+
-* Instagram
-* LinkedIn
-* Pinterest
-* Pocket
-* PollDaddy
-* Reddit
-* Skype
-* Spotify
-* StumbleUpon
-* Tumblr
-* Twitch
-* Twitter
-* Vimeo
-* WordPress
-* YouTube
-* Email ( use "mailto:" in URL or use "mail-icon" class )
-* RSS Feed ( use "/feed/" in URL or use "feed-icon" class )
-
-Social networks that aren't currently supported will be indicated by a generic star icon.
-
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.0 - DD.MM.YYYY =
 
 * Initial Release.
 
