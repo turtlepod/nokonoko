@@ -69,13 +69,17 @@ function tamatebako_fonts_mce_css( $mce_css ){
 	}
 
 	/* get available subset. */
-	$subsets_settings = tamatebako_fonts_subsets_setting();
+	$subsets_settings = tamatebako_fonts_subsets();
 	$subsets = array_intersect( $subsets_settings, $fonts_subsets );
 
 	$url = tamatebako_google_fonts_url( $google_fonts, $subsets );
+
+	/* Add google font */
 	if( !empty( $url ) ){
 		$mce_css .= ', ' . $url;
 	}
+
+	/* add font rules. */
 	$mce_css .= ', ' . add_query_arg( 'action', 'tamatebako_fonts_mce_css', admin_url( 'admin-ajax.php' ) );
 	return $mce_css;
 }

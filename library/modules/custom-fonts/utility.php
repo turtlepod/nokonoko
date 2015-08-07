@@ -54,7 +54,7 @@ function tamatebako_get_font_weight( $font_name, $return_array = false ){
 	if( isset( $fonts[$font_name]['weight'] ) ){
 
 		/* Allowed weight+style. */
-		$allowed_weight = apply_filters( 'tamatebako_fonts_allowed_weight', array('400','400italic','700','700italic') );
+		$allowed_weight = tamatebako_fonts_allowed_weight();
 
 		/* available weight */
 		$available_weigth = $fonts[$font_name]['weight'];
