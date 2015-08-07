@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Theme\n"
 "Report-Msgid-Bugs-To: http://genbu.me/contact/\n"
-"POT-Creation-Date: 2015-07-21 15:10+0700\n"
-"PO-Revision-Date: 2015-07-21 15:10+0700\n"
+"POT-Creation-Date: 2015-08-07 16:53+0700\n"
+"PO-Revision-Date: 2015-08-07 16:55+0700\n"
 "Last-Translator: David Chandra Purnama <david@shellcreeper.com>\n"
 "Language-Team: \n"
 "Language: id_ID\n"
@@ -27,82 +27,97 @@ msgctxt "customizer"
 msgid "Full Size Background"
 msgstr "Latar Belakang Ukuran Penuh"
 
+#: includes/custom-fonts.php:10
+msgctxt "customizer"
+msgid "Site Title Font"
+msgstr "Font Judul Situs"
+
+#: includes/custom-fonts.php:11
+msgctxt "customizer"
+msgid "You can select your preferred font for your site title below."
+msgstr "Anda dapat memilih font untuk judul situs dibawah."
+
+#: includes/custom-fonts.php:17
+msgctxt "customizer"
+msgid "Post Title Font"
+msgstr "Font Judul Tulisan"
+
+#: includes/custom-fonts.php:23
+msgctxt "customizer"
+msgid "Content Heading 2"
+msgstr "Konten Tajuk 2"
+
+#: includes/custom-fonts.php:29
+msgctxt "customizer"
+msgid "Base Font"
+msgstr "Font Dasar"
+
+#: includes/custom-fonts.php:47
+msgctxt "Google Font Subset: add new subset( greek, cyrillic, vietnamese )"
+msgid "no-subset"
+msgstr "no-subset"
+
+#: includes/custom-fonts.php:53
+msgctxt "customizer"
+msgid "Fonts"
+msgstr "Font"
+
 #: includes/layouts.php:9
-msgctxt "sidebar name"
-msgid "Primary Sidebar"
-msgstr "Sidebar Primer"
-
-#: includes/layouts.php:10
-msgctxt "sidebar name"
-msgid "Secondary Sidebar"
-msgstr "Sidebar Sekunder"
-
-#: includes/layouts.php:18
-msgctxt "nav menu name"
-msgid "Navigation"
-msgstr "Navigasi"
-
-#: includes/layouts.php:19
-msgctxt "nav menu name"
-msgid "Footer Links"
-msgstr "Tautan Kaki Halaman"
-
-#: includes/layouts.php:40
 msgctxt "layout name"
 msgid "Content"
 msgstr "Konten"
 
-#: includes/layouts.php:45
+#: includes/layouts.php:14
 msgctxt "layout name"
 msgid "Content | Sidebar 1"
 msgstr "Konten | Sidebar 1"
 
-#: includes/layouts.php:49
+#: includes/layouts.php:18
 msgctxt "layout name"
 msgid "Sidebar 1 | Content"
 msgstr "Sidebar 1 | Konten"
 
-#: includes/layouts.php:53
+#: includes/layouts.php:22
 msgctxt "layout name"
 msgid "Content | Sidebar 2"
 msgstr "Konten | Sidebar 2"
 
-#: includes/layouts.php:57
+#: includes/layouts.php:26
 msgctxt "layout name"
 msgid "Sidebar 2 | Content"
 msgstr "Sidebar 2 | Konten"
 
-#: includes/layouts.php:62
+#: includes/layouts.php:31
 msgctxt "layout name"
 msgid "Sidebar 2 | Content | Sidebar 1"
 msgstr "Sidebar 2 | Konten | Sidebar 1"
 
-#: includes/layouts.php:66
+#: includes/layouts.php:35
 msgctxt "layout name"
 msgid "Sidebar 2 | Sidebar 1 | Content"
 msgstr "Sidebar 2 | Sidebar 1 | Konten"
 
-#: includes/layouts.php:70
+#: includes/layouts.php:39
 msgctxt "layout name"
 msgid "Content | Sidebar 1 | Sidebar 2"
 msgstr "Konten | Sidebar 1 | Sidebar 2"
 
-#: includes/layouts.php:74
+#: includes/layouts.php:43
 msgctxt "layout name"
 msgid "Sidebar 1 | Content | Sidebar 2"
 msgstr "Sidebar 1 | Konten | Sidebar 2"
 
-#: includes/layouts.php:86
+#: includes/layouts.php:55
 msgctxt "layout"
 msgid "Default"
 msgstr "Default"
 
-#: includes/layouts.php:87
+#: includes/layouts.php:56
 msgctxt "layout"
 msgid "Layout"
 msgstr "Layout"
 
-#: includes/layouts.php:88
+#: includes/layouts.php:57
 msgctxt "layout"
 msgid "Global Layout"
 msgstr "Layout Global"
@@ -121,6 +136,26 @@ msgstr ""
 "Logo akan menggantikan judul situs di area kepala halaman. Ukuran yang "
 "direkomendasikan adalah lebar 300px dan tinggi 200px."
 
+#: includes/setup.php:16
+msgctxt "sidebar name"
+msgid "Primary Sidebar"
+msgstr "Sidebar Primer"
+
+#: includes/setup.php:17
+msgctxt "sidebar name"
+msgid "Secondary Sidebar"
+msgstr "Sidebar Sekunder"
+
+#: includes/setup.php:25
+msgctxt "nav menu name"
+msgid "Navigation"
+msgstr "Navigasi"
+
+#: includes/setup.php:26
+msgctxt "nav menu name"
+msgid "Footer Links"
+msgstr "Tautan Kaki Halaman"
+
 #: includes/translation.php:13
 msgctxt "accessibility"
 msgid "Skip to content"
@@ -136,82 +171,86 @@ msgctxt "pagination"
 msgid "Previous"
 msgstr "Sebelumnya"
 
-#: includes/translation.php:18
-msgctxt "archive title"
-msgid "Search results for"
-msgstr "Hasil pencarian untuk"
-
-#: includes/translation.php:21
+#: includes/translation.php:20
 msgctxt "nav menu"
 msgid "Search&hellip;"
 msgstr "Cari&hellip;"
 
-#: includes/translation.php:22
+#: includes/translation.php:21
 msgctxt "nav menu"
 msgid "Search"
 msgstr "Cari"
 
-#: includes/translation.php:23
+#: includes/translation.php:22
 msgctxt "nav menu"
 msgid "Expand Search Form"
 msgstr "Buka Formulir Pencarian"
 
-#: includes/translation.php:26
+#: includes/translation.php:25
 msgctxt "entry"
 msgid "404 Not Found"
 msgstr "404 Tidak Ditemukan"
 
-#: includes/translation.php:27
+#: includes/translation.php:26
 msgctxt "entry"
 msgid "Apologies, but no entries were found."
 msgstr "Maaf, tidak ada entri ditemukan."
 
-#: includes/translation.php:28
+#: includes/translation.php:27
 msgctxt "entry"
 msgid "Next"
 msgstr "Berikutnya"
 
-#: includes/translation.php:29
+#: includes/translation.php:28
 msgctxt "entry"
 msgid "Previous"
 msgstr "Sebelumnya"
 
-#: includes/translation.php:30
+#: includes/translation.php:29
 msgctxt "entry"
 msgid "Permalink"
 msgstr "Permalink"
 
-#: includes/translation.php:33
+#: includes/translation.php:32
 msgctxt "comment"
 msgid "Next"
 msgstr "Berikutnya"
 
-#: includes/translation.php:34
+#: includes/translation.php:33
 msgctxt "comment"
 msgid "Previous"
 msgstr "Sebelumnya"
 
-#: includes/translation.php:35
+#: includes/translation.php:34
 msgctxt "comment"
 msgid "Comments are closed, but trackbacks and pingbacks are open."
 msgstr "Komentar ditutup, tapi pelacakan dan ping dibuka."
 
-#: includes/translation.php:36
+#: includes/translation.php:35
 msgctxt "comment"
 msgid "Comments are closed."
 msgstr "Komentar ditutup."
 
-#: includes/translation.php:39
+#: includes/translation.php:38
 msgctxt "entry"
 msgid "(Untitled)"
 msgstr "(Tanpa Judul)"
 
-#: includes/translation.php:40
+#: includes/translation.php:39
 msgctxt "entry"
 msgid "Read More"
 msgstr "Baca Selengkapnya"
+
+#: includes/translation.php:40
+msgctxt "archive title"
+msgid "Search:"
+msgstr "Cari:"
 
 #: includes/utility.php:11 includes/utility.php:12
 msgctxt "customizer"
 msgid "Custom CSS"
 msgstr "CSS Kustom"
+
+#~ msgctxt "archive title"
+#~ msgid "Search results for"
+#~ msgstr "Hasil pencarian untuk"

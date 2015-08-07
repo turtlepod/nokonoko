@@ -32,15 +32,15 @@ function tamatebako_fonts_settings(){
 /**
  * Font Subsets
  */
-function tamatebako_fonts_subsets_setting(){
+function tamatebako_fonts_subsets(){
 
 	/* Add latin and latin-extended as default subset. */
 	$subsets = array( 'latin', 'latin-ext' );
 
 	/* Add user defined subset. */
 	$settings = tamatebako_fonts_settings();
-	if( isset( $settings['subsets_settings']['font_subset'] ) ){
-		$subset = $settings['subsets_settings']['font_subset'];
+	if( isset( $settings['font_subset'] ) ){
+		$subset = $settings['font_subset'];
 
 		/* add subset. */
 		if ( 'cyrillic' == $subset ) {
@@ -64,7 +64,25 @@ function tamatebako_fonts_subsets_setting(){
 	/* sanitize */
 	$subsets = array_map( 'sanitize_html_class', $subsets );
 
-	return apply_filters( 'tamatebako_fonts_subsets_setting', $subsets );
+	return apply_filters( 'tamatebako_fonts_subsets', $subsets );
+}
+
+/**
+ * Font Allowed Weight (+style)
+ * Set to false to load all available weight/style.
+ */
+function tamatebako_fonts_allowed_weight(){
+	$weights = array( 
+		'400',
+		'400italic',
+		'700',
+		'700italic',
+	);
+	$settings = tamatebako_fonts_settings();
+	if( isset( $settings['allowed_weight'] ) ){
+		$weights = $settings['allowed_weight'];
+	}
+	return apply_filters( 'tamatebako_fonts_allowed_weight', $weights );
 }
 
 
@@ -129,7 +147,7 @@ function tamatebako_fonts_all_google_url(){
 	if( !empty( $fonts ) ){
 
 		/* get available subset. */
-		$subsets_settings = tamatebako_fonts_subsets_setting();
+		$subsets_settings = tamatebako_fonts_subsets();
 		$subsets = array_intersect( $subsets_settings, $fonts_subsets );
 
 		/* return url */
@@ -206,8 +224,15 @@ function tamatebako_fonts_body_class( $classes ){
 
 	/* Foreach setting */
 	foreach( $config as $section => $section_data ){
+
+		/* format font name */
+		$font = get_theme_mod( $section, $section_data['default'] );
+		$font = 'tf-' . $section . '-' . $font;
+		$font = strtolower( $font );
+		$font = str_replace( ' ','-', $font );
+
 		/* Add class */
-		$classes[] = sanitize_html_class( 'tf-' . $section . '-' . get_theme_mod( $section, $section_data['default'] ) );
+		$classes[] = sanitize_html_class( $font );
 	}
 	return array_unique( $classes );
 }
