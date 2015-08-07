@@ -224,8 +224,15 @@ function tamatebako_fonts_body_class( $classes ){
 
 	/* Foreach setting */
 	foreach( $config as $section => $section_data ){
+
+		/* format font name */
+		$font = get_theme_mod( $section, $section_data['default'] );
+		$font = 'tf-' . $section . '-' . $font;
+		$font = strtolower( $font );
+		$font = str_replace( ' ','-', $font );
+
 		/* Add class */
-		$classes[] = sanitize_html_class( 'tf-' . $section . '-' . get_theme_mod( $section, $section_data['default'] ) );
+		$classes[] = sanitize_html_class( $font );
 	}
 	return array_unique( $classes );
 }
