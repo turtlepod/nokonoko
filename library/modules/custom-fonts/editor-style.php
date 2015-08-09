@@ -34,18 +34,7 @@ function tamatebako_fonts_mce_fonts(){
 /**
  * Get Base Font (Google Font)
  */
-function tamatebako_fonts_mce_google_fonts(){
-
-
-}
-
-/* Add Editor Style */
-add_filter( 'mce_css', 'tamatebako_fonts_mce_css' );
-
-/**
- * WP Editor Styles
- */
-function tamatebako_fonts_mce_css( $mce_css ){
+function tamatebako_fonts_mce_google_fonts_url(){
 
 	/* var */
 	$google_fonts = array();
@@ -73,6 +62,20 @@ function tamatebako_fonts_mce_css( $mce_css ){
 	$subsets = array_intersect( $subsets_settings, $fonts_subsets );
 
 	$url = tamatebako_google_fonts_url( $google_fonts, $subsets );
+
+	return $url;
+
+}
+
+/* Add Editor Style */
+add_filter( 'mce_css', 'tamatebako_fonts_mce_css' );
+
+/**
+ * WP Editor Styles
+ */
+function tamatebako_fonts_mce_css( $mce_css ){
+
+	$url = tamatebako_fonts_mce_google_fonts_url();
 
 	/* Add google font */
 	if( !empty( $url ) ){
