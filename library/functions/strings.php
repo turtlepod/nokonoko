@@ -56,7 +56,7 @@ function tamatebako_strings(){
 		'previous_posts' => 'Previous',
 
 		/* functions/template/menu.php */
-		'menu_search_placeholder' => 'Search&hellip,',
+		'menu_search_placeholder' => 'Search&hellip;',
 		'menu_search_button' => 'Search',
 		'menu_search_form_toggle' => 'Expand Search Form',
 

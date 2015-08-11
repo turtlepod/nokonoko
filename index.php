@@ -7,7 +7,7 @@
 
 <body <?php body_class(); ?>>
 
-	<?php echo tamatebako_check_js_script(); ?>
+	<?php tamatebako_check_js_script(); ?>
 
 	<div id="container">
 

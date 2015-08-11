@@ -147,8 +147,8 @@ function tamatebako_entry_taxonomy( $args = array() ) {
 
 	/* Display output only if terms available. */
 	if ( !empty( $terms ) ) {
-		$tax_labels = get_taxonomy_labels( get_taxonomy( $args['taxonomy'] ) );
-		$tax_name = $tax_labels->name;
+		$tax_object = get_taxonomy( $args['taxonomy'] );
+		$tax_name = $tax_object->labels->name;
 		$text = sprintf( $args['text'], $tax_name );
 	?>
 		<span class="entry-terms <?php echo sanitize_html_class( $args['taxonomy'] ); ?>">
