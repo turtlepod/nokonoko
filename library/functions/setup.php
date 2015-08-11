@@ -174,12 +174,8 @@ function tamatebako_archive_title( $title ){
  */
 function tamatebako_archive_description( $desc ){
 
-	/* Blog Page. */
-	if( is_home() && !is_front_page() ){
-		$desc = get_post_field( 'post_content', get_queried_object_id(), 'raw' );
-	}
 	/* Author Page. */
-	elseif ( is_author() ){
+	if ( is_author() ){
 		$desc = get_the_author_meta( 'description', get_query_var( 'author' ) );
 	}
 	/* Post Type Archive. */
