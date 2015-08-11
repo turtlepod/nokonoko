@@ -8,6 +8,12 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.0.1 - 11.08.2015**
+
+* remove echo in check js script.
+* fix entry taxonomy
+* remove blog page content as archive description.
+
 **3.0.0 - 10.08.2015**
 
-first stable standalone library.
+* first stable standalone library.
