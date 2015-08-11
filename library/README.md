@@ -13,6 +13,7 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 * remove echo in check js script.
 * fix entry taxonomy
 * remove blog page content as archive description.
+* entry-taxonomy class fix.
 
 **3.0.0 - 10.08.2015**
 

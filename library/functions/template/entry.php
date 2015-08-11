@@ -151,7 +151,7 @@ function tamatebako_entry_taxonomy( $args = array() ) {
 		$tax_name = $tax_object->labels->name;
 		$text = sprintf( $args['text'], $tax_name );
 	?>
-		<span class="entry-terms <?php echo sanitize_html_class( $args['taxonomy'] ); ?>">
+		<span class="entry-taxonomy <?php echo sanitize_html_class( $args['taxonomy'] ); ?>">
 			<?php if( !empty( $text ) ){ ?>
 			<span class="entry-taxonomy-text"><?php echo $text;?></span> 
 			<?php } ?>
