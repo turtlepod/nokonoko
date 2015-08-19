@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html <?php language_attributes( 'html' ); ?>>
+<html <?php language_attributes( 'html' ); ?> class="no-js">
 
 <head>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-
-	<?php tamatebako_check_js_script(); ?>
 
 	<div id="container">
 

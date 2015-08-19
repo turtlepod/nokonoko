@@ -5,6 +5,22 @@
 **/
 
 /**
+ * Skip to Content Link
+ * Need to be added before any content of the page.
+ * Commonly added after the opening '<div id="container">'
+ * @access public
+ * @since  0.1.0
+ * @return string
+ */
+function tamatebako_skip_to_content(){
+?>
+<div class="skip-link">
+	<a class="screen-reader-text" href="#content"><?php echo tamatebako_string( 'skip_to_content' ); ?></a>
+</div>
+<?php
+}
+
+/**
  * Loads a template based off the post type and/or the post format.
  * @since  0.1.0
  */

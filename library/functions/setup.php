@@ -27,11 +27,8 @@ function tamatebako_setup(){
 	/* Enable Title Tag */
 	add_theme_support( 'title-tag' );
 
-	/* === WP HEAD === */
-
-	add_action( 'wp_head', 'tamatebako_wp_head_meta_charset',   0 );
-	add_action( 'wp_head', 'tamatebako_wp_head_meta_viewport',  1 );
-	add_action( 'wp_head', 'tamatebako_wp_head_link_pingback',  3 );
+	/* WP Head output */
+	add_action( 'wp_head', 'tamatebako_wp_head', 0 );
 
 	/* === SCRIPTS === */
 
@@ -43,7 +40,14 @@ function tamatebako_setup(){
 
 	/* === Filters: Set Better Default Output === */
 
+	/* TinyMCE add body class "entry-content" for easier styling. */
+	add_filter( 'tiny_mce_before_init', 'tamatebako_tinymce_body_class', 5 );
+
 	if( !is_admin() ){
+
+		/* Context: Body Class & Post Class */
+		add_filter( 'body_class', 'tamatebako_body_class', 5 );
+		add_filter( 'post_class', 'tamatebako_post_class', 5, 3 );
 
 		/* Archive Title & Desc */
 		add_filter( 'get_the_archive_title', 'tamatebako_archive_title', 5 );
@@ -72,32 +76,22 @@ function tamatebako_setup(){
 
 
 /**
- * Adds the meta charset to the header.
- * @author Justin Tadlock <justintadlock@gmail.com>
+ * Adds stuff to the head.
  * @return void
  */
-function tamatebako_wp_head_meta_charset() {
-	printf( '<meta charset="%s" />' . "\n", esc_attr( get_bloginfo( 'charset' ) ) );
-}
-
-
-/**
- * Adds the meta viewport to the header.
- * @author Justin Tadlock <justintadlock@gmail.com>
- */
-function tamatebako_wp_head_meta_viewport() {
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
-}
-
-
-/**
- * Adds the pingback link to the header.
- * @author Justin Tadlock <justintadlock@gmail.com>
- */
-function tamatebako_wp_head_link_pingback() {
-	if ( 'open' === get_option( 'default_ping_status' ) ){
-		printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
-	}
+function tamatebako_wp_head() {
+?>
+<script type="text/javascript">
+/* <![CDATA[ */
+document.documentElement.className = document.documentElement.className.replace(new RegExp('(^|\\s)no-js(\\s|$)'), '$1js$2');
+/* ]]> */
+</script>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php if ( 'open' === get_option( 'default_ping_status' ) ){ ?>
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php } // end pingback ?>
+<?php
 }
 
 
@@ -150,6 +144,146 @@ function tamatebako_scripts(){
 	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ){
 		wp_enqueue_script( 'comment-reply' );
 	}
+}
+
+
+/**
+ * Add TinyMCE Body Class
+ * Add "entry-content" in editor style for easier copy-paste CSS to editor.css
+ * need to consider this when styling '<body>' and '<div class"entry-content">'.
+ * @since  0.1.0
+ */
+function tamatebako_tinymce_body_class( $settings ){
+	$settings['body_class'] = $settings['body_class'] . ' entry-content';
+	return $settings;
+}
+
+/**
+ * Additional Body Class
+ * @since 0.1.0
+ */
+function tamatebako_body_class( $classes ){
+
+	/* WordPress */
+	$classes[] = 'wordpress';
+
+	/* Text Direction */
+	$classes[] = is_rtl() ? 'rtl' : 'ltr';
+
+	/* Parent or Child Theme */
+	$classes[] = is_child_theme() ? 'child-theme' : 'parent-theme';
+
+	/* Multisite */
+	if ( is_multisite() ) {
+		$classes[] = 'multisite';
+		$classes[] = 'blog-' . get_current_blog_id();
+	}
+
+	/* Is the current user logged in. */
+	$classes[] = is_user_logged_in() ? 'logged-in' : 'logged-out';
+
+	/* Plural/multiple-post view (opposite of singular). */
+	if ( is_home() || is_archive() || is_search() ){
+		$classes[] = 'plural';
+	}
+
+	/* Get all registered sidebars */
+	global $wp_registered_sidebars;
+
+	/* If not empty sidebar */
+	if ( !empty( $wp_registered_sidebars ) ){
+
+		/* Foreach widget areas */
+		foreach ( $wp_registered_sidebars as $sidebar ){
+
+			/* Add active/inactive class */
+			$classes[] = is_active_sidebar( $sidebar['id'] ) ? "sidebar-{$sidebar['id']}-active" : "sidebar-{$sidebar['id']}-inactive";
+		}
+	}
+
+	/* Get all registered menus */
+	$menus = get_registered_nav_menus();
+
+	/* If not empty menus */
+	if ( !empty( $menus ) ){
+
+		/* For each menus */
+		foreach ( $menus as $menu_id => $menu ){
+
+			/* Add active/inactive class */
+			$classes[] = has_nav_menu( $menu_id ) ? "menu-{$menu_id}-active" : "menu-{$menu_id}-inactive";
+		}
+	}
+
+	/* Mobile visitor class */
+	$classes[] = wp_is_mobile() ? 'wp-is-mobile' : 'wp-is-not-mobile';
+
+	/* Custom header */
+	if ( current_theme_supports( 'custom-header' ) && get_header_image() ){
+
+		/* Header Image */
+		if ( get_header_image() ) {
+			$classes[] = 'custom-header-image';
+		}
+		else{
+			$classes[] = 'custom-header-no-image';
+		}
+		/* Header Text */
+		if ( display_header_text() ){
+			$classes[] = 'custom-header-text';
+		}
+		else{
+			$classes[] = 'custom-header-no-text';
+		}
+		/* Header Text Color */
+		if ( get_header_textcolor() ) {
+			$classes[] = 'custom-header-text-color';
+		}
+		else{
+			$classes[] = 'custom-header-no-text-color';
+		}
+	}
+
+	return $classes;
+}
+
+
+/**
+ * Add Post Class
+ * @since 0.1.0
+ */
+function tamatebako_post_class( $classes, $class, $post_id ){
+
+	$post = get_post( $post_id );
+	$post_type = get_post_type();
+	$post_status = get_post_status();
+
+	/* Entry */
+	$classes[] = 'entry';
+
+	/* Has excerpt. */
+	if ( post_type_supports( $post->post_type, 'excerpt' ) && has_excerpt() ){
+		$classes[] = 'has-excerpt';
+	}
+
+	/* Has <!--more--> link. */
+	if ( !is_singular() && false !== strpos( $post->post_content, '<!--more-->' ) ){
+		$classes[] = 'has-more-link';
+	}
+
+	/* Post formats */
+	if ( post_type_supports( get_post_type(), 'post-formats' ) ) {
+		if ( get_post_format() ){
+			$classes[] = 'has-format';
+		}
+	}
+
+	/* Has <!--more--> link. */
+	if ( !is_singular() && false !== strpos( $post->post_content, '<!--more-->' ) ){
+		$_classes[] = 'has-more-link';
+	}
+
+	return $classes;
 }
 
 

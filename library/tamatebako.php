@@ -35,14 +35,8 @@ tamatebako_include( 'functions/sanitize' );
 /* Load default setup and helper functions. */
 tamatebako_include( 'functions/setup' );
 
-/* Load contexts function. */
-tamatebako_include( 'functions/context' );
-
 /* Load template-tag functions on site front end. */
 if ( !is_admin() ) {
-
-	/* Accessibility */
-	tamatebako_include( 'functions/template/accessibility' );
 
 	/* General */
 	tamatebako_include( 'functions/template/general' );
