@@ -115,18 +115,4 @@ function tamatebako_load_theme_support(){
 
 	tamatebako_require_if_theme_supports( 'tamatebako-custom-fonts', 'modules/custom-fonts/custom-fonts' );
 
-	/* === SCRIPTS === */
-
-	/* Register Script (JS) */
-	tamatebako_require_if_theme_supports( 'tamatebako-register-js', 'modules/scripts/register-js' );
-
-	/* Enqueue Script (JS) */
-	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-js', 'modules/scripts/enqueue-js' );
-
-	/* Register Style (CSS) */
-	tamatebako_require_if_theme_supports( 'tamatebako-register-css', 'modules/scripts/register-css' );
-
-	/* Enqueue Style (CSS) */
-	tamatebako_require_if_theme_supports( 'tamatebako-enqueue-css', 'modules/scripts/enqueue-css' );
-
 }

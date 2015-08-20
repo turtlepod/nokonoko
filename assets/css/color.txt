@@ -1,2 +1,0 @@
-Link Color: #0073aa;
-Link Hover: #00a0d2

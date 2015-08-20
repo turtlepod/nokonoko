@@ -1,14 +1,2 @@
 /* "theme-reset" */
-@import url( " base.css" );
-
-/* "theme-layouts" */
-@import url( "layouts.css" );
-
-/* "theme-menus" */
-@import url( "menus.css" );
-
-/* "theme" */
-@import url( "theme.css" );
-
-/* "media-queries" */
-@import url( "media-queries.css" );
+@import url( " dev.css" );

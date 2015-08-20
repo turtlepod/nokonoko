@@ -2,7 +2,7 @@
 
 	<div id="branding">
 
-		<?php if ( current_theme_supports( 'tamatebako-logo' ) && get_theme_mod( 'logo' ) ) { ?>
+		<?php if ( current_theme_supports( 'tamatebako-logo' ) && tamatebako_logo_url() ) { ?>
 
 			<?php if( is_front_page() && is_home() ){ ?>
 

@@ -111,6 +111,10 @@ function tamatebako_maybe_enqueue_style( $handle ){
 function tamatebako_maybe_enqueue_script( $handle ){
 	if( wp_script_is( sanitize_key( $handle ), 'registered' ) ){
 		wp_enqueue_script( sanitize_key( $handle ) );
+		return true;
+	}
+	else{
+		return false;
 	}
 }
 
