@@ -25,7 +25,7 @@ function tamatebako_logo_args(){
 		'flex_height'         => true,
 		'width'               => 300,
 		'height'              => 200,
-		'theme_mod_name'      => 'theme-logo',
+		'theme_mod_name'      => 'logo',
 	);
 
 	/* Logo Args. */
