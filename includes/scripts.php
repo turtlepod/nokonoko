@@ -38,7 +38,7 @@ function nokonoko_enqueue_scripts(){
 
 	/* == JS == */
 	wp_enqueue_script( "fitvids" );
-	wp_enqueue_script( "{$tamatebako->name}-script" );
+	wp_enqueue_script( "{$name}-script" );
 
 	/* == CSS == */
 	//wp_enqueue_style( "dashicons" );
