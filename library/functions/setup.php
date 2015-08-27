@@ -97,13 +97,12 @@ document.documentElement.className = document.documentElement.className.replace(
 
 /**
  * Current Active Theme Stylesheet URI
+ * Change the stylesheet uri for parent theme.
  */
 function tamatebako_stylesheet_uri( $stylesheet_uri ){
-
-	/* Child Theme Not Active */
-	$parent_stylesheet_uri = tamatebako_get_parent_stylesheet_uri();
-	if( ! is_child_theme() && !empty( $parent_stylesheet_uri ) ){
-		$stylesheet_uri = $parent_stylesheet_uri;
+	$parent_css = tamatebako_get_parent_stylesheet_uri();
+	if( ! is_child_theme() && $parent_css ){
+		$stylesheet_uri = $parent_css;
 	}
 	return $stylesheet_uri;
 }
@@ -114,26 +113,30 @@ function tamatebako_stylesheet_uri( $stylesheet_uri ){
  * @since 3.0.0
  */
 function tamatebako_scripts(){
+	global $tamatebako;
 
-	/* == Register CSS == */
+	/* == Register Main (Parent Theme) CSS == */
+	$stylesheet_uri = get_stylesheet_uri();
+	$parent_css = tamatebako_get_parent_stylesheet_uri();
+	$parent_css = is_child_theme() ? $parent_css : $stylesheet_uri;
 
-	/* Main active theme stylesheet */
-	wp_register_style(
-		'style',
-		esc_url( get_stylesheet_uri() ),
-		array(),
-		is_child_theme() ? tamatebako_child_theme_version() : tamatebako_theme_version(),
-		'all'
-	);
-
-	/* Parent theme CSS if child theme active */
-	$parent_stylesheet_uri = tamatebako_get_parent_stylesheet_uri();
-	if( is_child_theme() && !empty( $parent_stylesheet_uri ) ){
+	if( $parent_css ){
 		wp_register_style(
-			'parent',
-			esc_url( $parent_stylesheet_uri ),
+			sanitize_title( $tamatebako->name . '-style' ),
+			esc_url( $parent_css ),
 			array(),
 			tamatebako_theme_version(),
+			'all'
+		);
+	}
+
+	/* == Register Child Theme CSS ( Only if child theme active ) == */
+	if( is_child_theme() ){
+		wp_register_style(
+			sanitize_title( $tamatebako->child . '-style' ),
+			esc_url( $stylesheet_uri ),
+			array( sanitize_title( $tamatebako->name ) ),
+			tamatebako_child_theme_version(),
 			'all'
 		);
 	}

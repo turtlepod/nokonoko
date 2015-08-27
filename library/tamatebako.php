@@ -18,6 +18,10 @@
 global $tamatebako;
 $tamatebako = new stdClass;
 
+/* add theme name/prefix */
+$tamatebako->name = get_template();
+$tamatebako->child = get_stylesheet();
+
 /* Constant: Tamatebako Directory (not path) */
 define( 'TAMATEBAKO_DIR', basename( dirname( __FILE__ ) ) );
 

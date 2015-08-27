@@ -85,11 +85,13 @@ function tamatebako_child_theme_version(){
 }
 
 /**
- * Returns the parent theme stylesheet URI.  Will return the active theme's stylesheet URI if no child
+ * Returns the (parent) theme stylesheet URI.  Will return the active theme's stylesheet URI if no child
  * theme is active. Be sure to check `is_child_theme()` when using.
  */
-function tamatebako_get_parent_stylesheet_uri() {
-	return apply_filters( 'tamatebako_get_parent_stylesheet_uri', tamatebako_theme_file( 'assets/css/style', 'css' ) );
+function tamatebako_get_parent_stylesheet_uri(){
+	$css = tamatebako_theme_file( 'assets/css/style', 'css' );
+	$css = $css ? $css : get_template_directory_uri() . '/style.css';
+	return apply_filters( 'tamatebako_get_parent_stylesheet_uri', $css );
 }
 
 
