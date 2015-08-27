@@ -118,6 +118,13 @@ function tamatebako_maybe_enqueue_script( $handle ){
 	}
 }
 
+/**
+ * Check Script Debug
+ */
+function tamatebako_is_debug(){
+	return defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? true : false;
+}
+
 
 /**
  * Get parent theme assets file.
@@ -131,9 +138,6 @@ function tamatebako_maybe_enqueue_script( $handle ){
  */
 function tamatebako_theme_file( $file, $ext ){
 
-	/* Debug mode. */
-	$debug = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? true : false;
-
 	/* Path & URI */
 	$path = trailingslashit( get_template_directory() ) . $file;
 	$uri = trailingslashit( get_template_directory_uri() ) . $file;
@@ -145,7 +149,7 @@ function tamatebako_theme_file( $file, $ext ){
 	}
 
 	/* Not debug & min file exist, load it! */
-	if( ! $debug && file_exists(  $path . '.min.' . $ext ) ){
+	if( ! tamatebako_is_debug() && file_exists(  $path . '.min.' . $ext ) ){
 		$file_uri = $uri . '.min.' . $ext;
 	}
 
@@ -165,9 +169,6 @@ function tamatebako_theme_file( $file, $ext ){
  */
 function tamatebako_child_theme_file( $file, $ext ){
 
-	/* Debug mode. */
-	$debug = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? true : false;
-
 	/* Path & URI */
 	$path = trailingslashit( get_stylesheet_directory() ) . $file;
 	$uri = trailingslashit( get_stylesheet_directory_uri() ) . $file;
@@ -179,7 +180,7 @@ function tamatebako_child_theme_file( $file, $ext ){
 	}
 
 	/* Not debug & min file exist, load it! */
-	if( ! $debug && file_exists(  $path . '.min.' . $ext ) ){
+	if( ! tamatebako_is_debug() && file_exists(  $path . '.min.' . $ext ) ){
 		$file_uri = $uri . '.min.' . $ext;
 	}
 
