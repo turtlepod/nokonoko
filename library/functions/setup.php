@@ -8,6 +8,7 @@
 /* Setup the defaults theme feature. */
 add_action( 'after_setup_theme', 'tamatebako_setup', 5 );
 
+
 /**
  * Tamatebako Setup
  * @since 3.0.0
@@ -36,7 +37,8 @@ function tamatebako_setup(){
 	add_filter( 'stylesheet_uri', 'tamatebako_stylesheet_uri', 5 );
 
 	/* Scripts */
-	add_action( 'wp_enqueue_scripts', 'tamatebako_scripts', 0 );
+	add_action( 'wp_enqueue_scripts', 'tamatebako_styles', 1 );
+	add_action( 'wp_enqueue_scripts', 'tamatebako_scripts', 1 );
 
 	/* === Filters: Set Better Default Output === */
 
@@ -77,6 +79,11 @@ function tamatebako_setup(){
 
 /**
  * Adds stuff to the head.
+ * - javascript detection script
+ * - charset
+ * - viewport
+ * - pingback
+ *
  * @return void
  */
 function tamatebako_wp_head() {
@@ -112,7 +119,7 @@ function tamatebako_stylesheet_uri( $stylesheet_uri ){
  * Register Scripts
  * @since 3.0.0
  */
-function tamatebako_scripts(){
+function tamatebako_styles(){
 	global $tamatebako;
 
 	/* == Register Main (Parent Theme) CSS == */
@@ -140,10 +147,15 @@ function tamatebako_scripts(){
 			'all'
 		);
 	}
+}
 
-	/* === Load Comment Reply Scripts === */
 
-	/* Load the comment reply script on singular posts with open comments if threaded comments are supported. */
+/**
+ * Enqueue Scripts
+ * Load the comment reply script on singular posts with open comments if threaded comments are supported.
+ * @since 3.0.0
+ */
+function tamatebako_scripts(){
 	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ){
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -160,6 +172,7 @@ function tamatebako_tinymce_body_class( $settings ){
 	$settings['body_class'] = $settings['body_class'] . ' entry-content';
 	return $settings;
 }
+
 
 /**
  * Additional Body Class
