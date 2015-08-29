@@ -1,6 +1,7 @@
 <?php
 /**
- * Logo Upload.
+ * Logo Module.
+ * This module is to easily add logo support in theme.
 **/
 
 /**
@@ -81,7 +82,7 @@ function tamatebako_logo_body_class( $classes ) {
 	$logo_args = tamatebako_logo_args();
 	$logo_uploaded = get_theme_mod( sanitize_key( $logo_args['theme_mod_name'] ) );
 	$classes[] = 'logo-active';
-	if( $logo_uploaded || !empty( $logo_args['default-logo'] ) ){
+	if( $logo_uploaded ){
 		$classes[] = 'logo-uploaded';
 	}
 	else{
@@ -104,11 +105,6 @@ function tamatebako_logo_url(){
 	if( current_theme_supports( 'tamatebako-logo' ) && get_theme_mod( sanitize_key( $logo_args['theme_mod_name'] ) ) ){
 		$image = wp_get_attachment_image_src( absint( get_theme_mod( sanitize_key( $logo_args['theme_mod_name'] ) ) ), 'full' );
 		return tamatebako_sanitize_file_type( $image[0], 'image' ); /* image URL */
-	}
-
-	/* If default logo image defined, use it as fallback. */
-	if( !empty( $logo_args['default-logo'] ) ){
-		return tamatebako_sanitize_file_type( $logo_args['default-logo'], 'image' );
 	}
 	return '';
 }
