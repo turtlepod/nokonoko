@@ -40,14 +40,10 @@ function tamatebako_get_template( $dir = 'content' ) {
 	}
 
 	/* Assume the theme developer is creating an attachment template. */
-	if ( 'attachment' === $post_type ) {
+	if ( is_attachment() && 'attachment' === $post_type ) {
 		remove_filter( 'the_content', 'prepend_attachment' );
-
 		$mime_type = get_post_mime_type();
-
 		list( $type, $subtype ) = false !== strpos( $mime_type, '/' ) ? explode( '/', $mime_type ) : array( $mime_type, '' );
-
-		$templates[] = "{$dir}/attachment-{$type}{$singular}.php";
 		$templates[] = "{$dir}/attachment-{$type}.php";
 	}
 
