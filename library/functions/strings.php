@@ -59,6 +59,7 @@ function tamatebako_strings(){
 		'menu_search_placeholder' => 'Search&hellip;',
 		'menu_search_button' => 'Search',
 		'menu_search_form_toggle' => 'Expand Search Form',
+		'menu_default_home' => 'Home',
 
 		/* functions/template/content.php */
 		'error_title' => '404 Not Found',

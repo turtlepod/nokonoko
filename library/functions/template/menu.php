@@ -79,7 +79,7 @@ function tamatebako_menu_fallback_cb(){
 <div class="wrap">
 	<ul class="menu-items" id="menu-items">
 		<li class="menu-item">
-			<a rel="home" href="<?php echo esc_url( home_url() ); ?>">Home</a>
+			<a rel="home" title="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php echo tamatebako_string('menu_default_home'); ?></a>
 		</li>
 	</ul>
 </div>
@@ -93,8 +93,8 @@ function tamatebako_menu_fallback_cb(){
 function tamatebako_menu_search_form( $id = 'search-menu' ){
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-	<a href="#<?php echo esc_attr( $id ); ?>" class="search-toggle"><span class="screen-reader-text"><?php echo tamatebako_string('menu_search_form_toggle'); ?></span></a>
-	<input id="<?php echo esc_attr( $id ); ?>" type="search" class="search-field" placeholder="<?php echo tamatebako_string('menu_search_placeholder'); ?>" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else ''; ?>" name="s"/>
+	<a href="#<?php echo esc_attr( $id ); ?>" class="search-toggle"><span class="screen-reader-text"><?php echo tamatebako_string( 'menu_search_form_toggle' ); ?></span></a>
+	<input id="<?php echo esc_attr( $id ); ?>" type="search" class="search-field" placeholder="<?php echo tamatebako_string( 'menu_search_placeholder' ); ?>" value="<?php if ( is_search() ) echo esc_attr( strip_tags( get_search_query() ) ); else ''; ?>" name="s"/>
 	<button class="search-submit button"><span class="screen-reader-text"><?php echo tamatebako_string('menu_search_button'); ?></span></button>
 </form>
 <?php

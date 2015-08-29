@@ -20,6 +20,7 @@ $texts = array(
 	'menu_search_placeholder'     => _x( 'Search&hellip;', 'nav menu', 'nokonoko' ),
 	'menu_search_button'          => _x( 'Search', 'nav menu', 'nokonoko' ),
 	'menu_search_form_toggle'     => _x( 'Expand Search Form', 'nav menu', 'nokonoko' ),
+	'menu_default_home'           => _x( 'Home', 'nav menu', 'nokonoko' ),
 
 	/* functions/template/entry.php */
 	'error_title'                 => _x( '404 Not Found', 'entry', 'nokonoko' ),

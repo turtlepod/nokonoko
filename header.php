@@ -7,8 +7,8 @@
 			<?php if( is_front_page() && is_home() ){ ?>
 
 				<h1 id="site-logo">
-					<a rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>">
-						<img class="logo-img" src="<?php echo esc_url( tamatebako_logo_url() ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"/>
+					<a rel="home" title="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>">
+						<img class="logo-img" src="<?php echo esc_url( tamatebako_logo_url() ); ?>" alt="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>" title="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>"/>
 						<span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
 					</a>
 				</h1>
@@ -16,8 +16,8 @@
 			<?php } else { ?>
 
 				<p id="site-logo">
-					<a rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>">
-						<img class="logo-img" src="<?php echo esc_url( tamatebako_logo_url() ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"/>
+					<a rel="home" title="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>">
+						<img class="logo-img" src="<?php echo esc_url( tamatebako_logo_url() ); ?>" alt="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>" title="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>"/>
 						<span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
 					</a>
 				</p>
@@ -28,11 +28,11 @@
 
 			<?php if( is_front_page() && is_home() ){ ?>
 
-				<h1 id="site-title"><a rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 id="site-title"><a title="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>" rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 
 			<?php } else { ?>
 
-				<p id="site-title"><a rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php bloginfo( 'name' ); ?></a></p>
+				<p id="site-title"><a title="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>" rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php bloginfo( 'name' ); ?></a></p>
 
 			<?php } ?>
 

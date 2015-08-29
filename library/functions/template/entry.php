@@ -11,10 +11,10 @@
  */
 function tamatebako_entry_title(){
 	if( is_singular() ){
-		the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+		the_title( '<h1 class="entry-title">', '</h1>' );
 	}
 	else{
-		the_title( '<h2 class="entry-title">', '</h2>' );
+		the_title( '<h2 class="entry-title"><a title="' . the_title_attribute( array( 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 	}
 }
 
@@ -22,10 +22,10 @@ function tamatebako_entry_title(){
 /**
  * Entry Date: display post date.
  * this template tags is only for the main loop.
- * @param $permalink bool if true(default) will be wrapped with current post permalink.
  * @param $data_format string the date format of the date, default using date format set on general settings.
+ * @param $force_permalink bool if true(default) will be wrapped with current post permalink.
  */
-function tamatebako_entry_date( $permalink = true, $date_format = '' ){
+function tamatebako_entry_date( $date_format = '', $force_permalink = '' ){
 
 	/* Default time markup */
 	$time_string = '<time class="published updated" datetime="%1$s">%2$s</time>';
@@ -43,8 +43,13 @@ function tamatebako_entry_date( $permalink = true, $date_format = '' ){
 		get_the_modified_date( $date_format )
 	);
 
-	if( $permalink && is_singular() ){
-		echo '<span class="entry-date entry-date-permalink"><a href=" ' . esc_url( get_permalink() ) . '" rel="bookmark">'  . $time_string . '</a></span>';
+	$permalink = is_singular() ? false : true;
+	if( false === $force_permalink || true === $force_permalink ){
+		$permalink = $force_permalink;
+	}
+
+	if( $permalink ){
+		echo '<span class="entry-date entry-date-permalink"><a title="' . the_title_attribute( array( 'echo' => false ) ) . '" href=" ' . esc_url( get_permalink() ) . '" rel="bookmark">'  . $time_string . '</a></span>';
 	}
 	else{
 		echo '<span class="entry-date">' . $time_string . '</span>';
@@ -56,11 +61,24 @@ function tamatebako_entry_date( $permalink = true, $date_format = '' ){
  * Comments Link
  * Link to #comments or #respond with number of comments info.
  * this is just wrapper function for comments_popup_link().
+ * TODO: make it more accessible.
+ * @param $args array formatted comments popup link arguments.
  */
-function tamatebako_comments_link(){
+function tamatebako_comments_link( $args = array() ){
 
 	/* Vars */
+	$title = get_the_title();
 	$number = get_comments_number( get_the_ID() );
+
+	/* Args */
+	$defaults = array(
+		'zero'      => number_format_i18n( 0 ), /* string to display for no comments */
+		'one'       => number_format_i18n( 1 ), /* string to display for 1 comments */
+		'more'      => '%', /* string to display for more than one comments */
+		'none'      => '', /* string to display if no comments available. */
+		'css_class' => 'comments-link', /* css classes */
+	);
+	$args = wp_parse_args( $args, $defaults );
 
 	/* If no comment added, and comments is closed do not display link to comment. */
 	if ( 0 == $number && !comments_open() && !pings_open() ) {
@@ -76,7 +94,7 @@ function tamatebako_comments_link(){
 	}
 
 	/* Display comments link as default. */
-	comments_popup_link( number_format_i18n( 0 ), number_format_i18n( 1 ), '%', 'comments-link', '' );
+	comments_popup_link( $args['zero'], $args['one'], $args['more'], $args['css_class'], $args['none'] );
 }
 
 
@@ -111,7 +129,7 @@ function tamatebako_content_error(){
  * @param $taxonomies array list of taxonomies to display.
  * @since 3.0.0
  */
-function tamatebako_entry_taxonomies( $args = array(), $taxonomies = array() ){
+function tamatebako_entry_taxonomies( $taxonomies = array(), $args = array() ){
 
 	/* Entry Taxonomies */
 	$entry_taxonomies = $taxonomies;
@@ -199,7 +217,7 @@ function tamatebako_read_more() {
 	$string = tamatebako_string( 'read_more' );
 	$read_more = '';
 	if ( !empty( $string ) ){
-		$read_more = '<span class="more-link-wrap"><a class="more-link" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span></a></span>';
+		$read_more = '<span class="more-link-wrap"><a class="more-link" title="' . the_title_attribute( array( 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span></a></span>';
 	}
 	echo $read_more;
 }
@@ -212,6 +230,6 @@ function tamatebako_read_more() {
  */
 function tamatebako_entry_permalink(){
 ?>
-<a class="entry-permalink" href="<?php the_permalink(); ?>" rel="bookmark"><span><?php echo tamatebako_string( 'permalink' ); ?></span></a>
+<a class="entry-permalink" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" rel="bookmark"><span><?php echo tamatebako_string( 'permalink' ); ?></span></a>
 <?php
 }

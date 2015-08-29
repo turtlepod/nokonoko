@@ -21,7 +21,7 @@
 		<div class="entry-summary">
 
 			<?php if ( has_post_thumbnail() ) { ?>
-				<a class="theme-thumbnail-link" href="<?php the_permalink(); ?>">
+				<a class="theme-thumbnail-link" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'thumbnail' ); ?>
 				</a>
 			<?php } ?>
@@ -35,10 +35,6 @@
 		<footer class="entry-footer">
 			<?php edit_post_link(); ?>
 			<?php tamatebako_entry_taxonomies(); ?>
-			<div class="entry-taxonomies">
-				<?php //tamatebako_entry_taxonomy( array( 'taxonomy' => 'category' ) ); ?>
-				<?php //tamatebako_entry_taxonomy( array( 'taxonomy' => 'post_tag', 'text' => 'Post %s:' ) ); /* Post Tag: */ ?>
-			</div>
 		</footer><!-- .entry-footer -->
 
 	</div><!-- .entry > .wrap -->
