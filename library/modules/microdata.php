@@ -1,6 +1,7 @@
 <?php
 /**
- * Microdata Filters (unmaintained)
+ * Microdata Modules (unmaintained)
+ * This module will filter WP default output using schema.org microdata markup.
 **/
 
 /* Link to author archive */

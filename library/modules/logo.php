@@ -1,7 +1,7 @@
 <?php
 /**
  * Logo Module.
- * This module is to easily add logo support in theme.
+ * Easily create logo upload option in customizer.
 **/
 
 /**

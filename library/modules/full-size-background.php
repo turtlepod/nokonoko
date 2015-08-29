@@ -1,6 +1,7 @@
 <?php
 /**
- * Full Size Background
+ * Full Size Background Module.
+ * Easily create full size background option in customizer.
 **/
 
 /**
