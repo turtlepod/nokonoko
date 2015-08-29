@@ -8,7 +8,6 @@
 /* Setup the defaults theme feature. */
 add_action( 'after_setup_theme', 'tamatebako_setup', 5 );
 
-
 /**
  * Tamatebako Setup
  * @since 3.0.0
@@ -16,7 +15,7 @@ add_action( 'after_setup_theme', 'tamatebako_setup', 5 );
  */
 function tamatebako_setup(){
 
-	/* Enable Featured Image */
+	/* Enable Featured Image for all post types. */
 	add_theme_support( 'post-thumbnails' );
 
 	/* Eanble Feed Link */
@@ -332,7 +331,6 @@ function tamatebako_archive_description( $desc ){
 	elseif ( is_post_type_archive() ){
 		$desc = get_post_type_object( get_query_var( 'post_type' ) )->description;
 	}
-
 	/* Add paragraph tags. */
 	if( !empty( $desc ) ){
 		return wpautop( $desc );
@@ -472,4 +470,3 @@ function tamatebako_get_comment_author_url_link( $link ) {
 
 	return preg_replace( $patterns, $replaces, $link );
 }
-

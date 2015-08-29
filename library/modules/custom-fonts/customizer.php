@@ -13,7 +13,7 @@ add_action( 'customize_register', 'tamatebako_fonts_customizer_register' );
 function tamatebako_fonts_customizer_register( $wp_customize ) {
 
 	/* Custom Control */
-	tamatebako_include( 'modules/custom-fonts/customizer-control' );
+	tamatebako_include( 'modules/custom-fonts/customizer-control', true );
 
 	/* Load All Google Fonts in Customizer */
 	add_action( 'customize_controls_print_styles', 'tametebako_fonts_customize_styles' );

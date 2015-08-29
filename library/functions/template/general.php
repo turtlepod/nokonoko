@@ -12,10 +12,10 @@
  * @since  0.1.0
  * @return string
  */
-function tamatebako_skip_to_content(){
+function tamatebako_skip_to_content( $href = "#content" ){
 ?>
 <div class="skip-link">
-	<a class="screen-reader-text" href="#content"><?php echo tamatebako_string( 'skip_to_content' ); ?></a>
+	<a class="screen-reader-text" href="<?php esc_attr( $href ); ?>"><?php echo tamatebako_string( 'skip_to_content' ); ?></a>
 </div>
 <?php
 }
@@ -57,38 +57,27 @@ function tamatebako_get_template( $dir = 'content' ) {
 		/* Get theme post format support. */
 		$theme_support_format = get_theme_support( 'post-formats' );
 
+		/* Get the post format. */
+		$format = get_post_format() ? get_post_format() : 'standard';
+
 		/* Only if theme support specific format */
-		if ( is_array( $theme_support_format[0] ) ){
+		if ( is_array( $theme_support_format[0] ) && in_array( $format, $theme_support_format[0] ) ){
 
-			/* Get the post format. */
-			$post_format = get_post_format() ? get_post_format() : 'standard';
-
-			if ( in_array( $post_format, $theme_support_format[0] ) ){
-
-				/* Template based off post type and post format. */
-				$templates[] = "{$dir}/{$post_type}-format-{$post_format}{$singular}.php";
-				$templates[] = "{$dir}/{$post_type}-format{$singular}.php";
-				$templates[] = "{$dir}/{$post_type}-format-{$post_format}.php";
-
-				/* Template based off the post format. */
-				$templates[] = "{$dir}/format-{$post_format}{$singular}.php";
-				$templates[] = "{$dir}/format{$singular}.php";
-				$templates[] = "{$dir}/format-{$post_format}.php";
-			}
+			/* Template based off post type and post format. */
+			$templates[] = "{$dir}/{$post_type}-format-{$format}{$singular}.php";
+			$templates[] = "{$dir}/{$post_type}-format-{$format}.php";
 		}
+	}
+
+	/* Page Template (only for singular) */
+	if ( is_page() && get_page_template_slug() ) {
+		$page_template_base = str_replace( '.php', '', basename( get_page_template_slug() ) );
+		$templates[] = "{$dir}/page-singular-{$page_template_base}.php";
 	}
 
 	/* Template based off the post type. */
 	$templates[] = "{$dir}/{$post_type}{$singular}.php";
 	$templates[] = "{$dir}/{$post_type}.php";
-
-	/* Page Template. */
-	if ( 'page' === $post_type ) {
-		if( get_page_template_slug() ){
-			$page_template = str_replace( '.php', '', basename( get_page_template_slug() ) );
-			$templates[] = "{$dir}/page-singular-{$page_template}.php";
-		}
-	}
 
 	/* Fallback 'content.php' template. */
 	$templates[] = "{$dir}/content{$singular}.php";

@@ -73,7 +73,8 @@ add_action( 'customize_preview_init', 'tamatebako_custom_css_customizer_js' );
  * JS to load changes asynchronously.
  */
 function tamatebako_custom_css_customizer_js() {
-	$js = trailingslashit( get_template_directory_uri() ) . TAMATEBAKO_DIR . '/modules/custom-css/custom-css.js';
+	global $tamatebako;
+	$js = trailingslashit( get_template_directory_uri() ) . $tamatebako->dir . '/modules/custom-css/custom-css.js';
 	wp_enqueue_script( 'tamatebako_custom_css_preview', $js, array( 'customize-preview' ), tamatebako_theme_version(), true );
 }
 

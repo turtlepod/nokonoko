@@ -41,7 +41,7 @@ function tamatebako_get_menu_name( $location ){
 
 
 /**
- * Check if menus is registered
+ * Check if a custom menu location is registered
  * @since 0.1.0
  */
 function tamatebako_is_menu_registered( $location ){
@@ -79,7 +79,7 @@ function tamatebako_menu_fallback_cb(){
 <div class="wrap">
 	<ul class="menu-items" id="menu-items">
 		<li class="menu-item">
-			<a rel="home" href="<?php echo home_url(); ?>">Home</a>
+			<a rel="home" href="<?php echo esc_url( home_url() ); ?>">Home</a>
 		</li>
 	</ul>
 </div>

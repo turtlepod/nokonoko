@@ -181,13 +181,13 @@ $layouts_args = tamatebako_layouts_args();
  * Load Layouts Post Meta
  */
 if( true === $layouts_args['post_meta'] ){
-	tamatebako_include( 'modules/layouts/post-meta' );
+	tamatebako_include( 'modules/layouts/post-meta', true );
 }
 
 /**
  * Load Layouts Customizer
  */
 if( true === $layouts_args['customize'] ){
-	tamatebako_include( 'modules/layouts/customizer' );
+	tamatebako_include( 'modules/layouts/customizer', true );
 }
 

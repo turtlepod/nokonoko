@@ -34,10 +34,10 @@
 
 		<footer class="entry-footer">
 			<?php edit_post_link(); ?>
-			<?php //tamatebako_entry_taxonomies(); ?>
+			<?php tamatebako_entry_taxonomies(); ?>
 			<div class="entry-taxonomies">
-				<?php tamatebako_entry_taxonomy( array( 'taxonomy' => 'category' ) ); ?>
-				<?php tamatebako_entry_taxonomy( array( 'taxonomy' => 'post_tag', 'text' => 'Post %s:' ) ); /* Post Tag: */ ?>
+				<?php //tamatebako_entry_taxonomy( array( 'taxonomy' => 'category' ) ); ?>
+				<?php //tamatebako_entry_taxonomy( array( 'taxonomy' => 'post_tag', 'text' => 'Post %s:' ) ); /* Post Tag: */ ?>
 			</div>
 		</footer><!-- .entry-footer -->
 
