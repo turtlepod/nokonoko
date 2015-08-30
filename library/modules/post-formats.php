@@ -41,7 +41,7 @@ function tamatebako_structured_post_formats() {
 function tamatebako_post_format_aside_infinity( $content ) {
 
 	if ( has_post_format( 'aside' ) && !is_singular() && !post_password_required() ) {
-		$infinity = '<a class="permalink" href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( array( 'echo' => false ) ) . '">&#8734;</a>';
+		$infinity = '<a class="permalink" href="' . esc_url( get_permalink() ) . '">&#8734;</a>';
 		if ( have_comments() || comments_open() ){
 			$infinity = '<a class="comments-link" href="' . esc_url( get_permalink() ) . '">' . number_format_i18n( get_comments_number() ) . '</a>';
 		}

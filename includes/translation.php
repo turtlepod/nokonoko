@@ -27,7 +27,6 @@ $texts = array(
 	'error_message'               => _x( 'Apologies, but no entries were found.', 'entry', 'nokonoko' ),
 	'next_post'                   => _x( 'Next', 'entry', 'nokonoko' ),
 	'previous_post'               => _x( 'Previous', 'entry', 'nokonoko' ),
-	'permalink'                   => _x( 'Permalink', 'entry', 'nokonoko' ),
 
 	/* functions/template/comment.php */
 	'next_comment'                => _x( 'Next', 'comment', 'nokonoko' ),

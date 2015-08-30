@@ -14,7 +14,7 @@ function tamatebako_entry_title(){
 		the_title( '<h1 class="entry-title">', '</h1>' );
 	}
 	else{
-		the_title( '<h2 class="entry-title"><a title="' . the_title_attribute( array( 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 	}
 }
 
@@ -23,7 +23,7 @@ function tamatebako_entry_title(){
  * Entry Date: display post date.
  * this template tags is only for the main loop.
  * @param $data_format string the date format of the date, default using date format set on general settings.
- * @param $force_permalink bool if true(default) will be wrapped with current post permalink.
+ * @param $force_permalink bool to force use/not use permalink. default is conditional.
  */
 function tamatebako_entry_date( $date_format = '', $force_permalink = '' ){
 
@@ -49,7 +49,7 @@ function tamatebako_entry_date( $date_format = '', $force_permalink = '' ){
 	}
 
 	if( $permalink ){
-		echo '<span class="entry-date entry-date-permalink"><a title="' . the_title_attribute( array( 'echo' => false ) ) . '" href=" ' . esc_url( get_permalink() ) . '" rel="bookmark">'  . $time_string . '</a></span>';
+		echo '<span class="entry-date entry-date-permalink"><a href=" ' . esc_url( get_permalink() ) . '" rel="bookmark">'  . $time_string . '</a></span>';
 	}
 	else{
 		echo '<span class="entry-date">' . $time_string . '</span>';
@@ -217,19 +217,7 @@ function tamatebako_read_more() {
 	$string = tamatebako_string( 'read_more' );
 	$read_more = '';
 	if ( !empty( $string ) ){
-		$read_more = '<span class="more-link-wrap"><a class="more-link" title="' . the_title_attribute( array( 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span></a></span>';
+		$read_more = '<span class="more-link-wrap"><a class="more-link" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span></a></span>';
 	}
 	echo $read_more;
-}
-
-
-/**
- * Entry Permalink
- * General link to the post/entry.
- * @since 0.1.0
- */
-function tamatebako_entry_permalink(){
-?>
-<a class="entry-permalink" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" rel="bookmark"><span><?php echo tamatebako_string( 'permalink' ); ?></span></a>
-<?php
 }

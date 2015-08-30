@@ -21,11 +21,10 @@
 		<div class="entry-summary">
 
 			<?php if ( has_post_thumbnail() ) { ?>
-				<a class="theme-thumbnail-link" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'thumbnail' ); ?>
+				<a class="theme-thumbnail-link" href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'alignright theme-thumbnail', 'alt' => get_the_title() ) ); ?>
 				</a>
 			<?php } ?>
-			<?php //get_the_image( array( 'attachment' => false, 'image_class' => 'theme-thumbnail' ) ); ?>
 
 			<?php the_excerpt(); ?>
 			<?php tamatebako_read_more(); ?>

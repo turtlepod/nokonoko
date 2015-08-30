@@ -79,7 +79,7 @@ function tamatebako_menu_fallback_cb(){
 <div class="wrap">
 	<ul class="menu-items" id="menu-items">
 		<li class="menu-item">
-			<a rel="home" title="<?php echo esc_attr( strip_tags( get_bloginfo( 'name' ) ) ); ?>" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php echo tamatebako_string('menu_default_home'); ?></a>
+			<a rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php echo tamatebako_string('menu_default_home'); ?></a>
 		</li>
 	</ul>
 </div>
