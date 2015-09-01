@@ -67,21 +67,21 @@
 	/* === Menu Toggle: "js" enabled === */
 
 	/* Hide Menu */
-	.menu-items{
+	.menu-dropdown .menu-items{
 		display: none;
 	}
 
 	/* Display Menu */
-	.menu-toggle-active.menu-container{
+	.menu-toggle-active.menu-dropdown{
 		border-bottom: 0;
 	}
-	.menu-toggle-active .menu-items{
+	.menu-toggle-active.menu-dropdown .menu-items{
 		display: block;
 	}
-	.menu-toggle-active .menu-toggle{
+	.menu-toggle-active.menu-dropdown .menu-toggle{
 		border-bottom: 1px solid #ccc;
 	}
-	.menu-toggle-active > .wrap{
+	.menu-toggle-active.menu-dropdown > .wrap{
 		display: block;
 	}
 

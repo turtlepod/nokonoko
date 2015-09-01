@@ -87,6 +87,33 @@ function tamatebako_menu_fallback_cb(){
 }
 
 /**
+ * Menu Footer Fallback Callback
+ * Generic menu fallback and only display link to home page.
+ * @since 0.1.0
+ */
+function tamatebako_menu_footer_fallback_cb(){
+?>
+<div class="wrap">
+	<ul class="menu-items" id="menu-items">
+		<?php echo tamatebako_menu_copyright_item(); ?>
+	</ul>
+</div>
+<?php
+}
+
+/**
+ * Menu Footer Fallback Callback
+ * Generic menu fallback and only display link to home page.
+ * @since 0.1.0
+ */
+function tamatebako_menu_copyright_item(){
+	$copy  = '<li id="menu-copyright" class="menu-item">';
+	$copy .= '<span><a class="site-link" rel="home" href="' . esc_url( user_trailingslashit( home_url() ) ) . '">' . get_bloginfo( 'name' ) . '</a> &#169; ' . date_i18n( 'Y' ) . '</span>';
+	$copy .= '</li>';
+	return $copy;
+}
+
+/**
  * Navigation Search Form
  * @since 0.1.0
  */
