@@ -22,15 +22,16 @@ function tamatebako_logo_args(){
 		'section'             => 'title_tagline',
 		'label'               => 'Logo',
 		'description'         => '',
-		'flex_width'          => true,
-		'flex_height'         => true,
+		'flex_width'          => 1,
+		'flex_height'         => 1,
 		'width'               => 300,
 		'height'              => 200,
 		'theme_mod_name'      => 'logo',
 	);
 
 	/* Logo Args. */
-	return wp_parse_args( $theme_args, $defaults_args );
+	$args = wp_parse_args( $theme_args, $defaults_args );
+	return $args;
 }
 
 
