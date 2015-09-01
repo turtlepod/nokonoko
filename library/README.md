@@ -18,6 +18,7 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 * back compat: minimum using wp.4.1 (since the "title-tag" theme support.)
 * add args to set logo theme mod name. change theme mod name to "theme-logo".
 * remove scripts modules + rethink css files.
+* various stuff happen :(
 
 **3.0.1 - 11.08.2015**
 
