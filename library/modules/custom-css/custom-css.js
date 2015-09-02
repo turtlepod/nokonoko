@@ -6,7 +6,7 @@
 ( function( $ ) {
 	wp.customize( 'custom_css', function( value ) {
 		value.bind( function( to ) {
-			$( '#custom-css' ).html( to );
+			$( '#tamatebako-custom-css' ).html( to );
 		} );
 	} );
 } )( jQuery );
