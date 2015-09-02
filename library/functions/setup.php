@@ -259,6 +259,11 @@ function tamatebako_body_class( $classes ){
 		}
 	}
 
+	/* admin/super-admin */
+	if( is_super_admin() ){
+		$classes[] = 'tamatebako-super';
+	}
+
 	return $classes;
 }
 
