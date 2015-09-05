@@ -8,6 +8,10 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.1.1 - 05.09.2015**
+
+* add comment in moderation text notice.
+
 **3.1.0 - 19.08.2015**
 
 * merge context to setup.

@@ -77,6 +77,7 @@ function tamatebako_strings(){
 		'untitled' => '(Untitled)',
 		'read_more' => 'Read More',
 		'search_title_prefix' => 'Search:',
+		'comment_moderation_message' => 'Your comment is awaiting moderation.',
 
 	);
 

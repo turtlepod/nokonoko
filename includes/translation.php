@@ -38,6 +38,7 @@ $texts = array(
 	'untitled'                    => _x( '(Untitled)', 'entry', 'nokonoko' ),
 	'read_more'                   => _x( 'Read More', 'entry', 'nokonoko' ),
 	'search_title_prefix'         => _x( 'Search:', 'archive title', 'nokonoko' ),
+	'comment_moderation_message'  => _x( 'Your comment is awaiting moderation.', 'comment', 'nokonoko' ),
 
 );
 

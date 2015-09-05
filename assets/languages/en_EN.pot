@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Theme\n"
 "Report-Msgid-Bugs-To: http://genbu.me/contact/\n"
-"POT-Creation-Date: 2015-08-07 16:53+0700\n"
-"PO-Revision-Date: 2015-08-07 16:53+0700\n"
+"POT-Creation-Date: 2015-09-05 12:42+0700\n"
+"PO-Revision-Date: 2015-09-05 12:42+0700\n"
 "Last-Translator: David Chandra Purnama <david@shellcreeper.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -184,29 +184,29 @@ msgctxt "nav menu"
 msgid "Expand Search Form"
 msgstr ""
 
-#: includes/translation.php:25
-msgctxt "entry"
-msgid "404 Not Found"
+#: includes/translation.php:23
+msgctxt "nav menu"
+msgid "Home"
 msgstr ""
 
 #: includes/translation.php:26
 msgctxt "entry"
-msgid "Apologies, but no entries were found."
+msgid "404 Not Found"
 msgstr ""
 
 #: includes/translation.php:27
 msgctxt "entry"
-msgid "Next"
+msgid "Apologies, but no entries were found."
 msgstr ""
 
 #: includes/translation.php:28
 msgctxt "entry"
-msgid "Previous"
+msgid "Next"
 msgstr ""
 
 #: includes/translation.php:29
 msgctxt "entry"
-msgid "Permalink"
+msgid "Previous"
 msgstr ""
 
 #: includes/translation.php:32
@@ -242,6 +242,11 @@ msgstr ""
 #: includes/translation.php:40
 msgctxt "archive title"
 msgid "Search:"
+msgstr ""
+
+#: includes/translation.php:41
+msgctxt "comment"
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: includes/utility.php:11 includes/utility.php:12
