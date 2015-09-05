@@ -5,19 +5,27 @@
 **/
 
 /**
- * Entry Title
- * Use <h1> for singular page, and <h2> for archive.
+ * Entry Title.
+ * this template tags is only for the main loop.
+ * Use <h1> for singular page without link, and <h2> for archive with permalink to post.
  */
 function tamatebako_entry_title(){
-	$tag = is_singular() ? 'h1' : 'h2';
-	the_title( '<' . $tag . ' class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . $tag . '>' );
+	if( is_singular() ){
+		the_title( '<h1 class="entry-title">', '</h1>' );
+	}
+	else{
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+	}
 }
 
 
 /**
- * Entry Date
+ * Entry Date: display post date.
+ * this template tags is only for the main loop.
+ * @param $data_format string the date format of the date, default using date format set on general settings.
+ * @param $force_permalink bool to force use/not use permalink. default is conditional.
  */
-function tamatebako_entry_date( $permalink = true, $date_format = '' ){
+function tamatebako_entry_date( $date_format = '', $force_permalink = '' ){
 
 	/* Default time markup */
 	$time_string = '<time class="published updated" datetime="%1$s">%2$s</time>';
@@ -35,6 +43,11 @@ function tamatebako_entry_date( $permalink = true, $date_format = '' ){
 		get_the_modified_date( $date_format )
 	);
 
+	$permalink = is_singular() ? false : true;
+	if( false === $force_permalink || true === $force_permalink ){
+		$permalink = $force_permalink;
+	}
+
 	if( $permalink ){
 		echo '<span class="entry-date entry-date-permalink"><a href=" ' . esc_url( get_permalink() ) . '" rel="bookmark">'  . $time_string . '</a></span>';
 	}
@@ -46,13 +59,26 @@ function tamatebako_entry_date( $permalink = true, $date_format = '' ){
 
 /**
  * Comments Link
+ * Link to #comments or #respond with number of comments info.
+ * this is just wrapper function for comments_popup_link().
+ * TODO: make it more accessible.
+ * @param $args array formatted comments popup link arguments.
  */
-function tamatebako_comments_link(){
+function tamatebako_comments_link( $args = array() ){
 
 	/* Vars */
-	$id = get_the_ID();
 	$title = get_the_title();
-	$number = get_comments_number( $id );
+	$number = get_comments_number( get_the_ID() );
+
+	/* Args */
+	$defaults = array(
+		'zero'      => number_format_i18n( 0 ), /* string to display for no comments */
+		'one'       => number_format_i18n( 1 ), /* string to display for 1 comments */
+		'more'      => '%', /* string to display for more than one comments */
+		'none'      => '', /* string to display if no comments available. */
+		'css_class' => 'comments-link', /* css classes */
+	);
+	$args = wp_parse_args( $args, $defaults );
 
 	/* If no comment added, and comments is closed do not display link to comment. */
 	if ( 0 == $number && !comments_open() && !pings_open() ) {
@@ -68,12 +94,12 @@ function tamatebako_comments_link(){
 	}
 
 	/* Display comments link as default. */
-	comments_popup_link( number_format_i18n( 0 ), number_format_i18n( 1 ), '%', 'comments-link', '' );
+	comments_popup_link( $args['zero'], $args['one'], $args['more'], $args['css_class'], $args['none'] );
 }
 
 
 /**
- * Content Error
+ * Content Error: a basic error 404 page.
  * used in "index.php"
  * @since 0.1.0
  */
@@ -98,20 +124,26 @@ function tamatebako_content_error(){
 /**
  * Entry Taxonomies
  * a helper function to print all taxonomy/term attach to a post.
+ * @see tamatebako_entry_taxonomy()
+ * @param $args array this arguments is passed to `tamatebako_entry_taxonomy()` except for `$args['taxonomy']`.
+ * @param $taxonomies array list of taxonomies to display.
  * @since 3.0.0
  */
-function tamatebako_entry_taxonomies( $args = array() ){
+function tamatebako_entry_taxonomies( $taxonomies = array(), $args = array() ){
 
 	/* Entry Taxonomies */
-	$entry_taxonomies = array();
+	$entry_taxonomies = $taxonomies;
 
-	/* Get Taxonomies Object */
-	$entry_taxonomies_obj = get_object_taxonomies( get_post_type(), 'object' );
-	foreach ( $entry_taxonomies_obj as $entry_tax_id => $entry_tax_obj ){
+	/* if no taxonomies defined, list all taxonomies. */
+	if( empty( $taxonomies ) ){
+		/* Get Taxonomies Object */
+		$entry_taxonomies_obj = get_object_taxonomies( get_post_type(), 'object' );
+		foreach ( $entry_taxonomies_obj as $entry_tax_id => $entry_tax_obj ){
 
-		/* Only for public taxonomy */
-		if ( 1 == $entry_tax_obj->public ){
-			$entry_taxonomies[] = $entry_tax_id;
+			/* Only for public taxonomy */
+			if ( 1 == $entry_tax_obj->public ){
+				$entry_taxonomies[] = $entry_tax_id;
+			}
 		}
 	}
 
@@ -129,7 +161,8 @@ function tamatebako_entry_taxonomies( $args = array() ){
 
 /**
  * This template tag is meant to replace template tags like `the_category()`, `the_terms()`, etc.
- * @since     3.0.0
+ $ @param $args array list of arguments for separator, taxonomy, and text format.
+ * @since 3.0.0
  */
 function tamatebako_entry_taxonomy( $args = array() ) {
 
@@ -151,7 +184,7 @@ function tamatebako_entry_taxonomy( $args = array() ) {
 		$tax_name = $tax_object->labels->name;
 		$text = sprintf( $args['text'], $tax_name );
 	?>
-		<span class="entry-terms <?php echo sanitize_html_class( $args['taxonomy'] ); ?>">
+		<span class="entry-taxonomy <?php echo sanitize_html_class( $args['taxonomy'] ); ?>">
 			<?php if( !empty( $text ) ){ ?>
 			<span class="entry-taxonomy-text"><?php echo $text;?></span> 
 			<?php } ?>
@@ -176,7 +209,8 @@ function tamatebako_entry_nav(){
 
 /**
  * Tamatebako Read More
- * Can be added after "the_excerpt()"
+ * Can be added after "the_excerpt()".
+ * this element is wrapped using span for flexibility, so can be added inside paragraph elements.
  * @since 0.1.0
  */
 function tamatebako_read_more() {
@@ -186,16 +220,4 @@ function tamatebako_read_more() {
 		$read_more = '<span class="more-link-wrap"><a class="more-link" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $string . '</span> <span class="screen-reader-text">' . get_the_title() . '</span></a></span>';
 	}
 	echo $read_more;
-}
-
-
-/**
- * Entry Permalink
- * General link to the post/entry.
- * @since 0.1.0
- */
-function tamatebako_entry_permalink(){
-?>
-<a class="entry-permalink" href="<?php the_permalink(); ?>" rel="bookmark"><span><?php echo tamatebako_string( 'permalink' ); ?></span></a>
-<?php
 }

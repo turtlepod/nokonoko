@@ -29,7 +29,7 @@ function tamatebako_back_compat_args(){
 	/* Default */
 	$defaults_args = array(
 		'theme_name' => 'This',
-		'wp_requires' => '4.0',
+		'wp_requires' => '4.1',
 		'php_requires' => '5.2.4',
 		'wp_requires_notice' => '%theme_name% theme requires at least WordPress %wp_requires%. You are running WordPress %wp_current%. Please upgrade and try again.',
 		'php_requires_notice' => '%theme_name% theme requires at least PHP %php_requires%. You are running PHP %php_current%. Please upgrade and try again.',

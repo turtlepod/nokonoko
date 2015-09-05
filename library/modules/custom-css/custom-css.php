@@ -73,7 +73,8 @@ add_action( 'customize_preview_init', 'tamatebako_custom_css_customizer_js' );
  * JS to load changes asynchronously.
  */
 function tamatebako_custom_css_customizer_js() {
-	$js = trailingslashit( get_template_directory_uri() ) . TAMATEBAKO_DIR . '/modules/custom-css/custom-css.js';
+	global $tamatebako;
+	$js = trailingslashit( get_template_directory_uri() ) . $tamatebako->dir . '/modules/custom-css/custom-css.js';
 	wp_enqueue_script( 'tamatebako_custom_css_preview', $js, array( 'customize-preview' ), tamatebako_theme_version(), true );
 }
 
@@ -85,10 +86,10 @@ add_action( 'wp_head', 'tamatebako_custom_css_wp_head', 99 );
  * Add CSS to Head.
  */
 function tamatebako_custom_css_wp_head() {
-	global $wp_customize;
+	global $wp_customize, $tamatebako;
 	if( get_theme_mod( 'custom_css' ) ){
 ?>
-<style id="custom-css" type="text/css">
+<style id="tamatebako-custom-css" type="text/css">
 <?php echo tamatebako_parse_css( get_theme_mod( 'custom_css' ) );?>
 </style>
 <?php
@@ -96,7 +97,7 @@ function tamatebako_custom_css_wp_head() {
 	/* Always add empty style in customizer. */
 	elseif( isset( $wp_customize ) ){
 ?>
-<style id="custom-css" type="text/css"></style>
+<style id="tamatebako-custom-css" type="text/css"></style>
 <?php
 	}
 }
@@ -108,6 +109,7 @@ function tamatebako_custom_css_wp_head() {
  */
 function tamatebako_parse_css( $css ){
 	$css = esc_html( $css );
+	$css = wp_kses( $css, array() ); /* why not striptags? who knows? */
 	$css = str_replace( '&gt;', '>', $css );
 	$css = str_replace( '&quot;', '"', $css );
 	$css = str_replace( '&amp;', "&", $css );

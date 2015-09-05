@@ -14,7 +14,13 @@ function tamatebako_attachment(){
 	$mime       = get_post_mime_type();
 	$attachment = '';
 
-	$mime_type = false !== strpos( $mime, '/' ) ? explode( '/', $mime ) : array( $mime, '' );
+	$mime_type = '';
+	if( false !== strpos( $mime, '/' ) ){
+		$mime_type = explode( '/', $mime );
+	}
+	else{
+		$mime_type = array( $mime, '' );
+	}
 
 	/* Loop through each mime type. If a function exists for it, call it. Allow users to filter the display. */
 	foreach ( $mime_type as $type ) {
@@ -38,14 +44,14 @@ function tamatebako_attachment_image( $mime = '', $file = '' ){
 		/* Image URL */
 		$src = wp_get_attachment_image_src( get_the_ID(), 'full' );
 		/* Display image with caption */
-		echo img_caption_shortcode( array( 'align' => 'aligncenter', 'width' => esc_attr( $src[1] ), 'caption' => get_the_excerpt() ), wp_get_attachment_image( get_the_ID(), 'full', false ) );
+		return img_caption_shortcode( array( 'align' => 'aligncenter', 'width' => esc_attr( $src[1] ), 'caption' => get_the_excerpt() ), wp_get_attachment_image( get_the_ID(), 'full', false ) );
 
 	}
 	/* No caption. */
 	else {
 
 		/* Display image without caption. */
-		echo wp_get_attachment_image( get_the_ID(), 'full', false, array( 'class' => 'aligncenter' ) );
+		return wp_get_attachment_image( get_the_ID(), 'full', false, array( 'class' => 'aligncenter' ) );
 	}
 }
 

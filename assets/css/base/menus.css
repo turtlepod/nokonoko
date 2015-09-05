@@ -109,6 +109,7 @@
 		-ms-transform: rotate(270deg); /* IE 9 */
 		-webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
 		transform: rotate(270deg);
+		margin-top: 2px;
 	}
 /* Drop Down Mobile */
 .mobile-menu-active .menu-dropdown li:hover > .sub-menu,

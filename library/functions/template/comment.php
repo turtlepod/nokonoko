@@ -29,29 +29,37 @@ function tamatebako_comments_nav(){
 }
 
 /**
- * Comments Error
+ * Comments Error Message.
  * used in "comments.php"
  * @since 0.1.0
  */
 function tamatebako_comments_error(){
-	if( is_page() ){
-		return false;
+	echo tamatebako_get_comments_error();
+}
+
+/**
+ * Get Comments Error.
+ * used in "comments.php"
+ * @since 3.1.0
+ */
+function tamatebako_get_comments_error(){
+	$out = '';
+
+	if ( pings_open() && !comments_open() ){
+		$out .= '<p class="comments-closed pings-open">';
+		$out .= tamatebako_string( 'comments_closed_pings_open' );
+		$out .= '</p><!-- .comments-closed.pings-open -->';
 	}
-?>
-<?php if ( pings_open() && !comments_open() ) { ?>
-
-	<p class="comments-closed pings-open">
-		<?php echo tamatebako_string( 'comments_closed_pings_open' ); ?>
-	</p><!-- .comments-closed.pings-open -->
-
-<?php } elseif ( !comments_open() ) { ?>
-
-	<p class="comments-closed">
-		<?php echo tamatebako_string( 'comments_closed' ); ?>
-	</p><!-- .comments-closed -->
-
-<?php } ?>
-<?php
+	elseif( !comments_open() ){
+		$out .= '<p class="comments-closed">';
+		$out .= tamatebako_string( 'comments_closed' );
+		$out .= '</p><!-- .comments-closed -->';
+	}
+	/* do not add comments error on page post type. */
+	if( is_page() ){
+		$out =  '';
+	}
+	return apply_filters( 'tamatebako_get_comments_error', $out );
 }
 
 /**

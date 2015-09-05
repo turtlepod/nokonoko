@@ -1,6 +1,9 @@
 <?php
 /**
- * Register Sidebar
+ * Register Sidebar Module.
+ * WP Widget Areas should be registered on "widgets_init".
+ * this module is wrapper functions to make it easier to register widget area/sidebar
+ * on theme setup function without extra functions/hooks to widgets init.
  * @since 1.0.0
 **/
 

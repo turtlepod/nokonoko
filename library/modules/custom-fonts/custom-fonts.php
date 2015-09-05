@@ -100,15 +100,15 @@ function tamatebako_fonts_label(){
 
 /* === FONTS AVAILABLE === */
 
-tamatebako_include( 'modules/custom-fonts/fonts' );
+tamatebako_include( 'modules/custom-fonts/fonts', true );
 
 /* === UTILITY === */
 
-tamatebako_include( 'modules/custom-fonts/utility' );
+tamatebako_include( 'modules/custom-fonts/utility', true );
 
 /* === CUSTOMIZER === */
 
-tamatebako_include( 'modules/custom-fonts/customizer' );
+tamatebako_include( 'modules/custom-fonts/customizer', true );
 
 /* === IMPLEMENTATION === */
 
@@ -242,5 +242,5 @@ function tamatebako_fonts_body_class( $classes ){
 
 $settings = tamatebako_fonts_settings();
 if ( isset( $settings['editor_styles'] ) && !empty( $settings['editor_styles'] ) ){
-	tamatebako_include( 'modules/custom-fonts/editor-style' );
+	tamatebako_include( 'modules/custom-fonts/editor-style', true );
 }

@@ -20,13 +20,13 @@ $texts = array(
 	'menu_search_placeholder'     => _x( 'Search&hellip;', 'nav menu', 'nokonoko' ),
 	'menu_search_button'          => _x( 'Search', 'nav menu', 'nokonoko' ),
 	'menu_search_form_toggle'     => _x( 'Expand Search Form', 'nav menu', 'nokonoko' ),
+	'menu_default_home'           => _x( 'Home', 'nav menu', 'nokonoko' ),
 
 	/* functions/template/entry.php */
 	'error_title'                 => _x( '404 Not Found', 'entry', 'nokonoko' ),
 	'error_message'               => _x( 'Apologies, but no entries were found.', 'entry', 'nokonoko' ),
 	'next_post'                   => _x( 'Next', 'entry', 'nokonoko' ),
 	'previous_post'               => _x( 'Previous', 'entry', 'nokonoko' ),
-	'permalink'                   => _x( 'Permalink', 'entry', 'nokonoko' ),
 
 	/* functions/template/comment.php */
 	'next_comment'                => _x( 'Next', 'comment', 'nokonoko' ),
@@ -38,6 +38,7 @@ $texts = array(
 	'untitled'                    => _x( '(Untitled)', 'entry', 'nokonoko' ),
 	'read_more'                   => _x( 'Read More', 'entry', 'nokonoko' ),
 	'search_title_prefix'         => _x( 'Search:', 'archive title', 'nokonoko' ),
+	'comment_moderation_message'  => _x( 'Your comment is awaiting moderation.', 'comment', 'nokonoko' ),
 
 );
 

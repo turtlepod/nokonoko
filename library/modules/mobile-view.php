@@ -1,6 +1,7 @@
 <?php
 /**
- * Customizer Mobile View
+ * Customizer Mobile View.
+ * Create devices preview in customizer screen by resizing preview screen.
  */
 
 /* Hook to theme setup */
@@ -18,7 +19,6 @@ function tamatebako_customizer_mobile_view_setup(){
 		add_action( 'customize_controls_print_styles', 'tamatebako_customize_mobile_view_style' );
 	}
 }
-
 
 /**
  * Load mobile preview toggle icon
@@ -57,7 +57,6 @@ jQuery(document).ready(function ($) {
 </script>
 <?php
 }
-
 
 /**
  * Add custom stylesheet to customizer

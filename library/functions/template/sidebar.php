@@ -42,7 +42,7 @@ function tamatebako_get_sidebar_name( $id ){
 
 	/* Check if sidebar is set */
 	if ( isset( $wp_registered_sidebars[$id] ) ){
-		if( isset( $wp_registered_sidebars[$id]['name'] ) && !empty( $wp_registered_sidebars[$id]['name'] ) ){
+		if( isset( $wp_registered_sidebars[$id]['name'] ) ){
 			return $wp_registered_sidebars[$id]['name'];
 		}
 		return false;

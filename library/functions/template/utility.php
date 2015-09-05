@@ -3,7 +3,6 @@
  * Utility Functions
  * This functions use anon functions, require PHP 5.3 or later.
  * @since 1.2.3
- * @package Tamatebako
  */
 
 /**
@@ -24,7 +23,7 @@ function tamatebako_set_layout( $new_layout ){
  * @param $new_dir string
  * @since 0.1.0
  */
-function tamatebako_set_template_dir( $new_dir, $old_dir ){
+function tamatebako_set_template_dir( $new_dir, $old_dir = 'content' ){
 	$filter_dir = function( $dir ) use( $new_dir, $old_dir ){
 		if ( $dir == $old_dir ){
 			return $new_dir;

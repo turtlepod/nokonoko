@@ -59,13 +59,13 @@ function tamatebako_strings(){
 		'menu_search_placeholder' => 'Search&hellip;',
 		'menu_search_button' => 'Search',
 		'menu_search_form_toggle' => 'Expand Search Form',
+		'menu_default_home' => 'Home',
 
-		/* functions/template/content.php */
+		/* functions/template/entry.php */
 		'error_title' => '404 Not Found',
 		'error_message' => 'Apologies, but no entries were found.',
 		'next_post' => 'Next',
 		'previous_post' => 'Previous',
-		'permalink' => 'Permalink',
 
 		/* functions/template/comment.php */
 		'next_comment' => 'Next',
@@ -77,6 +77,7 @@ function tamatebako_strings(){
 		'untitled' => '(Untitled)',
 		'read_more' => 'Read More',
 		'search_title_prefix' => 'Search:',
+		'comment_moderation_message' => 'Your comment is awaiting moderation.',
 
 	);
 

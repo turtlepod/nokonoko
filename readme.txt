@@ -1,11 +1,11 @@
 === NokoNoko ===
 Contributors: turtlepod
-Tags: black, blue, brown, gray, green, pink, purple, red, silver, tan, white, yellow, dark, light, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, holiday, photoblogging, seasonal
-Requires at least: 4.0
-Tested up to: 4.2
-Stable tag: 4.2
+Requires at least: 4.1
+Tested up to: 4.3
+Version: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, blue, brown, gray, green, pink, purple, red, silver, tan, white, yellow, dark, light, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, holiday, photoblogging, seasonal
 
 == Description ==
 

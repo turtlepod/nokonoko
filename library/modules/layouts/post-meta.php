@@ -77,5 +77,5 @@ add_action( 'admin_init', 'tamatebako_layouts_admin_setup' );
  */
 function tamatebako_layouts_admin_setup() {
 	/* Load meta boxes functions. */
-	tamatebako_include( 'modules/layouts/post-meta-box' );
+	tamatebako_include( 'modules/layouts/post-meta-box', true );
 }

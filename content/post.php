@@ -22,10 +22,9 @@
 
 			<?php if ( has_post_thumbnail() ) { ?>
 				<a class="theme-thumbnail-link" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'thumbnail' ); ?>
+					<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'alignright theme-thumbnail', 'alt' => get_the_title() ) ); ?>
 				</a>
 			<?php } ?>
-			<?php //get_the_image( array( 'attachment' => false, 'image_class' => 'theme-thumbnail' ) ); ?>
 
 			<?php the_excerpt(); ?>
 			<?php tamatebako_read_more(); ?>
@@ -34,11 +33,7 @@
 
 		<footer class="entry-footer">
 			<?php edit_post_link(); ?>
-			<?php //tamatebako_entry_taxonomies(); ?>
-			<div class="entry-taxonomies">
-				<?php tamatebako_entry_taxonomy( array( 'taxonomy' => 'category' ) ); ?>
-				<?php tamatebako_entry_taxonomy( array( 'taxonomy' => 'post_tag', 'text' => 'Post %s:' ) ); /* Post Tag: */ ?>
-			</div>
+			<?php tamatebako_entry_taxonomies(); ?>
 		</footer><!-- .entry-footer -->
 
 	</div><!-- .entry > .wrap -->

@@ -1,6 +1,7 @@
 <?php
 /**
- * Logo Upload.
+ * Logo Module.
+ * Easily create logo upload option in customizer.
 **/
 
 /**
@@ -21,14 +22,16 @@ function tamatebako_logo_args(){
 		'section'             => 'title_tagline',
 		'label'               => 'Logo',
 		'description'         => '',
-		'flex_width'          => true,
-		'flex_height'         => true,
+		'flex_width'          => 1,
+		'flex_height'         => 1,
 		'width'               => 300,
 		'height'              => 200,
+		'theme_mod_name'      => 'logo',
 	);
 
 	/* Logo Args. */
-	return wp_parse_args( $theme_args, $defaults_args );
+	$args = wp_parse_args( $theme_args, $defaults_args );
+	return $args;
 }
 
 
@@ -46,7 +49,7 @@ function tamatebako_logo_customize_register( $wp_customize ){
 
 	/* Add Setting: as theme mod. */
 	$wp_customize->add_setting(
-		'logo',
+		sanitize_key( $logo_args['theme_mod_name'] ),
 		array(
 			'type'                => 'theme_mod',
 			'transport'           => 'refresh',
@@ -58,13 +61,13 @@ function tamatebako_logo_customize_register( $wp_customize ){
 	/* Add Control (WP 4.3 with image cropper) */
 	if ( class_exists( 'WP_Customize_Cropped_Image_Control' ) && true === $logo_args['crop'] ) {
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'logo', $logo_args )
+			new WP_Customize_Cropped_Image_Control( $wp_customize, sanitize_key( $logo_args['theme_mod_name'] ), $logo_args )
 		);
 	}
 	/* WP 4.2, use image as is. */
 	elseif( class_exists( 'WP_Customize_Media_Control' ) ){
 		$wp_customize->add_control(
-			new WP_Customize_Media_Control( $wp_customize, 'logo', $logo_args )
+			new WP_Customize_Media_Control( $wp_customize, sanitize_key( $logo_args['theme_mod_name'] ), $logo_args )
 		);
 	}
 }
@@ -78,9 +81,9 @@ add_filter( 'body_class', 'tamatebako_logo_body_class' );
  */
 function tamatebako_logo_body_class( $classes ) {
 	$logo_args = tamatebako_logo_args();
-	$logo_uploaded = get_theme_mod( 'logo' );
+	$logo_uploaded = get_theme_mod( sanitize_key( $logo_args['theme_mod_name'] ) );
 	$classes[] = 'logo-active';
-	if( $logo_uploaded || !empty( $logo_args['default-logo'] ) ){
+	if( $logo_uploaded ){
 		$classes[] = 'logo-uploaded';
 	}
 	else{
@@ -96,16 +99,13 @@ function tamatebako_logo_body_class( $classes ) {
  */
 function tamatebako_logo_url(){
 
-	/* if theme supports it and logo uploaded, return logo URL */
-	if( current_theme_supports( 'tamatebako-logo' ) && get_theme_mod( 'logo' ) ){
-		$image = wp_get_attachment_image_src( absint( get_theme_mod( 'logo' ) ), 'full' );
-		return tamatebako_sanitize_file_type( $image[0], 'image' ); /* image URL */
-	}
-
-	/* If default logo image defined, use it as fallback. */
+	/* Get logo args */
 	$logo_args = tamatebako_logo_args();
-	if( !empty( $logo_args['default-logo'] ) ){
-		return tamatebako_sanitize_file_type( $logo_args['default-logo'], 'image' );
+
+	/* if theme supports it and logo uploaded, return logo URL */
+	if( current_theme_supports( 'tamatebako-logo' ) && get_theme_mod( sanitize_key( $logo_args['theme_mod_name'] ) ) ){
+		$image = wp_get_attachment_image_src( absint( get_theme_mod( sanitize_key( $logo_args['theme_mod_name'] ) ) ), 'full' );
+		return tamatebako_sanitize_file_type( $image[0], 'image' ); /* image URL */
 	}
 	return '';
 }

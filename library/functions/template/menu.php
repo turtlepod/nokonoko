@@ -41,7 +41,7 @@ function tamatebako_get_menu_name( $location ){
 
 
 /**
- * Check if menus is registered
+ * Check if a custom menu location is registered
  * @since 0.1.0
  */
 function tamatebako_is_menu_registered( $location ){
@@ -79,11 +79,38 @@ function tamatebako_menu_fallback_cb(){
 <div class="wrap">
 	<ul class="menu-items" id="menu-items">
 		<li class="menu-item">
-			<a rel="home" href="<?php echo home_url(); ?>">Home</a>
+			<a rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php echo tamatebako_string('menu_default_home'); ?></a>
 		</li>
 	</ul>
 </div>
 <?php
+}
+
+/**
+ * Menu Footer Fallback Callback
+ * Generic menu fallback and only display link to home page.
+ * @since 0.1.0
+ */
+function tamatebako_menu_footer_fallback_cb(){
+?>
+<div class="wrap">
+	<ul class="menu-items" id="menu-items">
+		<?php echo tamatebako_menu_copyright_item(); ?>
+	</ul>
+</div>
+<?php
+}
+
+/**
+ * Menu Footer Fallback Callback
+ * Generic menu fallback and only display link to home page.
+ * @since 0.1.0
+ */
+function tamatebako_menu_copyright_item(){
+	$copy  = '<li id="menu-copyright" class="menu-item">';
+	$copy .= '<span><a class="site-link" rel="home" href="' . esc_url( user_trailingslashit( home_url() ) ) . '">' . get_bloginfo( 'name' ) . '</a> &#169; ' . date_i18n( 'Y' ) . '</span>';
+	$copy .= '</li>';
+	return $copy;
 }
 
 /**
@@ -93,8 +120,8 @@ function tamatebako_menu_fallback_cb(){
 function tamatebako_menu_search_form( $id = 'search-menu' ){
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-	<a href="#<?php echo esc_attr( $id ); ?>" class="search-toggle"><span class="screen-reader-text"><?php echo tamatebako_string('menu_search_form_toggle'); ?></span></a>
-	<input id="<?php echo esc_attr( $id ); ?>" type="search" class="search-field" placeholder="<?php echo tamatebako_string('menu_search_placeholder'); ?>" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else ''; ?>" name="s"/>
+	<a href="#<?php echo esc_attr( $id ); ?>" class="search-toggle"><span class="screen-reader-text"><?php echo tamatebako_string( 'menu_search_form_toggle' ); ?></span></a>
+	<input id="<?php echo esc_attr( $id ); ?>" type="search" class="search-field" placeholder="<?php echo tamatebako_string( 'menu_search_placeholder' ); ?>" value="<?php if ( is_search() ) echo esc_attr( strip_tags( get_search_query() ) ); else ''; ?>" name="s"/>
 	<button class="search-submit button"><span class="screen-reader-text"><?php echo tamatebako_string('menu_search_button'); ?></span></button>
 </form>
 <?php
