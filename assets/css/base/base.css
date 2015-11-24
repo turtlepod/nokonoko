@@ -1,32 +1,3 @@
-/**
- * BASE CSS
-*****************************************
- *
- * COLOR
- *
- * #444444 color
- * #ffffff background
- * #cccccc border
- * #aaaaaa :active :focus
- * rgba(255, 255, 255, 0.8) gallery-caption background
- *
-*****************************************
- * 
- * TABLE OF CONTENTS:
- * 
- * #00 - BOX SIZING TO ALL
- * #01 - ELEMENTS
- * #02 - ALIGNMENT
- * #03 - IMAGES & MEDIA
- * #04 - HTML & BODY
- * #05 - UTILLITY
- * #06 - GALLERY
- * #07 - 20px RESET
- * #08 - WP EDITOR (front-end)
- * #09 - ACCESSIBILITY
- * 
-******************************************/
-
 
 /* === #00 - BOX SIZING TO ALL === */
 html {
@@ -352,6 +323,8 @@ td {
 	clear:both;
 }
 
+
+/* ========================= */
 /* === #03 - IMAGES & MEDIA === */
 img {
 	max-width:100%;
@@ -378,6 +351,7 @@ a img {
 a img.alignnone {
 	display:block;
 }
+
 .wp-caption {
 	max-width:100%;
 }
@@ -388,26 +362,18 @@ a img.alignnone {
 	margin-bottom: 0;
 	padding: 0;
 }
-.wp-audio-shortcode {
-	max-width:100%;
-	clear: both;
-}
-.wp-video-shortcode {
-	max-width:100%;
-	clear: both;
-}
-.mejs-container{
-	max-width: 100%;
-}
-iframe{
-	max-width: 100%;
-}
-.html5-captions .wp-caption,.wp-caption{
+.html5-captions .wp-caption,
+.wp-caption{
 	padding: 10px;
 	padding: 1rem;
 	background: #fff;
 	border: 1px solid #ccc;
 }
+iframe{
+	max-width: 100%;
+}
+
+/* ========================= */
 
 /* === #04 - HTML & BODY === */
 html {
@@ -526,15 +492,15 @@ body#tinymce .gallery{
 			box-sizing:border-box;
 		}
 .gallery-columns-0 .gallery-item,
-.gallery-columns-1 .gallery-item   { width:100%;  }
-.gallery-columns-2 .gallery-item   { width:50%;   }
-.gallery-columns-3 .gallery-item   { width:33.33%;}
-.gallery-columns-4 .gallery-item   { width:25%;   }
-.gallery-columns-5 .gallery-item   { width:20%;   }
-.gallery-columns-6 .gallery-item   { width:16.66%;}
-.gallery-columns-7 .gallery-item   { width:14.28%;}
-.gallery-columns-8 .gallery-item   { width:12.5%; }
-.gallery-columns-9 .gallery-item   { width:11.11%;}
+.gallery-columns-1 .gallery-item  { width:100%;  }
+.gallery-columns-2 .gallery-item  { width:50%;   }
+.gallery-columns-3 .gallery-item  { width:33.33%;}
+.gallery-columns-4 .gallery-item  { width:25%;   }
+.gallery-columns-5 .gallery-item  { width:20%;   }
+.gallery-columns-6 .gallery-item  { width:16.66%;}
+.gallery-columns-7 .gallery-item  { width:14.28%;}
+.gallery-columns-8 .gallery-item  { width:12.5%; }
+.gallery-columns-9 .gallery-item  { width:11.11%;}
 .gallery-columns-10 .gallery-item { width:10%;   }
 .gallery-columns-11 .gallery-item { width:9.09%; }
 .gallery-columns-12 .gallery-item { width:8.33%; }
@@ -560,7 +526,7 @@ body#tinymce .gallery{
 
 /* === #07 - 20px RESET === */
 hr,h1,h2,h3,h4,h5,h6,figure,p,ul,ol,dl,address,pre,object,fieldset,table,table caption,hr,
-.block,.wp-audio-shortcode,.wp-video-shortcode,.gallery,.html5-captions .wp-caption,.wp-caption{
+.block,.gallery,.html5-captions .wp-caption,.wp-caption{
 	margin-bottom: 20px;
 	margin-bottom: 2rem;
 }
@@ -576,6 +542,7 @@ hr,h1,h2,h3,h4,h5,h6,figure,p,ul,ol,dl,address,pre,object,fieldset,table,table c
 	margin: 0 auto 20px;
 	margin: 0 auto 2rem;
 }
+
 
 /* === #08 - WP EDITOR (front-end) === */
 .wp-editor-wrap{
@@ -646,3 +613,4 @@ hr,h1,h2,h3,h4,h5,h6,figure,p,ul,ol,dl,address,pre,object,fieldset,table,table c
 	border: 1px solid red;
 	background: #fff;
 }
+
