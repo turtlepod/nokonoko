@@ -203,6 +203,11 @@ function tamatebako_body_class( $classes ){
 		$classes[] = 'plural';
 	}
 
+	/* Singular */
+	if( is_singular() ){
+		$classes[] = 'singular';
+	}
+
 	/* Get all registered sidebars */
 	global $wp_registered_sidebars;
 
