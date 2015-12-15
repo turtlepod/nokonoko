@@ -16,7 +16,6 @@ html{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-
 #container > .wrap{
 	padding: 20px;
 	padding: 2rem;
-	padding-right: 0;
 }
 	#container > .wrap:after{
 		content:".";display:block;height:0;clear:both;visibility:hidden;
@@ -36,8 +35,6 @@ html{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-
 		content:".";display:block;height:0;clear:both;visibility:hidden;
 	}
 #content > .wrap{
-	padding-right: 20px;
-	padding-right: 2rem;
 }
 #content{
 	width: 100%;
@@ -45,8 +42,8 @@ html{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-
 }
 #sidebar-primary{
 	float: right;
-	margin-right: -320px;
-	margin-right: -32rem;
+	margin-right: -340px;
+	margin-right: -34rem;
 	width: 320px;
 	width: 32rem;
 	max-width: 100%;
@@ -109,8 +106,7 @@ html{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-
 	margin-right: 0;
 }
 .layout-content-sidebar2 #sidebar-secondary{
-	margin-right: 20px;
-	margin-right: 2rem;
+	margin-right: 0;
 	margin-left: -200px;
 	margin-left: -20rem;
 	float: right;
@@ -138,8 +134,7 @@ html{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-
 	padding-right: 20rem;
 }
 .layout-content-sidebar1-sidebar2 #sidebar-secondary{
-	margin-right: 20px;
-	margin-right: 2rem;
+	margin-right: 0;
 	margin-left: -200px;
 	margin-left: -20rem;
 	float: right;
@@ -152,8 +147,7 @@ html{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-
 	padding-right: 20rem;
 }
 .layout-sidebar1-content-sidebar2 #sidebar-secondary{
-	margin-right: 20px;
-	margin-right: 2rem;
+	margin-right: 0;
 	margin-left: -200px;
 	margin-left: -20rem;
 	float: right;
@@ -966,7 +960,6 @@ code{
 .widget_search .screen-reader-text{
 }
 .widget_search .search-field{
-	text-align: center;
 }
 .widget_search .search-submit{
 	
