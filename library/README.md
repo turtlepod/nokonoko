@@ -8,15 +8,19 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
-**3.1.2 - 14.12.2015**
+**3.1.3 - 08.Jan.2016**
 
 * Fix child theme style.css to parent theme style.css deps.
 
-**3.1.1 - 05.09.2015**
+**3.1.2 - 14.Dec.2015**
+
+* Fix child theme style.css to parent theme style.css deps.
+
+**3.1.1 - 05.Sep.2015**
 
 * add comment in moderation text notice.
 
-**3.1.0 - 19.08.2015**
+**3.1.0 - 19.Aug.2015**
 
 * merge context to setup.
 * merge all wp_head stuff. 
@@ -28,13 +32,13 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 * remove scripts modules + rethink css files.
 * various stuff happen :(
 
-**3.0.1 - 11.08.2015**
+**3.0.1 - 11.Aug.2015**
 
 * remove echo in check js script.
 * fix entry taxonomy
 * remove blog page content as archive description.
 * entry-taxonomy class fix.
 
-**3.0.0 - 10.08.2015**
+**3.0.0 - 10.Aug.2015**
 
 * first stable standalone library.
