@@ -8,6 +8,11 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.1.4 - 26.Jan.2016**
+
+* Add nonce to custom font editor style.
+* Prefix theme_mod for custom font (in nokonoko)
+
 **3.1.3 - 08.Jan.2016**
 
 * Fix child theme style.css to parent theme style.css deps.
