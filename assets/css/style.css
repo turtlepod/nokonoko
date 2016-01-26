@@ -338,7 +338,6 @@ code{
 
 /* === LOOP META === */
 .archive-header{
-	margin-right: 20px;
 	margin-bottom: 20px;
 	background: pink;
 }
@@ -430,7 +429,7 @@ code{
 			.entry-permalink:before{
 				
 			}
-/* Entry Content, Entry Summary */
+	/* Entry Content, Entry Summary */
 	.entry-content,
 	.entry-summary{
 	}

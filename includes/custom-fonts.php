@@ -6,26 +6,26 @@
 
 /* Customizer setting configuration */
 $fonts_config = array(
-	'site_title_font' => array(
+	'font_site_title' => array(
 		'label' => _x( 'Site Title Font', 'customizer', 'nokonoko' ),
 		'description' => _x( 'You can select your preferred font for your site title below.', 'customizer', 'nokonoko' ),
 		'target' => '#site-title',
 		'fonts' => array( 'websafe', 'heading', 'base' ),
 		'default' => 'Open Sans',
 	),
-	'post_title_font' => array(
+	'font_post_title' => array(
 		'label' => _x( 'Post Title Font', 'customizer', 'nokonoko' ),
 		'target' => '#content .entry-title',
 		'fonts' => array( 'websafe', 'heading', 'base' ),
 		'default' => 'Open Sans',
 	),
-	'content_h2' => array(
+	'font_content_h2' => array(
 		'label' => _x( 'Content Heading 2', 'customizer', 'nokonoko' ),
 		'target' => '.entry-summary h2,.entry-content h2,body#tinymce h2',
 		'fonts' => array( 'heading' ),
 		'default' => 'Cherry Swash',
 	),
-	'base_font' => array(
+	'font_base' => array(
 		'label' => _x( 'Base Font', 'customizer', 'nokonoko' ),
 		'target' => 'body.wordpress,body#tinymce',
 		'fonts' => array( 'websafe', 'base' ),
@@ -37,7 +37,7 @@ $fonts_config = array(
 $fonts_settings = array(
 	'editor_styles' => array(
 		'base_font',
-		'content_h2',
+		'font_content_h2',
 	),
 	/**
 	 * Translators: to add an additional font character subset specific to your language
