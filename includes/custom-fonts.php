@@ -36,7 +36,7 @@ $fonts_config = array(
 /* Additional settings for custom font features */
 $fonts_settings = array(
 	'editor_styles' => array(
-		'base_font',
+		'font_base',
 		'font_content_h2',
 	),
 	/**
