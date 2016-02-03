@@ -68,6 +68,9 @@ function tamatebako_setup(){
 		add_filter( 'wp_link_pages_args', 'tamatebako_wp_link_pages', 5 );
 		add_filter( 'wp_link_pages_link', 'tamatebako_wp_link_pages_link', 5 );
 
+		/* Edit Post Link */
+		add_filter( 'edit_post_link', 'tamatebako_edit_post_link', 5, 3 );
+
 		/* Comments */
 		add_filter( 'get_comment_author_link', 'tamatebako_get_comment_author_link', 5 );
 		add_filter( 'get_comment_author_url_link', 'tamatebako_get_comment_author_url_link', 5 );
@@ -435,6 +438,19 @@ function tamatebako_wp_link_pages_link( $link ) {
 	if ( 0 !== strpos( $link, '<a' ) ){
 		$link = "<span class='page-numbers'>{$link}</span>";
 	}
+	return $link;
+}
+
+
+/**
+ * Wraps edit post link text with span
+ * @since 3.1.5
+ */
+function tamatebako_edit_post_link( $link, $id, $text ){
+	$class = 'post-edit-link';
+	$url   = get_edit_post_link( $id );
+	$text  = '<span class="post-edit-link-text">' . $text . '</span>';
+	$link  = '<a class="' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
 	return $link;
 }
 
