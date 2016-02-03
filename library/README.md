@@ -8,6 +8,11 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.1.5 - 04.Feb.2016**
+
+* Edit post link wrap.
+
+
 **3.1.4 - 26.Jan.2016**
 
 * Add nonce to custom font editor style.
