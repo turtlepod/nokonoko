@@ -126,7 +126,7 @@
 	left: 22.9rem;
 }
 .mobile-menu-active .menu-item-parent-link a:before{
-	content: "\f344d";
+	content: "\f344";
 	font-family: "dashicons";
 	vertical-align: top;
 	margin-right: 5px;
