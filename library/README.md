@@ -4,14 +4,17 @@ WordPress theme engine for faster theme development.
 
 **Copyright & license**<br />
 This framework is licensed under the [GNU General Public License](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 (GPL) or later.<br />
-2015 © [Genbu Media](http://genbu.me/). All rights reserved.
+2016 © [Genbu Media](http://genbu.me/). All rights reserved.
 
 ###Changelog
+
+**3.1.6 - 06.Feb.2016**
+
+* Add filter for aside infinity.
 
 **3.1.5 - 04.Feb.2016**
 
 * Edit post link wrap.
-
 
 **3.1.4 - 26.Jan.2016**
 
