@@ -132,7 +132,7 @@ function tamatebako_styles(){
 
 	if( $parent_css ){
 		wp_register_style(
-			sanitize_title( $tamatebako->name . '-style' ),
+			esc_attr( $tamatebako->name . '-style' ),
 			esc_url( $parent_css ),
 			array(),
 			tamatebako_theme_version(),
@@ -143,7 +143,7 @@ function tamatebako_styles(){
 	/* == Register Child Theme CSS ( Only if child theme active ) == */
 	if( is_child_theme() ){
 		wp_register_style(
-			sanitize_title( $tamatebako->child . '-style' ),
+			esc_attr( $tamatebako->child . '-style' ),
 			esc_url( $stylesheet_uri ),
 			array( sanitize_title( $tamatebako->name ) . '-style' ),
 			tamatebako_child_theme_version(),

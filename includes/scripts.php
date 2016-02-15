@@ -86,7 +86,7 @@ function nokonoko_register_scripts(){
 	wp_register_style( "{$name}-google-fonts", tamatebako_google_fonts_url( array( 'Open Sans' => '400,400italic,700,700italic,800,800italic' ) ) );
 
 	/* Genericons */
-	wp_register_style( "genericons", tamatebako_theme_file( "assets/genericons/genericons", "css" ), array(), '3.3.1', 'all' );
+	wp_register_style( "genericons", tamatebako_theme_file( "assets/genericons/genericons", "css" ), array(), '3.4.1', 'all' );
 
 	/* Theme Debug */
 	wp_register_style( "{$name}-debug", tamatebako_theme_file( "assets/css/base/debug", "css" ), array() );

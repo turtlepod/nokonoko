@@ -8,6 +8,14 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.1.8 - 14.Feb.2016**
+
+* Add Font Weight Option in Fonts module.
+
+**3.1.7 - 09.Feb.2016**
+
+* Esc Attr Theme Name
+
 **3.1.6 - 06.Feb.2016**
 
 * Add filter for aside infinity.
