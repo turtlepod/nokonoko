@@ -58,6 +58,9 @@ function nokonoko_theme_setup(){
 	/* === POST FORMATS === */
 	tamatebako_include( 'includes/post-formats' );
 
+	/* === WOOCOMMERCE === */
+	tamatebako_include( 'includes/woocommerce' );
+
 }
 
 do_action( 'tamatebako_after_setup' );

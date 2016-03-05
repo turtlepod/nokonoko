@@ -74,7 +74,6 @@ function tamatebako_setup(){
 		/* Comments */
 		add_filter( 'get_comment_author_link', 'tamatebako_get_comment_author_link', 5 );
 		add_filter( 'get_comment_author_url_link', 'tamatebako_get_comment_author_url_link', 5 );
-		add_filter( 'comment_text', 'tamatebako_comment_moderation_notice', 5, 3 );
 
 	} // end admin conditional
 }
@@ -132,7 +131,7 @@ function tamatebako_styles(){
 
 	if( $parent_css ){
 		wp_register_style(
-			sanitize_title( $tamatebako->name . '-style' ),
+			esc_attr( $tamatebako->name . '-style' ),
 			esc_url( $parent_css ),
 			array(),
 			tamatebako_theme_version(),
@@ -143,7 +142,7 @@ function tamatebako_styles(){
 	/* == Register Child Theme CSS ( Only if child theme active ) == */
 	if( is_child_theme() ){
 		wp_register_style(
-			sanitize_title( $tamatebako->child . '-style' ),
+			esc_attr( $tamatebako->child . '-style' ),
 			esc_url( $stylesheet_uri ),
 			array( sanitize_title( $tamatebako->name ) . '-style' ),
 			tamatebako_child_theme_version(),
@@ -496,19 +495,4 @@ function tamatebako_get_comment_author_url_link( $link ) {
 	);
 
 	return preg_replace( $patterns, $replaces, $link );
-}
-
-
-/**
- * Comment Moderation Notice
- * Add message in the comment if the comment is submitted but not yet approved.
- * @since 3.1.2
- */
-function tamatebako_comment_moderation_notice( $comment_text, $comment, $args ){
-	/* if comment not approved. */
-	if ( '0' == $comment->comment_approved ){
-		$message = '<p class="comment-awaiting-moderation">' . tamatebako_string( 'comment_moderation_message' ) . '</p>';
-		$comment_text = $message . $comment_text;
-	}
-	return $comment_text;
 }
