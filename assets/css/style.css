@@ -689,6 +689,9 @@ code{
 				.comment-content{
 				}
 					.comment-awaiting-moderation{
+						background: #ebebeb;
+						padding: 10px;
+						padding: 1rem;
 					}
 					.comment-content p{
 						margin-bottom: 10px;

@@ -8,6 +8,10 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.1.9 - 05.Mar.2016**
+
+* Comment moderation now using template tag and not filter to avoid error.
+
 **3.1.8 - 14.Feb.2016**
 
 * Add Font Weight Option in Fonts module.
