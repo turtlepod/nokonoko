@@ -12,24 +12,9 @@ Tags: black, blue, brown, gray, green, pink, purple, red, silver, tan, white, ye
 Just another WordPress starter theme...
 This is just example description.
 
-* Responsive Layout
-* Custom Background
-* Custom Header
-* Custom Colors
-* Custom Fonts
-* Two Navigation Menus
-* Two Widget Areas (Sidebars)
-* Social Links
-* Post Formats
-* Something Cool
-* The GPL v2.0 or later license. :) Use it to make something cool.
-
-Available layouts:
-
-* Content | Sidebar
-* Sidebar | Content
-
 This theme is licensed under the GNU General Public License, version 2 (GPL) or later. All included images are also under GPL2+ licensing.
+
+For more info please visit theme page: [XXX WordPress Theme](http://genbumedia.com/themes/xxx/).
 
 == Installation ==
 

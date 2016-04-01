@@ -18,6 +18,23 @@ function tamatebako_entry_title(){
 	}
 }
 
+	/**
+	 * Hide Page Title
+	 * This function is used with "Hide Page Title Module"
+	 * Added here so this function will always available.
+	 */
+	function tamatebako_show_page_title(){
+		/* Always display title, if theme do not support this feature. */
+		if( ! current_theme_supports( 'tamatebako-hide-page-title' ) ){
+			return true;
+		}
+		/* Check Post Meta */
+		if( get_post_meta( get_the_ID(), 'tamatebako_hide_page_title', true ) ){
+			return false;
+		}
+		return true;
+	}
+
 
 /**
  * Entry Date: display post date.

@@ -8,6 +8,12 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.2.0 - 20.Mar.2016**
+
+* Upsell Module (for PRO version).
+* Responsive image in content.
+* Hide Page Title Module
+
 **3.1.9 - 05.Mar.2016**
 
 * Comment moderation now using template tag and not filter to avoid error.

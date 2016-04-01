@@ -1,5 +1,10 @@
 <?php
 /**
+ * Hide Page Title Option
+ */
+add_theme_support( 'tamatebako-hide-page-title', array( 'label' => _x( 'Hide title in single page?', 'hide page title', 'nokonoko' ) ) );
+
+/**
  * Layouts Setup
 **/
 $image_dir = get_template_directory_uri() . '/assets/images/layouts/';
