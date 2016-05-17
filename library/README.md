@@ -4,9 +4,17 @@ WordPress theme engine for faster theme development.
 
 **Copyright & license**<br />
 This framework is licensed under the [GNU General Public License](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 (GPL) or later.<br />
-2016 © [Genbu Media](http://genbu.me/). All rights reserved.
+2016 © [Genbu Media](http://genbumedia.com/). All rights reserved.
 
 ###Changelog
+
+**3.3.0 - 18.May.2016**
+
+* Remove Logo Module. Use WP Custom Logo
+* Remove Customizer Mobile View Module. WP already have it.
+* Remove Get the Image (NokoNoko).
+* Use import for base CSS (NokoNoko).
+* No longer use genericons. create own "esicons".
 
 **3.2.0 - 20.Mar.2016**
 

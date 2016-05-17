@@ -1,4 +1,0 @@
-<?php
-/**
- * WooCommerce Compatibility
-**/

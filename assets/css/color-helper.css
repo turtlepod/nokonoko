@@ -1,0 +1,27 @@
+/* === MAIN === */
+#container > .wrap{
+	background: orange;
+}
+
+/* === CONTENT === */
+#content{
+	background: yellow;
+}
+
+/* === LOOP META === */
+.archive-header{
+	background: pink;
+}
+
+/* === ENTRY === */
+.entry{
+	background: lightyellow;
+}
+
+/* === SIDEBAR === */
+#sidebar-primary{
+	background: lightblue;
+}
+#sidebar-secondary{
+	background: lightgreen;
+}
