@@ -135,6 +135,9 @@ function tamatebako_do_content( $content ){
 		$content = wptexturize( $content );
 		$content = do_shortcode( $content );
 		$content = shortcode_unautop( $content );
+		if( function_exists('wp_make_content_images_responsive') ) { /* WP 4.4+ */
+			$content = wp_make_content_images_responsive( $content );
+		}
 	}
 	return $content;
 }
