@@ -44,6 +44,9 @@ function tamatebako_setup(){
 	/* TinyMCE add body class "entry-content" for easier styling. */
 	add_filter( 'tiny_mce_before_init', 'tamatebako_tinymce_body_class', 5 );
 
+	/* === Widgets: Selective Refresh Support === */
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 	if( !is_admin() ){
 
 		/* Context: Body Class & Post Class */

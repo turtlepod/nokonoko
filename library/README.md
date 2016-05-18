@@ -15,6 +15,7 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 * Remove Get the Image (NokoNoko).
 * Use import for base CSS (NokoNoko).
 * No longer use genericons. create own "esicons".
+* Selective widget refresh (customizer) support.
 
 **3.2.0 - 20.Mar.2016**
 

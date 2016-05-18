@@ -17,8 +17,8 @@ function nokonoko_theme_setup(){
 	/* === MINIMUM SYSTEM REQ === */
 	$back_compat_args = array(
 		'theme_name'   => 'NokoNoko',
-		'wp_requires'  => '4.1.0',
-		'php_requires' => '5.2.4',
+		'wp_requires'  => '4.5.0',
+		'php_requires' => '5.3.0',
 	);
 	add_theme_support( 'tamatebako-back-compat', $back_compat_args );
 	if( ! tamatebako_minimum_requirement( $back_compat_args ) ) return;
@@ -52,6 +52,12 @@ function nokonoko_theme_setup(){
 
 	/* === POST FORMATS === */
 	tamatebako_include( 'includes/post-formats' );
+
+	/* === CUSTOMIZER === */
+	tamatebako_include( 'includes/customizer' );
+
+	/* === FUNCTIONS === */
+	tamatebako_include( 'includes/functions' );
 
 }
 

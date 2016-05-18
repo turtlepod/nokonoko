@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'esicons';
-    src:    url('fonts/esicons.eot?qjjjrm');
-    src:    url('fonts/esicons.eot?qjjjrm#iefix') format('embedded-opentype'),
-        url('fonts/esicons.ttf?qjjjrm') format('truetype'),
-        url('fonts/esicons.woff?qjjjrm') format('woff'),
-        url('fonts/esicons.svg?qjjjrm#esicons') format('svg');
+    src:    url('fonts/esicons.eot?4c8lcw');
+    src:    url('fonts/esicons.eot?4c8lcw#iefix') format('embedded-opentype'),
+        url('fonts/esicons.ttf?4c8lcw') format('truetype'),
+        url('fonts/esicons.woff?4c8lcw') format('woff'),
+        url('fonts/esicons.svg?4c8lcw#esicons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -29,6 +29,9 @@
 }
 .esicons-sticky:before {
     content: "\f537";
+}
+.esicons-sticky-alt:before {
+    content: "\f109";
 }
 .esicons-quote:before {
     content: "\f122";
@@ -102,6 +105,9 @@
 .esicons-menu:before {
     content: "\f349";
 }
+.esicons-menu-alt:before {
+    content: "\f228";
+}
 .esicons-list:before {
     content: "\f203";
 }
@@ -161,6 +167,12 @@
 }
 .esicons-quote-alt:before {
     content: "\f11a";
+}
+.esicons-dot:before {
+    content: "\f428";
+}
+.esicons-uniF400:before {
+    content: "\f400";
 }
 .esicons-wordpress:before {
     content: "\f20d";
