@@ -1,7 +1,6 @@
 /**
  * WooCommerce Compat CSS
 ******************************************/
-
 html .woocommerce-page .menu-search .search-submit{
 	display: none;
 }
@@ -21,3 +20,23 @@ html .woocommerce-page .search-toggle-active.menu-search .search-submit:hover{
 	box-shadow: none;
 	font-weight: 400;
 }
+/**
+ * JetPack Compat CSS
+******************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

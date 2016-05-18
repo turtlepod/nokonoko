@@ -23,34 +23,9 @@ $layouts = array(
 		'name'          => _x( 'Sidebar 1 | Content', 'layout name', 'nokonoko' ),
 		'thumbnail'     => $image_dir . 'sidebar1-content.png',
 	),
-	'content-sidebar2'  => array(
-		'name'          => _x( 'Content | Sidebar 2', 'layout name', 'nokonoko' ),
-		'thumbnail'     => $image_dir . 'content-sidebar2.png',
-	),
-	'sidebar2-content'  => array(
-		'name'          => _x( 'Sidebar 2 | Content', 'layout name', 'nokonoko' ),
-		'thumbnail'     => $image_dir . 'sidebar2-content.png',
-	),
-	/* Three Columns */
-	'sidebar2-content-sidebar1' => array(
-		'name'          => _x( 'Sidebar 2 | Content | Sidebar 1', 'layout name', 'nokonoko' ),
-		'thumbnail'     => $image_dir . 'sidebar2-content-sidebar1.png',
-	),
-	'sidebar2-sidebar1-content' => array(
-		'name'          => _x( 'Sidebar 2 | Sidebar 1 | Content', 'layout name', 'nokonoko' ),
-		'thumbnail'     => $image_dir . 'sidebar2-sidebar1-content.png',
-	),
-	'content-sidebar1-sidebar2' => array(
-		'name'          => _x( 'Content | Sidebar 1 | Sidebar 2', 'layout name', 'nokonoko' ),
-		'thumbnail'     => $image_dir . 'content-sidebar1-sidebar2.png',
-	),
-	'sidebar1-content-sidebar2' => array(
-		'name'          => _x( 'Sidebar 1 | Content | Sidebar 2', 'layout name', 'nokonoko' ),
-		'thumbnail'     => $image_dir . 'sidebar1-content-sidebar2.png',
-	),
 );
 $layouts_args = array(
-	'default'           => 'sidebar2-content-sidebar1',
+	'default'           => 'content-sidebar1',
 	'customize'         => true,
 	'post_meta'         => true,
 	'post_types'        => array( 'post' ),
