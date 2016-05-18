@@ -17,7 +17,7 @@ function nokonoko_theme_setup(){
 	/* === MINIMUM SYSTEM REQ === */
 	$back_compat_args = array(
 		'theme_name'   => 'NokoNoko',
-		'wp_requires'  => '4.5.0',
+		'wp_requires'  => '4.4.0',
 		'php_requires' => '5.3.0',
 	);
 	add_theme_support( 'tamatebako-back-compat', $back_compat_args );
@@ -58,6 +58,9 @@ function nokonoko_theme_setup(){
 
 	/* === FUNCTIONS === */
 	tamatebako_include( 'includes/functions' );
+
+	/* === UPDATER === */
+	tamatebako_include( 'includes/updater' );
 
 }
 
