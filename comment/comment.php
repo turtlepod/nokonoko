@@ -13,9 +13,7 @@
 
 				<div class="comment-byline">
 
-					<a class="comment-permalink" href="<?php echo esc_url( get_comment_link() ); ?>"><time class="comment-published" datetime="<?php echo get_comment_time( 'Y-m-d\TH:i:sP' );?>">
-
-					<?php printf( '%1$s (%2$s)', get_comment_date(), get_comment_time() ) ?></time></a>
+					<a class="comment-permalink" href="<?php echo esc_url( get_comment_link() ); ?>"><time class="comment-published" datetime="<?php echo get_comment_time( 'Y-m-d\TH:i:sP' );?>"><?php printf( '%1$s (%2$s)', get_comment_date(), get_comment_time() ) ?></time></a>
 
 				</div><!-- .comment-byline -->
 

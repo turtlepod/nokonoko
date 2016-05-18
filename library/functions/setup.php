@@ -72,6 +72,7 @@ function tamatebako_setup(){
 		add_filter( 'edit_post_link', 'tamatebako_edit_post_link', 5, 3 );
 
 		/* Comments */
+		add_filter( 'comment_form_defaults', 'tamatebako_comment_form_defaults', 5 );
 		add_filter( 'get_comment_author_link', 'tamatebako_get_comment_author_link', 5 );
 		add_filter( 'get_comment_author_url_link', 'tamatebako_get_comment_author_url_link', 5 );
 
@@ -451,6 +452,17 @@ function tamatebako_edit_post_link( $link, $id, $text ){
 	$text  = '<span class="post-edit-link-text">' . $text . '</span>';
 	$link  = '<a class="' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
 	return $link;
+}
+
+/**
+ * Comment Forms Defaults
+ * @sice 3.2.0
+ */
+function tamatebako_comment_form_defaults( $defaults ){
+	$defaults['title_reply'] = '<span>' . $defaults['title_reply'] . '</span>';
+	$defaults['title_reply_to'] = '<span>' . $defaults['cancel_reply_link'] . '</span>';
+	$defaults['cancel_reply_link'] = '<span>' . $defaults['cancel_reply_link'] . '</span>';
+	return $defaults;
 }
 
 
