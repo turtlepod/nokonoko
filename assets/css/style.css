@@ -697,6 +697,9 @@ code{
 								-webkit-font-smoothing: antialiased;
 							}
 				.comment-content{
+					padding: 20px;
+					padding: 2rem;
+					padding-bottom: 0;
 				}
 					.comment-awaiting-moderation{
 						background: #ebebeb;
@@ -704,9 +707,6 @@ code{
 						padding: 1rem;
 					}
 					.comment-content p{
-						padding: 20px;
-						padding: 2rem;
-						padding-bottom: 0;
 					}
 				.comment-reply-link{
 					float: right;
