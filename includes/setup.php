@@ -14,7 +14,6 @@ if ( ! isset( $content_width ) ){
 
 $sidebars_args = array(
 	"primary"   => array( "name" => _x( 'Primary Sidebar', 'sidebar name', 'nokonoko' ), "description" => "" ),
-	"secondary" => array( "name" => _x( 'Secondary Sidebar', 'sidebar name', 'nokonoko' ), "description" => "" ),
 );
 add_theme_support( 'tamatebako-sidebars', $sidebars_args );
 

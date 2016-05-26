@@ -11,7 +11,6 @@ add_filter( 'body_class', 'nokonoko_scripts_body_class' );
  * Scripts Body Class Helper
  */
 function nokonoko_scripts_body_class( $classes ){
-	$classes[] = 'theme-genericons-active';
 	return $classes;
 }
 
@@ -41,13 +40,12 @@ function nokonoko_enqueue_scripts(){
 	wp_enqueue_script( "{$name}-script" );
 
 	/* == CSS == */
-	//wp_enqueue_style( "dashicons" );
-	wp_enqueue_style( "genericons" );
 	//wp_enqueue_style( "{$name}-google-fonts" );
+	wp_enqueue_style( "esicons" );
 	wp_enqueue_style( "{$name}-style" ); /* main css. */
 
 	if( is_child_theme() ) wp_enqueue_style( "{$child}-style" ); /* child theme css. */
-	if( tamatebako_is_debug() ) wp_enqueue_style( "{$name}-debug" ); /* media queries debug. */
+	//if( tamatebako_is_debug() ) wp_enqueue_style( "{$name}-debug" ); /* media queries debug. */
 }
 
 
@@ -85,8 +83,8 @@ function nokonoko_register_scripts(){
 	/* Google Fonts */
 	wp_register_style( "{$name}-google-fonts", tamatebako_google_fonts_url( array( 'Open Sans' => '400,400italic,700,700italic,800,800italic' ) ) );
 
-	/* Genericons */
-	wp_register_style( "genericons", tamatebako_theme_file( "assets/genericons/genericons", "css" ), array(), '3.4.1', 'all' );
+	/* Esicons */
+	wp_register_style( "esicons", tamatebako_theme_file( "assets/esicons/style", "css" ), array(), '1.0.0', 'all' );
 
 	/* Theme Debug */
 	wp_register_style( "{$name}-debug", tamatebako_theme_file( "assets/css/base/debug", "css" ), array() );

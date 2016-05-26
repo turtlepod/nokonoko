@@ -1,0 +1,42 @@
+/**
+ * WooCommerce Compat CSS
+******************************************/
+html .woocommerce-page .menu-search .search-submit{
+	display: none;
+}
+html .woocommerce-page .menu-search .search-submit{
+	padding: 0;
+}
+html .woocommerce-page .search-toggle-active.menu-search .search-submit{
+	display: inline;
+	border-radius: none;
+	box-shadow: none;
+	font-weight: 400;
+}
+html .woocommerce-page .search-toggle-active.menu-search .search-submit:hover{
+	background: transparent;
+	display: inline;
+	border-radius: none;
+	box-shadow: none;
+	font-weight: 400;
+}
+/**
+ * JetPack Compat CSS
+******************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

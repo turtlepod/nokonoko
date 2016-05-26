@@ -6,11 +6,18 @@
 
 			<?php echo get_avatar( $comment ); ?>
 
-			<cite class="comment-author vcard"><?php comment_author_link(); ?></cite><br />
+			<div class="wrap">
 
-			<a class="comment-permalink" href="<?php echo esc_url( get_comment_link() ); ?>"><time class="comment-published" datetime="<?php echo get_comment_time( 'Y-m-d\TH:i:sP' );?>"><?php printf( '%1$s (%2$s)', get_comment_date(), get_comment_time() ) ?></time></a>
+				<cite class="comment-author vcard"><?php comment_author_link(); ?></cite>
+				<?php edit_comment_link(); ?>
 
-			<?php edit_comment_link(); ?>
+				<div class="comment-byline">
+
+					<a class="comment-permalink" href="<?php echo esc_url( get_comment_link() ); ?>"><time class="comment-published" datetime="<?php echo get_comment_time( 'Y-m-d\TH:i:sP' );?>"><?php printf( '%1$s (%2$s)', get_comment_date(), get_comment_time() ) ?></time></a>
+
+				</div><!-- .comment-byline -->
+
+			</div><!-- .comment-meta > .wrap -->
 
 		</header><!-- .comment-meta -->
 

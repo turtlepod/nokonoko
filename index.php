@@ -17,13 +17,9 @@
 
 		<div class="wrap">
 
-			<?php //tamatebako_get_sidebar( 'secondary' ); ?>
-
 			<div id="main">
 
 				<div class="wrap">
-
-					<?php //tamatebako_get_sidebar( 'primary' ); ?>
 
 					<main id="content" class="content" role="main">
 
@@ -62,8 +58,6 @@
 				</div><!-- #main > .wrap -->
 
 			</div><!-- #main -->
-
-			<?php tamatebako_get_sidebar( 'secondary' ); ?>
 
 		</div><!-- #container > .wrap -->
 

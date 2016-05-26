@@ -1,4 +1,3 @@
-
 /* === #00 - BOX SIZING TO ALL === */
 html {
 	-moz-box-sizing:border-box;
@@ -381,10 +380,10 @@ html {
 }
 body {
 	font-family: 'Open Sans','Trebuchet MS', sans-serif;
-	font-size:17px;
-	font-size:1.7rem;
-	font-size:1.7em; /* chrome fix */
-	line-height:1.7em;
+	font-size:16px;
+	font-size:1.6rem;
+	font-size:1.6em; /* chrome fix */
+	line-height:1.6em;
 	color: #444;
 }
 	/* Editor Style */
@@ -475,7 +474,8 @@ body#tinymce .gallery{
 			opacity: 0.8;
 		}
 		.gallery .gallery-item .gallery-caption {
-			font-size: 13px;
+			font-size: 14px;
+			font-size: 1.4rem;
 			display: block;
 			position: absolute;
 			bottom: 0;

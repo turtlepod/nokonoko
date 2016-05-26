@@ -6,11 +6,6 @@
 /* Load Library. */
 require_once( trailingslashit( get_template_directory() ) . 'library/tamatebako.php' );
 
-/* Load External Library. */
-if( ! function_exists( 'get_the_image' ) ){
-	tamatebako_include( 'includes/get-the-image' );
-}
-
 /* Load theme general setup */
 add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
 
@@ -22,8 +17,8 @@ function nokonoko_theme_setup(){
 	/* === MINIMUM SYSTEM REQ === */
 	$back_compat_args = array(
 		'theme_name'   => 'NokoNoko',
-		'wp_requires'  => '4.1.0',
-		'php_requires' => '5.2.4',
+		'wp_requires'  => '4.4.0',
+		'php_requires' => '5.3.0',
 	);
 	add_theme_support( 'tamatebako-back-compat', $back_compat_args );
 	if( ! tamatebako_minimum_requirement( $back_compat_args ) ) return;
@@ -34,11 +29,14 @@ function nokonoko_theme_setup(){
 	/* === SCRIPTS === */
 	tamatebako_include( 'includes/scripts' );
 
-	/* === CUSTOM FONTS === */
-	tamatebako_include( 'includes/custom-fonts' );
-
 	/* === SETUP: Sidebars, Menus, Image Sizes, Content Width === */
 	tamatebako_include( 'includes/setup' );
+
+	/* === LOGO === */
+	tamatebako_include( 'includes/custom-logo' );
+
+	/* === CUSTOM FONTS === */
+	tamatebako_include( 'includes/custom-fonts' );
 
 	/* === LAYOUTS === */
 	tamatebako_include( 'includes/layouts' );
@@ -49,17 +47,20 @@ function nokonoko_theme_setup(){
 	/* === HEADER IMAGE === */
 	tamatebako_include( 'includes/header-image' );
 
-	/* === LOGO === */
-	tamatebako_include( 'includes/logo' );
-
-	/* === UTILITY: Mobile View, Custom CSS === */
+	/* === UTILITY: Custom CSS === */
 	tamatebako_include( 'includes/utility' );
 
 	/* === POST FORMATS === */
 	tamatebako_include( 'includes/post-formats' );
 
-	/* === WOOCOMMERCE === */
-	tamatebako_include( 'includes/woocommerce' );
+	/* === CUSTOMIZER === */
+	tamatebako_include( 'includes/customizer' );
+
+	/* === FUNCTIONS === */
+	tamatebako_include( 'includes/functions' );
+
+	/* === UPDATER === */
+	tamatebako_include( 'includes/updater' );
 
 }
 
