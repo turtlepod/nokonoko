@@ -42,7 +42,6 @@ function nokonoko_enqueue_scripts(){
 	/* == CSS == */
 	//wp_enqueue_style( "{$name}-google-fonts" );
 	wp_enqueue_style( "esicons" );
-	wp_enqueue_style( "social-menus" );
 	wp_enqueue_style( "{$name}-style" ); /* main css. */
 
 	if( is_child_theme() ) wp_enqueue_style( "{$child}-style" ); /* child theme css. */
@@ -86,7 +85,6 @@ function nokonoko_register_scripts(){
 
 	/* Esicons */
 	wp_register_style( "esicons", tamatebako_theme_file( "assets/esicons/style", "css" ), array(), '1.0.0', 'all' );
-	wp_register_style( "social-menus", tamatebako_theme_file( "assets/css/base/social-menus", "css" ), array(), '1.0.0', 'all' );
 
 	/* Theme Debug */
 	wp_register_style( "{$name}-debug", tamatebako_theme_file( "assets/css/base/debug", "css" ), array() );
