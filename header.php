@@ -18,4 +18,6 @@
 
 	</div><!-- #branding -->
 
+	<?php get_template_part( 'menu/social' ); ?>
+
 </header><!-- #header-->

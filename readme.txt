@@ -5,11 +5,10 @@ Tested up to: 4.5
 Version: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, blue, brown, gray, green, pink, purple, red, silver, tan, white, yellow, dark, light, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, holiday, photoblogging, seasonal
+Tags: one-column, two-columns, three-columns, four-columns, grid-layout, left-sidebar, right-sidebar, theme-options, custom-colors, custom-background, custom-header, flexible-header, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, news, photography, portfolio
 
 == Description ==
 
-Just another WordPress starter theme...
 This is just example description.
 
 This theme is licensed under the GNU General Public License, version 2 (GPL) or later. All included images are also under GPL2+ licensing.
@@ -18,9 +17,10 @@ For more info please visit theme page: [XXX WordPress Theme](http://genbumedia.c
 
 == Installation ==
 
-1. In your admin panel, go to Appearance -> Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's ZIP file. Click Install Now.
-3. Click Activate to use your new theme right away.
+1. In your admin panel, navigate to "Appearance > Themes" and click the "Add New" button.
+2. Click "Upload Theme" and then "Browse" theme's ZIP file.
+3. Click "Install Now".
+4. Click "Activate" to use the theme.
 
 == Frequently Asked Questions ==
 
@@ -31,10 +31,6 @@ Example answer
 = How to change layout? =
 
 You can change Global Layout in Customize Page. You can change individual post layout using Layouts meta box in post edit screen.
-
-= How to upload logo? =
-
-You can upload logo in Customize Page in "Site Title & Tagline" Section or in WordPress 4.3 "Site Identity" Section.
 
 == Changelog ==
 

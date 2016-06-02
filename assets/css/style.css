@@ -6,6 +6,10 @@
 */
 @import url("base/menus.css");
 
+/* === BASE SOCIAL MENUS ===
+*/
+@import url("base/social-menus.css");
+
 /* === PLUGINS ===
 @import url("plugins.css");
 */
@@ -133,7 +137,7 @@ code{
 	margin: 30px auto;
 	margin: 3rem auto;
 	width: 1200px;
-	max-width: 100%;
+	max-width: 95%;
 	border: 1px solid #ccc;
 }
 
@@ -142,7 +146,11 @@ code{
 	padding: 20px;
 	padding: 2rem;
 }
+#header:after{
+	content:".";display:block;height:0;clear:both;visibility:hidden;
+}
 	#branding{
+		float: left;
 	}
 	#branding:after{
 		content:".";display:block;height:0;clear:both;visibility:hidden;
@@ -177,6 +185,10 @@ code{
 		display: block;
 	}
 
+#social-links{
+	float: right;
+}
+
 
 /* === MENUS === */
 
@@ -208,6 +220,9 @@ code{
 	/* Menu Search */
 	#menu-primary .menu-search .search-toggle{
 		
+	}
+	#menu-primary .menu-search .search-form{
+		background: #fff;
 	}
 	#menu-primary .search-toggle-active.menu-search button{
 		
@@ -1204,9 +1219,8 @@ code{
 /* === FOOTER === */
 #footer{
 	border-top: 1px solid #ccc;
-}
-#footer:after{
-	content:".";display:block;height:0;clear:both;visibility:hidden;
+	width: 100%;
+	clear: both;
 }
 #menu-footer{
 }
@@ -1254,8 +1268,8 @@ code{
 
 /* === LAYOUTS === */
 
-/* Push primary sidebar to bottom */
 @media screen and (max-width: 900px){
+	/* Push primary sidebar to bottom */
 	.wordpress #main > .wrap{
 		margin-right: 0;
 		margin-left: 0;
@@ -1268,6 +1282,35 @@ code{
 		margin-left: 0;
 		float: left;
 		width: 100%;
+	}
+
+	/* Full width container */
+	#container{
+		width: 100%;
+		clear: both;
+		max-width: 100%;
+		margin: 0 auto;
+		border: none;
+	}
+
+	/* Header: Social Icons */
+	#branding{
+		float: none;
+		width: 100%;
+		margin-bottom: 20px;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	#social-links{
+		float: none;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#social-links li,
+	#social-links li a{
+		float: none;
+		margin-right: 0;
+		display: inline-block;
 	}
 }
 

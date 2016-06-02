@@ -1,0 +1,176 @@
+
+/* Social Links */
+.social-links{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+.social-links:after{
+	content:".";display:block;height:0;clear:both;visibility:hidden;
+}
+.social-links li{
+	display: block;
+	float: left;
+}
+.social-links a{
+	text-decoration: none;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.social-links a:hover,
+.social-links a:focus{
+	opacity: 0.8;
+}
+.social-links a:before{
+	content: "\f103"; /* Link icon */
+	display: block;
+	font-family: "esicons";
+	font-size: 24px;
+	padding: 8px;
+	border-radius: 3px;
+	line-height: 1em;
+	color: #444;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Icons */
+.social-links a[href*="codepen.io"]:before { content: '\f22d'; }
+.social-links a[href*="digg.com"]:before { content: '\f22f'; }
+.social-links a[href*="dribbble.com"]:before { content: '\f20c'; }
+.social-links a[href*="dropbox.com"]:before { content: '\f23f'; }
+.social-links a[href*="facebook.com"]:before { content: '\f20a'; }
+.social-links a[href*="flickr.com"]:before { content: '\f21e'; }
+.social-links a[href*="foursquare.com"]:before { content: '\f22c'; }
+.social-links a[href*="github.com"]:before { content: '\f241'; }
+.social-links a[href*="plus.google.com"]:before { content: '\f21c'; }
+.social-links a[href*="instagram.com"]:before { content: '\f21a'; }
+.social-links a[href*="linkedin.com"]:before { content: '\f23e'; }
+.social-links a[href*="pinterest.com"]:before { content: '\f22e'; }
+.social-links a[href*="getpocket.com"]:before { content: '\f22a'; }
+.social-links a[href*="polldaddy.com"]:before { content: '\f21d'; }
+.social-links a[href*="reddit.com"]:before { content: '\f22b'; }
+.social-links a[href*="skype.com"]:before { content: '\f23c'; }
+.social-links a[href*="skype:"]:before { content: '\f23c'; }
+.social-links a[href*="spotify.com"]:before { content: '\f51a'; }
+.social-links a[href*="stumbleupon.com"]:before { content: '\f23a'; }
+.social-links a[href*="tumblr.com"]:before { content: '\f21b'; }
+.social-links a[href*="twitter.com"]:before { content: '\f202'; }
+.social-links a[href*="vimeo.com"]:before { content: '\f23b'; }
+.social-links a[href*="wordpress.org"]:before,
+.social-links a[href*="wordpress.com"]:before { content: '\f20d'; }
+.social-links a[href*="youtube.com"]:before { content: '\f243'; }
+.social-links a[href*="mailto:"]:before { content: '\f466'; }
+.social-links a[href*="tel:"]:before { content: '\f525'; }
+.social-links a[href$="/feed/"]:before { content: '\f303'; }
+.social-links .mail-icon a:before { content: '\f466'; }
+.social-links .phone-icon a:before { content: '\f525'; }
+.social-links .feed-icon a:before { content: '\f303'; }
+.social-links .user-icon a:before { content: '\f110'; }
+.social-links .calendar-icon a:before { content: '\f145'; }
+.social-links .website-icon a:before { content: '\f319'; }
+.social-links .category-icon a:before { content: '\f318'; }
+.social-links .tag-icon a:before { content: '\f323'; }
+.social-links .share-icon a:before { content: '\f237'; }
+.social-links .home-icon a:before { content: '\f102'; }
+
+/* Icons Color */
+.social-links-color a:before{
+	color: #444;
+	background: transparent;
+}
+.social-links-color a[href*="codepen.io"]:before { color: #444; }
+.social-links-color a[href*="digg.com"]:before { color: #444; }
+.social-links-color a[href*="dribbble.com"]:before { color: #ea4c89; }
+.social-links-color a[href*="dropbox.com"]:before { color: #007ee5; }
+.social-links-color a[href*="facebook.com"]:before { color: #3b5998; }
+.social-links-color a[href*="flickr.com"]:before { color: #ff0084; }
+.social-links-color a[href*="foursquare.com"]:before { color: #444; }
+.social-links-color a[href*="github.com"]:before { color: #444; }
+.social-links-color a[href*="plus.google.com"]:before { color: #dd4b39; }
+.social-links-color a[href*="instagram.com"]:before { color: #3f729b; }
+.social-links-color a[href*="linkedin.com"]:before { color: #0e76a8; }
+.social-links-color a[href*="pinterest.com"]:before { color: #c8232c; }
+.social-links-color a[href*="getpocket.com"]:before { color: #ee4056; }
+.social-links-color a[href*="polldaddy.com"]:before { color: #bc0b0b; }
+.social-links-color a[href*="reddit.com"]:before { color: #336699; }
+.social-links-color a[href*="skype.com"]:before { color: #00aff0; }
+.social-links-color a[href*="skype:"]:before { color: #00aff0; }
+.social-links-color a[href*="spotify.com"]:before { color: #444; }
+.social-links-color a[href*="stumbleupon.com"]:before { color: #ff2618; }
+.social-links-color a[href*="tumblr.com"]:before { color: #34526f; }
+.social-links-color a[href*="twitter.com"]:before { color: #33ccff; }
+.social-links-color a[href*="vimeo.com"]:before { color: #1AB7EA; }
+.social-links-color a[href*="wordpress.org"]:before,
+.social-links-color a[href*="wordpress.com"]:before { color: #21759b; }
+.social-links-color a[href*="youtube.com"]:before { color: #c4302b; }
+.social-links-color a[href*="mailto:"]:before { color: #444; }
+.social-links-color a[href*="tel:"]:before { color: #444; }
+.social-links-color a[href$="/feed/"]:before { color: #444; }
+.social-links-color .mail-icon a:before { color: #444; }
+.social-links-color .phone-icon a:before { color: #444; }
+.social-links-color .feed-icon a:before { color: #444; }
+.social-links-color .user-icon a:before { color: #444; }
+.social-links-color .calendar-icon a:before { color: #444; }
+.social-links-color .website-icon a:before { color: #444; }
+.social-links-color .category-icon a:before { color: #444; }
+.social-links-color .tag-icon a:before { color: #444; }
+.social-links-color .share-icon a:before { color: #444; }
+.social-links-color .home-icon a:before { color: #444; }
+
+/* Icons Background Color */
+.social-links-background a:before{
+	color: #fff;
+	background: #444;
+}
+.social-links-background a[href*="codepen.io"]:before { background: #444; }
+.social-links-background a[href*="digg.com"]:before { background: #444; }
+.social-links-background a[href*="dribbble.com"]:before { background: #ea4c89; }
+.social-links-background a[href*="dropbox.com"]:before { background: #007ee5; }
+.social-links-background a[href*="facebook.com"]:before { background: #3b5998; }
+.social-links-background a[href*="flickr.com"]:before { background: #ff0084; }
+.social-links-background a[href*="foursquare.com"]:before { background: #444; }
+.social-links-background a[href*="github.com"]:before { background: #444; }
+.social-links-background a[href*="plus.google.com"]:before { background: #dd4b39; }
+.social-links-background a[href*="instagram.com"]:before { background: #3f729b; }
+.social-links-background a[href*="linkedin.com"]:before { background: #0e76a8; }
+.social-links-background a[href*="pinterest.com"]:before { background: #c8232c; }
+.social-links-background a[href*="getpocket.com"]:before { background: #ee4056; }
+.social-links-background a[href*="polldaddy.com"]:before { background: #bc0b0b; }
+.social-links-background a[href*="reddit.com"]:before { background: #336699; }
+.social-links-background a[href*="skype.com"]:before { background: #00aff0; }
+.social-links-background a[href*="skype:"]:before { background: #00aff0; }
+.social-links-background a[href*="spotify.com"]:before { background: #444; }
+.social-links-background a[href*="stumbleupon.com"]:before { background: #ff2618; }
+.social-links-background a[href*="tumblr.com"]:before { background: #34526f; }
+.social-links-background a[href*="twitter.com"]:before { background: #33ccff; }
+.social-links-background a[href*="vimeo.com"]:before { background: #1AB7EA; }
+.social-links-background a[href*="wordpress.org"]:before,
+.social-links-background a[href*="wordpress.com"]:before { background: #21759b; }
+.social-links-background a[href*="youtube.com"]:before { background: #c4302b; }
+.social-links-background a[href*="mailto:"]:before { background: #444; }
+.social-links-background a[href*="tel:"]:before { background: #444; }
+.social-links-background a[href$="/feed/"]:before { background: #444; }
+.social-links-background .mail-icon a:before { background: #444; }
+.social-links-background .phone-icon a:before { background: #444; }
+.social-links-background .feed-icon a:before { background: #444; }
+.social-links-background .user-icon a:before { background: #444; }
+.social-links-background .calendar-icon a:before { background: #444; }
+.social-links-background .website-icon a:before { background: #444; }
+.social-links-background .category-icon a:before { background: #444; }
+.social-links-background .tag-icon a:before { background: #444; }
+.social-links-background .share-icon a:before { background: #444; }
+.social-links-background .home-icon a:before { background: #444; }
+
+
+
+
+
+
+
+
+
+
+
