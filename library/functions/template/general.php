@@ -98,7 +98,7 @@ function tamatebako_archive_header(){
 	<header class="archive-header">
 		<?php the_archive_title( '<h1 class="archive-title">', '</h1>'); ?>
 		<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
-	</header><!-- .loop-meta -->
+	</header><!-- .archive-header -->
 <?php
 	}
 }

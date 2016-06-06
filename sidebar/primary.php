@@ -8,11 +8,11 @@ if ( strpos( get_theme_mod( 'theme_layout' ),'sidebar1' ) === false) {
 
 	<aside class="sidebar">
 
-		<?php if ( is_active_sidebar( 'primary' ) ) : // If the sidebar has widgets. ?>
+		<?php if ( is_active_sidebar( 'primary' ) ) { ?>
 
-			<?php dynamic_sidebar( 'primary' ); // Displays the primary sidebar. ?>
+			<?php dynamic_sidebar( 'primary' ); ?>
 
-		<?php else : // If the sidebar has no widgets. ?>
+		<?php } else { ?>
 
 			<?php the_widget( 'WP_Widget_Recent_Posts',
 				array(
@@ -26,7 +26,7 @@ if ( strpos( get_theme_mod( 'theme_layout' ),'sidebar1' ) === false) {
 				)
 			); ?>
 
-		<?php endif; // End widgets check. ?>
+		<?php } // end widget check. ?>
 
 	</aside><!-- #sidebar-primary > .sidebar -->
 
