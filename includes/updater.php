@@ -154,7 +154,7 @@ class nokonoko_Theme_Updater{
 		$options = array(
 			'timeout'    => 20,
 			'body'       => $body,
-			'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
+			'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url(),
 		); 
 
 		/* Remote URL */
