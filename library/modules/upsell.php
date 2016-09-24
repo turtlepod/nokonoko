@@ -21,7 +21,6 @@ function tamatebako_upsell_args(){
 		'theme_name'          => '',
 		'theme_price'         => '',
 		'upgrade_url'         => '',
-		'redirect'            => false,
 	);
 
 	/* Logo Args. */
@@ -83,23 +82,6 @@ function tamatebako_upsell_admin_enqueue_scripts( $hook_suffix ){
  */
 function tamatebako_upsell_admin_html(){
 	tamatebako_include( 'includes/upsell-admin' );
-}
-
-
-/* ===== THEME ACTIVATION REDIRECT ===== */
-
-/* Redirect on theme activation */
-add_action( 'admin_init', 'tamatebako_upsell_theme_activation_redirect' );
-
-/**
- * Redirect to "Install Plugins" page on activation
- */
-function tamatebako_upsell_theme_activation_redirect() {
-	$upsell_args = tamatebako_upsell_args();
-	global $pagenow;
-	if ( is_admin() && isset( $_GET['activated'] ) &&  "themes.php" == $pagenow && true === $upsell_args['redirect'] ) {
-		wp_redirect( admin_url( 'themes.php?page=tamatebako_theme_upgrade' ) );
-	}
 }
 
 

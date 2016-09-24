@@ -118,7 +118,7 @@ function tamatebako_fonts_mce_css_ajax_callback(){
 	}
 
 	header( 'Content-type: text/css' );
-	echo $css;
+	echo wp_strip_all_tags( $css );
 	die();
 }
 
