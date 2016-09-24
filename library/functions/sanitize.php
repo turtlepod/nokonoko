@@ -173,7 +173,7 @@ function tamatebako_sanitize_file_ext( $input, $ext = 'css' ){
  * For output in front end it's best to simply use "wp_strip_all_tags()"
  * @since 3.3.3
  */
-function tamatebako_sanitize_script( $css ){
+function tamatebako_esc_css( $css ){
 	$css = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $css );
 	$css = wp_kses( $css, array() );
 	$css = esc_html( $css );

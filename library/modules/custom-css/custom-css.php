@@ -57,7 +57,7 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 			'type'                => 'theme_mod',
 			'transport'           => 'postMessage',
 			'capability'          => 'edit_theme_options',
-			'sanitize_callback'   => 'tamatebako_sanitize_script',
+			'sanitize_callback'   => 'tamatebako_esc_css',
 		)
 	);
 
