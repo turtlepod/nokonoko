@@ -10,7 +10,8 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 **3.3.3 - 24.Sept.2016**
 
-* Move tamatebako_parse_css() as tamatebako_sanitize_script()
+* Move tamatebako_parse_css() as tamatebako_esc_css()
+* Better handling of front page template.
 
 **3.3.2 - 27.July.2016**
 

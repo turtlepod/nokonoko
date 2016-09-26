@@ -47,6 +47,9 @@ function tamatebako_setup(){
 	/* === Widgets: Selective Refresh Support === */
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	/* == Template Hierarchy: Front Page Template Fix == */
+	add_filter( 'frontpage_template', 'tamatebako_front_page_template' );
+
 	if( !is_admin() ){
 
 		/* Context: Body Class & Post Class */
@@ -177,6 +180,18 @@ function tamatebako_scripts(){
 function tamatebako_tinymce_body_class( $settings ){
 	$settings['body_class'] = $settings['body_class'] . ' entry-content';
 	return $settings;
+}
+
+
+/**
+ * Fix WordPress Front Page Template
+ * This will enable page template even when front-page.php exist.
+ * This will not load front-page.php if blog is set as front page.
+ * @since 3.3.3
+ * @author Jenny Regan (Theme Hybrid)
+ */
+function tamatebako_front_page_template( $template ){
+	return ( is_home() || locate_template( get_page_template_slug() ) ) ? '' : $template;
 }
 
 
