@@ -74,10 +74,15 @@ function tamatebako_menu_toggle( $location ){
  * Generic menu fallback and only display link to home page.
  * @since 0.1.0
  */
-function tamatebako_menu_fallback_cb(){
+function tamatebako_menu_fallback_cb( $args = array() ){
+	$args_default = array(
+		'menu_id'    => 'menu-items',
+		'menu_class' => 'menu-items',
+	);
+	$args = wp_parse_args( $args, $args_default );
 ?>
 <div class="wrap">
-	<ul class="menu-items" id="menu-items">
+	<ul id="<?php echo esc_attr( $args['menu_id'] ); ?>" class="<?php echo esc_attr( $args['menu_class'] ); ?>">
 		<li class="menu-item">
 			<a rel="home" href="<?php echo esc_url( user_trailingslashit( home_url() ) ); ?>"><?php echo tamatebako_string('menu_default_home'); ?></a>
 		</li>

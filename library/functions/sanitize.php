@@ -165,3 +165,22 @@ function tamatebako_sanitize_file_ext( $input, $ext = 'css' ){
 
 	return '';
 }
+
+
+/**
+ * Sanitize Scripts such as CSS code.
+ * It will also restore several character from esc_html().
+ * For output in front end it's best to simply use "wp_strip_all_tags()"
+ * @since 3.3.3
+ */
+function tamatebako_esc_css( $css ){
+	$css = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $css );
+	$css = wp_kses( $css, array() );
+	$css = esc_html( $css );
+	$css = str_replace( '&gt;', '>', $css );
+	$css = str_replace( '&quot;', '"', $css );
+	$css = str_replace( '&amp;', "&", $css );
+	$css = str_replace( '&amp;#039;', "'", $css );
+	$css = str_replace( '&#039;', "'", $css );
+	return $css;
+}

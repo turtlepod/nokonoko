@@ -8,6 +8,26 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.3.4 - 12.Nov.2016**
+
+* Prefix custom css module to "tmb_custom_css" for compat issue with 4.7.
+* Example to back-compat custom css in 4.7.
+
+**3.3.3 - 24.Sept.2016**
+
+* Move tamatebako_parse_css() as tamatebako_esc_css()
+* Better handling of front page template.
+
+**3.3.2 - 27.July.2016**
+
+* Improvement in menu falback cb. 
+
+**3.3.1 - 19.July.2016**
+
+* use wp_strip_all_tags() to sanitize CSS in custom css & custom fonts module.
+* use tamatebako_parse_css() as sanitize cb custom css module. this because wp_strip_all_tags() remove line breaks in textarea.
+* remove activation redirect in upsell module. It's not allowed in wp.org
+
 **3.3.0 - 18.May.2016**
 
 * Remove Logo Module. Use WP Custom Logo

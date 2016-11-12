@@ -22,7 +22,8 @@ function tamatebako_custom_css_args(){
 		'title'       => 'Custom CSS',
 		'label'       => 'Custom CSS',
 		'type'        => 'textarea',
-		'section'     => 'custom_css',
+		'section'     => 'tmb_custom_css',
+		'settings'    => 'custom_css',
 	);
 
 	/* Logo Args. */
@@ -44,7 +45,7 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 
 	/* Add Section */
 	$wp_customize->add_section(
-		'custom_css',
+		'tmb_custom_css',
 		array(
 			'title' => esc_html( $custom_css_args['title'] ),
 		)
@@ -57,12 +58,12 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 			'type'                => 'theme_mod',
 			'transport'           => 'postMessage',
 			'capability'          => 'edit_theme_options',
-			'sanitize_callback'   => 'esc_html',
+			'sanitize_callback'   => 'tamatebako_esc_css',
 		)
 	);
 
 	// Uses the `textarea` type added in WordPress 4.0.
-	$wp_customize->add_control( 'custom_css', tamatebako_custom_css_args() );
+	$wp_customize->add_control( 'tmb_custom_css', tamatebako_custom_css_args() );
 }
 
 
@@ -90,7 +91,7 @@ function tamatebako_custom_css_wp_head() {
 	if( get_theme_mod( 'custom_css' ) ){
 ?>
 <style id="tamatebako-custom-css" type="text/css">
-<?php echo tamatebako_parse_css( get_theme_mod( 'custom_css' ) );?>
+<?php echo wp_strip_all_tags( get_theme_mod( 'custom_css' ) );?>
 </style>
 <?php
 	}
@@ -100,20 +101,4 @@ function tamatebako_custom_css_wp_head() {
 <style id="tamatebako-custom-css" type="text/css"></style>
 <?php
 	}
-}
-
-/**
- * Tamatebako Restore CSS
- * restore several character from esc_html().
- * @access Private
- */
-function tamatebako_parse_css( $css ){
-	$css = esc_html( $css );
-	$css = wp_kses( $css, array() ); /* why not striptags? who knows? */
-	$css = str_replace( '&gt;', '>', $css );
-	$css = str_replace( '&quot;', '"', $css );
-	$css = str_replace( '&amp;', "&", $css );
-	$css = str_replace( '&amp;#039;', "'", $css );
-	$css = str_replace( '&#039;', "'", $css );
-	return $css;
 }

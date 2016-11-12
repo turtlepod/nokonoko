@@ -212,7 +212,7 @@ function tamatebako_fonts_print_style(){
 
 	/* PRINT CSS */
 	if ( !empty( $css ) ){
-		echo "\n" . '<style type="text/css" id="tamatebako-custom-fonts-rules-css">' . trim( $css ) . '</style>' . "\n";
+		echo "\n" . '<style type="text/css" id="tamatebako-custom-fonts-rules-css">' . trim( wp_strip_all_tags( $css ) ) . '</style>' . "\n";
 	}
 }
 
