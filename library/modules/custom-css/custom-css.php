@@ -22,7 +22,8 @@ function tamatebako_custom_css_args(){
 		'title'       => 'Custom CSS',
 		'label'       => 'Custom CSS',
 		'type'        => 'textarea',
-		'section'     => 'custom_css',
+		'section'     => 'tmb_custom_css',
+		'settings'    => 'custom_css',
 	);
 
 	/* Logo Args. */
@@ -44,7 +45,7 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 
 	/* Add Section */
 	$wp_customize->add_section(
-		'custom_css',
+		'tmb_custom_css',
 		array(
 			'title' => esc_html( $custom_css_args['title'] ),
 		)
@@ -62,7 +63,7 @@ function tamatebako_custom_css_customize_register( $wp_customize ){
 	);
 
 	// Uses the `textarea` type added in WordPress 4.0.
-	$wp_customize->add_control( 'custom_css', tamatebako_custom_css_args() );
+	$wp_customize->add_control( 'tmb_custom_css', tamatebako_custom_css_args() );
 }
 
 

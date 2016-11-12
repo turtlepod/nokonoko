@@ -8,6 +8,11 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.3.4 - 12.Nov.2016**
+
+* Prefix custom css module to "tmb_custom_css" for compat issue with 4.7.
+* Example to back-compat custom css in 4.7.
+
 **3.3.3 - 24.Sept.2016**
 
 * Move tamatebako_parse_css() as tamatebako_esc_css()
