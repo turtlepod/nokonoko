@@ -100,9 +100,6 @@ function tamatebako_load_theme_support(){
 	/* === LAYOUTS === */
 	tamatebako_require_if_theme_supports( 'tamatebako-layouts', 'modules/layouts/layouts' );
 
-	/* === CUSTOM CSS === */
-	tamatebako_require_if_theme_supports( 'tamatebako-custom-css', 'modules/custom-css/custom-css' );
-
 	/* === CUSTOM FONTS === */
 	tamatebako_require_if_theme_supports( 'tamatebako-custom-fonts', 'modules/custom-fonts/custom-fonts' );
 
