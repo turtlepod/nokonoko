@@ -8,6 +8,10 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.4.0 - 05.Dec.2016**
+
+* Remove Custom CSS Module. No longer needed in WP.4.7.
+
 **3.3.4 - 12.Nov.2016**
 
 * Prefix custom css module to "tmb_custom_css" for compat issue with 4.7.
