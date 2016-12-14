@@ -112,7 +112,7 @@ function tamatebako_archive_header(){
 function tamatebako_archive_footer(){
 	if ( is_home() || is_archive() || is_search() ){
 		the_posts_pagination( array(
-			'mid_size' => 3,
+			'mid_size' => 2,
 			'prev_text' => '<span class="screen-reader-text">' . tamatebako_string( 'previous_posts' ) . '</span>',
 			'next_text' => '<span class="screen-reader-text">' . tamatebako_string( 'next_posts' ) . '</span>',
 		) );

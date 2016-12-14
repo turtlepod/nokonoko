@@ -1,0 +1,6 @@
+= ESICONS CHANGELOG =
+
+## 2.0.0 - 14 Dec 2016
+* Complete rewrite. Previously all Dashicons and Genericons, now only 60 icons.
+* Separate social logos in "ESOCONS" project.
+

@@ -453,7 +453,7 @@ code{
 			content:".";display:block;height:0;clear:both;visibility:hidden;
 		}
 		.post-edit-link:before{
-			content: "\f327";
+			content: "\f464";
 			font-family: "esicons";
 			vertical-align: top;
 			color: #444;
@@ -704,7 +704,7 @@ code{
 								margin-left: 10px;
 							}
 							.comment-edit-link:before{
-								content: "\f327";
+								content: "\f464";
 								font-family: "esicons";
 								vertical-align: top;
 								margin-right: 5px;
@@ -827,7 +827,7 @@ code{
 				clear: both;
 			}
 			#commentform label[for="comment"]:before{
-				content: "\f327";
+				content: "\f464";
 				font-family: "esicons";
 				vertical-align: top;
 				margin-right: 5px;

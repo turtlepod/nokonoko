@@ -27,7 +27,7 @@
 .social-links a:before{
 	content: "\f103"; /* Link icon */
 	display: block;
-	font-family: "esicons";
+	font-family: "esocons";
 	font-size: 24px;
 	padding: 8px;
 	border-radius: 3px;
@@ -37,34 +37,56 @@
 }
 
 /* Icons */
-.social-links a[href*="codepen.io"]:before { content: '\f22d'; }
-.social-links a[href*="digg.com"]:before { content: '\f22f'; }
-.social-links a[href*="dribbble.com"]:before { content: '\f20c'; }
-.social-links a[href*="dropbox.com"]:before { content: '\f23f'; }
-.social-links a[href*="facebook.com"]:before { content: '\f20a'; }
-.social-links a[href*="flickr.com"]:before { content: '\f21e'; }
-.social-links a[href*="foursquare.com"]:before { content: '\f22c'; }
-.social-links a[href*="github.com"]:before { content: '\f241'; }
-.social-links a[href*="plus.google.com"]:before { content: '\f21c'; }
-.social-links a[href*="instagram.com"]:before { content: '\f21a'; }
-.social-links a[href*="linkedin.com"]:before { content: '\f23e'; }
-.social-links a[href*="pinterest.com"]:before { content: '\f22e'; }
-.social-links a[href*="getpocket.com"]:before { content: '\f22a'; }
-.social-links a[href*="polldaddy.com"]:before { content: '\f21d'; }
-.social-links a[href*="reddit.com"]:before { content: '\f22b'; }
-.social-links a[href*="skype.com"]:before { content: '\f23c'; }
-.social-links a[href*="skype:"]:before { content: '\f23c'; }
-.social-links a[href*="spotify.com"]:before { content: '\f51a'; }
-.social-links a[href*="stumbleupon.com"]:before { content: '\f23a'; }
-.social-links a[href*="tumblr.com"]:before { content: '\f21b'; }
-.social-links a[href*="twitter.com"]:before { content: '\f202'; }
-.social-links a[href*="vimeo.com"]:before { content: '\f23b'; }
+.social-links a[href*="amazon."]:before { content: '\e926'; }
+.social-links a[href*="behance.net"]:before { content: '\e927'; }
+.social-links a[href*="blogger."]:before { content: '\e929'; }
+.social-links a[href*="codepen.io"]:before { content: '\e92a'; }
+.social-links a[href*="dribbble.com"]:before { content: '\e92b'; }
+.social-links a[href*="dropbox.com"]:before { content: '\e92c'; }
+.social-links a[href*="eventbrite.com"]:before { content: '\e92d'; }
+.social-links a[href*="facebook.com"]:before { content: '\e930'; }
+.social-links a[href*="flickr.com"]:before { content: '\e902'; }
+.social-links a[href*="foursquare.com"]:before { content: '\e903'; }
+.social-links a[href*="ghost.org"]:before { content: '\e904'; }
+.social-links a[href*="github.com"]:before { content: '\e905'; }
+.social-links a[href*="google."]:before { content: '\e906'; }
+.social-links a[href*="plus.google.com"]:before { content: '\e909'; }
+.social-links a[href*="instagram.com"]:before { content: '\e90a'; }
+.social-links a[href*="linkedin.com"]:before { content: '\e914'; }
+
+
+.social-links a[href*="pinterest.com"]:before { content: '\e911'; }
+.social-links a[href*="getpocket.com"]:before { content: '\e912'; }
+.social-links a[href*="polldaddy.com"]:before { content: '\e913'; }
+.social-links a[href*="reddit.com"]:before { content: '\e915'; }
+.social-links a[href*="skype.com"]:before { content: '\e917'; }
+.social-links a[href*="skype:"]:before { content: '\e917'; }
+
+
+.social-links a[href*="spotify.com"]:before { content: '\e918'; }
+
+
+.social-links a[href*="stumbleupon.com"]:before { content: '\e91a'; }
+
+
+.social-links a[href*="tumblr.com"]:before { content: '\e91d'; }
+
+
+.social-links a[href*="twitter.com"]:before { content: '\e920'; }
+.social-links a[href*="vimeo.com"]:before { content: '\e921'; }
+
+
 .social-links a[href*="wordpress.org"]:before,
-.social-links a[href*="wordpress.com"]:before { content: '\f20d'; }
-.social-links a[href*="youtube.com"]:before { content: '\f243'; }
-.social-links a[href*="mailto:"]:before { content: '\f466'; }
-.social-links a[href*="tel:"]:before { content: '\f525'; }
-.social-links a[href$="/feed/"]:before { content: '\f303'; }
+.social-links a[href*="wordpress.com"]:before { content: '\e923'; }
+
+
+.social-links a[href*="youtube.com"]:before { content: '\e925'; }
+/* Icons */
+.social-links a[href*="mailto:"]:before { content: '\e90c'; }
+.social-links a[href*="tel:"]:before { content: '\e93e'; }
+.social-links a[href$="/feed/"]:before { content: '\e901'; }
+
+/* CSS Class */
 .social-links .mail-icon a:before { content: '\f466'; }
 .social-links .phone-icon a:before { content: '\f525'; }
 .social-links .feed-icon a:before { content: '\f303'; }
@@ -75,22 +97,31 @@
 .social-links .tag-icon a:before { content: '\f323'; }
 .social-links .share-icon a:before { content: '\f237'; }
 .social-links .home-icon a:before { content: '\f102'; }
+/*
+location/map icon.
+star icon, etc.
+*/
 
 /* Icons Color */
 .social-links-color a:before{
 	color: #444;
 	background: transparent;
 }
+.social-links-color a[href*="amazon."]:before { color: #444; }
+.social-links-color a[href*="behance.net"]:before { color: #0060FF; }
+.social-links-color a[href*="blogger."]:before { color: #FF5722; }
 .social-links-color a[href*="codepen.io"]:before { color: #444; }
-.social-links-color a[href*="digg.com"]:before { color: #444; }
 .social-links-color a[href*="dribbble.com"]:before { color: #ea4c89; }
 .social-links-color a[href*="dropbox.com"]:before { color: #007ee5; }
+.social-links-color a[href*="eventbrite.com"]:before { color: #F6682F; }
 .social-links-color a[href*="facebook.com"]:before { color: #3b5998; }
 .social-links-color a[href*="flickr.com"]:before { color: #ff0084; }
 .social-links-color a[href*="foursquare.com"]:before { color: #444; }
+.social-links-color a[href*="ghost.org"]:before { color: #85C9F0; }
 .social-links-color a[href*="github.com"]:before { color: #444; }
+.social-links-color a[href*="google."]:before { color: #4285F4; }
 .social-links-color a[href*="plus.google.com"]:before { color: #dd4b39; }
-.social-links-color a[href*="instagram.com"]:before { color: #3f729b; }
+.social-links-color a[href*="instagram.com"]:before { color: #444; }
 .social-links-color a[href*="linkedin.com"]:before { color: #0e76a8; }
 .social-links-color a[href*="pinterest.com"]:before { color: #c8232c; }
 .social-links-color a[href*="getpocket.com"]:before { color: #ee4056; }
