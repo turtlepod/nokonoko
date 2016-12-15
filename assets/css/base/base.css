@@ -73,10 +73,18 @@ ul {
 	list-style:disc;
 	margin-left: 3em;
 }
+	.rtl ul{
+		margin-left: 0;
+		margin-right: 3em;
+	}
 ol {
 	list-style-type:decimal;
 	margin-left: 3em;
 }
+	.rtl ol{
+		margin-left: 0;
+		margin-right: 3em;
+	}
 ol ol {
 	list-style:upper-roman;
 }
@@ -600,6 +608,12 @@ hr,h1,h2,h3,h4,h5,h6,figure,p,ul,ol,dl,address,pre,object,fieldset,table,table c
 	left: -9999em;
 	top: -9999em;
 }
+	.rtl .screen-reader-text,
+	.rtl .assistive-text{
+		position: absolute;
+		left: auto;
+		right: -9999em;
+	}
 .skip-link{
 	margin: 0 auto;
 	text-align: center;
@@ -613,4 +627,3 @@ hr,h1,h2,h3,h4,h5,h6,figure,p,ul,ol,dl,address,pre,object,fieldset,table,table c
 	border: 1px solid red;
 	background: #fff;
 }
-

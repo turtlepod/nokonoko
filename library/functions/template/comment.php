@@ -16,11 +16,23 @@ function tamatebako_comments_nav(){
 
 	<div class="comments-nav">
 
-		<?php previous_comments_link( '<span class="prev-comments"><span class="screen-reader-text">' . tamatebako_string( 'previous_comment' ) . '</span></span>' ); ?>
+		<?php if( is_rtl() ){ ?>
 
-		<span class="page-numbers"><?php printf( '%1$s / %2$s', get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); ?></span>
+			<?php next_comments_link( '<span class="next-comments"><span class="screen-reader-text">' . tamatebako_string( 'next_comment' ) . '</span></span>' ); ?>
 
-		<?php next_comments_link( '<span class="next-comments"><span class="screen-reader-text">' . tamatebako_string( 'next_comment' ) . '</span></span>' ); ?>
+			<span class="page-numbers"><?php printf( '%2$s / %1$s', get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); ?></span>
+
+			<?php previous_comments_link( '<span class="prev-comments"><span class="screen-reader-text">' . tamatebako_string( 'previous_comment' ) . '</span></span>' ); ?>
+
+		<?php } else { ?>
+
+			<?php previous_comments_link( '<span class="prev-comments"><span class="screen-reader-text">' . tamatebako_string( 'previous_comment' ) . '</span></span>' ); ?>
+
+			<span class="page-numbers"><?php printf( '%1$s / %2$s', get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); ?></span>
+
+			<?php next_comments_link( '<span class="next-comments"><span class="screen-reader-text">' . tamatebako_string( 'next_comment' ) . '</span></span>' ); ?>
+
+		<?php } ?>
 
 	</div><!-- .comments-nav -->
 
