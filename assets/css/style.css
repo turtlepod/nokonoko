@@ -320,8 +320,6 @@ code{
 }
 	/* Entry Header */
 	.entry-header{
-		margin-bottom: 20px;
-		margin-bottom: 2rem;
 	}
 		/* Entry Title */
 		.entry-title{
@@ -349,6 +347,8 @@ code{
 			}
 		/* Byline */
 		.entry-byline{
+			margin-bottom: 20px;
+			margin-bottom: 2rem;
 		}
 		.entry-byline:after{
 			content:".";display:block;height:0;clear:both;visibility:hidden;
