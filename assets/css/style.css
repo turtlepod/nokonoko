@@ -882,6 +882,16 @@ code{
 			.comment-wrap:after{
 				content:".";display:block;height:0;clear:both;visibility:hidden;
 			}
+				.comment-parent{
+					font-size: 14px;
+					display: none; /* only display in mobile */
+				}
+				.comment-parent-link:before{
+					content: "\f141";
+					font-family: "esicons";
+					vertical-align: top;
+					-webkit-font-smoothing: antialiased;
+				}
 				.comment-meta{
 					border-bottom: 1px solid #ccc;
 				}
@@ -1986,6 +1996,14 @@ code{
 
 /* === COMMENTS === */
 @media screen and (max-width: 700px) {
+	/* Display only one level */
+	.comment-parent{
+		display: block;
+	}
+	.comment-list .children .children{
+		margin-left: 0;
+	}
+	/* Respond form */
 	#respond .comment-form-author,
 	#respond .comment-form-email,
 	#respond .comment-form-url{

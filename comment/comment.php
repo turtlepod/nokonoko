@@ -1,5 +1,7 @@
 <li id="comment-<?php comment_ID(); ?>" <?php comment_class()?>>
 
+	<?php echo tamatebako_get_comment_parent_link(); ?>
+
 	<article class="comment-wrap">
 
 		<header class="comment-meta">

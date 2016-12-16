@@ -14,8 +14,8 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 * NokoNoko: Min Req: PHP 5.3 + WP 4.7 (yey!)
 * Change pagination mid_size from "3" to "2".
 * SVG utility function
-* Plans: JT Comments
-* Plans: Upsell stuff.
+* Comment parent link
+* Plans: Upsell stuff
 
 **3.4.0 - 05.Dec.2016**
 
