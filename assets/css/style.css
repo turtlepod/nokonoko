@@ -1257,7 +1257,7 @@ code{
 		margin: 0 10px 20px 0;
 		margin: 0 1rem 2rem 0;
 	}
-		.navigation.pagination .page-numbers{
+		.rtl .navigation.pagination .page-numbers{
 			float: right;
 			margin: 0 0 20px 10px;
 			margin: 0 0 2rem 1rem;
