@@ -319,7 +319,7 @@
 	float: right;
 	-webkit-font-smoothing: antialiased;
 }
-	.search-toggle-active.menu-search .search-submit:before{
+	.rtl .search-toggle-active.menu-search .search-submit:before{
 		border-left: 0;
 		border-right: 1px solid #ccc;
 		float: left;
