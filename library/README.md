@@ -13,7 +13,7 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 * NokoNoko: Update Esicons. Add Esocons.
 * NokoNoko: Min Req: PHP 5.3 + WP 4.7 (yey!)
 * Change pagination mid_size from "3" to "2".
-* Plans: SVG library
+* SVG utility function
 * Plans: JT Comments
 * Plans: Upsell stuff.
 
