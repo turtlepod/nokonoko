@@ -19,6 +19,7 @@ function nokonoko_scripts_body_class( $classes ){
 $editor_css = array(
 	tamatebako_google_fonts_url( array( 'Open Sans' => '400,400italic,700,700italic,800,800italic' ) ),
 	'assets/css/editor.css',
+	'assets/esicons/fonts.css',
 );
 add_editor_style( $editor_css );
 
