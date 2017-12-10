@@ -1,9 +1,9 @@
+// Base.
+@import 'base/base.scss';
 
-$blue: #009cde;
+// Theme.
+@import 'theme.scss';
 
-$green: #40c897;
-$green-light: #41DBA3;
-
-// Modules
-@import 'modules/*';
-@import 'modules/**/*';
+// Plugins.
+@import 'plugins/*';
+@import 'plugins/**/*';

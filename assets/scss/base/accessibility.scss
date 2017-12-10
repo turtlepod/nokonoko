@@ -1,0 +1,25 @@
+.screen-reader-text,
+.assistive-text{
+	position: absolute;
+	left: -9999em;
+	top: -9999em;
+}
+	.rtl .screen-reader-text,
+	.rtl .assistive-text{
+		position: absolute;
+		left: auto;
+		right: -9999em;
+	}
+.skip-link{
+	margin: 0 auto;
+	text-align: center;
+}
+.skip-link .screen-reader-text:focus{
+	position: inherit;
+	left: auto;
+	top: auto;
+	padding: 10px 20px;
+	padding: 1rem 2rem;
+	border: 1px solid red;
+	background: #fff;
+}

@@ -1,0 +1,12 @@
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+/* JS */
+.js .hide-if-js,
+.no-js .hide-if-no-js{
+	display: none;
+}

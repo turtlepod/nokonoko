@@ -1,0 +1,33 @@
+html {
+	font-size:62.5%;
+}
+body {
+	font-family: 'Open Sans','Trebuchet MS', sans-serif;
+	font-size:16px;
+	font-size:1.6rem;
+	font-size:1.6em; /* chrome fix */
+	line-height:1.6em;
+	color: #444;
+}
+	/* Editor Style */
+	body#tinymce {
+		font-family: 'Open Sans','Trebuchet MS', sans-serif;
+		background: #fff;
+		color: #444;
+		margin: 20px;
+		border: none;
+		max-width: 100%;
+	}
+#container{
+	word-wrap: break-word;
+	word-break: normal;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+/* Admin Bar Fix */
+.adminbar-input{
+	display: inline;
+	background: none;
+}

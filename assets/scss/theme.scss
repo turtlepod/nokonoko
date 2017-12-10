@@ -1,20 +1,3 @@
-/* === BASE ===
-*/
-@import url("base/base.css");
-
-/* === BASE MENUS ===
-*/
-@import url("base/menus.css");
-
-/* === BASE SOCIAL MENUS ===
-*/
-@import url("base/social-menus.css");
-
-/* === PLUGINS ===
-@import url("plugins.css");
-*/
-
-
 /* === ELEMENTS === */
 body{
 	background: #efefef;
@@ -1120,7 +1103,7 @@ code{
 				margin-right: 5%;
 				float: left;
 			}
-				..rtl #commentform .comment-form-author{
+				.rtl #commentform .comment-form-author{
 					margin-right: 0;
 					margin-left: 5%;
 					float: right;
