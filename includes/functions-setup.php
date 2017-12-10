@@ -102,7 +102,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	// Flexslider.
 	wp_register_script( 'flexslider', tamatebako_theme_file( 'assets/flexslider/jquery.flexslider', 'js' ), array( 'jquery' ), '2.5.0', true );
-	wp_register_style( 'flexslider', tamatebako_theme_file( 'assets/flexslider/flexslider", 'css' ), array(), '2.5.0', 'all' );
+	wp_register_style( 'flexslider', tamatebako_theme_file( 'assets/flexslider/flexslider', 'css' ), array(), '2.5.0', 'all' );
 
 	// WebFontLoader.
 	wp_register_script( 'webfontloader', tamatebako_theme_file( 'assets/js/webfontloader', 'js' ), array(), '1.5.3', true );

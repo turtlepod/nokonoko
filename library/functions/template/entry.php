@@ -215,7 +215,12 @@ function tamatebako_entry_taxonomy( $args = array() ) {
  * Next Previous Post (Loop Nav)
  * @since 0.1.0
  */
-function tamatebako_entry_nav(){
+function tamatebako_entry_nav() {
+	$prev = get_previous_posts_link();
+	$next = get_next_posts_link();
+	if ( ! $prev || ! $next ) {
+		return false;
+	}
 ?>
 <nav class="post-navigation">
 	<?php previous_post_link( '<div class="nav-prev"><span class="screen-reader-text">' . tamatebako_string( 'previous_post' ) . ':</span> %link</div>', '%title' ); ?>
