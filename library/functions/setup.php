@@ -1,11 +1,12 @@
 <?php
 /**
  * Setup Defaults Theme Features.
+ *
  * @since 3.0.0
  * @access private
 **/
 
-/* Setup the defaults theme feature. */
+// Setup the defaults theme feature.
 add_action( 'after_setup_theme', 'tamatebako_setup', 5 );
 
 /**
@@ -13,7 +14,7 @@ add_action( 'after_setup_theme', 'tamatebako_setup', 5 );
  * @since 3.0.0
  * @access private
  */
-function tamatebako_setup(){
+function tamatebako_setup() {
 
 	/* Enable Featured Image for all post types. */
 	add_theme_support( 'post-thumbnails' );
@@ -129,33 +130,34 @@ function tamatebako_stylesheet_uri( $stylesheet_uri ){
 
 /**
  * Register Scripts
+ *
  * @since 3.0.0
  */
-function tamatebako_styles(){
+function tamatebako_styles() {
 	global $tamatebako;
 
-	/* == Register Main (Parent Theme) CSS == */
+	// Register Main (Parent Theme) CSS.
 	$stylesheet_uri = get_stylesheet_uri();
 	$parent_css = tamatebako_get_parent_stylesheet_uri();
 	$parent_css = is_child_theme() ? $parent_css : $stylesheet_uri;
 
-	if( $parent_css ){
+	if ( $parent_css ) {
 		wp_register_style(
 			esc_attr( $tamatebako->name . '-style' ),
 			esc_url( $parent_css ),
 			array(),
-			tamatebako_theme_version(),
+			tamatebako_is_debug() ? time() : tamatebako_theme_version(),
 			'all'
 		);
 	}
 
-	/* == Register Child Theme CSS ( Only if child theme active ) == */
-	if( is_child_theme() ){
+	// Register Child Theme CSS ( Only if child theme active ).
+	if ( is_child_theme() ) {
 		wp_register_style(
 			esc_attr( $tamatebako->child . '-style' ),
 			esc_url( $stylesheet_uri ),
 			array( sanitize_title( $tamatebako->name ) . '-style' ),
-			tamatebako_child_theme_version(),
+			tamatebako_is_debug() ? time() : tamatebako_child_theme_version(),
 			'all'
 		);
 	}

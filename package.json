@@ -1,0 +1,43 @@
+{
+  "name": "nokonoko",
+  "version": "1.0.0",
+  "description": "Awesome Base Theme.",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "fs-extra": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-checktextdomain": "^1.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-globbing": "^0.2.2",
+    "gulp-jshint": "^2.0.4",
+    "gulp-phpcs": "^1.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-scss-lint": "^0.4.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-template": "^4.0.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^4.3.11",
+    "gulp-wp-pot": "^2.0.4",
+    "gulp-zip": "^4.0.0",
+    "jshint": "^2.9.4",
+    "pump": "^1.0.2"
+  },
+  "scripts": {
+    "setup": "npm install && composer install && gulp assets",
+    "dist": "gulp bundle && gulp zip && gulp clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turtlepod/nokonoko.git"
+  },
+  "author": "GenbuMedia",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/turtlepod/nokonoko/issues"
+  },
+  "homepage": "https://genbumedia.com/"
+}

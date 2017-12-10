@@ -92,8 +92,10 @@ add_editor_style( $editor_css );
 
 add_action( 'wp_enqueue_scripts', function() {
 	global $tamatebako;
-	$name = $tamatebako->name;
-	$child = $tamatebako->child;
+	$name    = $tamatebako->name;
+	$child   = $tamatebako->child;
+	$debug   = tamatebako_is_debug();
+	$version = $debug ? time() : tamatebako_theme_version();
 
 	/* = REGISTER = */
 
@@ -136,7 +138,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	if ( is_child_theme() ) {
 		wp_enqueue_style( "{$child}-style" );
 	}
-	if ( tamatebako_is_debug() ) {
+	if ( $debug ) {
 		wp_enqueue_style( "{$name}-debug" );
 	}
 

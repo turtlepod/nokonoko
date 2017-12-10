@@ -1,0 +1,14 @@
+{
+	"name": "turtlepod/nokonoko",
+	"description": "Awesome Base Theme.",
+	"license": "GPL 3.0",
+	"authors": [
+		{
+			"name": "GenbuMedia",
+			"email": "david@genbumedia.com"
+		}
+	],
+	"autoload": {
+		"classmap": ["includes/"]
+	}
+}

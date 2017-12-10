@@ -1,10 +1,10 @@
 === NokoNoko ===
 Contributors: turtlepod
-Requires at least: 4.4
-Tested up to: 4.5
+Requires at least: 4.5
+Tested up to: 4.9
 Version: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, four-columns, grid-layout, left-sidebar, right-sidebar, theme-options, custom-colors, custom-background, custom-header, flexible-header, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, news, photography, portfolio
 
 == Description ==

@@ -5,20 +5,20 @@
  * Version: 1.0.0
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/
- * License: GNU General Public License v2.0
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License: GNU General Public License v3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Tags: one-column, two-columns, three-columns, four-columns, grid-layout, left-sidebar, right-sidebar, theme-options, custom-colors, custom-background, custom-header, flexible-header, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, news, photography, portfolio
  * Text Domain: nokonoko
 **/
 
 /*
-Looking for the stylesheet?
+Looking for the stylesheet? It's located in "assets" directory. Do not load this file.
 
 I consider that a man's brain originally is like a little empty attic, and you have to stock it with such furniture as you choose. A fool takes in all the lumber of every sort that he comes across, so that the knowledge which might be useful to him gets crowded out, or at best is jumbled up with a lot of other things, so that he has a difficulty in laying his hands on it.
 - Sherlock Holmes
 */
 
-body.tamatebako-super:before{
+body.tamatebako-super:before {
 	content: "I have the advantage of knowing your habits, my dear Watson...";
 	position: fixed;
 	top: 0;
