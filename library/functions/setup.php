@@ -82,6 +82,9 @@ function tamatebako_setup(){
 		add_filter( 'get_comment_author_link', 'tamatebako_get_comment_author_link', 5 );
 		add_filter( 'get_comment_author_url_link', 'tamatebako_get_comment_author_url_link', 5 );
 
+		/* SVG Icons */
+		add_action( 'wp_footer', 'tamatebako_svg_sprite_load', 9999 );
+
 	} // end admin conditional
 }
 
@@ -525,4 +528,21 @@ function tamatebako_get_comment_author_url_link( $link ) {
 	);
 
 	return preg_replace( $patterns, $replaces, $link );
+}
+
+
+/**
+ * Load SVG Sprite in Footer
+ * @since 3.5.0
+ */
+function tamatebako_svg_sprite_load(){
+	$icons = apply_filters( 'tamatebako_svg_sprites', array() );
+	if( ! $icons || ! is_array( $icons ) ){
+		return false;
+	}
+	foreach( $icons as $id => $file ){
+		if ( file_exists( $file ) ) {
+			require_once( $file );
+		}
+	}
 }

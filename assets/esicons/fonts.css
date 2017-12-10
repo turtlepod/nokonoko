@@ -1,0 +1,218 @@
+/**
+ * Esicons - Essential Icon Pack
+ * 60 selected fonts for WordPress Theme
+ * 
+ * @link http://genbumedia.com/library/esicons/
+ * @version 2.0.0
+ * @author David Chandra Purnama <david@genbumedia.com>
+ * @copyright Copyright (c) 2016, Genbu Media
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+**/
+
+@font-face {
+  font-family: 'esicons';
+  src:  url('fonts/esicons.eot?avc5m6');
+  src:  url('fonts/esicons.eot?avc5m6#iefix') format('embedded-opentype'),
+    url('fonts/esicons.ttf?avc5m6') format('truetype'),
+    url('fonts/esicons.woff?avc5m6') format('woff'),
+    url('fonts/esicons.svg?avc5m6#esicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="esicons-"], [class*=" esicons-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'esicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.esicons-page:before {
+  content: "\f105";
+}
+.esicons-text:before {
+  content: "\f121";
+}
+.esicons-cart:before {
+  content: "\f174";
+}
+.esicons-rss:before {
+  content: "\f303";
+}
+.esicons-category:before {
+  content: "\f318";
+}
+.esicons-portfolio:before {
+  content: "\f322";
+}
+.esicons-tag:before {
+  content: "\f323";
+}
+.esicons-testimonial:before {
+  content: "\f473";
+}
+.esicons-attachment:before {
+  content: "\f546";
+}
+.esicons-link:before {
+  content: "\f103";
+}
+.esicons-quote:before {
+  content: "\f122";
+}
+.esicons-aside:before {
+  content: "\f123";
+}
+.esicons-chat:before {
+  content: "\f125";
+}
+.esicons-video:before {
+  content: "\f126";
+}
+.esicons-audio:before {
+  content: "\f127";
+}
+.esicons-image:before {
+  content: "\f128";
+}
+.esicons-status:before {
+  content: "\f130";
+}
+.esicons-gallery:before {
+  content: "\f161";
+}
+.esicons-comment:before {
+  content: "\f101";
+}
+.esicons-sticky:before {
+  content: "\f109";
+}
+.esicons-user:before {
+  content: "\f110";
+}
+.esicons-key:before {
+  content: "\f112";
+}
+.esicons-calendar:before {
+  content: "\f145";
+}
+.esicons-edit:before {
+  content: "\f464";
+}
+.esicons-time:before {
+  content: "\f469";
+}
+.esicons-calendar-2:before {
+  content: "\f508";
+}
+.esicons-sticky-2:before {
+  content: "\f537";
+}
+.esicons-camera:before {
+  content: "\f129";
+}
+.esicons-video-camera:before {
+  content: "\f234";
+}
+.esicons-video-2:before {
+  content: "\f236";
+}
+.esicons-microphone:before {
+  content: "\f482";
+}
+.esicons-menu:before {
+  content: "\f349";
+}
+.esicons-menu-2:before {
+  content: "\f228";
+}
+.esicons-menu-3:before {
+  content: "\f333";
+}
+.esicons-menu-4:before {
+  content: "\f329";
+}
+.esicons-arrow-up:before {
+  content: "\f142";
+}
+.esicons-arrow-right:before {
+  content: "\f139";
+}
+.esicons-arrow-down:before {
+  content: "\f140";
+}
+.esicons-arrow-left:before {
+  content: "\f141";
+}
+.esicons-arrow-2-up:before {
+  content: "\f342";
+}
+.esicons-arrow-2-right:before {
+  content: "\f344";
+}
+.esicons-arrow-2-down:before {
+  content: "\f346";
+}
+.esicons-arrow-2-left:before {
+  content: "\f340";
+}
+.esicons-arrow-3-up:before {
+  content: "\f343";
+}
+.esicons-arrow-3-right:before {
+  content: "\f345";
+}
+.esicons-arrow-3-down:before {
+  content: "\f347";
+}
+.esicons-arrow-3-left:before {
+  content: "\f341";
+}
+.esicons-home:before {
+  content: "\f102";
+}
+.esicons-globe:before {
+  content: "\f319";
+}
+.esicons-item:before {
+  content: "\f180";
+}
+.esicons-search:before {
+  content: "\f179";
+}
+.esicons-search-2:before {
+  content: "\f400";
+}
+.esicons-email:before {
+  content: "\f466";
+}
+.esicons-quote-2:before {
+  content: "\f11a";
+}
+.esicons-dot:before {
+  content: "\f428";
+}
+.esicons-check:before {
+  content: "\f147";
+}
+.esicons-close-2:before {
+  content: "\f158";
+}
+.esicons-close:before {
+  content: "\f335";
+}
+.esicons-plus:before {
+  content: "\f543";
+}
+.esicons-minus:before {
+  content: "\f421";
+}
+

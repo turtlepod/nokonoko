@@ -72,6 +72,7 @@ function tamatebako_strings(){
 		'previous_comment' => 'Previous',
 		'comments_closed_pings_open' => 'Comments are closed, but trackbacks and pingbacks are open.',
 		'comments_closed' => 'Comments are closed.',
+		'comment_parent_link_text' => 'In reply to %s',
 
 		/* functions/setup.php */
 		'untitled' => '(Untitled)',

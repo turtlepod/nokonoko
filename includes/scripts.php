@@ -17,8 +17,9 @@ function nokonoko_scripts_body_class( $classes ){
 /* === EDITOR STYLE === */
 
 $editor_css = array(
-	//tamatebako_google_fonts_url( array( 'Open Sans' => '400,400italic,700,700italic,800,800italic' ) ),
+	tamatebako_google_fonts_url( array( 'Open Sans' => '400,400italic,700,700italic,800,800italic' ) ),
 	'assets/css/editor.css',
+	'assets/esicons/fonts.css',
 );
 add_editor_style( $editor_css );
 
@@ -42,6 +43,7 @@ function nokonoko_enqueue_scripts(){
 	/* == CSS == */
 	//wp_enqueue_style( "{$name}-google-fonts" );
 	wp_enqueue_style( "esicons" );
+	wp_enqueue_style( "esocons" );
 	wp_enqueue_style( "{$name}-style" ); /* main css. */
 
 	if( is_child_theme() ) wp_enqueue_style( "{$child}-style" ); /* child theme css. */
@@ -84,7 +86,10 @@ function nokonoko_register_scripts(){
 	wp_register_style( "{$name}-google-fonts", tamatebako_google_fonts_url( array( 'Open Sans' => '400,400italic,700,700italic,800,800italic' ) ) );
 
 	/* Esicons */
-	wp_register_style( "esicons", tamatebako_theme_file( "assets/esicons/style", "css" ), array(), '1.0.0', 'all' );
+	wp_register_style( "esicons", tamatebako_theme_file( "assets/esicons/fonts", "css" ), array(), '2.0.0', 'all' );
+
+	/* Esocons */
+	wp_register_style( "esocons", tamatebako_theme_file( "assets/esocons/fonts", "css" ), array(), '1.0.0', 'all' );
 
 	/* Theme Debug */
 	wp_register_style( "{$name}-debug", tamatebako_theme_file( "assets/css/base/debug", "css" ), array() );

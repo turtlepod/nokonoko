@@ -22,7 +22,7 @@
 
 			<?php if ( has_post_thumbnail() ) { ?>
 				<a class="theme-thumbnail-link" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'alignright theme-thumbnail', 'alt' => get_the_title() ) ); ?>
+					<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'theme-thumbnail', 'alt' => get_the_title() ) ); ?>
 				</a>
 			<?php } ?>
 

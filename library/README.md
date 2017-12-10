@@ -8,6 +8,15 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 
 ###Changelog
 
+**3.5.0 - 14.Dec.2016**
+
+* NokoNoko: Update Esicons. Add Esocons.
+* NokoNoko: Min Req: PHP 5.3 + WP 4.7 (yey!)
+* Change pagination mid_size from "3" to "2".
+* SVG utility function
+* Comment parent link
+* Plans: Upsell stuff
+
 **3.4.0 - 05.Dec.2016**
 
 * Remove Custom CSS Module. No longer needed in WP.4.7.

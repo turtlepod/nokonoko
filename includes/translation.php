@@ -33,6 +33,7 @@ $texts = array(
 	'previous_comment'            => _x( 'Previous', 'comment', 'nokonoko' ),
 	'comments_closed_pings_open'  => _x( 'Comments are closed, but trackbacks and pingbacks are open.', 'comment', 'nokonoko' ),
 	'comments_closed'             => _x( 'Comments are closed.', 'comment', 'nokonoko' ),
+	'comment_parent_link_text'    => _x( 'In reply to %s', 'comment', 'nokonoko' ),
 
 	/* functions/setup.php */
 	'untitled'                    => _x( '(Untitled)', 'entry', 'nokonoko' ),

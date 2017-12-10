@@ -16,11 +16,23 @@ function tamatebako_comments_nav(){
 
 	<div class="comments-nav">
 
-		<?php previous_comments_link( '<span class="prev-comments"><span class="screen-reader-text">' . tamatebako_string( 'previous_comment' ) . '</span></span>' ); ?>
+		<?php if( is_rtl() ){ ?>
 
-		<span class="page-numbers"><?php printf( '%1$s / %2$s', get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); ?></span>
+			<?php next_comments_link( '<span class="next-comments"><span class="screen-reader-text">' . tamatebako_string( 'next_comment' ) . '</span></span>' ); ?>
 
-		<?php next_comments_link( '<span class="next-comments"><span class="screen-reader-text">' . tamatebako_string( 'next_comment' ) . '</span></span>' ); ?>
+			<span class="page-numbers"><?php printf( '%2$s / %1$s', get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); ?></span>
+
+			<?php previous_comments_link( '<span class="prev-comments"><span class="screen-reader-text">' . tamatebako_string( 'previous_comment' ) . '</span></span>' ); ?>
+
+		<?php } else { ?>
+
+			<?php previous_comments_link( '<span class="prev-comments"><span class="screen-reader-text">' . tamatebako_string( 'previous_comment' ) . '</span></span>' ); ?>
+
+			<span class="page-numbers"><?php printf( '%1$s / %2$s', get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); ?></span>
+
+			<?php next_comments_link( '<span class="next-comments"><span class="screen-reader-text">' . tamatebako_string( 'next_comment' ) . '</span></span>' ); ?>
+
+		<?php } ?>
 
 	</div><!-- .comments-nav -->
 
@@ -147,4 +159,38 @@ function tamatebako_comment_moderation_message(){
 	?>
 	<p class="comment-awaiting-moderation"><?php echo tamatebako_string( 'comment_moderation_message' );?></p>
 	<?php
+}
+
+/**
+ * Get comment parent link
+ * @link http://justintadlock.com/archives/2016/11/16/designing-better-nested-comments
+ * @since 3.5.0
+ */
+function tamatebako_get_comment_parent_link( $args = array() ) {
+
+	$link = '';
+
+	$defaults = array(
+		'text'   => tamatebako_string( 'comment_parent_link_text' ), // Defaults.
+		'depth'  => 3,                                               // At what level should the link show.
+		'before' => '<div class="comment-parent">',                  // String to output before link.
+		'after'  => '</div>'                                         // String to output after link.
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	if ( $args['depth'] <= $GLOBALS['comment_depth'] ) {
+
+		$parent = get_comment()->comment_parent;
+
+		if ( 0 < $parent ) {
+
+			$url  = esc_url( get_comment_link( $parent ) );
+			$text = sprintf( $args['text'], get_comment_author( $parent ) );
+
+			$link = sprintf( '%s<a class="comment-parent-link" href="%s"><span>%s</span></a>%s', $args['before'], $url, $text, $args['after'] );
+		}
+	}
+
+	return $link;
 }
