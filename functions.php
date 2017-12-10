@@ -55,9 +55,6 @@ function nokonoko_theme_setup(){
 	// Header image.
 	tamatebako_include( 'includes/header-image' );
 
-	// Utility.
-	tamatebako_include( 'includes/utility' );
-
 	// Post Formats.
 	tamatebako_include( 'includes/post-formats' );
 
