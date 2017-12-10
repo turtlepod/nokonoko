@@ -23,49 +23,31 @@ function nokonoko_theme_setup(){
 	// Minimum system requirements.
 	$back_compat_args = array(
 		'theme_name'   => 'NokoNoko',
-		'wp_requires'  => '4.7',
-		'php_requires' => '5.3',
+		'wp_requires'  => '4.9',
+		'php_requires' => '5.6',
 	);
 	add_theme_support( 'tamatebako-back-compat', $back_compat_args );
 	if ( ! tamatebako_minimum_requirement( $back_compat_args ) ) {
 		return;
 	}
 
-	// Translations.
-	tamatebako_include( 'includes/translation' );
+	// Initial Setup.
+	tamatebako_include( 'includes/functions-setup' );
 
-	// Scripts.
-	tamatebako_include( 'includes/scripts' );
+	// WordPress.
+	tamatebako_include( 'includes/functions-wordpress' );
 
-	// Setup.
-	tamatebako_include( 'includes/setup' );
+	// Framework.
+	tamatebako_include( 'includes/functions-framework' );
 
-	// Logo.
-	tamatebako_include( 'includes/custom-logo' );
+	// Template functions.
+	tamatebako_include( 'includes/functions-template' );
 
-	// Custom fonts.
-	tamatebako_include( 'includes/custom-fonts' );
+	// Utility functions.
+	tamatebako_include( 'includes/functions-utility' );
 
-	// Layouts.
-	tamatebako_include( 'includes/layouts' );
-
-	// Backgrund.
-	tamatebako_include( 'includes/background' );
-
-	// Header image.
-	tamatebako_include( 'includes/header-image' );
-
-	// Post Formats.
-	tamatebako_include( 'includes/post-formats' );
-
-	// Customizer.
-	tamatebako_include( 'includes/customizer' );
-
-	// Functions.
-	tamatebako_include( 'includes/functions' );
-
-	// Updater.
-	tamatebako_include( 'includes/updater' );
+	// Updater Class.
+	tamatebako_include( 'includes/class-updater' );
 }
 
 do_action( 'tamatebako_after_setup' );
