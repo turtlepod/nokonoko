@@ -1,67 +1,74 @@
 <?php
 /**
  * Theme Functions
-** ---------------------------- */
+ *
+ * @since 1.0.0
+ * @author GenbuMedia
+ */
 
-/* Load Library. */
+// Load library.
 require_once( trailingslashit( get_template_directory() ) . 'library/tamatebako.php' );
 
-/* Load theme general setup */
+// Load theme general setup.
 add_action( 'after_setup_theme', 'nokonoko_theme_setup', 5 );
 
 /**
- * Setup
+ * Setup.
+ * Loaded early so child theme can easily override it.
+ *
+ * @since 1.0.0
  */
 function nokonoko_theme_setup(){
 
-	/* === MINIMUM SYSTEM REQ === */
+	// Minimum system requirements.
 	$back_compat_args = array(
 		'theme_name'   => 'NokoNoko',
 		'wp_requires'  => '4.7',
 		'php_requires' => '5.3',
 	);
 	add_theme_support( 'tamatebako-back-compat', $back_compat_args );
-	if( ! tamatebako_minimum_requirement( $back_compat_args ) ) return;
+	if ( ! tamatebako_minimum_requirement( $back_compat_args ) ) {
+		return;
+	}
 
-	/* === TRANSLATION === */
+	// Translations.
 	tamatebako_include( 'includes/translation' );
 
-	/* === SCRIPTS === */
+	// Scripts.
 	tamatebako_include( 'includes/scripts' );
 
-	/* === SETUP: Sidebars, Menus, Image Sizes, Content Width === */
+	// Setup.
 	tamatebako_include( 'includes/setup' );
 
-	/* === LOGO === */
+	// Logo.
 	tamatebako_include( 'includes/custom-logo' );
 
-	/* === CUSTOM FONTS === */
+	// Custom fonts.
 	tamatebako_include( 'includes/custom-fonts' );
 
-	/* === LAYOUTS === */
+	// Layouts.
 	tamatebako_include( 'includes/layouts' );
 
-	/* === BACKGROUND === */
+	// Backgrund.
 	tamatebako_include( 'includes/background' );
 
-	/* === HEADER IMAGE === */
+	// Header image.
 	tamatebako_include( 'includes/header-image' );
 
-	/* === UTILITY: Custom CSS === */
+	// Utility.
 	tamatebako_include( 'includes/utility' );
 
-	/* === POST FORMATS === */
+	// Post Formats.
 	tamatebako_include( 'includes/post-formats' );
 
-	/* === CUSTOMIZER === */
+	// Customizer.
 	tamatebako_include( 'includes/customizer' );
 
-	/* === FUNCTIONS === */
+	// Functions.
 	tamatebako_include( 'includes/functions' );
 
-	/* === UPDATER === */
+	// Updater.
 	tamatebako_include( 'includes/updater' );
-
 }
 
 do_action( 'tamatebako_after_setup' );
