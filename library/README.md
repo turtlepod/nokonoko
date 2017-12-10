@@ -4,9 +4,14 @@ WordPress theme engine for faster theme development.
 
 **Copyright & license**<br />
 This framework is licensed under the [GNU General Public License](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 (GPL) or later.<br />
-2016 © [Genbu Media](http://genbumedia.com/). All rights reserved.
+2017 © [Genbu Media](http://genbumedia.com/). All rights reserved.
 
 ###Changelog
+
+**4.0.0 - ???**
+
+* WPCS
+* Remove old features.
 
 **3.5.0 - 14.Dec.2016**
 

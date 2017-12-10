@@ -1,6 +1,6 @@
 <?php
 /**
- * Tamatebako Framework Integration
+ * Tamatebako Box Integration
  *
  * - Translations.
  * - Custom Fonts.
@@ -113,12 +113,6 @@ $fonts_strings = array(
 add_theme_support( 'tamatebako-custom-fonts', $fonts_config, $fonts_settings, $fonts_strings );
 
 
-/* === HIDE PAGE TITLES === */
-
-// Hide Page Title Option.
-add_theme_support( 'tamatebako-hide-page-title', array( 'label' => _x( 'Hide title in single page?', 'hide page title', 'nokonoko' ) ) );
-
-
 /* === THEME LAYOUTS === */
 
 // Layout Setup.
@@ -156,6 +150,12 @@ $layouts_strings = array(
 add_theme_support( 'tamatebako-layouts', $layouts, $layouts_args, $layouts_strings );
 
 
+/* === HIDE PAGE TITLES === */
+
+// Hide Page Title Option.
+add_theme_support( 'tamatebako-hide-page-title', array( 'label' => _x( 'Hide title in single page?', 'hide page title', 'nokonoko' ) ) );
+
+
 /* === FULL SIZE BACKGROUND === */
 
 // Full size background.
@@ -163,12 +163,3 @@ $full_size_bg_args = array(
 	'label' => _x( 'Full Size Background', 'customizer', 'nokonoko' ),
 );
 add_theme_support( 'tamatebako-full-size-background', $full_size_bg_args );
-
-
-
-
-
-
-
-
-
