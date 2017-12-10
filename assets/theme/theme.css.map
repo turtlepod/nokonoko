@@ -1,0 +1,1 @@
+{"version":3,"sources":["modules/a.scss"],"names":[],"mappings":"AAAA,CAAC,CAAC;EACD,KAAK,EAAE,IAAI;EACX,aAAa,EAAE,GAAG,CAAC,KAAK,CAAC,wBAAyB,GAClD;;AAHD,CAAC,CAAC;EACD,KAAK,EAAE,IAAI;EACX,aAAa,EAAE,GAAG,CAAC,KAAK,CAAC,wBAAyB,GAClD","file":"theme.css","sourcesContent":["a {\n\tcolor: #fff;\n\tborder-bottom: 1px solid rgba(255, 255, 255, 0.20);\n}"]}

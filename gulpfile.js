@@ -49,7 +49,7 @@ gulp.task( 'js:minify', function() {
 		'assets/theme/theme.js',
 	] )
 		.pipe( sourcemaps.init() )
-		.pipe( concat( 'assets/theme/theme.min.js' ) )
+		.pipe( concat( 'theme/theme.min.js' ) )
 		.pipe( uglify() )
 		.pipe( sourcemaps.mapSources( function( sourcePath, file ) {
 			return 'assets/' + sourcePath;
@@ -111,7 +111,7 @@ gulp.task( 'assets', [ 'minify' ] );
  */
 gulp.task( 'watch', function () {
 	// watch CSS
-	gulp.watch( 'resources/assets/css/*.css', [ 'css:minify' ] );
+	gulp.watch( 'assets/*.scss', [ 'css:compile' ] );
 });
 
 /**
