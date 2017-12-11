@@ -1,3 +1,7 @@
+/**
+ * Elements
+ */
+
 a,abbr,acronym,address,article,aside,audio,big,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,img,ins,kbd,label,legend,li,main,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,ul,var,video {
 	margin:0;
 	padding:0;
@@ -68,7 +72,7 @@ ol {
 	list-style-type:decimal;
 	margin-left: 3em;
 }
-	.rtl ol{
+	.rtl ol {
 		margin-left: 0;
 		margin-right: 3em;
 	}
@@ -137,7 +141,7 @@ dd address,li address {
 	margin:0;
 }
 /* Blockquote */
-blockquote,q{
+blockquote,q {
 	font-style:normal;
 	quotes:none;
 	margin: 0;
@@ -196,17 +200,17 @@ form label {
 :focus {
 	outline:0;
 }
-fieldset{
+fieldset {
 	width: 100%;
 	max-width: 100%;
 	padding: 1em;
 	border: 1px solid #ccc;
 }
-legend{
+legend {
 	border: 1px solid #ccc;
 	padding: 0 0.5em;
 }
-input, textarea, select, button{
+input, textarea, select, button {
 	font: inherit;
 	color: inherit;
 	display: block;
@@ -219,39 +223,39 @@ input, textarea, select, button{
 	border: 1px solid #ccc;
 	background: #fff;
 }
-optgroup{
+optgroup {
 	font: inherit;
 	font-weight: 600;
 }
 input:focus, input:active,
 textarea:focus, textarea:active,
-select:focus, select:active{
+select:focus, select:active {
 	border: 1px solid #aaa;
 	background: #fff;
 }
 input[type="checkbox"],
-input[type="radio"]{
+input[type="radio"] {
 	width: auto;
 	min-width: inherit;
 	display: inline;
 }
-input[type="range"]{
+input[type="range"] {
 	margin: 0;
 }
-input[type="color"]{
+input[type="color"] {
 	height: 2.5em;
 	width: 3em;
 	min-width: 0;
 	cursor: pointer;
 }
-input[type="file"]{
+input[type="file"] {
 	cursor: pointer;
 }
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
 button,
-.button{
+.button {
 	width: auto;
 	min-width: inherit;
 	background: #fff;
@@ -270,10 +274,10 @@ input[type="reset"]:focus,
 button:hover,
 button:focus,
 .button:hover,
-.button:focus{
+.button:focus {
 	border: 1px solid #aaa;
 }
-optgroup{
+optgroup {
 	max-width: 100%;
 	font-style: normal;
 }
@@ -285,7 +289,7 @@ table {
 	width: 100%;
 	border: 1px solid #ccc;
 }
-table caption{
+table caption {
 	font-size: 1.2em;
 }
 td,th {
@@ -293,7 +297,7 @@ td,th {
 	border: 1px solid #ccc;
 	padding: 0.5em;
 }
-th{
+th {
 	font-weight: 600;
 }
 td {

@@ -1,3 +1,7 @@
+/**
+ * Utility Class
+ */
+
 .clearfix:after {
 	content:".";
 	display:block;
@@ -7,6 +11,6 @@
 }
 /* JS */
 .js .hide-if-js,
-.no-js .hide-if-no-js{
+.no-js .hide-if-no-js {
 	display: none;
 }

@@ -1,10 +1,14 @@
-body#tinymce  .wpview-wrap .toolbar div,
-body#tinymce  #wp-image-toolbar div{
+/**
+ * Gallery
+ */
+
+body#tinymce .wpview-wrap .toolbar div,
+body#tinymce #wp-image-toolbar div {
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 }
-body#tinymce .gallery{
+body#tinymce .gallery {
 	padding: 10px;
 	margin-bottom: 0;
 }

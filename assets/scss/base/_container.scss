@@ -1,3 +1,7 @@
+/**
+ * Container
+ */
+
 html {
 	font-size:62.5%;
 }
@@ -18,7 +22,7 @@ body {
 		border: none;
 		max-width: 100%;
 	}
-#container{
+#container {
 	word-wrap: break-word;
 	word-break: normal;
 	-webkit-hyphens: auto;
@@ -27,7 +31,7 @@ body {
 	hyphens: auto;
 }
 /* Admin Bar Fix */
-.adminbar-input{
+.adminbar-input {
 	display: inline;
 	background: none;
 }

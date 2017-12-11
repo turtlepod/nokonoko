@@ -1,39 +1,41 @@
-/* Social Logos in Navigation Menus
------------------------------------------- */
+/**
+ * Social Logos in Menus
+ */
+
 .social-links,
-.rtl .social-links{
+.rtl .social-links {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	display: block;
 }
-.social-links:after{
+.social-links:after {
 	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
-.social-links li{
+.social-links li {
 	display: block;
 	float: left;
 }
-	.rtl .social-links li{
+	.rtl .social-links li {
 		float: right;
 	}
-.social-links a{
+.social-links a {
 	text-decoration: none;
 	display: block;
 	float: left;
 	margin-right: 5px;
 	margin-bottom: 5px;
 }
-	.rtl .social-links a{
+	.rtl .social-links a {
 		float: right;
 		margin-right: 0;
 		margin-left: 5px;
 	}
 .social-links a:hover,
-.social-links a:focus{
+.social-links a:focus {
 	opacity: 0.8;
 }
-.social-links a:before{
+.social-links a:before {
 	content: "\e92e"; /* Link icon */
 	display: block;
 	font-family: "esocons";
@@ -111,7 +113,7 @@
 
 /* ICONS COLOR
 ------------------------------------------ */
-.social-links-color a:before{
+.social-links-color a:before {
 	color: #444;
 	background: transparent;
 }
@@ -179,7 +181,7 @@
 
 /* ICONS BACKGROUND COLOR
 ------------------------------------------ */
-.social-links-background a:before{
+.social-links-background a:before {
 	color: #fff;
 	background: #444;
 }
@@ -243,3 +245,4 @@
 .social-links-background .smartphone-icon a:before { background: #444; }
 .social-links-background .star-icon a:before { background: #444; }
 .social-links-background .user-icon a:before { background: #444; }
+

@@ -1,3 +1,7 @@
+/**
+ * Media and Images
+ */
+
 img {
 	max-width:100%;
 	height:auto;
@@ -28,19 +32,19 @@ a img.alignnone {
 	max-width:100%;
 }
 .wp-caption-text,
-.wp-caption-dd{
+.wp-caption-dd {
 	font: inherit;
 	text-align: left;
 	margin-bottom: 0;
 	padding: 0;
 }
 .html5-captions .wp-caption,
-.wp-caption{
+.wp-caption {
 	padding: 10px;
 	padding: 1rem;
 	background: #fff;
 	border: 1px solid #ccc;
 }
-iframe{
+iframe {
 	max-width: 100%;
 }

@@ -1,25 +1,29 @@
-.wp-editor-wrap{
+/**
+ * WP Editor (Front End)
+ */
+
+.wp-editor-wrap {
 	margin-bottom: 20px;
 	margin-bottom: 2rem;
 	max-width: 100%;
 }
 .wp-editor-wrap button:hover,
-.wp-editor-wrap button:focus{
+.wp-editor-wrap button:focus {
 	border: none;
 }
-.wp-editor-container{
+.wp-editor-container {
 	background: #fff;
 	border: 1px solid #e5e5e5
 }
 .wp-switch-editor,
 .wp-core-ui .button-group.button-small .button,
-.wp-core-ui .button.button-small{
+.wp-core-ui .button.button-small {
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 }
 .wp-editor-container textarea.wp-editor-area:active,
-.wp-editor-container textarea.wp-editor-area:focus{
+.wp-editor-container textarea.wp-editor-area:focus {
 	border: none;
 }
 .howto {
@@ -27,7 +31,7 @@
 	display: block;
 	font-style: italic;
 }
-#wp-link{
+#wp-link {
 	font-size: 13px;
 	font-size: 1.3rem;
 	-moz-box-sizing: content-box;
@@ -35,7 +39,7 @@
 	box-sizing: content-box;
 }
 #wp-link input[type="text"],
-#wp-link input[type="checkbox"]{
+#wp-link input[type="checkbox"] {
 	display: inline;
 	padding: 0;
 	margin-bottom: 0;

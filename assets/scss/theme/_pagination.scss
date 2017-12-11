@@ -28,20 +28,16 @@
 			margin: 0 0 2rem 1rem;
 		}
 
-		&:hover,
-		&:focus {
-			border: 1px solid #aaa;
-		}
-		.current& {
+		&.current {
 			color: #ccc;
 			border: 1px solid #eee;
 		}
-		.dots& {
+		&.dots {
 			color: #ccc;
 			border: 1px solid #eee;
 		}
 
-		.prev& {
+		&.prev {
 
 			&:before {
 				content: "\f340";
@@ -55,7 +51,7 @@
 			}
 		}
 
-		.next& {
+		&.next {
 
 			&:after {
 				content: "\f344";

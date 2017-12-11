@@ -1,13 +1,21 @@
-.alignleft,.left {
+/**
+ * Alignment
+ */
+
+.alignleft,
+.left {
 	float:left;
 }
-.alignright,.right {
+.alignright,
+.right {
 	float:right;
 }
-.aligncenter,.center {
+.aligncenter,
+.center {
 	display:block;
 }
-.alignnone,.block {
+.alignnone,
+.block {
 	clear:both;
 }
 .clear {
