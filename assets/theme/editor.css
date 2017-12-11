@@ -1,13 +1,18 @@
-/* === BASE ===
-*/
-@import url("base/base.css");
+/**
+ * Editor CSS
+ *
+ * @since 1.0.0
+ */
+
+/* === BASE === */
+@import url( "base.min.css" );
 
 
 /* === EDITOR STYLE === */
-body{
+body {
 	font-size:1.7em; /* use em for default, chrome fix */
 }
-a{
+a {
 	color: #21759B;
 }
 a:hover,
@@ -19,7 +24,7 @@ ul{
 }
 
 /* Blockquotes */
-blockquote{
+blockquote {
 	position: relative;
 	padding: 0 0 0 50px;
 	padding: 0 0 0 5rem;
@@ -27,12 +32,12 @@ blockquote{
 	font-size: 2rem;
 	line-height: 1.7em;
 }
-q{
+q {
 	position: relative;
 	padding: 0 0 0 20px;
 	padding: 0 0 0 2rem;
 }
-blockquote:before{
+blockquote:before {
 	content: "\f11a";
 	font-family: "esicons";
 	font-size: 40px;
@@ -41,7 +46,7 @@ blockquote:before{
 	left: 0;
 	-webkit-font-smoothing: antialiased;
 }
-q:before{
+q:before {
 	content: "\f11a";
 	font-family: "esicons";
 	color: #ccc;
@@ -51,12 +56,12 @@ q:before{
 }
 
 /* Forms */
-label{
+label {
 }
 /* Pre, Code */
-pre{
+pre {
 	background-color: #eee;
 }
-code{
+code {
 	background: #eee;
 }

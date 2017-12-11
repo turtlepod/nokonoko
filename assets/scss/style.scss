@@ -5,11 +5,13 @@
  */
 
 /* Base CSS. */
-@import 'base/_base.scss';
+@import 'base/base.scss';
+
+/* Menus CSS. */
+@import 'menus/menus.scss';
 
 /* Theme CSS. */
-@import 'theme/_theme.scss';
+@import 'theme/theme.scss';
 
 /* Plugin Support. */
-@import 'plugins/*';
-@import 'plugins/**/*';
+@import 'plugins/plugins.scss';

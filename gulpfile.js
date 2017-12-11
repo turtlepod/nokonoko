@@ -75,6 +75,28 @@ gulp.task( 'css:lint', function( cb ) {
 } );
 
 /**
+ * SCSS Base Compile
+ *
+ * @since 1.0.0
+ */
+gulp.task( 'css:base', function( cb ) {
+	pump( [
+		gulp.src( [
+			'assets/scss/base/base.scss'
+		] ),
+		sourcemaps.init(),
+		sassglob( {
+			extensions: [ '.scss' ]
+		} ),
+		sass(),
+		concat( 'theme/base.min.css' ),
+		cleancss(),
+		sourcemaps.write( '/' ),
+		gulp.dest( 'assets' )
+	], cb );
+} );
+
+/**
  * SCSS Process
  *
  * @since 1.0.0
@@ -97,7 +119,7 @@ gulp.task( 'css:compile', function( cb ) {
 } );
 
 /* Minify */
-gulp.task( 'minify', [ 'css:compile', 'js:minify'] );
+gulp.task( 'minify', [ 'css:base', 'css:compile', 'js:minify' ] );
 
 /** Assets */
 gulp.task( 'assets', [ 'minify' ] );
@@ -112,7 +134,7 @@ gulp.task( 'watch', function () {
 	gulp.watch( [
 		'assets/*.scss',
 		'assets/**/*.scss',
-	], [ 'css:compile' ] );
+	], [ 'css:base', 'css:compile' ] );
 
 	// JS.
 	gulp.watch( [
