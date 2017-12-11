@@ -1,40 +1,45 @@
-
+/**
+ * Menu
+ *
+ * @since 1.0.0
+ */
 
 /* Primary Menu */
-#menu-primary{
-	
-}
-	#menu-primary .menu-container{
+#menu-primary {
+
+	.menu-container {
 		
+		li a {
+			
+		}
+		li a:hover,
+		li a:focus {
+			
+		}
+		li li a {
+			
+		}
+		li li a:hover,
+		li li a:focus {
+			
+		}
+		.current-menu-item > a,
+		.current-menu-ancestor > a {
+			
+		}
 	}
-		#menu-primary li a{
-			
-		}
-		#menu-primary li a:hover,
-		#menu-primary li a:focus{
-			
-		}
-			#menu-primary li li a{
-				
-			}
-			#menu-primary li li a:hover,
-			#menu-primary li li a:focus{
-				
-			}
-			#menu-primary .current-menu-item > a,
-			#menu-primary .current-menu-ancestor > a{
-				
-			}
+
 	/* Menu Search */
-	#menu-primary .menu-search .search-toggle{
+	.menu-search .search-toggle{
 		
 	}
-	#menu-primary .menu-search .search-form{
+	.menu-search .search-form{
 		background: #fff;
 	}
-	#menu-primary .search-toggle-active.menu-search button{
+	.search-toggle-active.menu-search button{
 		
 	}
+}
 
 
 /* === MENU ===  */
