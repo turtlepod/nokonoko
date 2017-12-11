@@ -42,10 +42,6 @@ gulp.task( 'js:hint', function( cb ) {
  */
 gulp.task( 'js:minify', function() {
 	gulp.src( [
-		'assets/library/fitvids/jquery.fitvids.min.js',
-		'assets/library/flexslider/jquery.flexslider.min.js',
-		'assets/library/imagesloaded/jquery.imagesloaded.min.js',
-		'assets/library/webfontloader/webfontloader.min.js',
 		'assets/theme/theme.js',
 	] )
 		.pipe( sourcemaps.init() )
@@ -66,8 +62,8 @@ gulp.task( 'js:minify', function() {
 gulp.task( 'css:lint', function( cb ) {
 	pump( [
 		gulp.src( [
-			'assets/*.css',
-			'assets/**/*.css'
+			'assets/*.scss',
+			'assets/**/*.scss'
 		] ),
 		scsslint( {
 			'maxBuffer': 10007200,
@@ -110,8 +106,17 @@ gulp.task( 'assets', [ 'minify' ] );
  * @since 1.0.0
  */
 gulp.task( 'watch', function () {
-	// watch CSS
-	gulp.watch( 'assets/*.scss', [ 'css:compile' ] );
+	// CSS.
+	gulp.watch( [
+		'assets/*.scss',
+		'assets/**/*.scss',
+	], [ 'css:compile' ] );
+
+	// JS.
+	gulp.watch( [
+		'assets/*.js',
+		'assets/**/*.js',
+	], [ 'js:minify' ] );
 });
 
 /**

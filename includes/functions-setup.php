@@ -100,40 +100,29 @@ add_action( 'wp_enqueue_scripts', function() {
 	/* = REGISTER = */
 
 	// FitVids.
-	wp_register_script( 'fitvids', tamatebako_theme_file( 'assets/js/jquery.fitvids', 'js' ) , array( 'jquery' ), '1.1.0', true );
+	wp_register_script( 'fitvids', tamatebako_theme_file( 'assets/library/fitvids/jquery.fitvids', 'js' ) , array( 'jquery' ), '1.1.0', true );
 
 	// Flexslider.
-	wp_register_script( 'flexslider', tamatebako_theme_file( 'assets/flexslider/jquery.flexslider', 'js' ), array( 'jquery' ), '2.5.0', true );
+	wp_register_script( 'flexslider', tamatebako_theme_file( 'assets/library/flexslider/jquery.flexslider', 'js' ), array( 'jquery' ), '2.5.0', true );
 	wp_register_style( 'flexslider', tamatebako_theme_file( 'assets/flexslider/flexslider', 'css' ), array(), '2.5.0', 'all' );
 
 	// WebFontLoader.
-	wp_register_script( 'webfontloader', tamatebako_theme_file( 'assets/js/webfontloader', 'js' ), array(), '1.5.3', true );
+	wp_register_script( 'webfontloader', tamatebako_theme_file( 'assets/library/webfontloader', 'js' ), array(), '1.5.3', true );
 
 	// ImagesLoaded.
-	wp_register_script( 'imagesloaded', tamatebako_theme_file( 'assets/js/jquery.imagesloaded', 'js' ), array( 'jquery' ), '3.1.8', true );
+	wp_register_script( 'imagesloaded', tamatebako_theme_file( 'assets/library/jquery.imagesloaded', 'js' ), array( 'jquery' ), '3.1.8', true );
 
 	// Theme.
-	wp_register_script( "{$name}-script", tamatebako_theme_file( 'assets/js/jquery.theme', 'js' ), array( 'jquery', 'fitvids' ), tamatebako_theme_version(), true );
-
-	// Google fonts.
+	wp_register_script( "{$name}-script", tamatebako_theme_file( 'assets/theme/theme', 'js' ), array( 'jquery', 'fitvids' ), $version, true );
 	wp_register_style( "{$name}-google-fonts", tamatebako_google_fonts_url( array(
 		'Open Sans' => '400,400italic,700,700italic,800,800italic',
-	) ) );
-
-	// Icons.
-	wp_register_style( 'esicons', tamatebako_theme_file( 'assets/library/esicons/fonts', 'css' ), array(), '2.0.0', 'all' );
-	wp_register_style( 'esocons', tamatebako_theme_file( 'assets/library/esocons/fonts', 'css' ), array(), '1.0.0', 'all' );
-
-	// Debug.
-	wp_register_style( "{$name}-debug", tamatebako_theme_file( 'assets/css/base/debug', 'css' ), array() );
+	) ), array(), $version );
+	wp_register_style( "{$name}-debug", tamatebako_theme_file( 'assets/css/base/debug', 'css' ), array(), $version );
 
 	/* = ENQUEUE = */
 
-	wp_enqueue_script( "fitvids" );
 	wp_enqueue_script( "{$name}-script" );
 	//wp_enqueue_style( "{$name}-google-fonts" );
-	wp_enqueue_style( "esicons" );
-	wp_enqueue_style( "esocons" );
 	wp_enqueue_style( "{$name}-style" );
 	if ( is_child_theme() ) {
 		wp_enqueue_style( "{$child}-style" );

@@ -1,69 +1,24 @@
-/* === ELEMENTS === */
-@import 'elements.scss';
-
-/* === IMAGES & MEDIA === */
-@import 'media.scss';
-
-
-/* === LAYOUTS === */
-@import 'layouts.scss';
-
-
-/* === CONTAINER === */
-@import 'container.scss';
-
-/* === HEADER === */
-@import 'header.scss';
-
-
-/* === MENUS === */
-@import 'menus.scss';
-
-/* === CONTAINER WRAP === */
-@import 'container-wrap.scss';
-
-
-/* === MAIN === */
-@import 'main.scss';
-
-
-/* === CONTENT === */
-@import 'content.scss';
-
-
-/* === ARCHIVE HEADER === */
-@import 'archive-header.scss';
-
-
-
-/* === ENTRY === */
-@import 'entry.scss';
-
-/* === POST NAV: Next Post Link, Prev Post Link === */
-@import 'post-navigation.scss';
-
-/* === COMMENTS === */
-@import 'comments.scss';
-
-/* === LOOP PAGINATION === */
-@import 'pagination.scss';
-
-/* === SIDEBAR === */
-@import 'sidebar.scss';
-
-/* === WIDGETS === */
-@import 'widgets.scss';
-
-
-/* === FOOTER === */
-@import 'footer.scss';
-
-
-
 /**
- * Media Queries CSS
-******************************************/
+ * Theme CSS
+ *
+ * @since 4.0.0
+ */
 
-
-
-/* === LAYOUTS === */
+@import 'fonts.scss';
+@import 'elements.scss';
+@import 'media.scss';
+@import 'layouts.scss';
+@import 'container.scss';
+@import 'header.scss';
+@import 'menus.scss';
+@import 'container-wrap.scss';
+@import 'main.scss';
+@import 'content.scss';
+@import 'archive-header.scss';
+@import 'entry.scss';
+@import 'post-navigation.scss';
+@import 'comments.scss';
+@import 'pagination.scss';
+@import 'sidebar.scss';
+@import 'widgets.scss';
+@import 'footer.scss';

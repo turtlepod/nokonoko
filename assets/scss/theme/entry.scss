@@ -211,10 +211,10 @@
 			margin-left: 0.5rem;
 			-webkit-font-smoothing: antialiased;
 		}
-			.more-text:after{
+			.rtl .more-text:after{
 				display: none;
 			}
-			.more-text:before{
+			.rtl .more-text:before{
 				content: "\f341";
 				font-family: "esicons";
 				vertical-align: top;
