@@ -150,9 +150,14 @@ gulp.task( 'watch', function () {
  */
 gulp.task( 'checktextdomain', function() {
 	gulp.src( [ 
-		'*.php', 
-		'app/**/**.php', 
-		'resources/**/**.php'
+		'*.php',
+		'includes/**/**.php',
+		'comment/**/**.php',
+		'content/**/**.php',
+		'library/**/**.php',
+		'menu/**/**.php',
+		'sidebar/**/**.php',
+		'templates/**/**.php',
 	] )
 		.pipe( checktextdomain( {
 			text_domain: 'nokonoko',
@@ -186,7 +191,13 @@ gulp.task( 'makepot', function() {
 	gulp.src( [ 
 		'*.php', 
 		'**.php', 
-		'includes/**/**.php', 
+		'includes/**/**.php',
+		'comment/**/**.php',
+		'content/**/**.php',
+		'library/**/**.php',
+		'menu/**/**.php',
+		'sidebar/**/**.php',
+		'templates/**/**.php',
 	] )
 		.pipe( wpPot( {
 			domain: 'nokonoko',
