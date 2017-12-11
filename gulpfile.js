@@ -42,7 +42,9 @@ gulp.task( 'js:hint', function( cb ) {
  */
 gulp.task( 'js:minify', function() {
 	gulp.src( [
-		'assets/theme/theme.js',
+		'assets/js/accessibility.js',
+		'assets/js/menu.js',
+		'assets/js/fitvids.js',
 	] )
 		.pipe( sourcemaps.init() )
 		.pipe( concat( 'theme/theme.min.js' ) )
