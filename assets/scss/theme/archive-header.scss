@@ -1,0 +1,23 @@
+.archive-header{
+	padding: 20px;
+	padding: 2rem;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	margin-bottom: 2rem;
+}
+.archive-header:after{
+	content:".";display:block;height:0;clear:both;visibility:hidden;
+}
+	.archive-title{
+		font-size: 25px;
+		font-size: 2.5rem;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+	.archive-description{
+		margin-top: 20px;
+		margin-top: 2rem;
+	}
+	.archive-description p{
+		margin: 0;
+	}

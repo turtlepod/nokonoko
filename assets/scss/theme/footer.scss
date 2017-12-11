@@ -1,0 +1,30 @@
+
+#footer{
+	border-top: 1px solid #ccc;
+	width: 100%;
+	clear: both;
+}
+#menu-footer{
+}
+#menu-footer .menu-container{
+	border-top: none;
+}
+#menu-footer-items{
+	margin-top: -1px;
+}
+#menu-footer-items:after{
+	content:".";display:block;height:0;clear:both;visibility:hidden;
+}
+#menu-footer li a{
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: -1px;
+	background: #fff;
+}
+#footer > .wrap{
+	padding: 16px;
+	padding: 1.6rem;
+}
+#footer .copyright{
+	margin: 0;
+}

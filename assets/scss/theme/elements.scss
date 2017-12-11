@@ -1,0 +1,97 @@
+
+body{
+	background: #efefef;
+	font-size:1.7em; /* use em for default, chrome fix */
+}
+
+/* Link */
+a{
+	color: #0073aa;
+}
+a:hover,
+a:focus {
+	color: #00a0d2;
+}
+
+/* List */
+ul{
+	list-style: circle;
+}
+
+/* Blockquotes */
+blockquote{
+	position: relative;
+	padding: 0 0 0 50px;
+	padding: 0 0 0 5rem;
+	font-size: 20px;
+	font-size: 2rem;
+	line-height: 1.7em;
+}
+	.rtl blockquote{
+		padding: 0 50px 0 0;
+		padding: 0 5rem 0 0;
+	}
+q{
+	position: relative;
+	padding: 0 0 0 20px;
+	padding: 0 0 0 2rem;
+}
+	.rtl q{
+		padding: 0 50px 0 0;
+		padding: 0 5rem 0 0;
+	}
+blockquote:before{
+	content: "\f11a";
+	font-family: "esicons";
+	font-size: 40px;
+	color: #ccc;
+	position: absolute;
+	left: 0;
+	-webkit-font-smoothing: antialiased;
+}
+	.rtl blockquote:before{
+		left: auto;
+		right: 0;
+	}
+q:before{
+	content: "\f11a";
+	font-family: "esicons";
+	color: #ccc;
+	position: absolute;
+	left: 0;
+	-webkit-font-smoothing: antialiased;
+}
+	.rtl q:before{
+		left: auto;
+		right: 0;
+	}
+
+/* Forms */
+label{
+}
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button,
+.button{
+	padding: 10px 20px;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+button:hover,
+button:focus,
+.button:hover,
+.button:focus{
+}
+
+/* Pre, Code */
+pre{
+	background-color: #eee;
+}
+code{
+	background: #eee;
+}

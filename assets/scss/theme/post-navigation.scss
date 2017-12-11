@@ -1,0 +1,112 @@
+.post-navigation{
+	border: 1px solid #ccc;
+	background: #fff;
+	line-height: 1em;
+	margin-bottom: 20px;
+	margin-bottom: 2rem;
+}
+.post-navigation:after{
+	content:".";display:block;height:0;clear:both;visibility:hidden;
+}
+	.post-navigation .screen-reader-text{
+	}
+	.post-navigation .nav-prev{
+		padding: 20px;
+		padding: 2rem;
+		padding-left: 46px; /* 20 (padding) + 16 (icon) + 10 */
+		padding-left: 4.6rem;
+		width: 45%;
+		float: left;
+		text-align: left;
+		position: relative;
+	}
+		.rtl .post-navigation .nav-prev{
+			padding: 20px;
+			padding: 2rem;
+			padding-right: 46px; /* 20 (padding) + 16 (icon) + 10 */
+			padding-right: 4.6rem;
+			width: 45%;
+			float: right;
+			text-align: right;
+		}
+	.post-navigation .nav-next{
+		padding: 20px;
+		padding: 2rem;
+		padding-right: 46px;
+		padding-right: 4.6rem;
+		width: 45%;
+		float: right;
+		text-align: right;
+		position: relative;
+	}
+		.rtl .post-navigation .nav-next{
+			padding: 20px;
+			padding: 2rem;
+			padding-left: 46px;
+			padding-left: 4.6rem;
+			width: 45%;
+			float: left;
+			text-align: left;
+		}
+		.post-navigation .nav-prev a:before{
+			content: "\f340";
+			font-family: "esicons";
+			vertical-align: top;
+			padding: 20px;
+			padding: 2rem;
+			color: #444;
+			position: absolute;
+			top: 0;
+			left: 0;
+			-webkit-font-smoothing: antialiased;
+		}
+			.rtl .post-navigation .nav-prev a:before{
+				content: "\f344";
+				left: auto;
+				right: 0;
+			}
+		.post-navigation .nav-next a:after{
+			content: "\f344";
+			font-family: "esicons";
+			vertical-align: top;
+			padding: 20px;
+			padding: 2rem;
+			color: #444;
+			position: absolute;
+			top: 0;
+			right: 0;
+			-webkit-font-smoothing: antialiased;
+		}
+			.rtl .post-navigation .nav-next a:after{
+				content: "\f340";
+				right: auto;
+				left: 0;
+			}
+
+
+/* === LOOP-NAV === */
+@media screen and (max-width: 700px) {
+	.post-navigation{
+		border-bottom: 0;
+	}
+	.post-navigation .nav-prev,
+	.rtl .post-navigation .nav-prev{
+		width: 100%;
+		border-bottom: 1px solid #ccc;
+	}
+	.post-navigation .nav-next,
+	.rtl .post-navigation .nav-next{
+		width: 100%;
+		padding-right: 0;
+		padding-left: 46px;
+		padding-left: 4.6rem;
+		text-align: left;
+		border-bottom: 1px solid #ccc;
+	}
+	.rtl .post-navigation .nav-next a:after,
+	.post-navigation .nav-next a:after{
+		right: auto;
+		left: 0;
+	}
+}
+

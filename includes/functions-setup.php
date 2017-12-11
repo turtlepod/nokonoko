@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup Theme Elements
+ * Setup Theme Elements & Assets
  *
  * - Content width.
  * - Register sidebars.
@@ -121,8 +121,8 @@ add_action( 'wp_enqueue_scripts', function() {
 	) ) );
 
 	// Icons.
-	wp_register_style( 'esicons', tamatebako_theme_file( 'assets/esicons/fonts', 'css' ), array(), '2.0.0', 'all' );
-	wp_register_style( 'esocons', tamatebako_theme_file( 'assets/esocons/fonts', 'css' ), array(), '1.0.0', 'all' );
+	wp_register_style( 'esicons', tamatebako_theme_file( 'assets/library/esicons/fonts', 'css' ), array(), '2.0.0', 'all' );
+	wp_register_style( 'esocons', tamatebako_theme_file( 'assets/library/esocons/fonts', 'css' ), array(), '1.0.0', 'all' );
 
 	// Debug.
 	wp_register_style( "{$name}-debug", tamatebako_theme_file( 'assets/css/base/debug', 'css' ), array() );

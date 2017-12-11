@@ -1,9 +1,15 @@
-// Base.
-@import 'base/base.scss';
+/**
+ * Style
+ *
+ * @since 4.0.0
+ */
 
-// Theme.
-@import 'theme.scss';
+/* Base CSS. */
+@import 'base/_base.scss';
 
-// Plugins.
+/* Theme CSS. */
+@import 'theme/_theme.scss';
+
+/* Plugin Support. */
 @import 'plugins/*';
 @import 'plugins/**/*';
