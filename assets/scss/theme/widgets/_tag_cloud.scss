@@ -1,9 +1,12 @@
+/**
+ * Widget Tag Cloud
+ */
 
-/* Widget Tag Cloud */
-.widget_tag_cloud:after{
+.widget_tag_cloud:after {
 	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
-.tagcloud a{
+
+.tagcloud a {
 	font-size: 17px !important;
 	font-size: 1.7rem !important;
 	display: block;
@@ -15,13 +18,13 @@
 	color: #444;
 	background: #eee;
 }
-	.rtl .tagcloud a{
+	.rtl .tagcloud a {
 		float: right;
 		margin: 0 0 10px 10px;
 		margin: 0 0 1rem 1rem;
 	}
 .tagcloud a:hover,
-.tagcloud a:focus{
+.tagcloud a:focus {
 	color: #000;
 	background: #ddd;
 }

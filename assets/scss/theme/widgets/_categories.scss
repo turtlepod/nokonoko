@@ -1,20 +1,22 @@
+/**
+ * Widget Categories
+ */
 
-/* Widget Categories */
-.widget_categories ul{
+.widget_categories ul {
 	list-style: none;
 	margin: 0;
 }
-.widget_categories ul li{
+.widget_categories ul li {
 	position: relative;
 	padding-left: 20px;
 	padding-left: 2rem;
 }
-	.rtl .widget_categories ul li{
+	.rtl .widget_categories ul li {
 		padding-left: 0;
 		padding-right: 20px;
 		padding-right: 2rem;
 	}
-.widget_categories ul li:before{
+.widget_categories ul li:before {
 	content: '\f428';
 	margin-right: 5px;
 	font-family: "esicons";
@@ -24,7 +26,7 @@
 	left: 0;
 	-webkit-font-smoothing: antialiased;
 }
-	.rtl .widget_categories ul li:before{
+	.rtl .widget_categories ul li:before {
 		left: auto;
 		right: 0;
 	}

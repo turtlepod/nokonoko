@@ -1,60 +1,63 @@
+/**
+ * Layouts
+ */
 
 /* Right Sidebar */
-.layout-content-sidebar1 #main > .wrap{
+.layout-content-sidebar1 #main > .wrap {
 	margin-right: 320px;
 	margin-right: 32rem;
 }
-.layout-content-sidebar1 #content{
+.layout-content-sidebar1 #content {
 	float: left;
 }
-.layout-content-sidebar1 #sidebar-primary{
+.layout-content-sidebar1 #sidebar-primary {
 	float: right;
 	margin-right: -320px;
 	margin-right: -32rem;
 }
 
 /* Left Sidebar */
-.layout-sidebar1-content #main > .wrap{
+.layout-sidebar1-content #main > .wrap {
 	margin-left: 320px;
 	margin-left: 32rem;
 }
-.layout-sidebar1-content #content{
+.layout-sidebar1-content #content {
 	float: right;
 }
-.layout-sidebar1-content #sidebar-primary{
+.layout-sidebar1-content #sidebar-primary {
 	float: left;
 	margin-left: -320px;
 	margin-left: -32rem;
 }
 
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
 	/* Push primary sidebar to bottom */
 	.wordpress #main > .wrap,
-	.rtl .wordpress #main > .wrap{
+	.rtl .wordpress #main > .wrap {
 		margin-right: 0;
 		margin-left: 0;
 	}
 	.wordpress #content,
-	.rtl .wordpress #content{
+	.rtl .wordpress #content {
 		float: none;
 	}
 	.wordpress #sidebar-primary,
-	.rtl .wordpress #sidebar-primary{
+	.rtl .wordpress #sidebar-primary {
 		margin-right: 0;
 		margin-left: 0;
 		float: left;
 		width: 100%;
 	}
 	/* 580px Content Width */
-	#container{
+	#container {
 		max-width: 660px;
 	}
 }
-@media screen and (max-width: 660px){
+@media screen and ( max-width: 660px ) {
 	/* Full width container */
 	#container,
-	.rtl #container{
+	.rtl #container {
 		width: 100%;
 		clear: both;
 		max-width: 100%;
@@ -64,7 +67,7 @@
 
 	/* Header: Social Icons */
 	#branding,
-	.rtl #branding{
+	.rtl #branding {
 		float: none;
 		width: 100%;
 		margin-bottom: 20px;
@@ -72,7 +75,7 @@
 		text-align: center;
 	}
 	.rtl #social-links,
-	#social-links{
+	#social-links {
 		float: none;
 		margin: 0 auto;
 		text-align: center;
@@ -80,7 +83,7 @@
 	#social-links li,
 	.rtl #social-links li,
 	#social-links li a,
-	.rtl #social-links li a{
+	.rtl #social-links li a {
 		float: none;
 		margin-right: 0;
 		display: inline-block;

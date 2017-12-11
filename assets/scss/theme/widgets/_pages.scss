@@ -1,20 +1,22 @@
+/**
+ * Widget Pages
+ */
 
-/* Widget Pages */
-.widget_pages ul{
+.widget_pages ul {
 	list-style: none;
 	margin: 0;
 }
-.widget_pages ul li{
+.widget_pages ul li {
 	position: relative;
 	padding-left: 20px;
 	padding-left: 2rem;
 }
-	.rtl .widget_pages ul li{
+	.rtl .widget_pages ul li {
 		padding-left: 0;
 		padding-right: 20px;
 		padding-right: 2rem;
 	}
-.widget_pages ul li:before{
+.widget_pages ul li:before {
 	content: '\f428';
 	margin-right: 5px;
 	font-family: "esicons";
@@ -24,7 +26,7 @@
 	left: 0;
 	-webkit-font-smoothing: antialiased;
 }
-	.rtl .widget_pages ul li:before{
+	.rtl .widget_pages ul li:before {
 		left: auto;
 		right: 0;
 	}

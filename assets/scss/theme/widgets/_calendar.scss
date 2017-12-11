@@ -1,15 +1,15 @@
+/**
+ * Widget Calendar
+ */
 
-/* Widget Calendar */
-#wp-calendar{
+#wp-calendar {
 	line-height: 1em;
-}
-#wp-calendar td,
-#wp-calendar th{
-	padding: 5px;
-}
-#wp-calendar,
-#wp-calendar th,
-#wp-calendar tr,
-#wp-calendar td{
 	text-align: center;
+
+	td,
+	tr,
+	th {
+		padding: 5px;
+		text-align: center;
+	}
 }

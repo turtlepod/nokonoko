@@ -1,0 +1,19 @@
+/**
+ * Widget Media Image
+ */
+
+.widget_media_image {
+	text-align: center;
+
+	.widget-title {
+		text-align: left;
+	}
+
+	.wp-caption {
+		margin: 0 auto;
+	}
+}
+
+.rtl .widget_media_image .widget-title {
+	text-align: right;
+}

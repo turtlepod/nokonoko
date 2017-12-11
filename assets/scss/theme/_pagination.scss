@@ -1,12 +1,17 @@
-.navigation.pagination{
-}
-.navigation.pagination:before,
-.navigation.pagination:after{
-	content:".";display:block;height:0;clear:both;visibility:hidden;
-}
-	.navigation.pagination .screen-reader-text{
+/**
+ * Pagination
+ */
+
+.navigation.pagination {
+
+	&:before,
+	&:after {
+		content:".";display:block;height:0;clear:both;visibility:hidden;
 	}
-	.navigation.pagination .page-numbers{
+
+	.screen-reader-text {
+	}
+	.page-numbers {
 		line-height: 1;
 		padding: 10px 14px;
 		padding: 1rem 1.4rem;
@@ -16,44 +21,53 @@
 		border: 1px solid #ccc;
 		margin: 0 10px 20px 0;
 		margin: 0 1rem 2rem 0;
-	}
-		.rtl .navigation.pagination .page-numbers{
+
+		.rtl & {
 			float: right;
 			margin: 0 0 20px 10px;
 			margin: 0 0 2rem 1rem;
 		}
-	.navigation.pagination a.page-numbers:hover,
-	.navigation.pagination a.page-numbers:focus{
-		border: 1px solid #aaa;
-	}
-	.navigation.pagination .page-numbers.current{
-		color: #ccc;
-		border: 1px solid #eee;
-	}
-	.navigation.pagination .page-numbers.dots{
-		color: #ccc;
-		border: 1px solid #eee;
-	}
-	.navigation.pagination .page-numbers.prev{
-	}
-	.navigation.pagination .page-numbers.next{
-	}
-	.navigation.pagination .page-numbers.prev:before{
-		content: "\f340";
-		font-family: "esicons";
-		vertical-align: top;
-		-webkit-font-smoothing: antialiased;
-	}
-		.rtl .navigation.pagination .page-numbers.prev:before{
-			content: "\f344";
+
+		&:hover,
+		&:focus {
+			border: 1px solid #aaa;
 		}
-	.navigation.pagination .page-numbers.next:after{
-		content: "\f344";
-		font-family: "esicons";
-		vertical-align: top;
-		-webkit-font-smoothing: antialiased;
-	}
-		.rtl .navigation.pagination .page-numbers.next:after{
-			content: "\f340";
+		.current& {
+			color: #ccc;
+			border: 1px solid #eee;
 		}
+		.dots& {
+			color: #ccc;
+			border: 1px solid #eee;
+		}
+
+		.prev& {
+
+			&:before {
+				content: "\f340";
+				font-family: "esicons";
+				vertical-align: top;
+				-webkit-font-smoothing: antialiased;
+
+				.rtl & {
+					content: "\f344";
+				}
+			}
+		}
+
+		.next& {
+
+			&:after {
+				content: "\f344";
+				font-family: "esicons";
+				vertical-align: top;
+				-webkit-font-smoothing: antialiased;
+
+				.rtl & {
+					content: "\f340";
+				}
+			}
+		}
+	}
+}
 

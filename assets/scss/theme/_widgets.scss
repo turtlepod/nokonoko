@@ -1,7 +1,5 @@
 /**
  * Widgets CSS.
- *
- * @since 1.0.0
  */
 
 .widget {
@@ -33,3 +31,6 @@
 @import 'widgets/_rss.scss';
 @import 'widgets/_search.scss';
 @import 'widgets/_tag_cloud.scss';
+@import 'widgets/_media_image.scss';
+@import 'widgets/_media_gallery.scss';
+@import 'widgets/_media_video.scss';

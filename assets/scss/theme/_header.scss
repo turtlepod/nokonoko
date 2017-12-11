@@ -1,33 +1,36 @@
+/**
+ * Header
+ */
 
-#header{
+#header {
 	padding: 20px;
 	padding: 2rem;
 }
-#header:after{
+#header:after {
 	content:".";display:block;height:0;clear:both;visibility:hidden;
 }
-	#branding{
+	#branding {
 		float: left;
 	}
-		.rtl #branding{
+		.rtl #branding {
 			float: right;
 		}
-	#branding:after{
+	#branding:after {
 		content:".";display:block;height:0;clear:both;visibility:hidden;
 	}
-		.site-title{
+		.site-title {
 			font-size: 25px;
 			font-size: 2.5rem;
 			font-weight: 800;
 			line-height: 1.2em;
 			margin: 0;
 		}
-			.site-title a{
+			.site-title a {
 			}
 			.site-title a:hover,
 			.site-title a:focus{
 			}
-		.site-description{
+		.site-description {
 			font-size: 17px;
 			font-size: 1.7rem;
 			font-weight: 400;
@@ -35,23 +38,24 @@
 			margin: 0;
 		}
 	/* Logo */
-	.wp-custom-logo{
+	.wp-custom-logo {
 	}
-	.custom-logo-link{
+	.custom-logo-link {
 		display: block;
 		float: left;
 	}
-		.rtl .custom-logo-link{
+		.rtl .custom-logo-link {
 			float: right;
 		}
-	.custom-logo{
+	.custom-logo {
 		display: block;
 	}
 
-#social-links{
+#social-links {
 	float: right;
 }
 
-	.rtl #social-links{
+	.rtl #social-links {
 		float: left;
 	}
+
