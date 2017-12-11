@@ -1,0 +1,31 @@
+
+/* Widget Archives */
+.widget_archive ul {
+	list-style: none;
+	margin: 0;
+}
+.widget_archive ul li {
+	position: relative;
+	padding-left: 20px;
+	padding-left: 2rem;
+}
+	.rtl .widget_archive ul li {
+		position: relative;
+		padding-left: 0;
+		padding-right: 20px;
+		padding-right: 2rem;
+	}
+.widget_archive ul li:before {
+	content: '\f428';
+	margin-right: 5px;
+	font-family: "esicons";
+	vertical-align: top;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-font-smoothing: antialiased;
+}
+	.rtl .widget_archive ul li:before {
+		left: auto;
+		right: 0;
+	}

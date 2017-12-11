@@ -1,0 +1,35 @@
+/**
+ * Widgets CSS.
+ *
+ * @since 1.0.0
+ */
+
+.widget {
+	padding: 20px;
+	padding: 2rem;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	margin-bottom: 2rem;
+}
+.widget-title {
+	font-size: 17px;
+	font-size: 1.7rem;
+	line-height: 1em;
+	padding: 16px 20px;
+	padding: 1.6rem 2rem;
+	margin: -20px -20px 20px -20px;
+	border-bottom: 1px solid #ccc;
+}
+
+/* Widget styles. */
+@import 'widgets/_archives.scss';
+@import 'widgets/_calendar.scss';
+@import 'widgets/_categories.scss';
+@import 'widgets/_nav_menu.scss';
+@import 'widgets/_meta.scss';
+@import 'widgets/_pages.scss';
+@import 'widgets/_recent_comments.scss';
+@import 'widgets/_recent_entries.scss';
+@import 'widgets/_rss.scss';
+@import 'widgets/_search.scss';
+@import 'widgets/_tag_cloud.scss';
