@@ -118,7 +118,7 @@ function tamatebako_sanitize_hex_color_no_hash( $color ) {
  *
  * @param string       $input Data input.
  * @param string|array $type  File type. Use array for multiple types.
- * @return 
+ * @return string
  */
 function tamatebako_sanitize_file_type( $input, $type = 'image' ) {
 	// Check file type of input.
@@ -151,7 +151,7 @@ function tamatebako_sanitize_file_type( $input, $type = 'image' ) {
  *
  * @param string       $input Data input.
  * @param string|array $ext   Allowed file extention.
- * @param string
+ * @return string
  */
 function tamatebako_sanitize_file_ext( $input, $ext = 'css' ) {
 	// Check file type.
@@ -177,7 +177,6 @@ function tamatebako_sanitize_file_ext( $input, $ext = 'css' ) {
 
 	return '';
 }
-
 
 /**
  * Sanitize Scripts such as CSS code.
