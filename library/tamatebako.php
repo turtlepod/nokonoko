@@ -9,7 +9,7 @@
  * @version   4.0.0
  * @author    David Chandra <david@genbumedia.com>
  * @copyright Copyright (c) 2018, Genbu Media
- * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-3.0.html
 **/
 
 /**
@@ -91,7 +91,7 @@ function tamatebako_load_theme_support() {
 	}
 
 	// Full size background.
-	if ( current_theme_supports( 'custom-background' ) ){
+	if ( current_theme_supports( 'custom-background' ) ) {
 		tamatebako_require_if_theme_supports( 'tamatebako-full-size-background', 'modules/full-size-background' );
 	}
 

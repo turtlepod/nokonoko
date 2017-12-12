@@ -3,6 +3,7 @@
  * Setup Defaults Theme Features.
  *
  * @since 3.0.0
+ * @author GenbuMedia
  * @access private
 **/
 

@@ -8,12 +8,12 @@
 /**
  * Back Compat Args
  */
-function tamatebako_back_compat_args(){
+function tamatebako_back_compat_args() {
 
 	/* Get theme support */
 	$back_compat_support = get_theme_support( 'tamatebako-back-compat' );
 	$theme_args = array();
-	if ( isset( $back_compat_support[0] ) ){
+	if ( isset( $back_compat_support[0] ) ) {
 		$theme_args = $back_compat_support[0];
 	}
 
@@ -44,7 +44,7 @@ function tamatebako_back_compat_args(){
 /**
  * Notice.
  */
-function tamatebako_back_compat_notice(){
+function tamatebako_back_compat_notice() {
 
 	/* Vars */
 	global $wp_version;
@@ -67,7 +67,7 @@ function tamatebako_back_compat_notice(){
 	}
 
 	/* Parse tags */
-	if( !empty( $notice ) ){
+	if ( !empty( $notice ) ) {
 		$notice = str_replace( '%theme_name%', $args['theme_name'], $notice );
 		$notice = str_replace( '%wp_requires%', $args['wp_requires'], $notice );
 		$notice = str_replace( '%php_requires%', $args['php_requires'], $notice );
@@ -96,7 +96,6 @@ if ( version_compare( $wp_version, $args['wp_requires'], '<' ) || version_compar
 
 }
 
-
 /**
  * Prevent theme activation, and force switch to the default theme.
  */
@@ -115,25 +114,25 @@ function tamatebako_back_compat_switch_theme() {
  */
 function tamatebako_back_compat_admin_notice() {
 ?>
-	<div class="error">
-		<p><?php echo tamatebako_back_compat_notice(); ?></p>
-	</div>
+<div class="error">
+	<p><?php echo tamatebako_back_compat_notice(); ?></p>
+</div>
 <?php
 }
-
 
 /**
  * Prevent the Customizer from being loaded.
  */
 function tamatebako_back_compat_disable_customize(){
-	wp_die( tamatebako_back_compat_notice(), '', array( 'back_link' => true ) );
+	wp_die( tamatebako_back_compat_notice(), '', array(
+		'back_link' => true,
+	) );
 }
-
 
 /**
  * Prevent the Theme Preview from being loaded.
  */
-function tamatebako_back_compat_disable_preview(){
+function tamatebako_back_compat_disable_preview() {
 	if ( isset( $_GET['preview'] ) ) {
 		wp_die( tamatebako_back_compat_notice() );
 	}

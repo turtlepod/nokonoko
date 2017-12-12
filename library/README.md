@@ -3,7 +3,7 @@
 WordPress theme engine for faster theme development.
 
 **Copyright & license**<br />
-This framework is licensed under the [GNU General Public License](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 (GPL) or later.<br />
+This framework is licensed under the [GNU General Public License](http://www.gnu.org/licenses/old-licenses/gpl-3.0.html), version 3 (GPL) or later.<br />
 2017 © [Genbu Media](http://genbumedia.com/). All rights reserved.
 
 ###Changelog
@@ -11,7 +11,9 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 **4.0.0 - ???**
 
 * WPCS
-* Remove old features.
+* Remove upsell feature.
+* GPL 3.
+* Gulp, SASS, etc.
 
 **3.5.0 - 14.Dec.2016**
 

@@ -1,6 +1,7 @@
 <?php
 /**
  * Layouts Customizer
+ *
  * @since 3.0.0
  */
 
@@ -13,7 +14,7 @@ add_action( 'customize_register', 'tamatebako_layouts_customizer_register' );
 function tamatebako_layouts_customizer_register( $wp_customize ) {
 
 	/* Load Layout Customizer Class */
-	tamatebako_include( 'customizer/radio-image', true );
+	tamatebako_include( 'customizer/class-tamatebako-customize-radio-image', true );
 
 	/* Add the layout section. */
 	$wp_customize->add_section(
