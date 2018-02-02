@@ -1,30 +1,32 @@
 <?php
 /**
  * Attachment Template Tags
+ *
  * @since 3.0.0
+ * @author GenbuMedia
 **/
 
 /**
  * Display attachment.
+ *
  * @author Justin Tadlock <justintadlock@gmail.com>
  * @since  0.1.0
  */
-function tamatebako_attachment(){
+function tamatebako_attachment() {
 	$file       = wp_get_attachment_url();
 	$mime       = get_post_mime_type();
 	$attachment = '';
 
 	$mime_type = '';
-	if( false !== strpos( $mime, '/' ) ){
+	if( false !== strpos( $mime, '/' ) ) {
 		$mime_type = explode( '/', $mime );
-	}
-	else{
+	} else {
 		$mime_type = array( $mime, '' );
 	}
 
-	/* Loop through each mime type. If a function exists for it, call it. Allow users to filter the display. */
+	// Loop through each mime type. If a function exists for it, call it. Allow users to filter the display.
 	foreach ( $mime_type as $type ) {
-		if ( function_exists( "tamatebako_attachment_{$type}" ) ){
+		if ( function_exists( "tamatebako_attachment_{$type}" ) ) {
 			$attachment = call_user_func( "tamatebako_attachment_{$type}", $mime, $file );
 		}
 	}
@@ -34,31 +36,33 @@ function tamatebako_attachment(){
 
 /**
  * Display Attachment Image with caption if available.
+ *
  * @since 0.1.0
+ *
+ * @param string $mime File mime type. Not currently used.
+ * @param string $file File URL. Not currently used.
+ * @return string
  */
-function tamatebako_attachment_image( $mime = '', $file = '' ){
+function tamatebako_attachment_image( $mime = '', $file = '' ) {
 
-	/* If image has excerpt / caption. */
+	// If image has excerpt / caption.
 	if ( has_excerpt() ) {
-
-		/* Image URL */
 		$src = wp_get_attachment_image_src( get_the_ID(), 'full' );
-		/* Display image with caption */
 		return img_caption_shortcode( array( 'align' => 'aligncenter', 'width' => esc_attr( $src[1] ), 'caption' => get_the_excerpt() ), wp_get_attachment_image( get_the_ID(), 'full', false ) );
-
-	}
-	/* No caption. */
-	else {
-
-		/* Display image without caption. */
+	} else { // No caption. Display image without caption.
 		return wp_get_attachment_image( get_the_ID(), 'full', false, array( 'class' => 'aligncenter' ) );
 	}
 }
 
 /**
  * Handles application attachments.
+ *
  * @author Justin Tadlock <justintadlock@gmail.com>
  * @since 3.0.0
+ *
+ * @param string $mime File mime type. Not currently used.
+ * @param string $file File URL. Not currently used.
+ * @return string
  */
 function tamatebako_attachment_application( $mime = '', $file = '' ) {
 	$embed_defaults = wp_embed_defaults();
@@ -71,8 +75,13 @@ function tamatebako_attachment_application( $mime = '', $file = '' ) {
 
 /**
  * Handles text attachments on their attachment pages.
+ *
  * @author Justin Tadlock <justintadlock@gmail.com>
  * @since 3.0.0
+ *
+ * @param string $mime File mime type. Not currently used.
+ * @param string $file File URL. Not currently used.
+ * @return string
  */
 function tamatebako_attachment_text( $mime = '', $file = '' ) {
 	$embed_defaults = wp_embed_defaults();
@@ -85,7 +94,12 @@ function tamatebako_attachment_text( $mime = '', $file = '' ) {
 
 /**
  * Handles the output of the media for audio attachment posts.
+ *
  * @since 3.0.0
+ *
+ * @param string $mime File mime type. Not currently used.
+ * @param string $file File URL. Not currently used.
+ * @return string
  */
 function tamatebako_attachment_audio( $mime = '', $file = '' ) {
 	return do_shortcode( '[audio src="' . esc_url( esc_url( $file ) ) . '"]' );
@@ -93,7 +107,12 @@ function tamatebako_attachment_audio( $mime = '', $file = '' ) {
 
 /**
  * Handles the output of the media for video attachment posts. This should be used within The Loop.
+ *
  * @since  3.0.0
+ *
+ * @param string $mime File mime type. Not currently used.
+ * @param string $file File URL. Not currently used.
+ * @return string
  */
 function tamatebako_attachment_video( $mime = '', $file = '' ) {
 	return do_shortcode( '[video src="' . esc_url( esc_url( $file ) ) . '"]' );

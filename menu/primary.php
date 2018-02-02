@@ -5,8 +5,8 @@
 		<?php tamatebako_menu_toggle( 'primary' ); ?>
 
 		<?php 
-		/* Display menu only if the location is registered */
-		if ( tamatebako_is_menu_registered( 'primary' ) ){
+		// Display menu only if the location is registered.
+		if ( tamatebako_is_menu_registered( 'primary' ) ) {
 			wp_nav_menu(
 				array(
 					'theme_location'  => 'primary',
@@ -18,8 +18,7 @@
 				)
 			);
 			
-		}
-		else{
+		} else {
 			tamatebako_menu_fallback_cb();
 		}
 		?>

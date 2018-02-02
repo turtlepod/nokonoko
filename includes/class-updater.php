@@ -17,7 +17,7 @@ new nokonoko_Theme_Updater();
  * @link http://genbumedia.com/plugins/fx-updater
  * @author GenbuMedia
 **/
-class nokonoko_Theme_Updater{
+class nokonoko_Theme_Updater {
 
 	/**
 	 * Class Constructor

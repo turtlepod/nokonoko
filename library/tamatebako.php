@@ -95,11 +95,6 @@ function tamatebako_load_theme_support() {
 		tamatebako_require_if_theme_supports( 'tamatebako-full-size-background', 'modules/full-size-background' );
 	}
 
-	// Microdata filters.
-	if ( ! is_admin() ) {
-		tamatebako_require_if_theme_supports( 'tamatebako-microdata', 'modules/microdata' );
-	}
-
 	// Layouts.
 	tamatebako_require_if_theme_supports( 'tamatebako-layouts', 'modules/layouts/layouts' );
 

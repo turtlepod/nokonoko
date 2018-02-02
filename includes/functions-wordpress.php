@@ -46,7 +46,3 @@ $custom_header_args = array(
 	'wp-head-callback'       => '',
 );
 //add_theme_support( 'custom-header', $custom_header_args );
-
-
-
-

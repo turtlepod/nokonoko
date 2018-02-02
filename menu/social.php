@@ -3,7 +3,7 @@
  * Social Menu
  * @links http://css-tricks.com/snippets/wordpress/remove-li-elements-from-output-of-wp_nav_menu/
  */
-if ( tamatebako_is_menu_registered( 'social' ) ){
+if ( tamatebako_is_menu_registered( 'social' ) ) {
 	$args = array(
 		'theme_location'  => 'social',
 		'container'       => false,

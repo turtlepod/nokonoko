@@ -2,31 +2,39 @@
 /**
  * Theme Layouts
  * Based on Hybrid Core 2.0 Theme Layouts Ext.
- * @author    David Chandra <david@shellcreeper.com>
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ *
+ * @since 1.0.0
+ * @author David Chandra <david@shellcreeper.com>
+ * @author Justin Tadlock <justintadlock@gmail.com>
 **/
 
 /* === VARS === */
 
 /**
  * Layouts Defined By Theme
+ *
+ * @since 1.0.0
+ *
+ * @return array
  */
-function tamatebako_theme_layouts(){
+function tamatebako_theme_layouts() {
 	return get_theme_support( 'tamatebako-layouts' );
 }
 
 /**
  * List Of Layouts
+ *
+ * @since 1.0.0
+ *
+ * @return array
  */
 function tamatebako_layouts() {
-
-	/* Get theme-supported layouts. */
+	// Get theme-supported layouts.
 	$theme_layouts = tamatebako_theme_layouts();
 
-	/* Assign the strings passed in by the theme author. */
+	// Assign the strings passed in by the theme author.
 	$layouts = array();
-	if ( isset( $theme_layouts[0] ) ){
+	if ( isset( $theme_layouts[0] ) ) {
 		$layouts = $theme_layouts[0];
 	}
 
@@ -35,10 +43,14 @@ function tamatebako_layouts() {
 
 /**
  * Get Specific Layout Name From Layout Slug
+ *
+ * @since 1.0.0
+ *
+ * @return array
  */
 function tamatebako_layout_name( $layout ) {
 	$layouts = tamatebako_layouts();
-	if( isset( $layouts[ $layout ]['name'] ) ){
+	if ( isset( $layouts[ $layout ]['name'] ) ) {
 		return $layouts[ $layout ]['name'];
 	}
 	return $layout;
@@ -46,9 +58,12 @@ function tamatebako_layout_name( $layout ) {
 
 /**
  * Array of arguments for layouts.
+ *
+ * @since 1.0.0
+ *
+ * @return array
  */
 function tamatebako_layouts_args() {
-
 	$defaults = array( 
 		'customize'   => true, 
 		'post_meta'   => true, 
@@ -63,9 +78,13 @@ function tamatebako_layouts_args() {
 }
 
 /**
- * Texts String Used in Layouts Feature
+ * Texts String Used in Layouts Feature.
+ *
+ * @since 1.0.0
+ *
+ * @return array
  */
-function tamatebako_layouts_strings(){
+function tamatebako_layouts_strings() {
 	$defaults = array( 
 		'default'       => 'Default',
 		'layout'        => 'Layout',
@@ -78,30 +97,37 @@ function tamatebako_layouts_strings(){
 
 /**
  * Get String
+ *
+ * @since 1.0.0
+ *
+ * @return array
  */
-function tamatebako_layouts_string( $context ){
+function tamatebako_layouts_string( $context ) {
 	$strings = tamatebako_layouts_strings();
-	if ( isset( $strings[$context] ) ){
-		return $strings[$context];
+	if ( isset( $strings[ $context ] ) ) {
+		return $strings[ $context ];
 	}
 	return $context;
 }
 
 /**
  * Default Layout
+ *
+ * @since 1.0.0
+ *
+ * @param string $return Return  value type. Use 'slug' or 'name'.
+ * @return string
  */
-function tamatebako_layout_default( $return = 'slug' ){
-
-	/* Vars */
+function tamatebako_layout_default( $return = 'slug' ) {
 	$layouts = array_keys( tamatebako_layouts() );
 	$args = tamatebako_layouts_args();
 
-	/* Validate Layout */
-	if( in_array( $args['default'], $layouts ) ){
-		if( 'slug' == $return ){
+	// Validate Layout.
+	if ( in_array( $args['default'], $layouts ) ) {
+		if ( 'slug' == $return ) {
 			return $args['default'];
 		}
-		if( 'name' == $return ){
+		if ( 'name' == $return ) {
 			return tamatebako_layout_name( $args['default'] );
 		}
 	}

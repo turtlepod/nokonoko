@@ -124,3 +124,4 @@ This framework is licensed under the [GNU General Public License](http://www.gnu
 **3.0.0 - 10.Aug.2015**
 
 * first stable standalone library.
+

@@ -24,11 +24,7 @@ class Tamatebako_Customize_Radio_Image extends WP_Customize_Control {
 		global $tamatebako;
 
 		$file = trailingslashit( get_template_directory_uri() ) . $tamatebako->dir . '/customizer/assets/';
-
-		/* CSS */
 		wp_enqueue_style( "tamatebako-customizer-radio-image", $file . 'radio-image.css', array(), tamatebako_theme_version(), 'all' );
-
-		/* JS */
 		wp_enqueue_script( "tamatebako-customizer-radio-image", $file . 'radio-image.js', array( 'jquery', 'customize-controls' ), tamatebako_theme_version(), true );
 	}
 
@@ -38,7 +34,7 @@ class Tamatebako_Customize_Radio_Image extends WP_Customize_Control {
 	 * @since 3.2.0
 	 */
 	public function render_content() {
-		/* if no choices, bail. */
+		// If no choices, bail.
 		if ( empty( $this->choices ) ) {
 			return;
 		}

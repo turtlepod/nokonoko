@@ -1,6 +1,6 @@
 <?php
 
-if ( tamatebako_is_menu_registered( 'footer' ) ){
+if ( tamatebako_is_menu_registered( 'footer' ) ) {
 
 	wp_nav_menu(
 		array(
